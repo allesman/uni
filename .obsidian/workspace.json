@@ -4,19 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "559cc4a14311a248",
+        "id": "c364ccfb002a5035",
         "type": "tabs",
         "children": [
           {
-            "id": "c5a54b7af6792600",
+            "id": "9d43e7b6bcdf4572",
             "type": "leaf",
             "state": {
-              "type": "pdf",
-              "state": {
-                "file": "DS/DS-Slides.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "DS-Slides"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -168,10 +166,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c5a54b7af6792600",
+  "active": "9d43e7b6bcdf4572",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
     "DS/DS-Slides.pdf",
+    "conflict-files-obsidian-git.md",
     "DS/MathJax.md",
     "beep beep heloo world mf.md",
     "DS/2025-10-16 Mengen.md",
