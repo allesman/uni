@@ -1,5 +1,15 @@
 views:
   - type: table
     name: Table
-  - type: table
+    order:
+      - file.name
+      - file.folder
+    sort:
+      - property: file.name
+        direction: DESC
+  - type: cards
     name: View
+    cardSize: 220
+    image: file.file
+    imageFit: ""
+    imageAspectRatio: 0.8
