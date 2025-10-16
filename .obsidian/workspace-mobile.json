@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "Orga"
             }
+          },
+          {
+            "id": "5cb3ac5d6d8cb261",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Test.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Test"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -139,9 +154,19 @@
           "icon": "lucide-list",
           "title": "Outline"
         }
+      },
+      {
+        "id": "45bf129f712a9823",
+        "type": "leaf",
+        "state": {
+          "type": "git-view",
+          "state": {},
+          "icon": "git-pull-request",
+          "title": "Source Control"
+        }
       }
     ],
-    "currentTab": 0
+    "currentTab": 3
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -155,9 +180,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9a06fb963d6e76c6",
+  "active": "5cb3ac5d6d8cb261",
   "lastOpenFiles": [
-    "DS/2025-10-16.md",
-    "DS/Orga.md"
+    "DS/Orga.md",
+    "Test.md",
+    "DS/2025-10-16.md"
   ]
 }
