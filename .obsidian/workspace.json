@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "559cc4a14311a248",
+        "id": "1d16763b5feabc09",
         "type": "tabs",
         "children": [
           {
-            "id": "c5a54b7af6792600",
+            "id": "7577c11427a9fc1a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "DS/2025-10-16 Mengen.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "2025-10-16 Mengen"
+              "title": "New tab"
             }
           }
         ]
@@ -170,15 +166,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c5a54b7af6792600",
+  "active": "7577c11427a9fc1a",
   "lastOpenFiles": [
-    "DS/Base Test.base",
-    "conflict-files-obsidian-git.md",
-    "DS/2025-10-16 Mengen.md",
-    "beep beep heloo world mf.md",
     "Untitled.md",
-    "ERA/Orga.md",
+    "DS/Base Test.base",
+    "DS/Orga.md",
     "DS/DS-Slides.pdf",
+    "conflict-files-obsidian-git.md",
+    "DS/MathJax.md",
+    "beep beep heloo world mf.md",
+    "DS/2025-10-16 Mengen.md",
+    "ERA/Orga.md",
     "DS/2025-10-16.md",
     "DS/attachments/IMG_20251016_150731310.jpg",
     "DS/attachments",
@@ -186,7 +184,6 @@
     "DS/attachments/IMG_20251016_150731310 copy.png",
     "Vorkurs/VK-Slides.pdf",
     "ERA/2025-10-14.md",
-    "DS/MathJax.md",
     "DS/2025-10-14.md",
     "Rechnereinführung/Git.md"
   ]
