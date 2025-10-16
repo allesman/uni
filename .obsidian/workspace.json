@@ -11,14 +11,12 @@
             "id": "f8ed4e8fedfb0356",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "DS/2025-10-16.md",
-                "mode": "source",
-                "source": false
+                "file": "Vorkurs/VK-Slides.pdf"
               },
-              "icon": "lucide-file",
-              "title": "2025-10-16"
+              "icon": "lucide-file-text",
+              "title": "VK-Slides"
             }
           }
         ]
@@ -172,8 +170,8 @@
   },
   "active": "f8ed4e8fedfb0356",
   "lastOpenFiles": [
-    "ERA/2025-10-14.md",
     "DS/2025-10-16.md",
+    "ERA/2025-10-14.md",
     "DS/MathJax.md",
     "DS/2025-10-14.md",
     "ERA/Orga.md",
