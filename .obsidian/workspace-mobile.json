@@ -11,14 +11,13 @@
             "id": "9a06fb963d6e76c6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "bases",
               "state": {
-                "file": "DS/Orga.md",
-                "mode": "source",
-                "source": false
+                "file": "DS/Base Test.base",
+                "viewName": "Table"
               },
-              "icon": "lucide-file",
-              "title": "Orga"
+              "icon": "lucide-table",
+              "title": "Base Test"
             }
           }
         ]
@@ -156,8 +155,15 @@
   },
   "active": "9a06fb963d6e76c6",
   "lastOpenFiles": [
-    "Test.md",
+    "DS/2025-10-16 Mengen.md",
     "DS/Orga.md",
+    "DS/DS-Slides.pdf",
+    "DS/Base Test.base",
+    "DS/attachments/IMG_20251016_150731310.jpg",
+    "DS/attachments/IMG_20251016_150731310 copy.png",
+    "DS/attachments/IMG_20251016_150731310 copy 2.png",
+    "DS/attachments",
+    "Test.md",
     "DS/2025-10-16.md"
   ]
 }
