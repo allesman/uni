@@ -11,13 +11,14 @@
             "id": "9a06fb963d6e76c6",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "DS/Base Test.base",
-                "viewName": "Table"
+                "file": "DS/2025-10-14.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-table",
-              "title": "Base Test"
+              "icon": "lucide-file",
+              "title": "2025-10-14"
             }
           }
         ]
@@ -130,7 +131,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "DS/Base Test.base",
+            "file": "DS/2025-10-14.md",
             "followCursor": false,
             "showSearch": false,
             "searchQuery": ""
@@ -156,6 +157,7 @@
   },
   "active": "9a06fb963d6e76c6",
   "lastOpenFiles": [
+    "DS/2025-10-16.md",
     "DS/2025-10-14.md",
     "DS/Base Test.base",
     "DS/2025-10-16 Mengen.md",
@@ -165,7 +167,6 @@
     "DS/attachments/IMG_20251016_150731310 copy.png",
     "DS/attachments/IMG_20251016_150731310 copy 2.png",
     "DS/attachments",
-    "Test.md",
-    "DS/2025-10-16.md"
+    "Test.md"
   ]
 }
