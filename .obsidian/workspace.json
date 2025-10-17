@@ -4,21 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "1d16763b5feabc09",
+        "id": "559cc4a14311a248",
         "type": "tabs",
         "children": [
           {
-            "id": "7577c11427a9fc1a",
+            "id": "c5a54b7af6792600",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "DS/2025-10-14.md",
-                "mode": "source",
-                "source": false
+                "file": "DS/DS-Slides.pdf"
               },
-              "icon": "lucide-file",
-              "title": "2025-10-14"
+              "icon": "lucide-file-text",
+              "title": "DS-Slides"
             }
           }
         ]
@@ -170,24 +168,23 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7577c11427a9fc1a",
+  "active": "c5a54b7af6792600",
   "lastOpenFiles": [
-    "Untitled.md",
-    "DS/Base Test.base",
-    "DS/Orga.md",
-    "DS/DS-Slides.pdf",
-    "conflict-files-obsidian-git.md",
-    "DS/MathJax.md",
-    "beep beep heloo world mf.md",
-    "DS/2025-10-16 Mengen.md",
-    "ERA/Orga.md",
     "DS/2025-10-16.md",
+    "DS/2025-10-16 Mengen.md",
+    "DS/Base Test.base",
+    "conflict-files-obsidian-git.md",
+    "beep beep heloo world mf.md",
+    "Untitled.md",
+    "ERA/Orga.md",
+    "DS/DS-Slides.pdf",
     "DS/attachments/IMG_20251016_150731310.jpg",
     "DS/attachments",
     "DS/attachments/IMG_20251016_150731310 copy 2.png",
     "DS/attachments/IMG_20251016_150731310 copy.png",
     "Vorkurs/VK-Slides.pdf",
     "ERA/2025-10-14.md",
+    "DS/MathJax.md",
     "DS/2025-10-14.md",
     "Rechnereinführung/Git.md"
   ]
