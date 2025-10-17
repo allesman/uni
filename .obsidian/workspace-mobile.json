@@ -130,7 +130,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "DS/Orga.md",
+            "file": "DS/Base Test.base",
             "followCursor": false,
             "showSearch": false,
             "searchQuery": ""
@@ -156,10 +156,11 @@
   },
   "active": "9a06fb963d6e76c6",
   "lastOpenFiles": [
+    "DS/2025-10-14.md",
+    "DS/Base Test.base",
     "DS/2025-10-16 Mengen.md",
     "DS/Orga.md",
     "DS/DS-Slides.pdf",
-    "DS/Base Test.base",
     "DS/attachments/IMG_20251016_150731310.jpg",
     "DS/attachments/IMG_20251016_150731310 copy.png",
     "DS/attachments/IMG_20251016_150731310 copy 2.png",
