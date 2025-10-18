@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DS/Orga.md",
+                "file": "ERA/Orga.md",
                 "mode": "source",
                 "source": false
               },
@@ -131,7 +131,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "DS/Orga.md",
+            "file": "DS/2025-10-14.md",
             "followCursor": false,
             "showSearch": false,
             "searchQuery": ""
@@ -151,14 +151,23 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false,
-      "obsidian-git:Open Git source control": false
+      "bases:Create new base": false
     }
   },
   "active": "9a06fb963d6e76c6",
   "lastOpenFiles": [
-    "Test.md",
     "DS/Orga.md",
-    "DS/2025-10-16.md"
+    "ERA/Orga.md",
+    "DS/2025-10-16 Mengen.md",
+    "DS/2025-10-14.md",
+    "ERA/era_tutor01.pdf",
+    "DS/2025-10-16.md",
+    "DS/Base Test.base",
+    "DS/DS-Slides.pdf",
+    "DS/attachments/IMG_20251016_150731310.jpg",
+    "DS/attachments/IMG_20251016_150731310 copy.png",
+    "DS/attachments/IMG_20251016_150731310 copy 2.png",
+    "DS/attachments",
+    "Test.md"
   ]
 }
