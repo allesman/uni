@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "2025-10-14"
             }
+          },
+          {
+            "id": "3283509bb1f1e47d",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.9.14"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.9.14"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -170,7 +183,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7577c11427a9fc1a",
+  "active": "3283509bb1f1e47d",
   "lastOpenFiles": [
     "Untitled.md",
     "DS/Base Test.base",
