@@ -1,0 +1,5 @@
+---
+aliases:
+  - "Grundlagenpraktikum: Programmierung"
+---
+#orga
