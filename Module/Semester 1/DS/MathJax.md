@@ -5,8 +5,8 @@ Curly braces {} to group pieces of formulas
 Superscripts ( ^ ) and subscripts ( _ ) : x1e
 
 Fractions:
-ab \frac {a} {b}
-xy {x} \over {y} }
+\frac {a} {b}
+ \over {y} }
 
 Unscaled parentheses
 
