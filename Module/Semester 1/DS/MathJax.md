@@ -43,37 +43,37 @@ Hidden parentheses
 
 - manual adjustment: (((((x))))) \Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr)
 
-|Symbol|Code|
-|---|---|
-|<|\lt|
-|>|\gt|
-|≤|\le|
-|≤|\leq|
-|≦|\leqq|
-|⩽|\leqslant|
-|≥|\ge|
-|≥|\geq|
-|≧|\geqq|
-|⩾|\geqslant|
-|≠|\neq|
-|∧|\land|
-|∨|\lor|
-|¬|\lnot|
-|∀|\forall|
-|∃|\exists|
-|∄|\nexists|
-|⊤|\top|
-|⊥|\bot|
-|⊢|\vdash|
-|⊨|\vDash|
-|≈|\approx|
-|∼|\sim|
-|≃|\simeq|
-|≅|\cong|
-|≡|\equiv|
-|≺|\prec|
-|⊲|\lhd|
-|∴|\therefore|
+| Symbol | Code       |
+| ------ | ---------- |
+| <      | \lt        |
+| >      | \gt        |
+| ≤      | \le        |
+| ≤      | \leq       |
+| ≦      | \leqq      |
+| ⩽      | \leqslant  |
+| ≥      | \ge        |
+| ≥      | \geq       |
+| ≧      | \geqq      |
+| ⩾      | \geqslant  |
+| ≠      | \neq       |
+| ∧      | \land      |
+| ∨      | \lor       |
+| ¬      | \lnot      |
+| ∀      | \forall    |
+| ∃      | \exists    |
+| ∄      | \nexists   |
+| ⊤      | \top       |
+| ⊥      | \bot       |
+| ⊢      | \vdash     |
+| ⊨      | \vDash     |
+| ≈      | \approx    |
+| ∼      | \sim       |
+| ≃      | \simeq     |
+| ≅      | \cong      |
+| ≡      | \equiv     |
+| ≺      | \prec      |
+| ⊲      | \lhd       |
+| ∴      | \therefore |
 
 |Symbol|Code|
 |---|---|
@@ -135,22 +135,22 @@ Hidden parentheses
 |arccos⁡x|\arccos x|
 |arctan⁡x|\arctan x|
 
-|Symbol|Code|
-|---|---|
-|x3|\sqrt{x^3}|
-|xy3|\sqrt[3]{\frac xy}|
-|ln⁡(x)|\ln(x)|
-|log2⁡(x)|\log_{2}(x)|
-|∑n=1Nn|\sum_{n=1} ^{N} n|
-|∏n=1Nn|\prod_{n=1} ^{N} n|
-|∫0∞xdx|\int_{0} ^{\infty} x dx|
-|∬0∞xdx|\iint_{0} ^{\infty} x dx|
-|∭0∞xdx|\iiint_{0} ^{\infty} x dx|
-|limx→∞1x|\lim_{x \to \infty} {1 \over x }|
-|max(1,2,3)|\max(1,2,3)|
-|min(3,4,5)|\min(3,4,5)|
-|(n+12k)|{n+1 \choose 2k}|
-|(n+12k)(n+12k)|\binom{n+1}{2k} (n+12k)|
+| Symbol         | Code                             |
+| -------------- | -------------------------------- |
+| x3             | \sqrt{x^3}                       |
+| xy3            | \sqrt[3]{\frac xy}               |
+| ln⁡(x)         | \ln(x)                           |
+| log2⁡(x)       | \log_{2}(x)                      |
+| ∑n=1Nn         | \sum_{n=1} ^{N} n                |
+| ∏n=1Nn         | \prod_{n=1} ^{N} n               |
+| ∫0∞xdx         | \int_{0} ^{\infty} x dx          |
+| ∬0∞xdx         | \iint_{0} ^{\infty} x dx         |
+| ∭0∞xdx         | \iiint_{0} ^{\infty} x dx        |
+| limx→∞1x       | \lim_{x \to \infty} {1 \over x } |
+| max(1,2,3)     | \max(1,2,3)                      |
+| min(3,4,5)     | \min(3,4,5)                      |
+| (n+12k)        | {n+1 \choose 2k}                 |
+| (n+12k)(n+12k) | \binom{n+1}{2k} (n+12k)          |
 
 |Symbol|Code|
 |---|---|

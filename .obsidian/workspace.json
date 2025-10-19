@@ -25,17 +25,18 @@
             "id": "b8e18a21940a3edd",
             "type": "leaf",
             "state": {
-              "type": "webviewer",
+              "type": "markdown",
               "state": {
-                "url": "https://bearnok.com/grva/en/knowledge/software/mathjax",
-                "title": "MathJax symbol reference | BrNk",
-                "mode": "webview"
+                "file": "Module/Semester 1/DS/MathJax symbol reference  BrNk.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "globe-2",
-              "title": "MathJax symbol reference | BrNk"
+              "icon": "lucide-file",
+              "title": "MathJax symbol reference  BrNk"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -136,7 +137,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Module/Semester 1/DS/MathJax.md",
+                "file": "Module/Semester 1/DS/MathJax symbol reference  BrNk.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -146,7 +147,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for MathJax"
+              "title": "Backlinks for MathJax symbol reference  BrNk"
             }
           },
           {
@@ -184,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Module/Semester 1/DS/MathJax.md",
+                "file": "Module/Semester 1/DS/MathJax symbol reference  BrNk.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of MathJax"
+              "title": "Outline of MathJax symbol reference  BrNk"
             }
           },
           {
@@ -254,8 +255,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "13b1a780be26512a",
+  "active": "b15d098cb6abed62",
   "lastOpenFiles": [
+    "Module/Semester 1/DS/MathJax symbol reference  BrNk.md",
+    "Clippings",
     "Module/Semester 1/DS/MathJax.md",
     "Module/Semester 1/DS/DS-Slides.pdf",
     "Attachments/IMG_20251016_150731310 copy 2.png",
@@ -286,7 +289,6 @@
     "Module/Semester 1/DS/2025-10-16 Mengen.md",
     "Module/Semester 1/DS/2025-10-16.md",
     "Attachments/IMG_20251016_150731310.jpg",
-    "Module/Semester 1/DS/attachments",
     "Attachments/IMG_20251016_150731310 copy.png",
     "Rechnereinführung/Git.md"
   ]
