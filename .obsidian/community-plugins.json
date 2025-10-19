@@ -6,5 +6,7 @@
   "homepage",
   "dataview",
   "templater-obsidian",
-  "calendar"
+  "calendar",
+  "cmdr",
+  "make-md"
 ]
