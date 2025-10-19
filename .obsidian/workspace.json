@@ -4,37 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "615a678eca27d07b",
+        "id": "6b7a40ea8a37087e",
         "type": "tabs",
         "children": [
           {
-            "id": "5d75ca5975dadb57",
+            "id": "90a061142f41f59f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Module/Semester 1/DS/2025-10-16.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "2025-10-16"
-            }
-          },
-          {
-            "id": "6132c7592899af9e",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Module/Semester 1/DS/DS-Slides.pdf",
-                "page": 46,
-                "left": -313,
-                "top": 93,
-                "zoom": 1.25
-              },
-              "icon": "lucide-file-text",
-              "title": "DS-Slides"
+              "title": "New tab"
             }
           }
         ]
@@ -138,7 +118,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Module/Semester 1/DS/2025-10-16.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -148,7 +127,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2025-10-16"
+              "title": "Backlinks"
             }
           },
           {
@@ -186,13 +165,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Module/Semester 1/DS/2025-10-16.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2025-10-16"
+              "title": "Outline"
             }
           },
           {
@@ -261,10 +239,11 @@
       "slide-note:Slide Note Block Generator": false
     }
   },
-  "active": "5d75ca5975dadb57",
+  "active": "90a061142f41f59f",
   "lastOpenFiles": [
-    "Module/Semester 1/DS/DS-Slides.pdf",
     "Module/Semester 1/DS/2025-10-16.md",
+    "Module/Semester 1/DS/2025-10-14.md",
+    "Module/Semester 1/DS/DS-Slides.pdf",
     "Module/Semester 1/DS/2025-10-16 Mengen.md",
     "Dashboard.md",
     "handwritten-notes/New note.pdf",
@@ -272,7 +251,6 @@
     "handwritten-notes",
     "gdfgdf.md",
     "Module/Semester 1/DS/DS-Slides Annotated.pdf",
-    "Module/Semester 1/DS/2025-10-14.md",
     "Module/Semester 1/DS/Orga.md",
     "Module/Semester 1/DS/MathJax symbol reference  BrNk.md",
     "Clippings",
