@@ -42,7 +42,10 @@
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
-  "suppressedWarnings": [],
+  "suppressedWarnings": [
+    "obsidian-sync-space-folder",
+    "obsidian-sync-space-config"
+  ],
   "spaceSubFolder": ".space",
   "hiddenFiles": [],
   "hiddenExtensions": [
@@ -53,7 +56,7 @@
   "inlineBacklinks": false,
   "inlineContext": true,
   "inlineBacklinksExpanded": false,
-  "inlineContextExpanded": true,
+  "inlineContextExpanded": false,
   "inlineContextProperties": true,
   "inlineContextSectionsExpanded": true,
   "banners": true,
