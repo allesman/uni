@@ -1,5 +1,5 @@
 ---
-sticker: emoji//1f4f0
+sticker: lucide//home
 cssclasses: " "
 ---
 # MODULE

@@ -38,7 +38,10 @@
   "vaultSelector": true,
   "deleteFileOption": "trash",
   "expandedSpaces": [
-    "/"
+    "/",
+    "//Tags",
+    "//ERA",
+    "//Module/Module/Semester 1"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
@@ -56,7 +59,7 @@
   "inlineBacklinks": false,
   "inlineContext": true,
   "inlineBacklinksExpanded": false,
-  "inlineContextExpanded": false,
+  "inlineContextExpanded": true,
   "inlineContextProperties": true,
   "inlineContextSectionsExpanded": true,
   "banners": true,
