@@ -4,21 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "dd68ae8968dbc891",
+        "id": "55051fc3abfbc854",
         "type": "tabs",
         "children": [
           {
-            "id": "dff523d1642d8846",
+            "id": "37859df829eb8ace",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Module/Semester 1/DS/2025-10-16.md",
-                "mode": "source",
-                "source": false
+                "file": "handwritten-notes/New note.pdf"
               },
-              "icon": "lucide-file",
-              "title": "2025-10-16"
+              "icon": "lucide-file-text",
+              "title": "New note"
             }
           }
         ]
@@ -122,7 +120,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Module/Semester 1/DS/2025-10-16.md",
+                "file": "handwritten-notes/New note.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +130,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2025-10-16"
+              "title": "Backlinks for New note"
             }
           },
           {
@@ -170,13 +168,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Module/Semester 1/DS/2025-10-16.md",
+                "file": "handwritten-notes/New note.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2025-10-16"
+              "title": "Outline of New note"
             }
           },
           {
@@ -240,13 +238,16 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "pdf-plus:PDF++: Toggle auto-copy": false,
       "pdf-plus:PDF++: Toggle auto-focus": false,
-      "pdf-plus:PDF++: Toggle auto-paste": false
+      "pdf-plus:PDF++: Toggle auto-paste": false,
+      "handwritten-notes:Create empty handwritten note": false
     }
   },
-  "active": "dff523d1642d8846",
+  "active": "37859df829eb8ace",
   "lastOpenFiles": [
-    "gdfgdf.md",
+    "handwritten-notes/New note.pdf",
     "Module/Semester 1/DS/2025-10-16.md",
+    "handwritten-notes",
+    "gdfgdf.md",
     "Module/Semester 1/DS/DS-Slides Annotated.pdf",
     "Module/Semester 1/DS/DS-Slides.pdf",
     "Module/Semester 1/DS/2025-10-14.md",
@@ -269,9 +270,7 @@
     "Module/Semester 1",
     "Module/Module.md",
     "Module",
-    "Tags",
     "Module/Semester 1/ERA/2025-10-14.md",
-    "Module/Semester 1/DS/Base Test.base",
     "disk.md",
     "Module/Semester 1/ERA/Orga.md",
     "conflict-files-obsidian-git.md",
