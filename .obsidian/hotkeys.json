@@ -61,5 +61,13 @@
       ],
       "key": "G"
     }
+  ],
+  "omnisearch:show-modal": [
+    {
+      "modifiers": [
+        "Shift"
+      ],
+      "key": " "
+    }
   ]
 }
