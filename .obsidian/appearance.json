@@ -1,3 +1,5 @@
 {
-  "cssTheme": "Typewriter"
+  "cssTheme": "Border",
+  "nativeMenus": false,
+  "accentColor": "#675cad"
 }

@@ -4,19 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "559cc4a14311a248",
+        "id": "6b7a40ea8a37087e",
         "type": "tabs",
         "children": [
           {
-            "id": "c5a54b7af6792600",
+            "id": "90a061142f41f59f",
             "type": "leaf",
             "state": {
-              "type": "pdf",
-              "state": {
-                "file": "ERA/era_tutor01.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "era_tutor01"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -71,8 +69,35 @@
               "icon": "lucide-bookmark",
               "title": "Bookmarks"
             }
+          },
+          {
+            "id": "a29dd61de8653b27",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "b15d098cb6abed62",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -85,6 +110,7 @@
       {
         "id": "b828a1052c82fddd",
         "type": "tabs",
+        "dimension": 49.63450292397661,
         "children": [
           {
             "id": "3c8a792db97f8826",
@@ -92,7 +118,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ERA/2025-10-14.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +127,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2025-10-14"
+              "title": "Backlinks"
             }
           },
           {
@@ -140,21 +165,57 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ERA/2025-10-14.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2025-10-14"
+              "title": "Outline"
+            }
+          },
+          {
+            "id": "7bd04f2fb58bdae0",
+            "type": "leaf",
+            "state": {
+              "type": "full-calendar-sidebar-view",
+              "state": {},
+              "icon": "calendar-glyph",
+              "title": "Full Calendar"
+            }
+          },
+          {
+            "id": "52be1d4835667d7f",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ],
+        "currentTab": 5
+      },
+      {
+        "id": "35a87f2a3191db5d",
+        "type": "tabs",
+        "dimension": 50.36549707602339,
+        "children": [
+          {
+            "id": "e29a12d34ef174fa",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 343.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -165,28 +226,54 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "obsidian-full-calendar:Open Full Calendar": false,
+      "omnisearch:Omnisearch": false,
+      "homepage:Open homepage": false,
+      "templater-obsidian:Templater": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "pdf-plus:PDF++: Toggle auto-copy": false,
+      "pdf-plus:PDF++: Toggle auto-focus": false,
+      "pdf-plus:PDF++: Toggle auto-paste": false,
+      "handwritten-notes:Create empty handwritten note": false,
+      "slide-note:Slide Note Block Generator": false
     }
   },
-  "active": "c5a54b7af6792600",
+  "active": "90a061142f41f59f",
   "lastOpenFiles": [
-    "ERA/2025-10-14.md",
-    "ERA/era_tutor01.pdf",
-    "DS/DS-Slides.pdf",
-    "DS/2025-10-16.md",
-    "DS/2025-10-16 Mengen.md",
-    "DS/Base Test.base",
+    "Module/Semester 1/DS/2025-10-16.md",
+    "Module/Semester 1/DS/2025-10-14.md",
+    "Module/Semester 1/DS/DS-Slides.pdf",
+    "Module/Semester 1/DS/2025-10-16 Mengen.md",
+    "Dashboard.md",
+    "handwritten-notes/New note.pdf",
+    "Attachments/IMG_20251016_150731310 copy 2.png",
+    "handwritten-notes",
+    "gdfgdf.md",
+    "Module/Semester 1/DS/DS-Slides Annotated.pdf",
+    "Module/Semester 1/DS/Orga.md",
+    "Module/Semester 1/DS/MathJax symbol reference  BrNk.md",
+    "Clippings",
+    "Module/Semester 1/DS/MathJax.md",
+    "Templates/Template for Courses.md",
+    "Templates",
+    "Vault.md",
+    "Attachments",
+    "Notes",
+    "2025-10-19.md",
+    "Module/Semester 1/ERA/ERA.md",
+    "Module/Untitled.md",
+    "Module/Semester 1/Semester 1.md",
+    "Module/Semester 1",
+    "Module/Module.md",
+    "Module",
+    "Module/Semester 1/ERA/2025-10-14.md",
+    "disk.md",
+    "Module/Semester 1/ERA/Orga.md",
     "conflict-files-obsidian-git.md",
     "beep beep heloo world mf.md",
-    "Untitled.md",
-    "ERA/Orga.md",
-    "DS/attachments/IMG_20251016_150731310.jpg",
-    "DS/attachments",
-    "DS/attachments/IMG_20251016_150731310 copy 2.png",
-    "DS/attachments/IMG_20251016_150731310 copy.png",
-    "Vorkurs/VK-Slides.pdf",
-    "DS/MathJax.md",
-    "DS/2025-10-14.md",
+    "Attachments/IMG_20251016_150731310.jpg",
+    "Attachments/IMG_20251016_150731310 copy.png",
     "Rechnereinführung/Git.md"
   ]
 }

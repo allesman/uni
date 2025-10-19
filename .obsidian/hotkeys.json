@@ -38,28 +38,20 @@
       "key": "T"
     }
   ],
-  "editor:table-col-before": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "R"
-    }
-  ],
-  "editor:table-col-after": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "Z"
-    }
-  ],
   "editor:table-row-after": [
     {
       "modifiers": [
         "Alt"
       ],
       "key": "G"
+    }
+  ],
+  "omnisearch:show-modal": [
+    {
+      "modifiers": [
+        "Shift"
+      ],
+      "key": " "
     }
   ]
 }
