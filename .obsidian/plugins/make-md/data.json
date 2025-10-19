@@ -41,7 +41,8 @@
     "/",
     "//Tags",
     "//ERA",
-    "//Module/Module/Semester 1"
+    "//Module/Module/Semester 1",
+    "//Module"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
