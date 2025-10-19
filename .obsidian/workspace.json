@@ -20,25 +20,8 @@
               "icon": "lucide-file",
               "title": "2025-10-16"
             }
-          },
-          {
-            "id": "47073fde3aa265bb",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Module/Semester 1/DS/DS-Slides Annotated.pdf",
-                "page": 47,
-                "left": -5,
-                "top": 111,
-                "zoom": 2.8108074456826246
-              },
-              "icon": "lucide-file-text",
-              "title": "DS-Slides Annotated"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -139,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Module/Semester 1/DS/DS-Slides Annotated.pdf",
+                "file": "Module/Semester 1/DS/2025-10-16.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -149,7 +132,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for DS-Slides Annotated"
+              "title": "Backlinks for 2025-10-16"
             }
           },
           {
@@ -187,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Module/Semester 1/DS/DS-Slides Annotated.pdf",
+                "file": "Module/Semester 1/DS/2025-10-16.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of DS-Slides Annotated"
+              "title": "Outline of 2025-10-16"
             }
           },
           {
@@ -260,11 +243,12 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "b15d098cb6abed62",
+  "active": "dff523d1642d8846",
   "lastOpenFiles": [
-    "Module/Semester 1/DS/DS-Slides.pdf",
-    "Module/Semester 1/DS/DS-Slides Annotated.pdf",
+    "gdfgdf.md",
     "Module/Semester 1/DS/2025-10-16.md",
+    "Module/Semester 1/DS/DS-Slides Annotated.pdf",
+    "Module/Semester 1/DS/DS-Slides.pdf",
     "Module/Semester 1/DS/2025-10-14.md",
     "Module/Semester 1/DS/2025-10-16 Mengen.md",
     "Module/Semester 1/DS/Orga.md",
@@ -272,7 +256,6 @@
     "Clippings",
     "Module/Semester 1/DS/MathJax.md",
     "Attachments/IMG_20251016_150731310 copy 2.png",
-    "Untitled.md",
     "Templates/Template for Courses.md",
     "Templates",
     "Vault.md",
@@ -292,7 +275,6 @@
     "disk.md",
     "Module/Semester 1/ERA/Orga.md",
     "conflict-files-obsidian-git.md",
-    "Module/Semester 1/ERA/era_tutor01.pdf",
     "beep beep heloo world mf.md",
     "Attachments/IMG_20251016_150731310.jpg",
     "Attachments/IMG_20251016_150731310 copy.png",
