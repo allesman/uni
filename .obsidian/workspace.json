@@ -20,8 +20,19 @@
               "icon": "lucide-file",
               "title": "Orga"
             }
+          },
+          {
+            "id": "3474e391087300db",
+            "type": "leaf",
+            "state": {
+              "type": "full-calendar-view",
+              "state": {},
+              "icon": "calendar-glyph",
+              "title": "Calendar"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -167,10 +178,11 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "obsidian-full-calendar:Open Full Calendar": false
     }
   },
-  "active": "497eced3d75042c9",
+  "active": "3474e391087300db",
   "lastOpenFiles": [
     "conflict-files-obsidian-git.md",
     "DS/2025-10-14.md",
