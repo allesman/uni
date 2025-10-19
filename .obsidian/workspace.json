@@ -11,14 +11,12 @@
             "id": "e01f9d093679a296",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Dashboard.md",
-                "mode": "source",
-                "source": false
+                "file": "Module/Semester 1/DS/DS-Slides.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Dashboard"
+              "icon": "lucide-file-text",
+              "title": "DS-Slides"
             }
           }
         ]
@@ -122,7 +120,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Dashboard.md",
+                "file": "Module/Semester 1/DS/DS-Slides.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +130,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Dashboard"
+              "title": "Backlinks for DS-Slides"
             }
           },
           {
@@ -170,13 +168,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Dashboard.md",
+                "file": "Module/Semester 1/DS/DS-Slides.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Dashboard"
+              "title": "Outline of DS-Slides"
             }
           },
           {
@@ -241,11 +239,13 @@
       "pdf-plus:PDF++: Toggle auto-copy": false,
       "pdf-plus:PDF++: Toggle auto-focus": false,
       "pdf-plus:PDF++: Toggle auto-paste": false,
-      "handwritten-notes:Create empty handwritten note": false
+      "handwritten-notes:Create empty handwritten note": false,
+      "slide-note:Slide Note Block Generator": false
     }
   },
   "active": "e01f9d093679a296",
   "lastOpenFiles": [
+    "Dashboard.md",
     "handwritten-notes/New note.pdf",
     "Attachments/IMG_20251016_150731310 copy 2.png",
     "Module/Semester 1/DS/2025-10-16.md",
@@ -264,7 +264,6 @@
     "Vault.md",
     "Attachments",
     "Notes",
-    "Dashboard.md",
     "2025-10-19.md",
     "Module/Semester 1/ERA/ERA.md",
     "Module/Untitled.md",
