@@ -1,21 +1,11 @@
-References for MathJax usage in Markdown sintax
-
-[Mathjax plugin](https://github.com/sommerregen/grav-plugin-mathjax/blob/master/README.md) for math formula insertion has an extensive [documentation](http://docs.mathjax.org/en/latest/).
-
-In [Mathjax quick sintax reference](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference) tutorial and reference are available.
-
-Inline formulas enclose \ ( ... \ )
-
-Displayed formulas \ [ ... \ ]
+References for MathJax usage in Markdown syntax (https://bearnok.com/grva/en/knowledge/software/mathjax)
 
 Curly braces {} to group pieces of formulas
 
 Superscripts ( ^ ) and subscripts ( _ ) : x1e
 
 Fractions:
-
 ab \frac {a} {b}
-
 xy {x} \over {y} }
 
 Unscaled parentheses
