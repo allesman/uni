@@ -20,19 +20,8 @@
               "icon": "lucide-file",
               "title": "Orga"
             }
-          },
-          {
-            "id": "3474e391087300db",
-            "type": "leaf",
-            "state": {
-              "type": "full-calendar-view",
-              "state": {},
-              "icon": "calendar-glyph",
-              "title": "Calendar"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -64,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#DS",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,7 +74,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -105,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ERA/2025-10-14.md",
+                "file": "ERA/Orga.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2025-10-14"
+              "title": "Backlinks for Orga"
             }
           },
           {
@@ -153,21 +143,41 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ERA/2025-10-14.md",
+                "file": "ERA/Orga.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2025-10-14"
+              "title": "Outline of Orga"
+            }
+          },
+          {
+            "id": "7bd04f2fb58bdae0",
+            "type": "leaf",
+            "state": {
+              "type": "full-calendar-sidebar-view",
+              "state": {},
+              "icon": "calendar-glyph",
+              "title": "Full Calendar"
+            }
+          },
+          {
+            "id": "52be1d4835667d7f",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -182,7 +192,7 @@
       "obsidian-full-calendar:Open Full Calendar": false
     }
   },
-  "active": "3474e391087300db",
+  "active": "095623d0a69cd3ee",
   "lastOpenFiles": [
     "conflict-files-obsidian-git.md",
     "DS/2025-10-14.md",

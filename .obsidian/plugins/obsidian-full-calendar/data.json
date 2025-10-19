@@ -1,0 +1,16 @@
+{
+  "calendarSources": [
+    {
+      "type": "ical",
+      "color": "hsl(\n    129,\n    31.9%,\n    calc(46.7% + 10%)\n  )",
+      "url": "https://cal.tum.app?pStud=8B5A7403B37F5711&pToken=D6DB8E231A021BD6B3E840DFD550A9D32A41257FA9E9C02BB19686837C052B9F"
+    }
+  ],
+  "defaultCalendar": 0,
+  "firstDay": 1,
+  "initialView": {
+    "desktop": "dayGridMonth",
+    "mobile": "timeGrid3Days"
+  },
+  "timeFormat24h": false
+}
