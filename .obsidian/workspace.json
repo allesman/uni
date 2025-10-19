@@ -27,14 +27,14 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Module/Semester 1/DS/DS-Slides.pdf",
-                "page": 42,
+                "file": "Module/Semester 1/DS/DS-Slides Annotated.pdf",
+                "page": 47,
                 "left": -5,
-                "top": 17,
+                "top": 111,
                 "zoom": 2.8108074456826246
               },
               "icon": "lucide-file-text",
-              "title": "DS-Slides"
+              "title": "DS-Slides Annotated"
             }
           }
         ],
@@ -139,7 +139,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Module/Semester 1/DS/DS-Slides.pdf",
+                "file": "Module/Semester 1/DS/DS-Slides Annotated.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -149,7 +149,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for DS-Slides"
+              "title": "Backlinks for DS-Slides Annotated"
             }
           },
           {
@@ -187,13 +187,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Module/Semester 1/DS/DS-Slides.pdf",
+                "file": "Module/Semester 1/DS/DS-Slides Annotated.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of DS-Slides"
+              "title": "Outline of DS-Slides Annotated"
             }
           },
           {
@@ -260,10 +260,11 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "47073fde3aa265bb",
+  "active": "b15d098cb6abed62",
   "lastOpenFiles": [
-    "Module/Semester 1/DS/2025-10-16.md",
     "Module/Semester 1/DS/DS-Slides.pdf",
+    "Module/Semester 1/DS/DS-Slides Annotated.pdf",
+    "Module/Semester 1/DS/2025-10-16.md",
     "Module/Semester 1/DS/2025-10-14.md",
     "Module/Semester 1/DS/2025-10-16 Mengen.md",
     "Module/Semester 1/DS/Orga.md",
