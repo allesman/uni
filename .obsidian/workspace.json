@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Module/Semester 1/DS/MathJax.md",
+                "file": "Templates/Template for Courses.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MathJax"
+              "title": "Template for Courses"
             }
           }
         ],
@@ -137,7 +137,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Module/Semester 1/DS/MathJax.md",
+                "file": "Templates/Template for Courses.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for MathJax"
+              "title": "Backlinks for Template for Courses"
             }
           },
           {
@@ -185,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Module/Semester 1/DS/MathJax.md",
+                "file": "Templates/Template for Courses.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of MathJax"
+              "title": "Outline of Template for Courses"
             }
           },
           {
@@ -255,18 +255,19 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "b3f06b58022b7583",
+  "active": "b15d098cb6abed62",
   "lastOpenFiles": [
+    "Templates",
+    "Vault.md",
     "Module/Semester 1/DS/MathJax.md",
     "Module/Semester 1/DS/MathJax.md",
-    "Template for Courses.md",
+    "Templates/Template for Courses.md",
     "Attachments",
     "Notes",
     "Dashboard.md",
     "2025-10-19.md",
     "Module/Semester 1/ERA/ERA.md",
     "Module/Untitled.md",
-    "Vault.md",
     "Module/Semester 1/Semester 1.md",
     "Module/Semester 1",
     "Module/Module.md",
