@@ -11,10 +11,14 @@
             "id": "497eced3d75042c9",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "ERA/Orga.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Orga"
             }
           }
         ]
@@ -166,7 +170,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a8895f7d457f24a7",
+  "active": "497eced3d75042c9",
   "lastOpenFiles": [
     "conflict-files-obsidian-git.md",
     "DS/2025-10-14.md",
