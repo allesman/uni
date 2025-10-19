@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "55051fc3abfbc854",
+        "id": "cc0280ec25c3ab77",
         "type": "tabs",
         "children": [
           {
-            "id": "37859df829eb8ace",
+            "id": "e01f9d093679a296",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "handwritten-notes/New note.pdf"
+                "file": "Dashboard.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "New note"
+              "icon": "lucide-file",
+              "title": "Dashboard"
             }
           }
         ]
@@ -120,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "handwritten-notes/New note.pdf",
+                "file": "Dashboard.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +132,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for New note"
+              "title": "Backlinks for Dashboard"
             }
           },
           {
@@ -168,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "handwritten-notes/New note.pdf",
+                "file": "Dashboard.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of New note"
+              "title": "Outline of Dashboard"
             }
           },
           {
@@ -242,9 +244,10 @@
       "handwritten-notes:Create empty handwritten note": false
     }
   },
-  "active": "37859df829eb8ace",
+  "active": "e01f9d093679a296",
   "lastOpenFiles": [
     "handwritten-notes/New note.pdf",
+    "Attachments/IMG_20251016_150731310 copy 2.png",
     "Module/Semester 1/DS/2025-10-16.md",
     "handwritten-notes",
     "gdfgdf.md",
@@ -256,7 +259,6 @@
     "Module/Semester 1/DS/MathJax symbol reference  BrNk.md",
     "Clippings",
     "Module/Semester 1/DS/MathJax.md",
-    "Attachments/IMG_20251016_150731310 copy 2.png",
     "Templates/Template for Courses.md",
     "Templates",
     "Vault.md",
