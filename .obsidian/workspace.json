@@ -74,7 +74,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -87,6 +88,7 @@
       {
         "id": "b828a1052c82fddd",
         "type": "tabs",
+        "dimension": 49.63450292397661,
         "children": [
           {
             "id": "3c8a792db97f8826",
@@ -172,11 +174,28 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 5
+      },
+      {
+        "id": "35a87f2a3191db5d",
+        "type": "tabs",
+        "dimension": 50.36549707602339,
+        "children": [
+          {
+            "id": "e29a12d34ef174fa",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          }
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 343.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -189,15 +208,17 @@
       "bases:Create new base": false,
       "obsidian-git:Open Git source control": false,
       "obsidian-full-calendar:Open Full Calendar": false,
-      "omnisearch:Omnisearch": false
+      "omnisearch:Omnisearch": false,
+      "homepage:Open homepage": false,
+      "templater-obsidian:Templater": false
     }
   },
-  "active": "497eced3d75042c9",
+  "active": "e29a12d34ef174fa",
   "lastOpenFiles": [
+    "DS/2025-10-14.md",
     "ERA/2025-10-14.md",
     "DS/Orga.md",
     "DS/Base Test.base",
-    "DS/2025-10-14.md",
     "disk.md",
     "ERA/Orga.md",
     "conflict-files-obsidian-git.md",

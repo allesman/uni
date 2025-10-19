@@ -1,5 +1,10 @@
 [
   "obsidian-git",
   "obsidian-full-calendar",
-  "omnisearch"
+  "omnisearch",
+  "obsidian-style-settings",
+  "homepage",
+  "dataview",
+  "templater-obsidian",
+  "calendar"
 ]
