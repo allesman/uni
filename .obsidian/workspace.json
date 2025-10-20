@@ -4,24 +4,37 @@
     "type": "split",
     "children": [
       {
-        "id": "2739eab4e1b2ac88",
+        "id": "4509724f8bf84da7",
         "type": "tabs",
         "children": [
           {
-            "id": "a9cc54719495cd3f",
+            "id": "e7a7b303c61786dc",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Dashboard.md",
+                "mode": "preview",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Dashboard"
+            }
+          },
+          {
+            "id": "75796be43f8a3c27",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
-              "state": {
-                "aFile": ".space/context.mdb",
-                "bFile": ".space/context.mdb",
-                "aRef": ""
-              },
-              "icon": "diff",
-              "title": "Diff: context.mdb"
+              "type": "full-calendar-view",
+              "state": {},
+              "icon": "calendar-glyph",
+              "title": "Calendar"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -75,7 +88,7 @@
             }
           },
           {
-            "id": "da573cac624f9a16",
+            "id": "e110d35aac4b8cfa",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -224,10 +237,24 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "a9cc54719495cd3f",
+  "active": "75796be43f8a3c27",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
+    "Dashboard.md",
+    "Module/Semester 1/PGDP/PGDP.md",
+    "Module/Semester 1/PGDP/Grundlagenpraktikum Programmierung.md",
+    "Module/Semester 1/PGDP",
+    "Module/Semester 1/ERA/Übungen/Übungen.md",
+    "Module/Semester 1/ERA/Übungen/era_tutor01.pdf",
+    "Module/Semester 1/ERA/Übungen",
+    "Module/Semester 1/EIDI/Einführung in die Informatik.md",
+    "Module/Semester 1/EIDI/EIDI.md",
+    "Module/Semester 1/EIDI",
+    "Module/Semester 1/ERA/2025-10-14.md",
     "Module/Semester 1/ERA/2025-10-20.md",
+    "Module/Semester 1/ERA/ERA.md",
+    "Module/Semester 1/Semester 1.md",
+    "Module/Module.md",
+    "conflict-files-obsidian-git.md",
     "Templates/Templates.md",
     "Tags/#orga/#orga.md",
     "Tags/#orga",
@@ -246,23 +273,9 @@
     "Module/Vorkurs/VK-Slides.pdf",
     "Module/Vorkurs/Rechnereinführung",
     "Module/Vorkurs",
-    "Module/Semester 1/ERA/ERA.md",
     "Tags",
     "Module/Semester 1/DS/2025-10-16.md",
-    "Module/Semester 1/DS/2025-10-14.md",
-    "Module/Semester 1/DS/DS-Slides.pdf",
-    "Module/Semester 1/DS/2025-10-16 Mengen.md",
-    "Dashboard.md",
-    "handwritten-notes/New note.pdf",
     "Attachments/IMG_20251016_150731310 copy 2.png",
-    "handwritten-notes",
-    "gdfgdf.md",
-    "Module/Semester 1/DS/DS-Slides Annotated.pdf",
-    "Module/Semester 1/DS/Orga.md",
-    "Module/Semester 1/DS/MathJax symbol reference  BrNk.md",
-    "Module/Semester 1/DS/MathJax.md",
-    "Templates/Template for Courses.md",
-    "Vault.md",
     "Attachments/IMG_20251016_150731310.jpg",
     "Attachments/IMG_20251016_150731310 copy.png"
   ]
