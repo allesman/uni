@@ -1,0 +1,3 @@
+---
+sticker: emoji//0030-fe0f-20e3
+---

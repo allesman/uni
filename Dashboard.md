@@ -4,9 +4,8 @@ cssclasses: " "
 ---
 # MODULE
 ```dataview
-table Type, Building, Weekdays, Section, Professor, Quizzes
-from #courses
-sort file.Weekdays
+table without id file.link as NAME
+from #orga
 ```
 ---
 # AUFGABEN

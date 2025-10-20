@@ -1,3 +1,6 @@
+---
+tags: ds, orga
+---
 Moodle hat aktuellere Version des Stoffs
 
 # Tutorien
