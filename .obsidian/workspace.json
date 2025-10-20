@@ -24,15 +24,15 @@
             }
           },
           {
-            "id": "0c25deff94fcb398",
+            "id": "2425a2617cbe66fa",
             "type": "leaf",
             "state": {
               "type": "mk-space",
               "state": {
-                "path": "Module/Semester 1/DS"
+                "path": "Module/Semester 1"
               },
               "icon": "lucide-file",
-              "title": "DS"
+              "title": "Semester 1"
             }
           }
         ],
@@ -241,12 +241,14 @@
   },
   "active": "a6f00c8c438f7a26",
   "lastOpenFiles": [
+    "Module/Semester 1/Semester 1.md",
+    "Vault.md",
+    "Module/Module.md",
+    "Dashboard.md",
+    "Module/Semester 1/ERA/ERA.md",
     "Module/Semester 1/DS/DS.md",
     "Module/Semester 1/EIDI/Einführung in die Informatik.md",
-    "Dashboard.md",
     "Templates/Templates.md",
-    "Module/Module.md",
-    "Module/Semester 1/ERA/ERA.md",
     "Module/Semester 1/EIDI/EIDI.md",
     "Module/Semester 1/DS/2025-10-16.md",
     "Module/Semester 1/DS/DS-Slides.pdf",
@@ -262,7 +264,6 @@
     "Module/Semester 1/EIDI",
     "Module/Semester 1/ERA/2025-10-14.md",
     "Module/Semester 1/ERA/2025-10-20.md",
-    "Module/Semester 1/Semester 1.md",
     "conflict-files-obsidian-git.md",
     "Tags/#orga/#orga.md",
     "Tags/#orga",
@@ -272,7 +273,6 @@
     "Module/Vorkurs/Rechnereinführung/Linux/Commands.md",
     "Module/Vorkurs/Rechnereinführung/Linux/Package Management.md",
     "Module/Vorkurs/Rechnereinführung/Linux/File Systems.md",
-    "Module/Vorkurs/Rechnereinführung/Linux/Access Control.md",
     "Module/Vorkurs/Rechnereinführung/Linux",
     "Module/Vorkurs/VK-Slides.pdf",
     "Module/Vorkurs/Rechnereinführung",

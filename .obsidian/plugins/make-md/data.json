@@ -38,16 +38,19 @@
   "vaultSelector": true,
   "deleteFileOption": "trash",
   "expandedSpaces": [
-    "/",
     "//Module/Module/Semester 1",
     "//Module",
-    "//Notes"
+    "//Notes",
+    "//Tags",
+    "/"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
   "suppressedWarnings": [],
   "spaceSubFolder": ".space",
-  "hiddenFiles": [],
+  "hiddenFiles": [
+    "Templates"
+  ],
   "hiddenExtensions": [
     ".mdb",
     "_assets",
