@@ -65108,6 +65108,17 @@ function getTime3(t3) {
     suppressSeconds: true
   });
 }
+function getTime4(t3) {
+  if (t3.isDate) {
+    return "00:00";
+  }
+  return DateTime2.fromSeconds(t3.toUnixTime(), { zone: "UTC+2" }).toISOTime({
+    includeOffset: false,
+    includePrefix: false,
+    suppressMilliseconds: true,
+    suppressSeconds: true
+  });
+}
 function specifiesEnd2(iCalEvent) {
   return Boolean(iCalEvent.component.getFirstProperty("dtend")) || Boolean(iCalEvent.component.getFirstProperty("duration"));
 }
@@ -65143,8 +65154,8 @@ function icsToOFC(input) {
       endDate: date !== endDate ? endDate : void 0
     }, allDay ? { allDay: true } : {
       allDay: false,
-      startTime: getTime3(input.startDate),
-      endTime: getTime3(input.endDate)
+      startTime: getTime4(input.startDate),
+      endTime: getTime4(input.endDate)
     });
   }
 }
