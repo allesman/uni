@@ -24,29 +24,15 @@
             }
           },
           {
-            "id": "75796be43f8a3c27",
+            "id": "0c25deff94fcb398",
             "type": "leaf",
             "state": {
-              "type": "full-calendar-view",
-              "state": {},
-              "icon": "calendar-glyph",
-              "title": "Calendar"
-            }
-          },
-          {
-            "id": "9aa071ff276d285b",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
+              "type": "mk-space",
               "state": {
-                "file": "Module/Semester 1/DS/DS-Slides.pdf",
-                "page": 47,
-                "left": -5,
-                "top": 94,
-                "zoom": 2.8108074456826246
+                "path": "Module/Semester 1/DS"
               },
-              "icon": "lucide-file-text",
-              "title": "DS-Slides"
+              "icon": "lucide-file",
+              "title": "DS"
             }
           }
         ],
@@ -104,7 +90,7 @@
             }
           },
           {
-            "id": "e110d35aac4b8cfa",
+            "id": "a6f00c8c438f7a26",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -253,30 +239,31 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "75796be43f8a3c27",
+  "active": "a6f00c8c438f7a26",
   "lastOpenFiles": [
+    "Module/Semester 1/DS/DS.md",
+    "Module/Semester 1/EIDI/Einführung in die Informatik.md",
+    "Dashboard.md",
+    "Templates/Templates.md",
+    "Module/Module.md",
+    "Module/Semester 1/ERA/ERA.md",
+    "Module/Semester 1/EIDI/EIDI.md",
     "Module/Semester 1/DS/2025-10-16.md",
     "Module/Semester 1/DS/DS-Slides.pdf",
-    "Dashboard.md",
     "Module/Semester 1/DS/2025-10-14.md",
     "Module/Semester 1/DS/MathJax symbol reference  BrNk.md",
     "Module/Semester 1/DS/Diskrete Strukturen.md",
-    "Module/Semester 1/EIDI/EIDI.md",
     "Module/Semester 1/PGDP/PGDP.md",
     "Module/Semester 1/PGDP/Grundlagenpraktikum Programmierung.md",
     "Module/Semester 1/PGDP",
     "Module/Semester 1/ERA/Übungen/Übungen.md",
     "Module/Semester 1/ERA/Übungen/era_tutor01.pdf",
     "Module/Semester 1/ERA/Übungen",
-    "Module/Semester 1/EIDI/Einführung in die Informatik.md",
     "Module/Semester 1/EIDI",
     "Module/Semester 1/ERA/2025-10-14.md",
     "Module/Semester 1/ERA/2025-10-20.md",
-    "Module/Semester 1/ERA/ERA.md",
     "Module/Semester 1/Semester 1.md",
-    "Module/Module.md",
     "conflict-files-obsidian-git.md",
-    "Templates/Templates.md",
     "Tags/#orga/#orga.md",
     "Tags/#orga",
     "Module/Vorkurs/Rechnereinführung/Linux/Terminal.md",

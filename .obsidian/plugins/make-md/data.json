@@ -39,11 +39,9 @@
   "deleteFileOption": "trash",
   "expandedSpaces": [
     "/",
-    "//Module",
     "//Module/Module/Semester 1",
-    "//Module/Module/Semester 1/Module/Semester 1/ERA",
-    "//Module/Module/Semester 1/Module/Semester 1/DS",
-    "//Module/Module/Semester 1/Module/Semester 1/EIDI"
+    "//Module",
+    "//Notes"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
@@ -74,7 +72,7 @@
   "readableLineWidth": true,
   "autoAddContextsToSubtags": true,
   "releaseNotesPrompt": 0.999,
-  "enableDefaultSpaces": true,
+  "enableDefaultSpaces": false,
   "showSpacePinIcon": true,
   "experimental": false,
   "systemName": "uni vault",
