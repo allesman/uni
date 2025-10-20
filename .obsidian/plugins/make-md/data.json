@@ -42,7 +42,8 @@
     "//Module",
     "//Module/Module/Semester 1",
     "//Module/Module/Semester 1/Module/Semester 1/ERA",
-    "//Module/Module/Semester 1/Module/Semester 1/DS"
+    "//Module/Module/Semester 1/Module/Semester 1/DS",
+    "//Module/Module/Semester 1/Module/Semester 1/EIDI"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
