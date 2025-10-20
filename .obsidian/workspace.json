@@ -24,15 +24,17 @@
             }
           },
           {
-            "id": "2425a2617cbe66fa",
+            "id": "08e5d9a743bf6c8d",
             "type": "leaf",
             "state": {
-              "type": "mk-space",
+              "type": "markdown",
               "state": {
-                "path": "Module/Semester 1"
+                "file": "Module/Semester 1/ERA/2025-10-20.md",
+                "mode": "source",
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Semester 1"
+              "title": "2025-10-20"
             }
           }
         ],
@@ -90,7 +92,7 @@
             }
           },
           {
-            "id": "a6f00c8c438f7a26",
+            "id": "9b32bdb28dfd7bff",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -239,22 +241,25 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "a6f00c8c438f7a26",
+  "active": "daf79f1e3d688293",
   "lastOpenFiles": [
+    "Module/Semester 1/ERA/2025-10-20.md",
+    "Dashboard.md",
+    "Module/Semester 1/DS/Diskrete Strukturen.md",
+    "Untitled.canvas",
+    "Module/Semester 1/EIDI/2025-10-20.md",
+    "Module/Semester 1/DS/2025-10-16.md",
+    "Module/Semester 1/DS/2025-10-14.md",
     "Module/Semester 1/Semester 1.md",
     "Vault.md",
     "Module/Module.md",
-    "Dashboard.md",
     "Module/Semester 1/ERA/ERA.md",
     "Module/Semester 1/DS/DS.md",
     "Module/Semester 1/EIDI/Einführung in die Informatik.md",
     "Templates/Templates.md",
     "Module/Semester 1/EIDI/EIDI.md",
-    "Module/Semester 1/DS/2025-10-16.md",
     "Module/Semester 1/DS/DS-Slides.pdf",
-    "Module/Semester 1/DS/2025-10-14.md",
     "Module/Semester 1/DS/MathJax symbol reference  BrNk.md",
-    "Module/Semester 1/DS/Diskrete Strukturen.md",
     "Module/Semester 1/PGDP/PGDP.md",
     "Module/Semester 1/PGDP/Grundlagenpraktikum Programmierung.md",
     "Module/Semester 1/PGDP",
@@ -263,7 +268,6 @@
     "Module/Semester 1/ERA/Übungen",
     "Module/Semester 1/EIDI",
     "Module/Semester 1/ERA/2025-10-14.md",
-    "Module/Semester 1/ERA/2025-10-20.md",
     "conflict-files-obsidian-git.md",
     "Tags/#orga/#orga.md",
     "Tags/#orga",
@@ -271,8 +275,6 @@
     "Module/Vorkurs/Rechnereinführung/Linux/SSH.md",
     "Module/Vorkurs/Rechnereinführung/Linux/Scripting.md",
     "Module/Vorkurs/Rechnereinführung/Linux/Commands.md",
-    "Module/Vorkurs/Rechnereinführung/Linux/Package Management.md",
-    "Module/Vorkurs/Rechnereinführung/Linux/File Systems.md",
     "Module/Vorkurs/Rechnereinführung/Linux",
     "Module/Vorkurs/VK-Slides.pdf",
     "Module/Vorkurs/Rechnereinführung",
