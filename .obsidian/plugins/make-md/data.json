@@ -38,29 +38,29 @@
   "vaultSelector": true,
   "deleteFileOption": "trash",
   "expandedSpaces": [
-    "/",
-    "//ERA",
-    "//Module",
     "//Module/Module/Semester 1",
+    "//Module",
+    "//Notes",
     "//Tags",
+    "/",
     "//Module/Module/Semester 1/Module/Semester 1/EIDI",
     "//Module/Module/Semester 1/Module/Semester 1/ERA",
-    "//Module/Module/Semester 1/Module/Semester 1/PGDP",
     "//Module/Module/Semester 1/Module/Semester 1/DS"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
-  "suppressedWarnings": [
-    "obsidian-sync-space-folder",
-    "obsidian-sync-space-config"
-  ],
+  "suppressedWarnings": [],
   "spaceSubFolder": ".space",
-  "hiddenFiles": [],
+  "hiddenFiles": [
+    "Templates"
+  ],
   "hiddenExtensions": [
     ".mdb",
     "_assets",
     "_blocks"
   ],
+  "newFileLocation": "root",
+  "newFileFolderPath": "",
   "inlineBacklinks": false,
   "inlineContext": true,
   "inlineBacklinksExpanded": false,
@@ -80,7 +80,7 @@
   "readableLineWidth": true,
   "autoAddContextsToSubtags": true,
   "releaseNotesPrompt": 0.999,
-  "enableDefaultSpaces": true,
+  "enableDefaultSpaces": false,
   "showSpacePinIcon": true,
   "experimental": false,
   "systemName": "uni vault",
