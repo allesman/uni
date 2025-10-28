@@ -147,11 +147,13 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0a8cc4d00a23a1f3",
+  "active": "9a06fb963d6e76c6",
   "lastOpenFiles": [
+    "ERA/Orga.md",
     "Vault.md",
     "Templates/Templates.md",
     "Templates/Template for Courses.md",
@@ -187,7 +189,6 @@
     "Module/Semester 1/ERA/2025-10-27.md",
     "Module/Semester 1/ERA/2025-10-20.md",
     "Module/Semester 1/ERA/2025-10-14.md",
-    "Module/Semester 1/EIDI/Einführung in die Informatik.md",
     "Attachments/Pasted image 20251021210048.png",
     "Attachments/IMG_20251016_150731310.jpg",
     "Attachments/IMG_20251016_150731310 copy.png",
