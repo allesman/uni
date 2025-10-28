@@ -11,14 +11,10 @@
             "id": "9a06fb963d6e76c6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ERA/Orga.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Orga"
+              "title": "New tab"
             }
           }
         ]
@@ -154,20 +150,50 @@
       "bases:Create new base": false
     }
   },
-  "active": "9a06fb963d6e76c6",
+  "active": "0a8cc4d00a23a1f3",
   "lastOpenFiles": [
-    "DS/Orga.md",
-    "ERA/Orga.md",
-    "DS/2025-10-16 Mengen.md",
-    "DS/2025-10-14.md",
-    "ERA/era_tutor01.pdf",
-    "DS/2025-10-16.md",
-    "DS/Base Test.base",
-    "DS/DS-Slides.pdf",
+    "Tags/#ds/#ds.md",
+    "Tags/#ds",
+    "Tags",
+    "Module/Vorkurs/Vorkurs.md",
+    "Module/Vorkurs/VK-Slides.pdf",
+    "Module/Vorkurs/Rechnereinführung/Übungen.md",
+    "Module/Vorkurs/Rechnereinführung/Linux/Terminal.md",
+    "Module/Vorkurs/Rechnereinführung/Linux/SSH.md",
+    "Module/Vorkurs/Rechnereinführung/Linux/Scripting.md",
+    "Module/Vorkurs/Rechnereinführung/Linux/Package Management.md",
+    "Module/Vorkurs/Rechnereinführung/Linux/File Systems.md",
+    "Module/Vorkurs/Rechnereinführung/Linux/Commands.md",
+    "Module/Vorkurs/Rechnereinführung/Linux/Access Control.md",
+    "Module/Vorkurs/Rechnereinführung/Linux",
+    "Module/Vorkurs/Rechnereinführung/Latex.md",
+    "Module/Vorkurs/Rechnereinführung/Git.md",
+    "Module/Vorkurs/Rechnereinführung",
+    "Module/Vorkurs",
+    "Module/Semester 1/Semester 1.md",
+    "Module/Semester 1/PGDP/PGDP.md",
+    "Module/Semester 1/PGDP/Grundlagenpraktikum Programmierung.md",
+    "Module/Semester 1/PGDP",
+    "Module/Semester 1/ERA/Übungen/Übungen.md",
+    "Module/Semester 1/ERA/Übungen/era_tutor02.pdf",
+    "Module/Semester 1/ERA/Übungen/era_tutor01.pdf",
+    "Module/Semester 1/ERA/Übungen",
+    "Module/Semester 1/ERA/Slides/Slides.md",
+    "Module/Semester 1/ERA/ERA.md",
+    "Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md",
+    "Module/Semester 1/ERA/2025-10-27.md",
+    "Module/Semester 1/ERA/2025-10-20.md",
+    "Module/Semester 1/ERA/2025-10-14.md",
+    "Module/Semester 1/EIDI/Einführung in die Informatik.md",
+    "Module/Semester 1/EIDI/EIDI.md",
+    "Module/Semester 1/EIDI/2025-10-20.md",
+    "Module/Semester 1/DS/Übungen/Übungsblatt 2 Hausaufgaben.md",
+    "Attachments/Pasted image 20251021210048.png",
+    "Attachments/IMG_20251016_150731310.jpg",
+    "Attachments/IMG_20251016_150731310 copy.png",
+    "Attachments/IMG_20251016_150731310 copy 2.png",
     "DS/attachments/IMG_20251016_150731310.jpg",
     "DS/attachments/IMG_20251016_150731310 copy.png",
-    "DS/attachments/IMG_20251016_150731310 copy 2.png",
-    "DS/attachments",
-    "Test.md"
+    "DS/attachments/IMG_20251016_150731310 copy 2.png"
   ]
 }
