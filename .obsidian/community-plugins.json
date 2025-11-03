@@ -1,14 +1,15 @@
 [
-  "obsidian-git",
-  "obsidian-full-calendar",
-  "omnisearch",
-  "obsidian-style-settings",
-  "homepage",
-  "dataview",
   "templater-obsidian",
-  "calendar",
-  "cmdr",
-  "make-md",
+  "obsidian-style-settings",
+  "quickadd",
   "pdf-plus",
-  "quickadd"
+  "homepage",
+  "omnisearch",
+  "make-md",
+  "handwritten-notes",
+  "obsidian-full-calendar",
+  "dataview",
+  "cmdr",
+  "calendar",
+  "table-editor-obsidian"
 ]
