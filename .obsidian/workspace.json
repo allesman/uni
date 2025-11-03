@@ -24,37 +24,20 @@
             }
           },
           {
-            "id": "5f034a3daad9d927",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Module/Semester 1/ERA/Slides/era03-beispiel.pdf",
-                "page": 11,
-                "left": -11,
-                "top": 6,
-                "zoom": 1.4109375
-              },
-              "icon": "lucide-file-text",
-              "title": "era03-beispiel"
-            }
-          },
-          {
-            "id": "b2977bfe603f511d",
+            "id": "530b62a3b8ca7419",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Module/Semester 1/ERA/2025-10-27.md",
+                "file": "Weekly Tasks/KW45.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-10-27"
+              "title": "KW45"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -108,7 +91,7 @@
             }
           },
           {
-            "id": "48b6d5185369241c",
+            "id": "9c906755aa40d56f",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -122,7 +105,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 367.50152587890625
   },
   "right": {
     "id": "09faeb26a179d322",
@@ -236,7 +219,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 343.5
+    "width": 268.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -257,28 +241,37 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "b2977bfe603f511d",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "Weekly Tasks/KW45.md",
+    "Weekly Tasks/Weekly Template.md",
+    "Weekly Tasks/Untitled.md",
     "Dashboard.md",
+    "Weekly Tasks/Weekly Tasks.md",
+    "Module/Semester 1/DS/2025-10-16.md",
+    "Module/Semester 1/DS/2025-10-21.md",
+    "Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md",
+    "Weekly Tasks/KW.md",
+    "Module/Semester 1/DS/Übungen/exercise_sheet_03.pdf",
+    "Weekly Tasks",
+    "Module/Semester 1/DS/Übungen/exercise_sheet_02.pdf",
+    "Module/Semester 1/DS/Übungen/Übungsblatt 2 Hausaufgaben.md",
+    "Module/Semester 1/DS/2025-10-24.md",
+    "Module/Semester 1/DS/MathJax symbol reference  BrNk.md",
+    "Module/Semester 1/DS/2025-10-14.md",
+    "Module/Semester 1/ERA/2025-10-27.md",
     "Module/Semester 1/ERA/Slides/era03-beispiel.pdf",
     "Module/Semester 1/ERA/Slides/Slides.md",
-    "Module/Semester 1/ERA/2025-10-27.md",
     "Module/Semester 1/ERA/Slides",
     "Module/Semester 1/ERA/2025-10-20.md",
     "Module/Semester 1/ERA/Übungen/Übungen.md",
-    "Module/Semester 1/DS/Übungen/Übungsblatt 2 Hausaufgaben.md",
-    "Module/Semester 1/DS/Übungen/exercise_sheet_02.pdf",
     "Module/Semester 1/ERA/Übungen/era_tutor02.pdf",
     "Module/Semester 1/DS/Übungen/Übungen.md",
     "Module/Semester 1/DS/Übungen",
-    "Module/Semester 1/DS/2025-10-24.md",
-    "Module/Semester 1/DS/2025-10-21.md",
     "conflict-files-obsidian-git.md",
     "Module/Semester 1/DS/Diskrete Strukturen.md",
     "Module/Semester 1/DS/DS-Slides.pdf",
-    "Module/Semester 1/DS/MathJax symbol reference  BrNk.md",
     "Attachments/Pasted image 20251021210048.png",
-    "Module/Semester 1/DS/2025-10-16.md",
     "Tags/#ds/#ds.md",
     "Tags/#ds",
     "Tags",
@@ -286,16 +279,8 @@
     "Module/Semester 1/DS/DS.md",
     "Untitled.canvas",
     "Module/Semester 1/EIDI/2025-10-20.md",
-    "Module/Semester 1/DS/2025-10-14.md",
     "Module/Semester 1/Semester 1.md",
     "Vault.md",
-    "Module/Module.md",
-    "Module/Semester 1/ERA/ERA.md",
-    "Module/Semester 1/EIDI/Einführung in die Informatik.md",
-    "Templates/Templates.md",
-    "Module/Semester 1/EIDI/EIDI.md",
-    "Module/Semester 1/PGDP",
-    "Module/Semester 1/ERA/Übungen/era_tutor01.pdf",
     "Attachments/IMG_20251016_150731310 copy 2.png",
     "Attachments/IMG_20251016_150731310.jpg",
     "Attachments/IMG_20251016_150731310 copy.png"

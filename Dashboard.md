@@ -2,11 +2,8 @@
 sticker: lucide//home
 cssclasses: " "
 ---
-# MODULE
 ```dataview
-table without id file.link as NAME
+table without id file.link as MODUL
 from #orga
 ```
----
-# AUFGABEN
-
+`$= '![[' + 'weekly tasks/KW' + dv.date('now').weekNumber.toString().padStart(2, '0') + ']]'`
