@@ -38,14 +38,13 @@
   "vaultSelector": true,
   "deleteFileOption": "trash",
   "expandedSpaces": [
-    "//Module/Module/Semester 1",
     "//Module",
     "//Notes",
     "//Tags",
     "/",
     "//Module/Module/Semester 1/Module/Semester 1/EIDI",
     "//Module/Module/Semester 1/Module/Semester 1/ERA",
-    "//Module/Module/Semester 1/Module/Semester 1/DS"
+    "//Module/Module/Semester 1"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",

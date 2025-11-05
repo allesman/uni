@@ -24,17 +24,17 @@
             }
           },
           {
-            "id": "2c100da5241db0a7",
+            "id": "4b8c423a8c52e8e6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Module/Semester 1/DS/2025-10-24.md",
+                "file": "Module/Semester 1/DS/Funktionen.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-10-24"
+              "title": "Funktionen"
             }
           }
         ],
@@ -215,17 +215,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2c100da5241db0a7",
+  "active": "4b8c423a8c52e8e6",
   "lastOpenFiles": [
+    "Module/Semester 1/ERA/2025-10-20.md",
+    "Module/Semester 1/DS/Funktionen.md",
+    "Dashboard.md",
+    "Module/Semester 1/DS/2025-10-24.md",
     "Module/Semester 1/ERA/ERA.md",
     "Module/Semester 1/DS/DS-Slides.pdf",
-    "Module/Semester 1/DS/2025-10-24.md",
     "Module/Semester 1/DS/2025-10-16.md",
-    "Dashboard.md",
     "Module/Semester 1/DS/Diskrete Strukturen.md",
     "Module/Semester 1/DS/DS.md",
     "conflict-files-obsidian-git.md",
-    "Module/Semester 1/ERA/2025-10-20.md",
     "Module/Semester 1/EIDI/2025-10-20.md",
     "Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md",
     "Module/Semester 1/EIDI/Einführung in die Informatik.md",
@@ -251,7 +252,6 @@
     "Attachments/Attachments.md",
     "ERA/era_tutor01.pdf",
     "Vault.md",
-    "Templates/Template for Courses.md",
     "Templates",
     "Module/Vorkurs/Rechnereinführung/Linux",
     "Attachments/IMG_20251016_150731310.jpg",
