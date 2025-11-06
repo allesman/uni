@@ -24,20 +24,6 @@
             }
           },
           {
-            "id": "5c944eb2d11bb50e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "conflict-files-obsidian-git"
-            }
-          },
-          {
             "id": "c52fe8dbb611d2fc",
             "type": "leaf",
             "state": {
@@ -80,7 +66,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
