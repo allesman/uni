@@ -7,8 +7,15 @@
   "dataview",
   "templater-obsidian",
   "calendar",
+<<<<<<< HEAD
   "cmdr",
   "make-md",
   "pdf-plus",
   "obsidian-latex-suite"
+=======
+  "table-editor-obsidian",
+  "obsidian-latex-suite",
+  "open-in-new-tab",
+  "obsidian-git"
+>>>>>>> origin/main
 ]
