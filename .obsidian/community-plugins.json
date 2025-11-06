@@ -11,5 +11,8 @@
   "dataview",
   "cmdr",
   "calendar",
-  "table-editor-obsidian"
+  "table-editor-obsidian",
+  "obsidian-latex-suite",
+  "open-in-new-tab",
+  "obsidian-git"
 ]
