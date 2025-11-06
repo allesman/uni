@@ -1,18 +1,21 @@
 [
-  "templater-obsidian",
-  "obsidian-style-settings",
-  "quickadd",
-  "pdf-plus",
-  "homepage",
-  "omnisearch",
-  "make-md",
-  "handwritten-notes",
+  "obsidian-git",
   "obsidian-full-calendar",
+  "omnisearch",
+  "obsidian-style-settings",
+  "homepage",
   "dataview",
-  "cmdr",
+  "templater-obsidian",
   "calendar",
+<<<<<<< HEAD
+  "cmdr",
+  "make-md",
+  "pdf-plus",
+  "obsidian-latex-suite"
+=======
   "table-editor-obsidian",
   "obsidian-latex-suite",
   "open-in-new-tab",
   "obsidian-git"
+>>>>>>> origin/main
 ]
