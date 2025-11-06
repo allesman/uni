@@ -38,28 +38,22 @@
   "vaultSelector": true,
   "deleteFileOption": "trash",
   "expandedSpaces": [
-    "//Module",
-    "//Notes",
-    "//Tags",
     "/",
-    "//Module/Module/Semester 1/Module/Semester 1/EIDI",
-    "//Module/Module/Semester 1/Module/Semester 1/ERA",
-    "//Module/Module/Semester 1"
+    "//Module",
+    "//Module/Module/Semester 1",
+    "//Module/Module/Semester 1/Module/Semester 1/DS",
+    "//Module/Module/Semester 1/Module/Semester 1/ERA"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
   "suppressedWarnings": [],
   "spaceSubFolder": ".space",
-  "hiddenFiles": [
-    "Templates"
-  ],
+  "hiddenFiles": [],
   "hiddenExtensions": [
     ".mdb",
     "_assets",
     "_blocks"
   ],
-  "newFileLocation": "root",
-  "newFileFolderPath": "",
   "inlineBacklinks": false,
   "inlineContext": true,
   "inlineBacklinksExpanded": false,
@@ -79,10 +73,10 @@
   "readableLineWidth": true,
   "autoAddContextsToSubtags": true,
   "releaseNotesPrompt": 0.999,
-  "enableDefaultSpaces": false,
+  "enableDefaultSpaces": true,
   "showSpacePinIcon": true,
   "experimental": false,
-  "systemName": "uni vault",
+  "systemName": "Uni",
   "defaultSpaceTemplate": "",
   "selectedKit": "default",
   "actionMaxSteps": 100,
