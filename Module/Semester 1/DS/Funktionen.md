@@ -16,3 +16,5 @@ $f^{2}(x)=(f\circ f)(x)$
 $f^0(x)=Id_{x}$
 
 Wenn $f=A^A$, dann injektiv <-> bijektiv <-> surjektiv
+Wenn $g\circ f$ bijektiv, dann $f$ injektiv $g$ surjektiv
+**Orbit**=eindeutig bestimmter unendlicher Pfad
