@@ -8,33 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e7a7b303c61786dc",
+            "id": "bbc1bb5ca657fc69",
             "type": "leaf",
-            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Dashboard.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
-              "pinned": true,
               "icon": "lucide-file",
               "title": "Dashboard"
-            }
-          },
-          {
-            "id": "c52fe8dbb611d2fc",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Module/Semester 1/DS/DS-Slides.pdf",
-                "page": 126,
-                "zoom": -0.06225487144369047
-              },
-              "icon": "lucide-file-text",
-              "title": "DS-Slides"
             }
           },
           {
@@ -142,7 +126,8 @@
               "title": "Navigator"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -234,8 +219,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "git-view"
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
         ],
@@ -252,8 +237,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "calendar"
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           }
         ]
@@ -283,16 +268,17 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "bbc1bb5ca657fc69",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
+    "Weekly Tasks/KW45.md",
     "Dashboard.md",
-    "Module/Semester 1/DS/2025-10-24.md",
     "Module/Semester 1/DS/Kardinalität.md",
+    "Weekly Tasks/Weekly Tasks.md",
+    "Module/Semester 1/DS/2025-10-24.md",
+    "conflict-files-obsidian-git.md",
     "Module/Semester 1/DS/Funktionen.md",
     "Module/Semester 1/DS/DS-Slides.pdf",
     "Module/Semester 1/ERA/Strings.md",
-    "Weekly Tasks/KW45.md",
     "Module/Semester 1/ERA/2025-11-04.md",
     "Attachments/Pasted image 20251104173149.png",
     "Module/Semester 1/DS/Übungen/exercise_sheet_03.pdf",
@@ -304,7 +290,6 @@
     "Module/Semester 1/EIDI/2025-10-20.md",
     "Weekly Tasks/Weekly Template.md",
     "Weekly Tasks/Untitled.md",
-    "Weekly Tasks/Weekly Tasks.md",
     "Module/Semester 1/DS/2025-10-16.md",
     "Module/Semester 1/DS/2025-10-21.md",
     "Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md",
