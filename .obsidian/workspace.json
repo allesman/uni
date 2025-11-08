@@ -64,9 +64,22 @@
               "icon": "lucide-file",
               "title": "KW45"
             }
+          },
+          {
+            "id": "c4a6f1b1c46d724c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Module/Semester 1/DS/2025-10-24.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2025-10-24"
+            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -120,7 +133,7 @@
             }
           },
           {
-            "id": "7bf7a530bd1cff5a",
+            "id": "b3cbf64d07c5e139",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -129,8 +142,7 @@
               "title": "Navigator"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -212,8 +224,8 @@
             "state": {
               "type": "full-calendar-sidebar-view",
               "state": {},
-              "icon": "calendar-glyph",
-              "title": "Full Calendar"
+              "icon": "lucide-ghost",
+              "title": "full-calendar-sidebar-view"
             }
           },
           {
@@ -240,8 +252,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-ghost",
+              "title": "calendar"
             }
           }
         ]
@@ -253,8 +265,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "handwritten-notes:Create empty handwritten note": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -263,22 +273,24 @@
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
       "obsidian-full-calendar:Open Full Calendar": false,
-      "omnisearch:Omnisearch": false,
+      "obsidian-git:Open Git source control": false,
+      "handwritten-notes:Create empty handwritten note": false,
       "homepage:Open homepage": false,
+      "omnisearch:Omnisearch": false,
       "templater-obsidian:Templater": false,
       "pdf-plus:PDF++: Toggle auto-copy": false,
       "pdf-plus:PDF++: Toggle auto-focus": false,
-      "pdf-plus:PDF++: Toggle auto-paste": false,
-      "obsidian-git:Open Git source control": false
+      "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "af04a30505342589",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "Module/Semester 1/DS/Funktionen.md",
+    "Module/Semester 1/DS/2025-10-24.md",
+    "Dashboard.md",
     "Module/Semester 1/DS/Kardinalität.md",
+    "Module/Semester 1/DS/Funktionen.md",
     "Module/Semester 1/DS/DS-Slides.pdf",
     "conflict-files-obsidian-git.md",
-    "Dashboard.md",
     "Module/Semester 1/ERA/Strings.md",
     "Weekly Tasks/KW45.md",
     "Module/Semester 1/ERA/2025-11-04.md",
@@ -286,7 +298,6 @@
     "Module/Semester 1/DS/Übungen/exercise_sheet_03.pdf",
     "Module/Semester 1/DS/Übungen/exercise_sheet_02.pdf",
     "Module/Semester 1/ERA/2025-10-27.md",
-    "Module/Semester 1/DS/2025-10-24.md",
     "Module/Semester 1/DS/MathJax symbol reference  BrNk.md",
     "Module/Semester 1/DS/Übungen/Übungen.md",
     "Module/Semester 1/EIDI/2025-11-03.md",
