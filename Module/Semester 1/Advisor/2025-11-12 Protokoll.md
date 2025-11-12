@@ -1,0 +1,28 @@
+- Einstiegsrunde
+	- ✨ Wir haben geteilt was wir gemacht haben ✨
+- WUP
+	- Cooles Namensspiel 😎
+- Referate/Präsentieren
+	- Ankündigung einer neuen Aufgabe
+		- 5-8 min Referate
+		- Thema Beliebig
+		- Flip-charts als Hilfe
+	- Vorbereitung
+		- Thema (als Fragestellung formuliert, nicht zu spezifisch)
+		- Ziel
+			- inhaltlich vs überzeugen
+		- Rahmenbedingungen (wo? wann? wie?)
+		- Zielgruppe
+			- gibt es Tabu-Themen
+			- Vorwissen
+			- Voreingenommenheit
+		- Organisation
+			- Zeitslot (beeinflusst Gemüt der Zuhörenden)
+			- Logistik des Raum
+			- Sitzordnung
+	- Präsentation selbst
+		- Anfang (15% der Präsentation)
+			- Inhaltsübersicht geben
+			- persönlichen Bezug zum Thema nennen
+- Visualisierung
+- Abschlussrunde
