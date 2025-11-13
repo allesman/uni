@@ -1,0 +1,1 @@
+Wenn man ne Funktion hat die für $x\to0$ bzw $x\to \infty$ gegen $\frac{0}{0}$ bzw $\frac{\infty}{\infty}$ geht, schau die Ableitung an. Wenn die für diese Annäherung existiert, existiert die Annäherung für die Funktion auch hat den selben Wert

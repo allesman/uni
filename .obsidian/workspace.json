@@ -8,8 +8,9 @@
         "type": "tabs",
         "children": [
           {
-            "id": "bbc1bb5ca657fc69",
+            "id": "e7a7b303c61786dc",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
@@ -17,40 +18,13 @@
                 "mode": "preview",
                 "source": false
               },
+              "pinned": true,
               "icon": "lucide-file",
               "title": "Dashboard"
             }
           },
           {
-            "id": "af04a30505342589",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Module/Semester 1/DS/Kardinalität.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Kardinalität"
-            }
-          },
-          {
-            "id": "bf19b046e7339621",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Weekly Tasks/KW45.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "KW45"
-            }
-          },
-          {
-            "id": "c4a6f1b1c46d724c",
+            "id": "6d2ab9a3512a2d66",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -62,8 +36,23 @@
               "icon": "lucide-file",
               "title": "2025-10-24"
             }
+          },
+          {
+            "id": "7cbcb7d0d6df92d8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Module/Semester 1/DS/Graphen.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Graphen"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -117,7 +106,7 @@
             }
           },
           {
-            "id": "b3cbf64d07c5e139",
+            "id": "f93901d6830e41e9",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -268,46 +257,50 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "bbc1bb5ca657fc69",
+  "active": "7cbcb7d0d6df92d8",
   "lastOpenFiles": [
-    "Weekly Tasks/KW45.md",
-    "Dashboard.md",
-    "Module/Semester 1/DS/Kardinalität.md",
-    "Weekly Tasks/Weekly Tasks.md",
     "Module/Semester 1/DS/2025-10-24.md",
-    "conflict-files-obsidian-git.md",
+    "Module/Semester 1/DS/2025-10-21.md",
+    "Module/Semester 1/DS/Graphen.md",
+    "Module/Semester 1/DS/MathJax symbol reference  BrNk.md",
+    "Module/Semester 1/DS/Kardinalität.md",
+    "Dashboard.md",
     "Module/Semester 1/DS/Funktionen.md",
-    "Module/Semester 1/DS/DS-Slides.pdf",
+    "Module/Vorkurs/9 Differentiation and Integration/attachments/desktop.ini",
+    "Module/Vorkurs/9 Differentiation and Integration/attachments/Pasted image 20250925112807.png",
+    "Module/Vorkurs/9 Differentiation and Integration/attachments/Pasted image 20250923174440.png",
+    "Module/Vorkurs/9 Differentiation and Integration/attachments/Pasted image 20250923170525.png",
+    "Module/Vorkurs/9 Differentiation and Integration/attachments",
+    "Module/Vorkurs/9 Differentiation and Integration/desktop.ini",
+    "Module/Vorkurs/9 Differentiation and Integration/Taylor Expansion.md",
+    "Module/Vorkurs/9 Differentiation and Integration/L'Hospital.md",
+    "Module/Vorkurs/9 Differentiation and Integration/Integration.md",
+    "Module/Vorkurs/9 Differentiation and Integration/Antiderivatives.md",
+    "Module/Vorkurs/9 Differentiation and Integration/Derivatives.md",
+    "Module/Vorkurs/9 Differentiation and Integration",
+    "Module/Vorkurs/8 Continuity/desktop.ini",
+    "Module/Vorkurs/8 Continuity/Rules for computing with continuous functions.md",
+    "Module/Vorkurs/8 Continuity/Continuity at particular point.md",
+    "Module/Vorkurs/8 Continuity",
+    "Module/Vorkurs/7 Elementary Functions/attachments/desktop.ini",
+    "Module/Vorkurs/7 Elementary Functions/attachments/Pasted image 20250923133918.png",
+    "Module/Vorkurs/7 Elementary Functions/attachments",
+    "Module/Vorkurs/7 Elementary Functions/desktop.ini",
+    "Module/Vorkurs/7 Elementary Functions/Sine and Cosine.md",
+    "Module/Vorkurs/7 Elementary Functions/Powers and Exponentiation.md",
+    "Module/Vorkurs/7 Elementary Functions",
+    "Weekly Tasks/KW45.md",
+    "Weekly Tasks/Weekly Tasks.md",
+    "conflict-files-obsidian-git.md",
     "Module/Semester 1/ERA/Strings.md",
     "Module/Semester 1/ERA/2025-11-04.md",
     "Attachments/Pasted image 20251104173149.png",
-    "Module/Semester 1/DS/Übungen/exercise_sheet_03.pdf",
-    "Module/Semester 1/DS/Übungen/exercise_sheet_02.pdf",
     "Module/Semester 1/ERA/2025-10-27.md",
-    "Module/Semester 1/DS/MathJax symbol reference  BrNk.md",
     "Module/Semester 1/DS/Übungen/Übungen.md",
     "Module/Semester 1/EIDI/2025-11-03.md",
     "Module/Semester 1/EIDI/2025-10-20.md",
     "Weekly Tasks/Weekly Template.md",
-    "Weekly Tasks/Untitled.md",
-    "Module/Semester 1/DS/2025-10-16.md",
-    "Module/Semester 1/DS/2025-10-21.md",
-    "Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md",
-    "Weekly Tasks/KW.md",
-    "Weekly Tasks",
-    "Module/Semester 1/DS/Übungen/Übungsblatt 2 Hausaufgaben.md",
-    "Module/Semester 1/DS/2025-10-14.md",
-    "Module/Semester 1/ERA/Slides/era03-beispiel.pdf",
-    "Module/Semester 1/ERA/Slides/Slides.md",
-    "Module/Semester 1/ERA/Slides",
-    "Module/Semester 1/ERA/2025-10-20.md",
-    "Module/Semester 1/ERA/Übungen/Übungen.md",
-    "Module/Semester 1/ERA/Übungen/era_tutor02.pdf",
-    "Module/Semester 1/DS/Übungen",
-    "Module/Semester 1/DS/Diskrete Strukturen.md",
     "Attachments/Pasted image 20251021210048.png",
-    "Tags/#ds",
-    "Tags",
     "Untitled.canvas",
     "Attachments/IMG_20251016_150731310 copy 2.png",
     "Attachments/IMG_20251016_150731310.jpg",
