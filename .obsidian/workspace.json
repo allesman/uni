@@ -22,37 +22,8 @@
               "icon": "lucide-file",
               "title": "Dashboard"
             }
-          },
-          {
-            "id": "6d2ab9a3512a2d66",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Module/Semester 1/DS/2025-10-24.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2025-10-24"
-            }
-          },
-          {
-            "id": "7cbcb7d0d6df92d8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Module/Semester 1/DS/Graphen.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Graphen"
-            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -106,7 +77,7 @@
             }
           },
           {
-            "id": "f93901d6830e41e9",
+            "id": "8f70b357d9bc8b90",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -257,14 +228,17 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "7cbcb7d0d6df92d8",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "Dashboard.md",
+    "Module/Semester 1/ERA/2025-10-20.md",
+    "Module/Semester 1/ERA/2025-10-27.md",
+    "Module/Semester 1/ERA/2025-11-04.md",
+    "Module/Semester 1/DS/Graphen.md",
     "Module/Semester 1/DS/2025-10-24.md",
     "Module/Semester 1/DS/2025-10-21.md",
-    "Module/Semester 1/DS/Graphen.md",
     "Module/Semester 1/DS/MathJax symbol reference  BrNk.md",
     "Module/Semester 1/DS/Kardinalität.md",
-    "Dashboard.md",
     "Module/Semester 1/DS/Funktionen.md",
     "Module/Vorkurs/9 Differentiation and Integration/attachments/desktop.ini",
     "Module/Vorkurs/9 Differentiation and Integration/attachments/Pasted image 20250925112807.png",
@@ -293,13 +267,10 @@
     "Weekly Tasks/Weekly Tasks.md",
     "conflict-files-obsidian-git.md",
     "Module/Semester 1/ERA/Strings.md",
-    "Module/Semester 1/ERA/2025-11-04.md",
     "Attachments/Pasted image 20251104173149.png",
-    "Module/Semester 1/ERA/2025-10-27.md",
     "Module/Semester 1/DS/Übungen/Übungen.md",
     "Module/Semester 1/EIDI/2025-11-03.md",
     "Module/Semester 1/EIDI/2025-10-20.md",
-    "Weekly Tasks/Weekly Template.md",
     "Attachments/Pasted image 20251021210048.png",
     "Untitled.canvas",
     "Attachments/IMG_20251016_150731310 copy 2.png",
