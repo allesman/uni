@@ -7,7 +7,7 @@
 		- 5-8 min Referate
 		- Thema Beliebig
 		- Flip-charts als Hilfe
-	- Vorbereitung
+	- Vorbereitung auf Präsentation
 		- Thema (als Fragestellung formuliert, nicht zu spezifisch)
 		- Ziel
 			- inhaltlich vs überzeugen
@@ -20,9 +20,56 @@
 			- Zeitslot (beeinflusst Gemüt der Zuhörenden)
 			- Logistik des Raum
 			- Sitzordnung
-	- Präsentation selbst
+	- Aufbau Präsentation
 		- Anfang (15% der Präsentation)
 			- Inhaltsübersicht geben
 			- persönlichen Bezug zum Thema nennen
+			- Rhetorische Fragen
+			- Sinnstiftung und Anlass
+		- Hauptteil (75%)
+			- systematisches Vorstellen des Themas
+			- Haupt- und Unterthemen
+			- Ideen aus Publikum einbringen
+			- nach ca. 45min
+			- Zusammenfassung wichtiger Ergebnisse
+		- Schluss (10%)
+			- Zusammenfassung
+			- Rück- und Ausblick
+			- Feedback nehmen
+			- Fragen klären
+	- Gruppenarbeit
+		- Verhalten
+			- Abwechslungsreich
+			- Interaktiv
+			- Hilfsmittel
+			- Pausen einbauen, damit Leute mitkommen
+			- Mimik und Gesten
+		- Gestalten
+			- Interaktiv
+			- Roter Faden
+			- Hilfsmittel
+			- visuelle Element
+			- Show don't tell
+		- No-Gos
+			- Füllwörter
+			- Ablesen
+			- Abschweifen
+			- zu volle Plakate/Folien
+			- in Teamarbeit zurückhalten
+			- übertrieben Gestikulieren
 - Visualisierung
+	- Flip Chart vs Powerpoint vs Pinwand: Alles hat seine Vor- und Nachteile
+		- Flip Chart: unique, live änderbar, aber klein
+		- Powerpoint: komplizierte Illustrationen, Fotos
+		- Pinwand: Gruppenkollaboration
+	- 3 Farben max
+	- Blau und Schwarz
+	- Druckschrift
+	- Groß- oder Kleinbuchstaben
+	- von links oben nach rechts unten
+	- Skizzen, Bilder, Überschriften
 - Abschlussrunde
+	- Offenen Fragen
+		- Wann Robot?
+	- Lieblingsvorlesung
+		- viel EIDI, Computertechnik

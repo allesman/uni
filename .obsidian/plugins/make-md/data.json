@@ -43,6 +43,12 @@
     "//Module/Module/Semester 1",
     "//Module/Module/Semester 1/Module/Semester 1/ERA/Module/Semester 1/ERA/Slides",
     "//Weekly Tasks",
+<<<<<<< HEAD
+=======
+    "//Module/Module/Semester 1/Module/Semester 1/Advisor",
+    "//Module/Module/Semester 1/Module/Semester 1/PGDP",
+    "//Module/Module/Semester 1/Module/Semester 1/DS",
+>>>>>>> origin/main
     "//Module/Module/Semester 1/Module/Semester 1/ERA"
   ],
   "expandFolderOnClick": true,
