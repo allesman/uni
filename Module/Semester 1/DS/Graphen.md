@@ -13,3 +13,10 @@ ungerichtet + keine Schleifen -> einfacher Graph
 | $M_{m,n}$ | Gittergraph         |
 | $Q_{n}$   | Hyperwürfel         |
 | $B_{n}$   | perfekter Binärbaum |
+*Spannbaum* hat Kanten eines Graphen und Teilmenge der Knoten, sodass ein Baum (keine Zyklen) entsteht
+*Gradfolge* (Liste der Grade der Knoten)
+Realisierbar wenn
+1. gerade Summe
+2. letztes Element $d_n$ entfernen, letzte $d_n$ Komponenten um 1 verkleinern, aufsteigend sortieren
+   -> gdw. Ergebnis realisierbar ist auch Ursprünglicher Graph realisierbar
+3. 
