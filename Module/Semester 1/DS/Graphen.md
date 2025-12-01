@@ -25,7 +25,7 @@ ungerichtet + keine Schleifen -> einfacher Graph
 **Euler-Kreis:** Haus des Nikolaus (Jede Kante besucht)
 *hinreichend und notwendig*: jeder Knotengrad gerade
 **Hamilton-Kreis:** Jeder Knoten besucht, jede Kante $\leq1$
-*notwendig*: jeder Knoten hat mindestens Grad $\frac{|V|}{2}$
+*hinreichend*: jeder Knoten hat mindestens Grad $\frac{|V|}{2}$
 **planarer Graph**: Kann in 2D ohne Überschneidung von Kanten gezeichnet werden
 *hinreichend und notwendig*: **Eulersche Polyederformel**: $f-|E|+|V|=2$ 
 *notwendig:* $\deg(v)\le |V|$
