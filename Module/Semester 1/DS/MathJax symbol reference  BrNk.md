@@ -8,6 +8,7 @@ description: "My Site made with GRAV: an open source flat-file CMS"
 tags:
   - "clippings"
 ---
+https://detexify.kirelabs.org/classify.html
 ## MathJax symbol reference
 
 References for MathJax usage in Markdown sintax

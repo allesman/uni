@@ -1,6 +1,20 @@
-Spannbaum hat Knoten eines Graphs und Teilmenge der Kanten, sodass es einen Baum ergibt.
+*Pfad*: Folge von Knoten, die mit Kanten verbunden sind
+	*einfach*: keine doppelten Kanten
+*Distanz*: Länge des kürzesten Pfads zwischen zwei Knoten
+*Zusammenhangskomponente*: Teilgraphen, die zusammenhängen
+ungerichtet + keine Schleifen -> einfacher Graph
 
-Gradfolge = Liste der Knotengrade des Graphen
+| Abkürzung | Name                |
+| --------- | ------------------- |
+| $K_{n}$   | vollständiger Graph |
+| $C_n$     | Kreisgraph          |
+| $P_n$     | Pfadgraph           |
+| $K_{m,n}$ | Kreisgraph          |
+| $M_{m,n}$ | Gittergraph         |
+| $Q_{n}$   | Hyperwürfel         |
+| $B_{n}$   | perfekter Binärbaum |
+*Spannbaum* hat Kanten eines Graphen und Teilmenge der Knoten, sodass ein Baum (keine Zyklen) entsteht
+*Gradfolge* (Liste der Grade der Knoten)
 **Realisierbarkeit**:
 - Wenn ungerade Summe kann daraus, kein Graph erstellt werden
 - Havel Hakimi (erzeugen eines leichter auf Realisierbarkeit testbaren Graphen, der realisierbar ist gdw es der urpsprüngliche ist): 
