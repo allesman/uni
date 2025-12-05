@@ -24,21 +24,35 @@
             }
           },
           {
-            "id": "44ced1958f4378cc",
+            "id": "e2562cd17c362e69",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "mk-space",
               "state": {
-                "file": "Module/Semester 1/PGDP/Pre ÜPA.md",
-                "mode": "source",
-                "source": false
+                "path": "Module/Semester 1/PGDP"
               },
               "icon": "lucide-file",
-              "title": "Pre ÜPA"
+              "title": "PGDP"
+            }
+          },
+          {
+            "id": "c394f03f2ffad881",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Module/Semester 1/ERA/Zentralübungen/20251205.pdf",
+                "page": 1,
+                "left": -12,
+                "top": 846,
+                "zoom": 1.2970588235294118
+              },
+              "icon": "lucide-file-text",
+              "title": "20251205"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -92,7 +106,7 @@
             }
           },
           {
-            "id": "be989eda542c1ebf",
+            "id": "c8b0e8e40f4384f1",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -217,12 +231,13 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "44ced1958f4378cc",
+  "active": "c394f03f2ffad881",
   "lastOpenFiles": [
+    "Module/Semester 1/PGDP/PGDP.md",
     "Dashboard.md",
+    "Module/Semester 1/PGDP/Pre ÜPA.md",
     "Attachments/Pre ÜPA 2025-12-05 12.30.11.excalidraw.md",
     "Test.pdf",
-    "Module/Semester 1/PGDP/Pre ÜPA.md",
     "handwritten-notes/Untitled.md",
     "handwritten-notes/New note.pdf",
     "handwritten-notes/New note 1.pdf",
