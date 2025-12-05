@@ -34,25 +34,9 @@
               "icon": "lucide-file",
               "title": "PGDP"
             }
-          },
-          {
-            "id": "c394f03f2ffad881",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Module/Semester 1/ERA/Zentralübungen/20251205.pdf",
-                "page": 1,
-                "left": -12,
-                "top": 846,
-                "zoom": 1.2970588235294118
-              },
-              "icon": "lucide-file-text",
-              "title": "20251205"
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -231,8 +215,9 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "c394f03f2ffad881",
+  "active": "e2562cd17c362e69",
   "lastOpenFiles": [
+    "Module/Semester 1/ERA/Zentralübungen/20251205.pdf",
     "Module/Semester 1/PGDP/PGDP.md",
     "Dashboard.md",
     "Module/Semester 1/PGDP/Pre ÜPA.md",
@@ -272,7 +257,6 @@
     "Module/Semester 1/DS/2025-10-24.md",
     "Module/Semester 1/DS/2025-10-21.md",
     "Module/Semester 1/DS/2025-10-16.md",
-    "Module/Semester 1/DS/2025-10-14.md",
     "Attachments/Pasted image 20251104173149.png",
     "Attachments/Pasted image 20251021210048.png",
     "Attachments/IMG_20251016_150731310 copy 2.png",
