@@ -106,7 +106,7 @@
             }
           },
           {
-            "id": "7d0c336cb5df2d77",
+            "id": "17441cf374fb46de",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -199,8 +199,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-ghost",
+              "title": "calendar"
             }
           }
         ]
@@ -212,14 +212,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "handwritten-notes:Create empty handwritten note": false,
-      "obsidian-full-calendar:Open Full Calendar": false,
-      "omnisearch:Omnisearch": false,
-      "homepage:Open homepage": false,
-      "templater-obsidian:Templater": false,
-      "pdf-plus:PDF++: Toggle auto-copy": false,
-      "pdf-plus:PDF++: Toggle auto-focus": false,
-      "pdf-plus:PDF++: Toggle auto-paste": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -227,7 +219,12 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-full-calendar:Open Full Calendar": false,
+      "obsidian-git:Open Git source control": false,
+      "handwritten-notes:Create empty handwritten note": false,
+      "homepage:Open homepage": false,
+      "omnisearch:Omnisearch": false,
+      "templater-obsidian:Templater": false
     }
   },
   "active": "6eaec215a205eaa0",
