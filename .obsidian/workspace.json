@@ -22,21 +22,8 @@
               "icon": "lucide-file",
               "title": "Dashboard"
             }
-          },
-          {
-            "id": "e2562cd17c362e69",
-            "type": "leaf",
-            "state": {
-              "type": "mk-space",
-              "state": {
-                "path": "Module/Semester 1/PGDP"
-              },
-              "icon": "lucide-file",
-              "title": "PGDP"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -90,7 +77,7 @@
             }
           },
           {
-            "id": "c8b0e8e40f4384f1",
+            "id": "56961b23707f0c59",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -120,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ERA/2025-10-14.md",
+                "file": "Module/Semester 1/Advisor/Ersatzleistung_GPLA_1 1.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +117,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2025-10-14"
+              "title": "Backlinks for Ersatzleistung_GPLA_1 1"
             }
           },
           {
@@ -183,11 +170,12 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "calendar"
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -215,35 +203,43 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "e2562cd17c362e69",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "Module/Semester 1/ERA/Zentralübungen/20251205.pdf",
-    "Module/Semester 1/PGDP/PGDP.md",
+    "Module/Module.md",
     "Dashboard.md",
+    "Module/Semester 1/Advisor/Ersatzleistung_GPLA_1 1.pdf",
+    "Weekly Tasks/KW51.md",
+    "Module/Semester 1/DS/MathJax symbol reference  BrNk.md",
+    "Module/Semester 1/DS/Tutoriumsaufgaben/pages/{18220855-06a2-4fec-8606-e698a83ab828}",
+    "Module/Semester 1/DS/Tutoriumsaufgaben/pages/{0295b0be-aaa5-4eae-ab4b-4f7ae867ab5a}",
+    "Module/Semester 1/DS/Tutoriumsaufgaben/pages/pageinfolist",
+    "Module/Semester 1/DS/Tutoriumsaufgaben/thumbnail.png",
+    "Module/Semester 1/DS/Tutoriumsaufgaben/pages",
+    "Module/Semester 1/DS/Tutoriumsaufgaben/documentinfo",
+    "Module/Semester 1/DS/Tutoriumsaufgaben",
+    "Module/Semester 1/DS/Tutoriumsaufgaben (3)/pages/{18220855-06a2-4fec-8606-e698a83ab828}",
+    "Module/Semester 1/DS/Tutoriumsaufgaben (3)/pages/{0295b0be-aaa5-4eae-ab4b-4f7ae867ab5a}",
+    "Module/Semester 1/DS/Tutoriumsaufgaben (3)/pages/pageinfolist",
+    "Module/Semester 1/DS/Tutoriumsaufgaben (3)/thumbnail.png",
+    "Module/Semester 1/DS/Tutoriumsaufgaben (2)/thumbnail.png",
+    "Module/Semester 1/DS/Graphen.md",
+    "Module/Semester 1/Advisor/2025-11-12 Protokoll.md",
+    "Weekly Tasks/KW50.md",
+    "Module/Semester 1/DS/DS.md",
+    "Module/Semester 1/PGDP/PGDP.md",
     "Module/Semester 1/PGDP/Pre ÜPA.md",
     "Attachments/Pre ÜPA 2025-12-05 12.30.11.excalidraw.md",
-    "Test.pdf",
     "handwritten-notes/Untitled.md",
-    "handwritten-notes/New note.pdf",
-    "handwritten-notes/New note 1.pdf",
-    "handwritten-notes/New note.xopp",
-    "handwritten-notes",
     "Module/Semester 1/ERA/Slides/Slides.md",
-    "Module/Semester 1/DS/Graphen.md",
     "conflict-files-obsidian-git.md",
-    "Module/Vorkurs/9 Differentiation and Integration/attachments/desktop.ini",
     "Module/Vorkurs/9 Differentiation and Integration/attachments/Pasted image 20250925112807.png",
     "Module/Vorkurs/9 Differentiation and Integration/attachments/Pasted image 20250923174440.png",
     "Module/Vorkurs/9 Differentiation and Integration/attachments/Pasted image 20250923170525.png",
-    "Module/Vorkurs/9 Differentiation and Integration/desktop.ini",
-    "Module/Vorkurs/9 Differentiation and Integration/attachments",
     "Module/Vorkurs/9 Differentiation and Integration/Taylor Expansion.md",
     "Module/Vorkurs/9 Differentiation and Integration/L'Hospital.md",
     "Module/Vorkurs/9 Differentiation and Integration/Integration.md",
     "Module/Vorkurs/9 Differentiation and Integration/Derivatives.md",
     "Module/Vorkurs/9 Differentiation and Integration/Antiderivatives.md",
-    "Module/Vorkurs/9 Differentiation and Integration",
-    "Module/Vorkurs/8 Continuity/desktop.ini",
     "Module/Vorkurs/8 Continuity/Rules for computing with continuous functions.md",
     "Module/Vorkurs/8 Continuity/Continuity at particular point.md",
     "Module/Vorkurs/7 Elementary Functions/attachments/Pasted image 20250923133918.png",
@@ -252,16 +248,8 @@
     "Module/Semester 1/ERA/Slides/HA.md",
     "Weekly Tasks/KW49.md",
     "Module/Semester 1/ERA/Cache.md",
-    "Module/Semester 1/ERA/Mehrere Adressräume.md",
-    "Module/Semester 1/ERA/ERA.md",
-    "Module/Semester 1/DS/2025-10-24.md",
-    "Module/Semester 1/DS/2025-10-21.md",
-    "Module/Semester 1/DS/2025-10-16.md",
     "Attachments/Pasted image 20251104173149.png",
     "Attachments/Pasted image 20251021210048.png",
-    "Attachments/IMG_20251016_150731310 copy 2.png",
-    "Attachments/IMG_20251016_150731310.jpg",
-    "Attachments/IMG_20251016_150731310 copy.png",
-    "DS/attachments/IMG_20251016_150731310.jpg"
+    "Attachments/IMG_20251016_150731310 copy 2.png"
   ]
 }

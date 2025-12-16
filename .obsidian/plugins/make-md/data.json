@@ -41,12 +41,10 @@
     "/",
     "//Module/Module/Semester 1",
     "//Module/Module/Semester 1/Module/Semester 1/ERA/Module/Semester 1/ERA/Slides",
-    "//Weekly Tasks",
-    "//Module/Module/Semester 1/Module/Semester 1/Advisor",
     "//handwritten-notes",
     "//Module",
-    "//Module/Module/Semester 1/Module/Semester 1/ERA",
-    "//Module/Module/Semester 1/Module/Semester 1/ERA/Module/Semester 1/ERA/Zentralübungen"
+    "//Module/Module/Semester 1/Module/Semester 1/ERA/Module/Semester 1/ERA/Zentralübungen",
+    "//Module/Module/Semester 1/Module/Semester 1/Advisor"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
