@@ -22,8 +22,23 @@
               "icon": "lucide-file",
               "title": "Dashboard"
             }
+          },
+          {
+            "id": "f3a4cb279218a667",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Module/Semester 1/DS/Graphen.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Graphen"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -77,7 +92,7 @@
             }
           },
           {
-            "id": "56961b23707f0c59",
+            "id": "8a9a4e20d3ccd355",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -170,12 +185,11 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-ghost",
+              "title": "calendar"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
@@ -184,9 +198,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "pdf-plus:PDF++: Toggle auto-copy": false,
-      "pdf-plus:PDF++: Toggle auto-focus": false,
-      "pdf-plus:PDF++: Toggle auto-paste": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -199,31 +210,31 @@
       "handwritten-notes:Create empty handwritten note": false,
       "homepage:Open homepage": false,
       "omnisearch:Omnisearch": false,
-      "templater-obsidian:Templater": false,
-      "obsidian-excalidraw-plugin:New drawing": false
+      "templater-obsidian:Templater": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "f3a4cb279218a667",
   "lastOpenFiles": [
-    "Module/Module.md",
+    "Module/Semester 1/DS/Hausaufgaben.scrvn_403403370_tmp.qqmukz.part",
+    "Module/Semester 1/DS/Hausaufgaben.scrvn_3226480737_tmp.rx97us.part",
+    "Module/Semester 1/DS/Hausaufgaben.scrvn_259724971_tmp.0iku0x.part",
+    "Module/Semester 1/DS/Hausaufgaben.scrvn_148044470_tmp.g5d8b5.part",
+    "Module/Semester 1/DS/Hausaufgaben.scrvn_2021524854_tmp.z93eik.part",
     "Dashboard.md",
+    "Module/Semester 1/DS/Hausaufgaben.scrvn_973242358_tmp.v58xj1.part",
+    "Module/Semester 1/DS/Hausaufgaben.scrvn",
+    "Module/Semester 1/Advisor/aaaaaa.odt",
+    "Module/Semester 1/Advisor/lu1651489z8lo.tmp",
     "Module/Semester 1/Advisor/Ersatzleistung_GPLA_1 1.pdf",
+    "Module/Semester 1/Advisor/2025-11-12 Protokoll.md",
+    "Module/Semester 1/Advisor/GPLA Ersatzleistung Merlin Rehbinder.pdf",
+    "Module/Module.md",
     "Weekly Tasks/KW51.md",
     "Module/Semester 1/DS/MathJax symbol reference  BrNk.md",
-    "Module/Semester 1/DS/Tutoriumsaufgaben/pages/{18220855-06a2-4fec-8606-e698a83ab828}",
-    "Module/Semester 1/DS/Tutoriumsaufgaben/pages/{0295b0be-aaa5-4eae-ab4b-4f7ae867ab5a}",
-    "Module/Semester 1/DS/Tutoriumsaufgaben/pages/pageinfolist",
     "Module/Semester 1/DS/Tutoriumsaufgaben/thumbnail.png",
-    "Module/Semester 1/DS/Tutoriumsaufgaben/pages",
-    "Module/Semester 1/DS/Tutoriumsaufgaben/documentinfo",
-    "Module/Semester 1/DS/Tutoriumsaufgaben",
-    "Module/Semester 1/DS/Tutoriumsaufgaben (3)/pages/{18220855-06a2-4fec-8606-e698a83ab828}",
-    "Module/Semester 1/DS/Tutoriumsaufgaben (3)/pages/{0295b0be-aaa5-4eae-ab4b-4f7ae867ab5a}",
-    "Module/Semester 1/DS/Tutoriumsaufgaben (3)/pages/pageinfolist",
     "Module/Semester 1/DS/Tutoriumsaufgaben (3)/thumbnail.png",
     "Module/Semester 1/DS/Tutoriumsaufgaben (2)/thumbnail.png",
     "Module/Semester 1/DS/Graphen.md",
-    "Module/Semester 1/Advisor/2025-11-12 Protokoll.md",
     "Weekly Tasks/KW50.md",
     "Module/Semester 1/DS/DS.md",
     "Module/Semester 1/PGDP/PGDP.md",
@@ -247,7 +258,6 @@
     "Module/Vorkurs/7 Elementary Functions/Powers and Exponentiation.md",
     "Module/Semester 1/ERA/Slides/HA.md",
     "Weekly Tasks/KW49.md",
-    "Module/Semester 1/ERA/Cache.md",
     "Attachments/Pasted image 20251104173149.png",
     "Attachments/Pasted image 20251021210048.png",
     "Attachments/IMG_20251016_150731310 copy 2.png"
