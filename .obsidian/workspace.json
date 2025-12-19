@@ -22,23 +22,8 @@
               "icon": "lucide-file",
               "title": "Dashboard"
             }
-          },
-          {
-            "id": "f3a4cb279218a667",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Module/Semester 1/Advisor/Untitsdfsdfdsled.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Untitsdfsdfdsled"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -101,8 +86,7 @@
               "title": "Navigator"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -217,23 +201,25 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "f3a4cb279218a667",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "Module/Semester 1/ERA/Slides/era03-beispiel.pdf",
+    "Module/Semester 1/ERA/Slides/Slides.md",
+    "Dashboard.md",
+    "Module/Semester 1/DS/DS.md",
+    "Module/Semester 1/Advisor/Advisor.md",
     "Module/Semester 1/Advisor/test.md",
     "Module/Semester 1/Advisor/Untitsdfsdfdsled.md",
-    "Module/Semester 1/Advisor/Advisor.md",
     "Module/Semester 1/DS/Graphen.md",
     "Module/Semester 1/DS/Hausaufgaben.scrvn_403403370_tmp.qqmukz.part",
     "Module/Semester 1/DS/Hausaufgaben.scrvn_3226480737_tmp.rx97us.part",
     "Module/Semester 1/DS/Hausaufgaben.scrvn_259724971_tmp.0iku0x.part",
     "Module/Semester 1/DS/Hausaufgaben.scrvn_148044470_tmp.g5d8b5.part",
     "Module/Semester 1/DS/Hausaufgaben.scrvn_2021524854_tmp.z93eik.part",
-    "Dashboard.md",
     "Module/Semester 1/DS/Hausaufgaben.scrvn_973242358_tmp.v58xj1.part",
     "Module/Semester 1/DS/Hausaufgaben.scrvn",
     "Module/Semester 1/Advisor/aaaaaa.odt",
     "Module/Semester 1/Advisor/lu1651489z8lo.tmp",
-    "Module/Semester 1/Advisor/Ersatzleistung_GPLA_1 1.pdf",
     "Module/Semester 1/Advisor/2025-11-12 Protokoll.md",
     "Module/Module.md",
     "Weekly Tasks/KW51.md",
@@ -242,12 +228,10 @@
     "Module/Semester 1/DS/Tutoriumsaufgaben (3)/thumbnail.png",
     "Module/Semester 1/DS/Tutoriumsaufgaben (2)/thumbnail.png",
     "Weekly Tasks/KW50.md",
-    "Module/Semester 1/DS/DS.md",
     "Module/Semester 1/PGDP/PGDP.md",
     "Module/Semester 1/PGDP/Pre ÜPA.md",
     "Attachments/Pre ÜPA 2025-12-05 12.30.11.excalidraw.md",
     "handwritten-notes/Untitled.md",
-    "Module/Semester 1/ERA/Slides/Slides.md",
     "conflict-files-obsidian-git.md",
     "Module/Vorkurs/9 Differentiation and Integration/attachments/Pasted image 20250925112807.png",
     "Module/Vorkurs/9 Differentiation and Integration/attachments/Pasted image 20250923174440.png",
@@ -261,7 +245,6 @@
     "Module/Vorkurs/8 Continuity/Continuity at particular point.md",
     "Module/Vorkurs/7 Elementary Functions/attachments/Pasted image 20250923133918.png",
     "Module/Vorkurs/7 Elementary Functions/Sine and Cosine.md",
-    "Module/Vorkurs/7 Elementary Functions/Powers and Exponentiation.md",
     "Attachments/Pasted image 20251104173149.png",
     "Attachments/Pasted image 20251021210048.png",
     "Attachments/IMG_20251016_150731310 copy 2.png"
