@@ -30,3 +30,4 @@ jedes rad nur einmal
 getrange testen
 
 getmaxrange testen
+![[Pre ÜPA 2025-12-05 12.30.11.excalidraw]]
