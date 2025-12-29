@@ -1,19 +1,7 @@
 ---
-tags: natzahlen, relationen
+tags: ds
 ---
-Induktionsbeweis
-**IB** (P gilt für $n_0$)
-**IS** ($P(n)\to P(n+1$) beweisen)
-	**IA** (P gilt für beliebiges $n\in \mathbb{N}_0$)
-	$a_{n+1} =^{Def} ... =^{IA}$
-	dann auflösen, sodass P auch für $n+1$ gilt
-$n_0$ muss nicht zwingend 0 sein, man kann auch woanders anfangen
-**Starke Induktion**: Manchmal kann man nicht von $P(n)$ auf $P(n+1)$ schließen
--> Dann muss man $P$ für alle $x$ mit $n_0\le x \le n$ annehmen, um auf $P(n+1)$ zu schließen
-
-Relation $R\subseteq A_1,A_2,...A_k$
-Inverse Relation $R^{-1}=R^T=\{(b,a)|(a,b)\in \mathbb{R}\}$ 
-
+(siehe [[Relationen]])
 Graph besteht aus Knoten $V$ und Kanten $E \subseteq V\times V$
 
 > [!info] Bipartit
@@ -36,25 +24,32 @@ $R^{\le k}$: Alle Knoten, die in min. $k$ Schritten erreichbar sind.
 $R^+$: Transitive Hülle (kleinstmögliche Erweiterung von $R$, sodass transitiv)
 $R^*$: Reflexiv-Transitive Hülle (-,,-, sodass transitiv und reflexiv)
 
-**Wörter**
-$\preceq_{p}$ Präfix
-$\preceq_{s}$ Suffix
-$\cong_{c}$ Konjugiert
-$\preceq_i$ Infix
 
-## Ordnungsrelationen
-reflexiv, transitiv, antisymmetrisch
-- Totale Ordnung: alle Paare aus $a$ und $b$ stehen in Relation
-- Partielle Ordnung: nicht -,,-
-Visualisierung mit Hasse Diagrammen (weglassen der Kanten, die nur durch Reflexivität und Transitivität auftauchen)
-**Besondere Elemente**
-- maximales Element: steht nie an Stelle eins einer Relation
-- größtes Element: für alle Elemente existiert Relation wo an Stelle zwei 
-- minimales Element: steht nie an Stelle zwei einer Relation
-- kleinstes Element: für alle Elemente existiert Relation wo an Stelle eins
-- größte untere Schranke (in Bezug auf Teilmenge): größtes Element, das $\le$ alle der Teilmenge
-- kleinste obere Schranke (-,,-): kleinstes Element, das $\ge$ alle der Teilmenge
-## Äquivalenzrelationen
-reflexiv, transitiv, symmetrisch
-Partitionieren die Elemente in Äquivalenzklassen
-Äquivalenzklasse von Element $a$ bezüglich Relation $R$: $[a]_{R}$
+
+| Abkürzung | Name                |
+| --------- | ------------------- |
+| $K_{n}$   | vollständiger Graph |
+| $C_n$     | Kreisgraph          |
+| $P_n$     | Pfadgraph           |
+| $K_{m,n}$ | Kreisgraph          |
+| $M_{m,n}$ | Gittergraph         |
+| $Q_{n}$   | Hyperwürfel         |
+| $B_{n}$   | perfekter Binärbaum |
+*Spannbaum* hat Kanten eines Graphen und Teilmenge der Knoten, sodass ein Baum (keine Zyklen) entsteht
+*Gradfolge* (Liste der Grade der Knoten)
+**Realisierbarkeit**:
+- Wenn ungerade Summe kann daraus, kein Graph erstellt werden
+- Havel Hakimi (erzeugen eines leichter auf Realisierbarkeit testbaren Graphen, der realisierbar ist gdw es der urpsprüngliche ist): 
+	- aufsteigend sortieren
+	- letztes Element $d_n$ entfernen
+	- letzte $d_n$ Komponenten um 1 verkleinern
+	- 🔁
+**Euler-Kreis:** Haus des Nikolaus (Jede Kante besucht)
+*hinreichend und notwendig*: jeder Knotengrad gerade
+**Hamilton-Kreis:** Jeder Knoten besucht, jede Kante $\leq1$
+*hinreichend*: jeder Knoten hat mindestens Grad $\frac{|V|}{2}$
+**planarer Graph**: Kann in 2D ohne Überschneidung von Kanten gezeichnet werden
+*hinreichend und notwendig*: **Eulersche Polyederformel**: $f-|E|+|V|=2$ 
+*notwendig:* $\deg(v)\le |V|$
+*notwendig*: $3|V|-6\geq|E|$
+*idk*: $|E|\le 2|V|-4$

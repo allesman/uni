@@ -1,3 +1,6 @@
+---
+tags: ds
+---
 Untergruppe von Relationen $R\subseteq A\times B$, wo jedes Element von $A$ maximal einmal vertreten ist
 partielle Funktion: Nicht jedes Element von $A$ vertreten
 $B^A=:\{f:A\to B\}$ aka die Menge aller Funktionen zwischen $A$ und $B$

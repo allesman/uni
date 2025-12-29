@@ -1,7 +1,5 @@
 ---
-tags:
-  - Grundlagen
-  - DS
+tags: ds
 ---
 diskret heißt basically abzählbar (<-> kontinuierlich)
 
@@ -30,3 +28,12 @@ falls A, dann B
 wenn gültig:
 -> B ist **hinreichend** für A
 -> A ist **notwendig** für B
+
+> [!info] Prädikate
+> parametrisierte Aussagen, die eine Eigenschaft zusprechen
+## Quantoren
+*für alle* ($\forall$), *existiert* ($\exists$), *kein*
+
+> [!hint] Negation
+> $\lnot (\forall x P(x))\equiv\exists x (\lnot P(x))$ "Nicht für alle x gilt P" = "Es gibt ein x für das nicht P gilt"
+> $\lnot (\exists x P(x))\equiv\forall x (\lnot P(x))$ "Nicht ein (kein) x für das P gilt" = "Für alle x gilt nicht P"

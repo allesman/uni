@@ -1,6 +1,12 @@
 ---
-tags: ds, mengen
+tags:
+  - ds
 ---
+Relation $R\subseteq A_1,A_2,...A_k$
+Inverse Relation $R^{-1}=R^T=\{(b,a)|(a,b)\in \mathbb{R}\}$ 
+- Mehrfachnennung und Ordnung spielt keine Rolle
+- explizite und implizite Definition
+- Menge darf in Definition nur bereits Definierte Mengen verwenden (Russel)
 Symmetrische Differenz $\{1,2\} \triangle \{2,3\}=\{1,3\}$
 *Disjunkt* = Keine Überschneidung
 $A\uplus B$: Vereinigung disjunkter Mengen
@@ -28,3 +34,8 @@ $A^0=\{()\}$
 $\Sigma$ Alphabet
 Sprache $S \subseteq \Sigma^*$
 Wort als Tupel der Buchstaben, vereinfachte Darstellung durch Anreihung der Elemente
+**Wörter**
+$\preceq_{p}$ Präfix
+$\preceq_{s}$ Suffix
+$\cong_{c}$ Konjugiert
+$\preceq_i$ Infix

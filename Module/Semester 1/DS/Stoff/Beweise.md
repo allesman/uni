@@ -1,18 +1,6 @@
 ---
-tags:
-  - Grundlagen
-  - DS
-  - mengen
+tags: ds
 ---
-> [!info] Prädikate
-> parametrisierte Aussagen, die eine Eigenschaft zusprechen
-## Quantoren
-*für alle* ($\forall$), *existiert* ($\exists$), *kein*
-
-> [!hint] Negation
-> $\lnot (\forall x P(x))\equiv\exists x (\lnot P(x))$ "Nicht für alle x gilt P" = "Es gibt ein x für das nicht P gilt"
-> $\lnot (\exists x P(x))\equiv\forall x (\lnot P(x))$ "Nicht ein (kein) x für das P gilt" = "Für alle x gilt nicht P"
-# Beweis
 - aufgebaut aus Beweisschritten
 	- aufgebaut aus *Prämissen -> Konsequenz*
 
@@ -25,7 +13,12 @@ z.B. Syllogismen (Bandersnatch), modus ponens ($(P\to Q)\land P)\to Q$)
 | Kontraposition  | Nimm $\lnot B$ an, beweis damit $\lnot A$ | ![[IMG_20251016_150731310 copy 2.png]] |
 | Widerspruch     | Nimm $\lnot A$ an, finde Widerspruch      | ![[IMG_20251016_150731310.jpg]]        |
 ![[DS-Slides.pdf#page=43&rect=24,38,353,164|DS-Slides, p.43]]
-# Mengen
-- Mehrfachnennung und Ordnung spielt keine Rolle
-- explizite und implizite Definition
-- Menge darf in Definition nur bereits Definierte Mengen verwenden (Russel)
+# Induktionsbeweis
+**IB** (P gilt für $n_0$)
+**IS** ($P(n)\to P(n+1$) beweisen)
+	**IA** (P gilt für beliebiges $n\in \mathbb{N}_0$)
+	$a_{n+1} =^{Def} ... =^{IA}$
+	dann auflösen, sodass P auch für $n+1$ gilt
+$n_0$ muss nicht zwingend 0 sein, man kann auch woanders anfangen
+**Starke Induktion**: Manchmal kann man nicht von $P(n)$ auf $P(n+1)$ schließen
+-> Dann muss man $P$ für alle $x$ mit $n_0\le x \le n$ annehmen, um auf $P(n+1)$ zu schließen
