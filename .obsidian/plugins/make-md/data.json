@@ -39,10 +39,12 @@
   "deleteFileOption": "trash",
   "expandedSpaces": [
     "/",
-    "//Module/Module/Semester 1/Module/Semester 1/ERA/Module/Semester 1/ERA/Slides",
     "//handwritten-notes",
-    "//Module/Module/Semester 1/Module/Semester 1/ERA/Module/Semester 1/ERA/Zentralübungen",
-    "//Module/Module/Semester 1/Module/Semester 1/GDB"
+    "//Module/Module/Semester 1/Module/Semester 1/GDB",
+    "//Module",
+    "//Module/Module/Semester 1",
+    "//Weekly Tasks",
+    "//Weekly Tasks/Weekly Tasks/2025"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
