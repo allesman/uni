@@ -1,16 +1,3 @@
-Datenstruktur Stack (LIFO)
-- wächst (oft) nach unten
-Jedes Programm erhält Adressraum (für genutzte Daten und Programm selbst)
-![[era03-beispiel.pdf#page=12&rect=663,34,844,436|era03-beispiel, p.12|300]]
-Static Data hat z.B. Konstanten wie verwendete Strings
-
-Aufbau Programm/Routine:
-- Prologue
-- Tatsächlicher Stuff
-- Epilogue
-Pr/Ep für Sicherung von Variablen und Reservierung von Platz auf dem Stack (via SP)
-
-# Von-Neumann-Architektur
 1. Struktur des Rechners unabhängig von bearbeitetem Problem
 2. Rechner besteht aus vier Werken:
    Hauptspeicher (RAM)

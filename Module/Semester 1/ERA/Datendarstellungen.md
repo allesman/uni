@@ -1,4 +1,3 @@
-# Datendarstellungen
 - Grundlage: Relais (Stromkreis durch seperaten Strom an/aus öffnen schließen)
 - Transistor (selbe Funktionsweise, aber nur 3 Kontakte also 1 Stromkreis)
 ## -> Binär
@@ -13,8 +12,3 @@
 		- **F**: Nachkommastellen nach 1 (Fraction, Koeffizient, Mantisse, Significand)
 		- **E**: Verschiebung des Kommas (Abzüglich Bias)
 		- ($Mantisse\cdot basis^{Exponent}$)
-# Abstraktionsebenen
-Sprache -> Compiler -> Assembler Code (ISA) -> Binär Code -> Von-Neumann-Schicht -> Mikroarchitektur-Schicht -> Gatter-Schicht -> Bauelemente-Schicht -> Physikalische Schicht
-(gibt noch andere Wege zum Compiler, so Bytecode/JVM oder Interpreter)
-Vorteile: Verschiedene Versionen jeder Ebene jeweils mit anderen Ebenen kompatibel
-Es geht auch immer anders

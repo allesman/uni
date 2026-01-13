@@ -97,3 +97,14 @@ Ausrichtung auf n-Byte-Grenze: jede Adresse mod n = 0
 | kleinere Ziffern auf niedrigerer Adresse | kleinere Ziffern auf höherer Adresse |
 | dominiert, da von Intel verwendet        | auch von bestimmten verwendet        |
 meist Wechselmöglichkeit zwischen den beiden (z.B. in RISC-V)
+Datenstruktur Stack (LIFO)
+- wächst (oft) nach unten
+Jedes Programm erhält Adressraum (für genutzte Daten und Programm selbst)
+![[era03-beispiel.pdf#page=12&rect=663,34,844,436|era03-beispiel, p.12|300]]
+Static Data hat z.B. Konstanten wie verwendete Strings
+
+Aufbau Programm/Routine:
+- Prologue
+- Tatsächlicher Stuff
+- Epilogue
+Pr/Ep für Sicherung von Variablen und Reservierung von Platz auf dem Stack (via SP)
