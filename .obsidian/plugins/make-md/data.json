@@ -40,11 +40,11 @@
   "expandedSpaces": [
     "/",
     "//handwritten-notes",
-    "//Module/Module/Semester 1/Module/Semester 1/GDB",
     "//Module",
     "//Module/Module/Semester 1",
     "//Weekly Tasks",
-    "//Weekly Tasks/Weekly Tasks/2025"
+    "//Weekly Tasks/Weekly Tasks/2025",
+    "//Module/Module/Semester 1/Module/Semester 1/Advisor"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
