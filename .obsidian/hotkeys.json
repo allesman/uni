@@ -54,14 +54,6 @@
       "key": "D"
     }
   ],
-  "omnisearch:show-modal": [
-    {
-      "modifiers": [
-        "Shift"
-      ],
-      "key": "Tab"
-    }
-  ],
   "obsidian-excalidraw-plugin:excalidraw-autocreate-and-embed-on-current": [
     {
       "modifiers": [

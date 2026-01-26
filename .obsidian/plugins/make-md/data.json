@@ -39,9 +39,9 @@
   "deleteFileOption": "trash",
   "expandedSpaces": [
     "/",
-    "//Weekly Tasks",
     "//Module",
-    "//Module/Module/Semester 1"
+    "//Module/Module/Semester 1",
+    "//Module/Module/Semester 1/Module/Semester 1/ERA"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
