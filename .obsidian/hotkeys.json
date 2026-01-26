@@ -54,14 +54,6 @@
       "key": "D"
     }
   ],
-  "omnisearch:show-modal": [
-    {
-      "modifiers": [
-        "Shift"
-      ],
-      "key": "Tab"
-    }
-  ],
   "obsidian-excalidraw-plugin:excalidraw-autocreate-and-embed-on-current": [
     {
       "modifiers": [
@@ -70,5 +62,13 @@
       "key": "E"
     }
   ],
-  "templater-obsidian:insert-templater": []
+  "templater-obsidian:insert-templater": [],
+  "omnisearch:show-modal": [
+    {
+      "modifiers": [
+        "Shift"
+      ],
+      "key": " "
+    }
+  ]
 }
