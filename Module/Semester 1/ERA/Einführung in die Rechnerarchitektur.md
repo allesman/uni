@@ -1,5 +1,6 @@
 ---
 tags: Orga
+fertig: false
 ---
 #era
 Tutorübung und Zentralübung

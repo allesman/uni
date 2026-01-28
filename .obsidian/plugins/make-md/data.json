@@ -41,10 +41,10 @@
     "/",
     "//handwritten-notes",
     "//Module",
-    "//Module/Module/Semester 1",
-    "//Weekly Tasks",
     "//Weekly Tasks/Weekly Tasks/2025",
-    "//Module/Module/Semester 1/Module/Semester 1/PGDP"
+    "//Module/Module/Semester 1",
+    "//Module/Module/Semester 1/Module/Semester 1/PGDP",
+    "//Module/Module/Semester 1/Module/Semester 1/Advisor"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",

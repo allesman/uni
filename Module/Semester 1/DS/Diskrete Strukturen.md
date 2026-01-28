@@ -1,5 +1,6 @@
 ---
 tags: ds, orga
+fertig: false
 ---
 Moodle hat aktuellere Version des Stoffs
 
