@@ -24,17 +24,15 @@
             }
           },
           {
-            "id": "0615236da8b25fe2",
+            "id": "47ec9a395db03078",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "release-notes",
               "state": {
-                "aFile": "conflict-files-obsidian-git.md",
-                "bFile": "conflict-files-obsidian-git.md",
-                "aRef": ""
+                "currentVersion": "1.11.5"
               },
-              "icon": "diff",
-              "title": "Diff: conflict-files-obsidian-git"
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.11.5"
             }
           }
         ],
@@ -95,10 +93,13 @@
             "id": "3008f8e317e38d24",
             "type": "leaf",
             "state": {
-              "type": "mk-path-view",
-              "state": {},
-              "icon": "layout-grid",
-              "title": "Navigator"
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           }
         ],
@@ -220,7 +221,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 268.5
+    "width": 268.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -243,11 +245,11 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "0615236da8b25fe2",
+  "active": "47ec9a395db03078",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
     "Dashboard.md",
     "Module/Semester 1/PGDP/Pre ÜPA 3.md",
+    "conflict-files-obsidian-git.md",
     "Module/Semester 1/PGDP/Pre ÜPA 1.md",
     "Module/Semester 1/DS/ds+trainer.pdf",
     "Module/Semester 1/DS/Logik.md",
