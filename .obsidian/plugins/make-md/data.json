@@ -38,7 +38,10 @@
   "vaultSelector": true,
   "deleteFileOption": "trash",
   "expandedSpaces": [
-    "/"
+    "/",
+    "//Module",
+    "//Module/Module/Semester 1",
+    "//Module/Module/Semester 1/Module/Semester 1/EIDI"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",

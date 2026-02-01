@@ -5,20 +5,61 @@ klausur: 2026-02-09T00:00:00.000Z
 moodle: "[[https://eidi.tum.sexy]]"
 semester: 1
 ---
-![[Altkausuren]]
+[[Altkausuren]]
 # Einführung, Teil 1-2
 ts is free vro
 - Geheimnisprinzip -> Abstraktionsebene -> erleichtert Wartung
 - Bei Methodenaufruf werden gegebene Parameter für Ausführung der Methode kopiert
-- [[Abstract Keyword]]
-- [[Array]]
-## Call-by-Value (Referenzen)#
-Java übergibt **Kopien der Referenz**. `arr[0]=1` ändert das **Original-Objekt im Heap**. `arr = new int[1]` ändert nur die **lokale Kopie** der Referenz und hat außen keine Auswirkung.
+
+## Primitivity
+
+|                                 | Primitive                                                       | Non-Primitive                                                                                                |
+| ------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Examples                        | `int`, `boolean`                                                | `String`, `Array`, any custom class                                                                          |
+| What does the variable contain? | the value itself                                                | a **reference** to the address where the data is stored                                                      |
+| What if I supply it to method?  | method receives copy of value (can't modify the caller's value) | method receives copy of reference (can modify the data, [[#Call-by-Value (Referenzen)\|⚠️ but not always!]]) |
+
+## Decorators
+### Security Keywords
+
+| *decorator*    | *function*                                                         |
+| -------------- | ------------------------------------------------------------------ |
+| `public`       | accessible from everywhere                                         |
+| `private`      | accessible from within class                                       |
+| `protected`    | accessible from within class, subclasses and [[#Package\|package]] |
+| \[no keyword\] | like `protected` but no access from outside [[#Package\|package]]  ||
+### Other Keywords
+| *decorator* | *function*                                                                                                                                                                                                                                             |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `abstract`  | - methods declared without implementation<br>- classes that can never have objects (see also: [[#Abstraktion/ Interface s\|Interfaces]])<br>- all classes that contain abstract methods **must** be abstract                                           |
+| `final`     | - for variables -> constant values (can't be modified during runtime)<br>  - for [[#Primitivity\|non-primitives]], only the reference is `final`, not the data it points at<br>- for classes -> cannot be **[[#Abstraktion/ Interface s\|inherited]]** ||
+### Package
+normalerweise file, aber gibt keyword für mehr
+## Call-by-Value (Referenzen)
+Bei [[#Primitivity|Non-Primitive]] Methodenargumenten übergibt Java **Kopien der Referenz**. Modifizierung des Objekts (z.B. `arr[0]=1`) ändert das **Original-Objekt im Heap**. Reassignment der Variable auf (neues) Objekt (z.B. `arr = new int[1]`) ändert nur die **lokale Kopie** der Referenz und hat außen keine Auswirkung.
 # Teil 3: Testen
-## Testklassen
-assert
-nicht Objekte mit \=\= vergleichen
-base case, edge cases
+## Die Idee
+Die Idee (bei Unit-Tests, eigentlich gibts auch noch andere wie z.B. Implementation Tests aber nicht Stoff) ist folgende:
+Wir zerhacken unseren Code in die minimalen Bestandteile, idealerweise Funktionen ohne Side-Effects (nur Input und Output) und schreiben für jeden Tests, bei denen wir Inputs providen und einen bestimmten Output dafür erwarten. So wissen wir direkt, wo genau der Fehler liegt. Wir schreiben sowohl Tests für das **Base-Case** (erwartbare Inputs), als auch für **Edge Cases** (weniger erwartbare Inputs). Eine gute Weise die Test-Cases zu strukturieren sind sogenannte Testklassen, bei denen man mit einer Reihe von Fallunterscheidungen alle möglichen Kombinationen und so alle Situationen abdeckt.
+
+> [!info] Welcome to Reality
+> Meistens geht das mit dem Zerhacken nicht so schön, weil viele Methoden in der echten Welt inheränt Side-Effects haben (außer man ist auf Hascell-FP-Trip). Ich muss z.B. auf Arbeit oft Unit Tests schreiben für Methoden die auf ne DB zugreifen. Oder die Methode ist abgesehen von den Parametern noch von anderem Stuff abhängig, wie z.B. Datum. Hier braucht man dann Mocking, wodurch man versucht, möglichst nur die Methode im Test zu testen und alles andere zu imitieren und damit abzuschotten.
+
+## Syntax
+```
+@Test                                 // Test annotation
+public void testSortLengths(){
+	// Tests for Bit-Flip-Protection
+    int a = 6;
+    int b = 7;
+    int c = a+b;
+    assertEquals(c,13);               // assert-Keyword (there's a bunch)
+}
+```
+
+> [!danger] Niemals [[#Primitivity|Non-Primitives]] mit `==` oder `assertEquals` vergleichen!
+> Dann vergleichst du nur deren Referenzen du ==Dulli==. Mach einfach `assert(true, obj1.equals(obj2))` du ==Dulli==.
+
 # Teil 4: Kontrollstrukturen  
 broooo free
 # Teil 5: Felder (arrays)
@@ -34,21 +75,38 @@ skalarprodukt(a,b):
 		output+= i*j
 ```
 # Teil 6: Einige Abstrakte Datentypen
-- [[Bubble Sort]]
-- Radix Sort
 ## Allgemein
 ### Implementierung
 #### Komposition statt Vererbung!
 Wird eine Datenstruktur A durch Nutzung einer anderen Struktur B implementiert, ist **Vererbung (`A extends B`) suboptimal**, da B nicht **gekapselt** bleibt (Bsp: `Stack extends ArrayList` erbt `add(0,x)`, was **LIFO bricht**). Durch **Komposition** (B als Attribut) bleibt man **flexibel**, falls B später gegen eine andere Struktur ausgetauscht werden soll.
 #### Generische Datentypen
 Die generische Form **`A<B>`** macht primär dann Sinn, wenn B den **Typ der in A gespeicherten Elemente** definiert (z.B. eine Liste von B-Objekten).
-## Liste
-### Queue (FIFO)
-#### RingBuffer (FIFO)
-### Stack (LIFO)
+## Basic Strukturen
+[[Collections]]
+### List
+[[Linked List]]
+### Set
+### Map
+### [[Array]]
+### [[Hash Table]]
+
+## Advanced Strukturen (mit [[#Basic Strukturen|obigen]] implementierbar)
+### [[Queue]] (FIFO)
+#### [[Buffers]]
+##### RingBuffer
+### [[Stack]] (LIFO)
+
+## Sorting Algs
+### [[Bubble Sort]]
+#### [[Radix Sort]]
+#### [[Insertion Sort]]
+#### [[Merge Sort]]
+#### [[Selection Sort]]
 # Teil 7: Objektorientierung 
 ## Vererbung
 ## Polymorphie!
+[[Polymorphie.pdf]]
+[[Polymorphism]]
 ### Statischer vs. Dynamischer Typ
 Der **statische Typ** bestimmt die sichtbaren **[[#Methodensignatur|Methodensignaturen]]** für den Compiler; der **dynamische Typ** bestimmt die ausgeführte **Implementierung** der JVM.
 ### Methodensignatur
@@ -67,21 +125,22 @@ newStaticType object = (newStaticType) object;
 Erstellt ein neues Objekt mit dem alten **dynamischen** und dem in Klammern angegebenen neuen **statischen** Typ.
 Ein **Upcast** (von extender auf extendee) schränkt die **Sichtbarkeit** auf Methoden ein, die im **statischen Zieltyp** deklariert sind.
 
-## Abstraktion/Interfaces
+## Abstraktion/[[Interface]]s
 ![[Pasted image 20260131162811.png|500]]
 ## Enums
 # [[#Teil 8: Rekursion]]
 rekursion schmekursion sag ich immer
 - [[Binary Tree]]
 - [[Binary Search]]
+- [[Recursion]]
 ## Endrekursion (Tail-Call)
 # Teil 9: Fortgeschrittene Programmierkonstrukte  
-## Iteration
+## [[Iteration]]
 - `Iterable`implementieren
   -> `iterator()` bereitstellen
 - `iterator()` returnt ein Objekt einer Klasse, die `Iterator` implementiert
   -> muss Methoden `hasNext()` & `next()` bereitstellen
-## Lambda Expressions
+## [[Lambda Expressions]]
 
 | aus:                                           | kann man machen:                                     | Erklärung                                 |
 | ---------------------------------------------- | ---------------------------------------------------- | ----------------------------------------- |
@@ -99,7 +158,7 @@ rekursion schmekursion sag ich immer
 | **`Function<T, R>`** | `R apply(T a)`          | Nimmt `T` an und gibt ein Resultat `R` zurück.                                                           |
 | **`Predicate<T>`**   | `boolean test(T a)`     | Prüft eine Bedingung und gibt `true` oder `false` zurück.                                                |
 | **`Comparator<T>`**  | `int compare(T a, T b)` | Vergleicht zwei Objekte:<br>`a > b` -> `return > 0`<br>`a == b` -> `return 0`<br>`a < b` -> `return < 0` |
-## Streams
+## [[Streams]]
 ### Erstellen
 - `Stream.of(n,m,...)` aus festen Werten
 - `Stream.generate(insertSupplierName)` aus Supplier (infinite amount of elements!)
@@ -145,9 +204,12 @@ Streams sind **lazy** und verarbeiten Daten **"on-the-fly"**, was sie **speicher
 		- oder mit `Files.write()` Iterables und so reinschreiben
 		- oder mit `Files.readAllLines()` Lines als Stream lesen
 	- oder Path von Directory, dann gibts `Files.walk()`, was n gefüllten Stream ausgibt
+[[Java File System]]
+## [[Java Class - Socket]]
 
-# Teil 10: Nebenläufigkeit  
-## Threads
+# Teil 10: Nebenläufigkeit
+[[Producer Consumer Problem]]
+## [[Java Class - Thread|Threads]]
 - `Thread` vs `Runnable`
 	- `Runnable`
 		- etwas, das wir machen
@@ -160,13 +222,13 @@ Streams sind **lazy** und verarbeiten Daten **"on-the-fly"**, was sie **speicher
 	- Handling für `InterruptedException` (`try/catch` oder mit `throws` nach oben geben)
 	- (bei auf Objekt) *Ownership* des Objekts via `synchronized(obj)`
 - `join()` aufrufen -> warten bis thread fertig ist.
-- `synchronized` als
+- `synchronized` als [[Synchronized Keyword]]
 	- wrapper, dann "auf" einem Objekt,
 		- direkt der ressource, wenn sie ein objekt ist, sonst
 		- einem boilerplate objekt
 	- methodendings, äquivalent zu wrapper für ganze methode auf `this`
 - `volatile` ist `synchronized` light (Race Conditions passieren noch, aber kein Caching sondern es wird direkt mit RAM geschrieben und gelesen)
-- Race Conditions -> Monitor -> Deadlock -> Semaphor, Lock, etc.
+- [[Race Conditions]] -> Monitor -> [[Deadlock]] -> Semaphor, Lock, etc.
 	- `Semamphore(n)` mit `n` als Anzahl Permits
 		- `acquire()` nimmt 1 Permit, wartet falls 0 ist
 		- `release()` gibt 1 Permit zurück
@@ -175,8 +237,6 @@ Streams sind **lazy** und verarbeiten Daten **"on-the-fly"**, was sie **speicher
 my tip gui
 
 
-bis Bubble Sort von Isaac
-
-
-
-[[Altklausur 2017]]
+## TODOs
+TODO auto export
+TODO [[#Package]]

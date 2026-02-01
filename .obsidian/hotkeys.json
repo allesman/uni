@@ -70,5 +70,15 @@
       ],
       "key": " "
     }
+  ],
+  "wrangle-todos:todo-wrangler": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod",
+        "Shift"
+      ],
+      "key": "T"
+    }
   ]
 }

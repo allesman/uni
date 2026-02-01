@@ -91,7 +91,7 @@ static int factTR(int n, int a)
 
 ---
 ## Related Topics
-- [[]]
+- [[Recursion]]
 
 
 [^1]: Backtracking can include intermediary recursive calls that would fall into the logic step of a recursion function rather than the end. 

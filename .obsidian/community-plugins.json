@@ -14,5 +14,9 @@
   "obsidian-style-settings",
   "quickadd",
   "pdf-plus",
-  "obsidian-excalidraw-plugin"
+  "obsidian-excalidraw-plugin",
+  "wrangle-todos",
+  "webpage-html-export",
+  "obsidian-enhancing-export",
+  "obsidian-pandoc"
 ]
