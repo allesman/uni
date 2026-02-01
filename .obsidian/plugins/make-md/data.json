@@ -38,10 +38,7 @@
   "vaultSelector": true,
   "deleteFileOption": "trash",
   "expandedSpaces": [
-    "/",
-    "//Module",
-    "//Module/Module/Semester 1",
-    "//Module/Module/Semester 1/Module/Semester 1/PGDP"
+    "/"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
@@ -53,6 +50,8 @@
     "_assets",
     "_blocks"
   ],
+  "newFileLocation": "root",
+  "newFileFolderPath": "",
   "inlineBacklinks": false,
   "inlineContext": true,
   "inlineBacklinksExpanded": false,
@@ -69,13 +68,13 @@
   "fmKeySticker": "sticker",
   "openSpacesOnLaunch": true,
   "indexSVG": false,
-  "readableLineWidth": false,
+  "readableLineWidth": true,
   "autoAddContextsToSubtags": true,
-  "releaseNotesPrompt": 0.999,
+  "releaseNotesPrompt": 0.8,
   "enableDefaultSpaces": true,
   "showSpacePinIcon": true,
   "experimental": false,
-  "systemName": "uni vault",
+  "systemName": "Vault",
   "defaultSpaceTemplate": "",
   "selectedKit": "default",
   "actionMaxSteps": 100,
@@ -102,7 +101,7 @@
     "emojiTriggerChar": ":",
     "flowState": false
   },
-  "firstLaunch": true,
+  "firstLaunch": false,
   "notesPreview": false,
   "editStickerInSidebar": true,
   "overrideNativeMenu": false,

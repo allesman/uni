@@ -1,6 +1,6 @@
 {
   "command_timeout": 5,
-  "templates_folder": "",
+  "templates_folder": "Templates",
   "templates_pairs": [
     [
       "",
@@ -17,6 +17,14 @@
     {
       "folder": "Weekly Tasks",
       "template": "Weekly Tasks/Weekly Template.md"
+    },
+    {
+      "folder": "Module/Semester 1/EIDI/altklausuren",
+      "template": "Templates/Altklausur Template.md"
+    },
+    {
+      "folder": "Module",
+      "template": "Templates/Template for Courses.md"
     }
   ],
   "enable_file_templates": false,

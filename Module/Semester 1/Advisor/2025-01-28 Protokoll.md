@@ -1,0 +1,30 @@
+- Einführung
+	- Kompliment
+		- Türe aufhalten
+		- Essen
+		- CS
+	- Hobby
+		- Tennis
+		- Schlagzeug
+		- Free-Diving
+- Fusion
+	- was?
+	- pro
+	- contra
+- Ideen für nächstes Jahr
+	- Battle
+- PLA (ez clap)
+	- Stau auflösen
+- Buzzdazquiz
+	- haha quasi nur b und c
+- Tipps (Bild)
+- Ende
+	- Anwendung gelerntes
+		- Teamarbeit
+		- Kommunikation
+		- Zieldefinition
+		- In Conundrum stecken
+	- was genossen?
+		- die Runde
+		- Diskussionen
+- wie gehts weiter?
