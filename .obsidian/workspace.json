@@ -24,145 +24,30 @@
             }
           },
           {
-            "id": "47ec9a395db03078",
+            "id": "9d753e1385ac0b8a",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "mk-uri-view",
               "state": {
-                "currentVersion": "1.11.5"
+                "path": "https://www.make.md/static/latest.md"
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.11.5"
+              "icon": "lucide-file",
+              "title": "https://www.make.md/static/latest.md"
             }
           },
           {
-            "id": "1aa4cf8396f1b36d",
+            "id": "5234bf14119b872d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "mk-uri-view",
               "state": {
-                "file": "Module/Semester 1/DS/Diskrete Strukturen.md",
-                "mode": "preview",
-                "source": false
+                "path": "https://www.make.md/static/GetStarted.md"
               },
               "icon": "lucide-file",
-              "title": "Diskrete Strukturen"
-            }
-          },
-          {
-            "id": "0f7f1b5576143ede",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Module/Semester 1/EIDI/Java Class - Socket.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Java Class - Socket"
-            }
-          },
-          {
-            "id": "40e33c3f5276ec44",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Module/Semester 1/EIDI/Merge Sort.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Merge Sort"
-            }
-          },
-          {
-            "id": "24fd8095baf7d13f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Module/Semester 1/EIDI/Linked List.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Linked List"
-            }
-          },
-          {
-            "id": "5012a83cadf92cfc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Module/Semester 1/EIDI/Einführung in die Informatik.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Einführung in die Informatik"
-            }
-          },
-          {
-            "id": "89b752e7ba3e3521",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Module/Semester 1/EIDI/EIDI.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "EIDI"
-            }
-          },
-          {
-            "id": "c75db1a45240330e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Module/Semester 1/ERA/ERA.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ERA"
-            }
-          },
-          {
-            "id": "48408ec0a9f2af0d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Einführung in die Rechnerarchitektur"
-            }
-          },
-          {
-            "id": "760c6433629d1f31",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "conflict-files-obsidian-git"
+              "title": "https://www.make.md/static/GetStarted.md"
             }
           }
-        ],
-        "currentTab": 10
+        ]
       }
     ],
     "direction": "vertical"
@@ -216,19 +101,17 @@
             }
           },
           {
-            "id": "3008f8e317e38d24",
+            "id": "edeb14273103c03d",
             "type": "leaf",
             "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "Files"
+              "type": "mk-path-view",
+              "state": {},
+              "icon": "layout-grid",
+              "title": "Navigator"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -369,7 +252,7 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "a8895f7d457f24a7",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
     "conflict-files-obsidian-git.md",
     "Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md",
