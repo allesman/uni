@@ -48,17 +48,17 @@
             }
           },
           {
-            "id": "6f26332732910785",
+            "id": "17dda8f755bf5a2c",
             "type": "leaf",
             "state": {
               "type": "split-diff-view",
               "state": {
-                "aFile": ".trash/test.md",
-                "bFile": ".trash/test.md",
+                "aFile": ".trash/Test.md",
+                "bFile": ".trash/Test.md",
                 "aRef": ""
               },
               "icon": "diff",
-              "title": "Diff: test"
+              "title": "Diff: Test"
             }
           }
         ],
@@ -267,8 +267,9 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "52be1d4835667d7f",
+  "active": "17dda8f755bf5a2c",
   "lastOpenFiles": [
+    "Module/Semester 1/DS/Diskrete Strukturen.md",
     "Dashboard.md",
     "conflict-files-obsidian-git.md",
     "Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md",
@@ -281,7 +282,6 @@
     "Module/Semester 1/EIDI/Linked List.md",
     "Module/Semester 1/EIDI/Merge Sort.md",
     "Module/Semester 1/EIDI/Java Class - Socket.md",
-    "Module/Semester 1/DS/Diskrete Strukturen.md",
     "Module/Semester 1/DS/Stoff/Funktionen.md",
     "Module/Semester 1/DS/Stoff/Kardinalität.md",
     "Module/Semester 1/DS/Stoff/Graphen.md",
