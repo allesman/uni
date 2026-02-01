@@ -46,8 +46,23 @@
               "icon": "lucide-file",
               "title": "https://www.make.md/static/GetStarted.md"
             }
+          },
+          {
+            "id": "6f26332732910785",
+            "type": "leaf",
+            "state": {
+              "type": "split-diff-view",
+              "state": {
+                "aFile": ".trash/test.md",
+                "bFile": ".trash/test.md",
+                "aRef": ""
+              },
+              "icon": "diff",
+              "title": "Diff: test"
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -252,8 +267,9 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "52be1d4835667d7f",
   "lastOpenFiles": [
+    "Dashboard.md",
     "conflict-files-obsidian-git.md",
     "Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md",
     "Module/Semester 1/ERA/Datendarstellungen.md",
@@ -279,7 +295,6 @@
     "Module/Semester 1/EIDI/Race Conditions.md",
     "Module/Semester 1/EIDI/Queue.md",
     "Module/Semester 1/EIDI/Producer Consumer Problem.md",
-    "Module/Semester 1/EIDI/Polymorphism.md",
     "Module/Semester 1/DS/ds+trainer.pdf",
     "Weekly Tasks/2025",
     "Module/Semester 1/EIDI/Polymorphie.pdf",
