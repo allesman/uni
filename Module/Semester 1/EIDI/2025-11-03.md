@@ -1,4 +1,0 @@
-- Funktion $^1\to^n$ Algorithmus $^1\to^n$ Programm
-- Geheimnisprinzip -> Abstraktionsebene -> erleichtert Wartung
-- Signatur einer Methode: Parametertypen, Name (nicht Parameternamen)
-- Bei Methodenaufruf werden gegebene Parameter für Ausführung der Methode kopiert

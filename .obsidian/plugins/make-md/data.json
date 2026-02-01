@@ -40,11 +40,16 @@
   "expandedSpaces": [
     "/",
     "//handwritten-notes",
-    "//Module",
     "//Weekly Tasks/Weekly Tasks/2025",
     "//Module/Module/Semester 1",
-    "//Module/Module/Semester 1/Module/Semester 1/PGDP",
-    "//Module/Module/Semester 1/Module/Semester 1/Advisor"
+    "//Module/Module/Semester 1/Module/Semester 1/DS/Module/Semester 1/DS/Übungen",
+    "//Module/Module/Semester 1/Module/Semester 1/ERA/Module/Semester 1/ERA/Übungen",
+    "//Module/Module/Semester 1/Module/Semester 1/ERA/Module/Semester 1/ERA/Zentralübungen",
+    "//Module/Module/Semester 1/Module/Semester 1/ERA/Module/Semester 1/ERA/Slides",
+    "//Module/Module/Semester 1/Module/Semester 1/Advisor",
+    "//Module/Module/Semester 1/Module/Semester 1/DS",
+    "//Module/Module/Semester 1/Module/Semester 1/EIDI",
+    "//Tags"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",

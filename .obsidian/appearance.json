@@ -1,6 +1,9 @@
 {
-  "cssTheme": "Border",
+  "cssTheme": "Dracula for Obsidian",
   "nativeMenus": false,
-  "accentColor": "#675cad",
-  "theme": "system"
+  "accentColor": "",
+  "theme": "obsidian",
+  "textFontFamily": "",
+  "interfaceFontFamily": "Adwaita Mono",
+  "monospaceFontFamily": "Adwaita Mono"
 }
