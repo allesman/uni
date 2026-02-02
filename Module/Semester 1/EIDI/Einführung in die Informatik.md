@@ -8,7 +8,7 @@ semester: 1
 [[Altkausuren]]
 # Einführung, Teil 1-2
 ## Kapselung
-Abstraktionsebene zwischen Dingen außerhalb und innerhalb von Klasse (z.B. Getter und Setter) erleichtert Wartung/[[#Komposition statt Vererbung!|Modifikationen am gekapselten Stuff]].
+Abstraktionsebene zwischen Dingen außerhalb und innerhalb von Klasse (z.B. Getter und Setter) erleichtert Wartung und [[#Komposition statt Vererbung!|Modifikationen am gekapselten Stuff]].
 ## Primitivity
 
 |                       | Primitive                                                            | Non-Primitive                                                                                                                            |

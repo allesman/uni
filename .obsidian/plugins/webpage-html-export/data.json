@@ -70,7 +70,7 @@
     },
     "fileNavigationOptions": {
       "featureId": "file-navigation",
-      "enabled": true,
+      "enabled": false,
       "unavailable": false,
       "alwaysEnabled": false,
       "hideSettingsButton": false,
@@ -115,7 +115,7 @@
     },
     "themeToggleOptions": {
       "featureId": "theme-toggle",
-      "enabled": false,
+      "enabled": true,
       "unavailable": false,
       "alwaysEnabled": false,
       "hideSettingsButton": false,
@@ -127,7 +127,7 @@
     },
     "graphViewOptions": {
       "featureId": "graph-view",
-      "enabled": true,
+      "enabled": false,
       "unavailable": false,
       "alwaysEnabled": false,
       "hideSettingsButton": false,
