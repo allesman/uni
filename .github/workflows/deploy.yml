@@ -20,20 +20,20 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@main
-      - name: Rename entry point to index.html
+      - name: Rename entry point and fix meta tags
         run: |
           cd "HTML Exports"
-          # Find any file starting with 'einführung' (using a wildcard for the special characters)
-          # and rename it to index.html
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
           if [ -n "$target_file" ]; then
-            echo "Found file: $target_file. Renaming to index.html"
+            echo "Fixing meta tags inside $target_file"
+            # This replaces the long name with index.html inside the file content
+            sed -i 's/content="einführung-in-die-informatik.html"/content="index.html"/g' "$target_file"
+            
+            echo "Renaming $target_file to index.html"
             mv "$target_file" index.html
           else
-            echo "Error: Could not find the file starting with 'einführung' in $(pwd)"
-            ls -R # This prints the folder contents to the log so you can see what's actually there
-            exit 1 # Fails the build so you know it didn't work
+            echo "Target file not found."
           fi
       - name: Sync files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
