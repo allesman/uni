@@ -16,28 +16,34 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Prepare Files and Fix Navbar
+      - name: Prepare Files and Hide Extensions
         run: |
           cd "HTML Exports"
           # 1. Identify the content file
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
           if [ -n "$target_file" ]; then
-            echo "Patching metadata in $target_file for a prettier navbar"
+            echo "Patching metadata and hiding extensions..."
             
-            # 2. Update the pathname inside the main content file
-            # This makes the navbar/UI show 'eidi' instead of the long name
-            sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content="eidi.html"/g' "$target_file"
+            # 2. Update the internal pathname to 'eidi' (without .html)
+            sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content="eidi"/g' "$target_file"
             
-            echo "Creating redirect index for: $target_file"
-            
-            # 3. Generate the redirect index
+            # 3. Create .htaccess to hide the .html extension on the server
+            # This allows the browser to load 'eidi' instead of 'eidi.html'
+            cat <<EOF > .htaccess
+          RewriteEngine On
+          RewriteCond %{REQUEST_FILENAME} !-f
+          RewriteCond %{REQUEST_FILENAME}.html -f
+          RewriteRule ^(.*)$ \$1.html [L]
+          EOF
+
+            # 4. Generate the redirect index pointing to 'eidi' (no extension)
             cat <<EOF > index.html
           <!DOCTYPE html>
           <html>
             <head>
               <meta charset="UTF-8">
-              <meta http-equiv="refresh" content="0; url='$target_file'" />
+              <meta http-equiv="refresh" content="0; url='eidi'" />
               <title>Einführung in die Informatik</title>
             </head>
             <body>
@@ -45,6 +51,9 @@ jobs:
             </body>
           </html>
           EOF
+          
+            # 5. Rename the physical file to match our new clean name
+            mv "$target_file" eidi.html
           else
             echo "Error: No file found."
             exit 1
