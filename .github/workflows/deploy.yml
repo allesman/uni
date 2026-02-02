@@ -16,25 +16,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      name: Deploy Obsidian Export
-
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'HTML Exports/**'
-  workflow_dispatch:
-
-jobs:
-  deploy:
-    name: Deploy 🚀
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Prepare Root Index
+      - name: Prepare Files for Root URL
         run: |
           cd "HTML Exports"
           # 1. Find the long file
@@ -44,12 +26,16 @@ jobs:
             echo "Creating root index from $target_file..."
             
             # 2. Copy the content directly to index.html
+            # This makes the server load it at /eidi/ automatically
             cp "$target_file" index.html
             
-            # 3. Patch metadata so the JS thinks it's already 'home'
-            # We use ./ to tell the UI it is at the directory root
+            # 3. Patch the metadata INSIDE index.html
+            # We set the pathname to an empty string or './' so the 
+            # navbar and JS think they are already 'home'
             sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content=".\/"/g' index.html
             sed -i 's/property="og:url" content="[^"]*"/property="og:url" content=".\/"/g' index.html
+            
+            echo "Success: Site will now load at the directory root."
           else
             echo "Error: No file found."
             exit 1
@@ -64,24 +50,4 @@ jobs:
           local-dir: ./HTML Exports/
           server-dir: ./eidi/
           # This cleans up the old long filenames from the server
-          delete-missing: true
-
-      - name: Sync to Hosting
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: v132927.goserver.host
-          username: allesman
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./HTML Exports/
-          server-dir: ./eidi/
-          delete-missing: true
-          
-      - name: Sync files to hosting
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: v132927.goserver.host
-          username: allesman
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./HTML Exports/
-          server-dir: ./eidi/
           delete-missing: true
