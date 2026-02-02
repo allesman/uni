@@ -16,42 +16,32 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         
-      - name: Prepare Files and Hide Extensions
+      - name: Prepare Clean URL Masking
         run: |
           cd "HTML Exports"
           # 1. Identify the content file
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
           if [ -n "$target_file" ]; then
-            echo "Patching metadata and creating redirect..."
-            
-            # 2. Update the internal pathname to 'eidi'
-            # Note: Used double quotes for sed so it handles the variable properly
-            sed -i "s/meta name=\"pathname\" content=\"[^\"]*\"/meta name=\"pathname\" content=\"eidi\"/g" "$target_file"
+            echo "Creating URL mask for $target_file"
 
-            # 3. Create .htaccess to hide the .html extension
-            # EOF must be flush against the left margin
-          cat <<EOF > .htaccess
+            # 2. Create .htaccess to map the root /eidi/ to the long file
+            # This is server-side; the browser URL won't change to the long name
+            cat <<EOF > .htaccess
           RewriteEngine On
+          # If someone visits the folder root, show the long content file
+          RewriteRule ^$ "$target_file" [L]
+          
+          # Standard extension hider for other notes
           RewriteCond %{REQUEST_FILENAME} !-f
           RewriteCond %{REQUEST_FILENAME}.html -f
           RewriteRule ^(.*)$ \$1.html [L]
           EOF
 
-            # 4. Generate the redirect index
-            # Fixed the url='' syntax to be clean for the browser
-          cat <<EOF > index.html
-          <!DOCTYPE html>
-          <html>
-            <head>
-              <meta charset="UTF-8">
-              <meta http-equiv="refresh" content="0; url='$target_file'" />
-              <title>Einführung in die Informatik</title>
-            </head>
-            <body>
-              <p>Redirecting...</p>
-            </body>
-          </html>
+            # 3. Create a simple index.html as a fallback (optional)
+            cat <<EOF > index.html
+          <meta name="pathname" content="eidi">
+          <script>window.location.href='./';</script>
           EOF
           else
             echo "Error: No file found"
