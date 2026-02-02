@@ -51,11 +51,6 @@ jobs:
             </body>
           </html>
           EOF
-          
-            # 5. Rename the physical file to match our new clean name
-            mv "$target_file" eidi.html
-          else
-            echo "Error: No file found."
             exit 1
           fi
           
