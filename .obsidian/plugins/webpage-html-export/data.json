@@ -213,7 +213,7 @@
     "flattenExportPaths": false,
     "fixLinks": true,
     "faviconPath": "",
-    "siteName": "uni vault",
+    "siteName": "eidi",
     "iconEmojiStyle": "Native",
     "exportRoot": "Module/Semester 1/EIDI",
     "includePluginCss": [],
@@ -221,7 +221,7 @@
     "autoDisposeWebpages": true
   },
   "logLevel": "warning",
-  "titleProperty": "title",
+  "titleProperty": "eidi",
   "rssDateProperty": "date",
   "onlyExportModified": true,
   "deleteOldFiles": true,
