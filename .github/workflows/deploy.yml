@@ -20,20 +20,25 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@main
-      - name: Rename entry point and fix meta tags
+      - name: Global Fix and Rename
         run: |
           cd "HTML Exports"
+          # 1. Identify the file (handling the 'ü' via wildcard)
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
           if [ -n "$target_file" ]; then
-            echo "Fixing meta tags inside $target_file"
-            # This replaces the long name with index.html inside the file content
-            sed -i 's/content="einführung-in-die-informatik.html"/content="index.html"/g' "$target_file"
+            echo "Processing $target_file..."
             
-            echo "Renaming $target_file to index.html"
+            # 2. Replace the long filename with 'index.html' everywhere inside the file
+            # This fixes meta tags, og:url, and internal navigation links
+            sed -i 's/einführung-in-die-informatik.html/index.html/g' "$target_file"
+            
+            # 3. Finally, rename the physical file
+            echo "Renaming to index.html"
             mv "$target_file" index.html
           else
-            echo "Target file not found."
+            echo "Error: Target file not found."
+            exit 1
           fi
       - name: Sync files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
