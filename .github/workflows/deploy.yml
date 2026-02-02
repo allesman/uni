@@ -16,50 +16,30 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Identify and Patch Content File
+      - name: Identify Content File
         run: |
-          # 1. Find the long filename
+          # Finds the long 'einführung...' file and saves path to environment
           TARGET_FILE=$(ls "HTML Exports"/einf*hrung*.html 2>/dev/null | head -n 1)
-          
           if [ -z "$TARGET_FILE" ]; then
             echo "Error: No export file found."
             exit 1
           fi
-          
-          # 2. Patch the metadata so the UI navbar thinks the path is just 'eidi'
-          # We remove the .html from the pathname content
-          sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content="eidi"/g' "$TARGET_FILE"
-          
-          # 3. Rename the physical file to eidi.html
-          mv "$TARGET_FILE" "HTML Exports/eidi.html"
-          echo "Renamed and patched file to eidi.html"
+          echo "CONTENT_FILE=$TARGET_FILE" >> $GITHUB_ENV
 
-      - name: Create .htaccess and Redirect
+      - name: Create Root index.html
         run: |
-          cd "HTML Exports"
-          
-          # 1. Create .htaccess to hide the .html extension from the URL bar
-          cat <<EOF > .htaccess
-          RewriteEngine On
-          RewriteCond %{REQUEST_FILENAME} !-f
-          RewriteCond %{REQUEST_FILENAME}.html -f
-          RewriteRule ^(.*)$ \$1.html [L]
-          EOF
+          # Rename the content file to index.html so it loads at the directory root
+          mv "$CONTENT_FILE" "HTML Exports/index.html"
+          echo "Moved $CONTENT_FILE to index.html"
 
-          # 2. Create the index redirect pointing to 'eidi' (no extension)
-          cat <<EOF > index.html
-          <!DOCTYPE html>
-          <html>
-            <head>
-              <meta charset="UTF-8">
-              <meta http-equiv="refresh" content="0; url='eidi'" />
-              <title>Redirecting...</title>
-            </head>
-            <body>
-              <p>Redirecting to <a href="eidi">Informatik</a></p>
-            </body>
-          </html>
-          EOF
+      - name: Patch Metadata for Pretty Navbar
+        run: |
+          # Set pathname to './' so the UI thinks it is at the root /eidi/
+          sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content=".\/"/g' "HTML Exports/index.html"
+          # Set OG URL to './' for consistent social sharing
+          sed -i 's/property="og:url" content="[^"]*"/property="og:url" content=".\/"/g' "HTML Exports/index.html"
+          echo "Metadata patched for root display."
+          
       - name: Sync files to hosting
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
