@@ -16,40 +16,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Patch Identity and Base
+      - name: Rename and Patch Logic
         run: |
           cd "HTML Exports"
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
           if [ -n "$target_file" ]; then
-            # 1. The Navbar Patch
-            # This makes the UI display 'eidi' (the folder) as the home
-            sed -i "s|meta name=\"pathname\" content=\"[^\"]*\"|meta name=\"pathname\" content=\"./\"|g" "$target_file"
+            # 1. Rename the physical file
+            mv "$target_file" index.html
             
-            # 2. The Link Root Patch
-            # This is the fix for the jumping. It forces the JS to stay at /eidi/
-            sed -i "s|<base href=\"[^\"]*\">|<base href=\"./\">|g" "$target_file"
-
-            # 3. The htaccess Mask
-            # This serves the long file's content whenever someone hits /eidi/
-          cat <<EOF > .htaccess
-          RewriteEngine On
-          RewriteRule ^$ "$target_file" [L]
-          
-          # Keeps sub-pages working without .html
-          RewriteCond %{REQUEST_FILENAME} !-f
-          RewriteCond %{REQUEST_FILENAME}.html -f
-          RewriteRule ^(.*)$ \$1.html [L]
-          EOF
-
-            # 4. Fallback index
-          cat <<EOF > index.html
-          <script>window.location.href='./';</script>
-          EOF
-          
-          else
-            echo "Error: No file found"
-            exit 1
+            # 2. Patch the metadata in the new index.html
+            sed -i "s|meta name=\"pathname\" content=\"[^\"]*\"|meta name=\"pathname\" content=\"./\"|g" index.html
+            sed -i "s|<base href=\"[^\"]*\">|<base href=\"./\">|g" index.html
+            
+            # 3. THE MAGIC: Patch the plugin's internal map
+            # This finds the long filename inside all .js and .json files (like search index)
+            # and tells the plugin that the file is now called 'index.html'
+            find . -type f \( -name "*.js" -o -name "*.json" \) -exec sed -i "s|$target_file|index.html|g" {} +
+            
+            echo "Renamed and patched internal logic."
           fi
           
       - name: Sync files to hosting
