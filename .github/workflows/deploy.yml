@@ -20,23 +20,24 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@main
-      - name: Global Fix and Rename
+      - name: Create Clean Entry Point
         run: |
           cd "HTML Exports"
+          # 1. Identify the long file
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
           if [ -n "$target_file" ]; then
-            echo "Fixing metadata and link styles..."
+            echo "Processing $target_file..."
             
-            # 1. Fix the filename references
-            sed -i 's/einführung-in-die-informatik.html/index.html/g' "$target_file"
+            # 2. Copy the file to index.html (Keeping the original keeps the plugin happy)
+            cp "$target_file" index.html
             
-            # 2. Force links to look 'resolved' by removing the 'unresolved' class 
-            # (Adjusting the common class name used by the plugin)
-            sed -i 's/is-unresolved//g' "$target_file"
+            # 3. Fix the internal metadata so the URL doesn't "self-correct" in the bar
+            # We change the pathname to just './' (the current directory)
+            sed -i 's/content="einführung-in-die-informatik.html"/content=".\/"/g' index.html
+            sed -i 's/property="og:url" content="einführung-in-die-informatik.html"/property="og:url" content=".\/"/g' index.html
             
-            # 3. Rename the physical file
-            mv "$target_file" index.html
+            echo "index.html created and metadata patched."
           else
             echo "Error: Target file not found."
             exit 1
