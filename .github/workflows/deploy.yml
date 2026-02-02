@@ -27,9 +27,6 @@ jobs:
             
             # 2. Update the internal pathname to 'eidi'
             sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content="eidi"/g' "$target_file"
-            
-            # 3. Rename the physical file so the server can find it as 'eidi'
-            mv "$target_file" eidi.html
 
             # 4. Create .htaccess to hide the .html extension
             cat <<EOF > .htaccess
@@ -45,7 +42,7 @@ jobs:
           <html>
             <head>
               <meta charset="UTF-8">
-              <meta http-equiv="refresh" content="0; url='eidi'" />
+              <meta http-equiv="refresh" content="0; url='"$target_file"'" />
               <title>Einführung in die Informatik</title>
             </head>
             <body>
