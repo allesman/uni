@@ -23,18 +23,19 @@ jobs:
       - name: Global Fix and Rename
         run: |
           cd "HTML Exports"
-          # 1. Identify the file (handling the 'ü' via wildcard)
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
           if [ -n "$target_file" ]; then
-            echo "Processing $target_file..."
+            echo "Fixing metadata and link styles..."
             
-            # 2. Replace the long filename with 'index.html' everywhere inside the file
-            # This fixes meta tags, og:url, and internal navigation links
+            # 1. Fix the filename references
             sed -i 's/einführung-in-die-informatik.html/index.html/g' "$target_file"
             
-            # 3. Finally, rename the physical file
-            echo "Renaming to index.html"
+            # 2. Force links to look 'resolved' by removing the 'unresolved' class 
+            # (Adjusting the common class name used by the plugin)
+            sed -i 's/is-unresolved//g' "$target_file"
+            
+            # 3. Rename the physical file
             mv "$target_file" index.html
           else
             echo "Error: Target file not found."
