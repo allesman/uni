@@ -19,20 +19,20 @@ jobs:
       - name: Create Redirect Index
         run: |
           cd "HTML Exports"
-          # 1. Find the actual filename as it exists on the system
+          # Find the actual filename to avoid any manual typing
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
           if [ -n "$target_file" ]; then
             echo "Creating redirect index for: $target_file"
             
-            # 2. Use the variable $target_file so we don't manually type the 'ü'
-            cat <<EOF > index.html
+          cat <<EOF > index.html
           <!DOCTYPE html>
           <html>
             <head>
               <meta charset="UTF-8">
               <meta http-equiv="refresh" content="0; url='$target_file'" />
-              <title>Redirecting...</title>
+              <meta name="pathname" content="eidi.html">
+              <title>Einführung in die Informatik</title>
             </head>
             <body>
               <p>Redirecting to <a href="$target_file">Informatik</a></p>
