@@ -32,13 +32,16 @@ jobs:
           mv "$CONTENT_FILE" "HTML Exports/index.html"
           echo "Moved $CONTENT_FILE to index.html"
 
-      - name: Patch Metadata for Pretty Navbar
+      - name: Patch Metadata and Fix Links
         run: |
-          # Set pathname to './' so the UI thinks it is at the root /eidi/
+          # 1. Align the internal path with the root URL
           sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content=".\/"/g' "HTML Exports/index.html"
-          # Set OG URL to './' for consistent social sharing
-          sed -i 's/property="og:url" content="[^"]*"/property="og:url" content=".\/"/g' "HTML Exports/index.html"
-          echo "Metadata patched for root display."
+          
+          # 2. Fix the Base HREF (This is the magic part)
+          # This tells the browser to resolve all links relative to the root folder
+          sed -i 's/<base href="[^"]*">/<base href=".\/">/g' "HTML Exports/index.html"
+          
+          echo "Metadata and Base URL patched."
           
       - name: Sync files to hosting
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
