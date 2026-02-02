@@ -16,33 +16,43 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Identify and Patch Content File
+        run: |
+          # 1. Find the long filename
+          TARGET_FILE=$(ls "HTML Exports"/einf*hrung*.html 2>/dev/null | head -n 1)
+          
+          if [ -z "$TARGET_FILE" ]; then
+            echo "Error: No export file found."
+            exit 1
+          fi
+          
+          # 2. Patch the metadata in the actual content file for the navbar
+          # This ensures the UI shows 'eidi' once the redirect lands
+          sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content="eidi.html"/g' "$TARGET_FILE"
+          
+          # 3. Export filename for the next step
+          echo "CONTENT_FILE_NAME=$(basename "$TARGET_FILE")" >> $GITHUB_ENV
+          echo "Patched and identified: $TARGET_FILE"
+
       - name: Create Redirect Index
         run: |
           cd "HTML Exports"
-          # 1. Find the actual filename as it exists on the system
-          target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
-          if [ -n "$target_file" ]; then
-            echo "Creating redirect index for: $target_file"
-            
-            # 2. Use the variable $target_file so we don't manually type the 'ü'
-            cat <<EOF > index.html
+          # Use the variable from the previous step to build the redirect
+          cat <<EOF > index.html
           <!DOCTYPE html>
           <html>
             <head>
               <meta charset="UTF-8">
-              <meta http-equiv="refresh" content="0; url='$target_file'" />
+              <meta http-equiv="refresh" content="0; url='$CONTENT_FILE_NAME'" />
               <title>Redirecting...</title>
             </head>
             <body>
-              <p>Redirecting to <a href="$target_file">Informatik</a></p>
+              <p>Redirecting to <a href="$CONTENT_FILE_NAME">Informatik</a></p>
             </body>
           </html>
           EOF
-          else
-            echo "Error: No file found."
-            exit 1
-          fi
+          echo "Created index.html redirecting to $CONTENT_FILE_NAME"
 
       - name: Sync files to hosting
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -52,5 +62,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./HTML Exports/
           server-dir: ./eidi/
-          # This cleans up the old long filenames from the server
           delete-missing: true
