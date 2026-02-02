@@ -19,33 +19,35 @@ jobs:
       - name: Prepare Files and Create Redirect
         run: |
           cd "HTML Exports"
+          
+          # 1. Identify the long file (Must happen inside this block to use the variable)
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
           if [ -n "$target_file" ]; then
-            # 1. Patch the Navbar Identity
-            sed -i "s|meta name=\"pathname\" content=\"[^\"]*\"|meta name=\"pathname\" content=\"./\"|g" "$target_file"
+            echo "Processing: $target_file"
             
-            # 2. Patch the Base URL (The fix for the jumping URL)
-            # This forces the JS to resolve all paths relative to /eidi/
-            sed -i "s|<base href=\"[^\"]*\">|<base href=\"./\">|g" "$target_file"
+            # 2. Change pathname in the original file
+            sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content="eidi"/g' "$target_file"
             
-            # 3. Create index.html
-            cat <<EOF > index.html
+            # 3. Create index.html with the metadata identity
+            # (Ensuring EOF is at the start of the line to avoid syntax errors)
+          cat <<EOF > index.html
           <!DOCTYPE html>
           <html>
             <head>
               <meta charset="UTF-8">
-              <meta name="pathname" content="./">
+              <meta name="pathname" content="eidi">
               <meta http-equiv="refresh" content="0; url='$target_file'" />
               <title>Einführung in die Informatik</title>
             </head>
             <body>
-              <p>Redirecting...</p>
+              <p>Redirecting to <a href="$target_file">Informatik</a></p>
             </body>
           </html>
           EOF
+          
           else
-            echo "Error: No file found"
+            echo "Error: No export file found."
             exit 1
           fi
           
