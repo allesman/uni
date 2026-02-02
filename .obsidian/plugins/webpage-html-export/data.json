@@ -180,7 +180,7 @@
       "hideSettingsButton": false,
       "allowFoldingLists": true,
       "allowFoldingHeadings": true,
-      "documentWidth": "100em"
+      "documentWidth": "67em"
     },
     "rssOptions": {
       "featureId": "rss",
@@ -226,7 +226,7 @@
   "onlyExportModified": true,
   "deleteOldFiles": true,
   "exportPreset": "online",
-  "openAfterExport": true,
+  "openAfterExport": false,
   "filePickerBlacklist": [
     "(^|\\/)node_modules\\/",
     "(^|\\/)dist\\/",

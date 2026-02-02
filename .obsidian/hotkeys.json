@@ -80,5 +80,23 @@
       ],
       "key": "T"
     }
+  ],
+  "webpage-html-export:export-html-setting": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "E"
+    }
+  ],
+  "webpage-html-export:export-html-vault": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "E"
+    }
   ]
 }
