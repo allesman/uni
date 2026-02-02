@@ -23,26 +23,29 @@ jobs:
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
           if [ -n "$target_file" ]; then
-            echo "Patching metadata and renaming..."
+            echo "Patching metadata and creating redirect..."
             
             # 2. Update the internal pathname to 'eidi'
-            sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content="eidi"/g' "$target_file"
+            # Note: Used double quotes for sed so it handles the variable properly
+            sed -i "s/meta name=\"pathname\" content=\"[^\"]*\"/meta name=\"pathname\" content=\"eidi\"/g" "$target_file"
 
-            # 4. Create .htaccess to hide the .html extension
-            cat <<EOF > .htaccess
+            # 3. Create .htaccess to hide the .html extension
+            # EOF must be flush against the left margin
+          cat <<EOF > .htaccess
           RewriteEngine On
           RewriteCond %{REQUEST_FILENAME} !-f
           RewriteCond %{REQUEST_FILENAME}.html -f
           RewriteRule ^(.*)$ \$1.html [L]
           EOF
 
-            # 5. Generate the redirect index
-            cat <<EOF > index.html
+            # 4. Generate the redirect index
+            # Fixed the url='' syntax to be clean for the browser
+          cat <<EOF > index.html
           <!DOCTYPE html>
           <html>
             <head>
               <meta charset="UTF-8">
-              <meta http-equiv="refresh" content="0; url='"$target_file"'" />
+              <meta http-equiv="refresh" content="0; url='$target_file'" />
               <title>Einführung in die Informatik</title>
             </head>
             <body>
