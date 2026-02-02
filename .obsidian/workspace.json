@@ -22,23 +22,8 @@
               "icon": "lucide-file",
               "title": "Dashboard"
             }
-          },
-          {
-            "id": "40aa88228aca37ba",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Module/Semester 1/EIDI/Einführung in die Informatik.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Einführung in die Informatik"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -92,7 +77,7 @@
             }
           },
           {
-            "id": "1626ea4660d1fe52",
+            "id": "3474d79da1a672a1",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -245,23 +230,25 @@
       "webpage-html-export:Export as HTML": false
     }
   },
-  "active": "40aa88228aca37ba",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "Module/Semester 1/EIDI/Einführung in die Informatik.md",
-    "Dashboard.md",
-    "HTML Exports/einführung-in-die-informatik.html",
     "HTML Exports/site-lib/search-index.json",
     "HTML Exports/site-lib/metadata.json",
-    "HTML Exports/site-lib/styles/main-styles.css",
+    "Module/Semester 1/EIDI/Einführung in die Informatik.md",
+    "Dashboard.md",
     "HTML Exports/site-lib/styles/theme.css",
     "HTML Exports/site-lib/styles/obsidian.css",
-    "HTML Exports/site-lib/styles/global-variable-styles.css",
+    "HTML Exports/site-lib/styles/main-styles.css",
     "HTML Exports/site-lib/scripts/webpage.js",
+    "HTML Exports/site-lib/styles/global-variable-styles.css",
     "HTML Exports/site-lib/scripts/graph-wasm.wasm",
     "HTML Exports/site-lib/scripts/graph-wasm.js",
+    "HTML Exports/site-lib/scripts/graph-render-worker.js",
     "HTML Exports/site-lib/media/favicon.png",
     "HTML Exports/site-lib/media/6155340132a851f6089e.svg",
     "HTML Exports/site-lib/media/2308ab1944a6bfa5c5b8.svg",
+    "HTML Exports/site-lib/fonts/c504db5c06caaf7cdfba.woff2",
+    "HTML Exports/attachments/pasted-image-20260131162811.png",
     "conflict-files-obsidian-git.md",
     "[.md",
     "HTML Exports/260201/attachments/pasted-image-20260131162811.png",
@@ -269,7 +256,6 @@
     "HTML Exports/260201/site-lib/media/6155340132a851f6089e.svg",
     "HTML Exports/260201/site-lib/media/2308ab1944a6bfa5c5b8.svg",
     "HTML Exports/260201/altkausuren.md",
-    "HTML Exports/attachments/pasted-image-20260131162811.png",
     "HTML Exports/altkausuren.md",
     "Module/Semester 1/EIDI/altklausuren/Altklausur 2017-2.md",
     "Module/Semester 1/EIDI/altklausuren/Altklausur 2018 Retake.md",
