@@ -15,20 +15,22 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Change pathname
-        run: sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content="eidi"/g' "$target_file"
-        
-      - name: Create Meta-Redirect Index
+
+      - name: Prepare Files and Create Redirect
         run: |
           cd "HTML Exports"
-          # 1. Identify the long file (e.g., einfuehrung...)
+          
+          # 1. Identify the long file (Must happen inside this block to use the variable)
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
           if [ -n "$target_file" ]; then
-            echo "Creating redirect index for: $target_file"
+            echo "Processing: $target_file"
             
-            # 2. Create index.html with the metadata identity
-            # This tells the plugin JS it's at 'eidi' while redirecting
+            # 2. Change pathname in the original file
+            sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content="eidi"/g' "$target_file"
+            
+            # 3. Create index.html with the metadata identity
+            # (Ensuring EOF is at the start of the line to avoid syntax errors)
           cat <<EOF > index.html
           <!DOCTYPE html>
           <html>
@@ -43,6 +45,7 @@ jobs:
             </body>
           </html>
           EOF
+          
           else
             echo "Error: No export file found."
             exit 1
