@@ -16,33 +16,26 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Create Stealth URL Mask
+      - name: Patch Identity and Base
         run: |
           cd "HTML Exports"
-          # 1. Identify the long file
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
           if [ -n "$target_file" ]; then
-            echo "Creating stealth mask for: $target_file"
+            # 1. The Navbar Patch (Fixes the text)
+            sed -i "s|meta name=\"pathname\" content=\"[^\"]*\"|meta name=\"pathname\" content=\"./\"|g" "$target_file"
             
-            # 2. Create .htaccess
-            # This is the "Magic" part. [L] means 'Last' (stop processing rules here)
+            # 2. The Link Root Patch (Fixes the jumping/reloading)
+            # This tells the JS: "Treat the folder as the starting point for all links"
+            sed -i "s|<base href=\"[^\"]*\">|<base href=\"./\">|g" "$target_file"
+
+            # 3. The htaccess Mask (Serves the file at /eidi/)
           cat <<EOF > .htaccess
           RewriteEngine On
-          
-          # If the user visits the root /eidi/, show the long file content
           RewriteRule ^$ "$target_file" [L]
-          
-          # If the user visits /eidi/anything, and anything.html exists, show it
           RewriteCond %{REQUEST_FILENAME} !-f
           RewriteCond %{REQUEST_FILENAME}.html -f
           RewriteRule ^(.*)$ \$1.html [L]
-          EOF
-
-            # 3. Create a tiny index.html as a backup
-            # This just ensures the directory has a default file
-          cat <<EOF > index.html
-          <script>window.location.href='./';</script>
           EOF
           
           else
