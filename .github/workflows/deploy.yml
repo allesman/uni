@@ -3,15 +3,10 @@ name: Deploy Obsidian Export
 on:
   push:
     branches:
-      - main  # Or your default branch
+      - main
     paths:
-      - 'HTML Exports/**' # Only runs when files in this folder change
-  workflow_dispatch:      # Adds a "Run workflow" button in the GitHub UI
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+      - 'HTML Exports/**'
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -19,41 +14,40 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@main
+        uses: actions/checkout@v4
+
       - name: Create Redirect Index
         run: |
           cd "HTML Exports"
-          # 1. Identify the long filename
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
           if [ -n "$target_file" ]; then
             echo "Creating redirect index pointing to $target_file"
             
-            # 2. Generate a clean index.html that redirects to the content
-            # The '0' means zero seconds delay
-            cat <<EOF > index.html
-            <!DOCTYPE html>
-            <html>
-              <head>
-                <meta http-equiv="refresh" content="0; url='$target_file'" />
-                <title>Redirecting...</title>
-              </head>
-              <body>
-                <p>Redirecting to <a href="$target_file">$target_file</a></p>
-              </body>
-            </html>
-            EOF
+            # Ensure EOF has no spaces after it and is at the start of the line
+          cat <<EOF > index.html
+          <!DOCTYPE html>
+          <html>
+            <head>
+              <meta http-equiv="refresh" content="0; url='$target_file'" />
+              <title>Redirecting...</title>
+            </head>
+            <body>
+              <p>Redirecting to <a href="$target_file">$target_file</a></p>
+            </body>
+          </html>
+          EOF
           else
-            echo "Error: No export file found to redirect to."
+            echo "Error: No export file found."
             exit 1
           fi
+
       - name: Sync files to hosting
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: v132927.goserver.host
           username: allesman
           password: ${{ secrets.FTP_PASSWORD }}
-          # This tells the action to take the contents of your export folder...
           local-dir: ./HTML Exports/
-          # ...and put them in the root (or subfolder) of your FTP server
           server-dir: ./eidi/
+          delete-missing: true
