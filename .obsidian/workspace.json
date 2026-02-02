@@ -22,23 +22,8 @@
               "icon": "lucide-file",
               "title": "Dashboard"
             }
-          },
-          {
-            "id": "a38dcce5a6ff451f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Module/Semester 1/EIDI/Einführung in die Informatik.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Einführung in die Informatik"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -92,7 +77,7 @@
             }
           },
           {
-            "id": "38fe49c552cf7d1d",
+            "id": "4a104988f829ed7d",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -101,13 +86,11 @@
               "title": "Navigator"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 365.50152587890625,
-    "collapsed": true
+    "width": 365.50152587890625
   },
   "right": {
     "id": "09faeb26a179d322",
@@ -171,12 +154,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Dashboard.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Dashboard"
             }
           },
           {
@@ -221,7 +205,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 268.5
+    "width": 436.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -245,12 +229,16 @@
       "webpage-html-export:Export as HTML": false
     }
   },
-  "active": "a38dcce5a6ff451f",
+  "active": "52be1d4835667d7f",
   "lastOpenFiles": [
-    "Dashboard.md",
     "Module/Semester 1/EIDI/Einführung in die Informatik.md",
-    "Module/Semester 1/EIDI/Altkausuren.md",
     "HTML Exports/260201/index.html",
+    "HTML Exports/260201/site-lib/search-index.json",
+    "HTML Exports/260201/site-lib/metadata.json",
+    "HTML Exports/260201/attachments/pasted-image-20260131162811.png",
+    "HTML Exports/260201/attachments",
+    "Dashboard.md",
+    "Module/Semester 1/EIDI/Altkausuren.md",
     "HTML Exports/260201/site-lib/styles/obsidian.css",
     "HTML Exports/260201/site-lib/styles/theme.css",
     "HTML Exports/260201/site-lib/styles/global-variable-styles.css",
@@ -259,10 +247,6 @@
     "HTML Exports/260201/site-lib/media/6155340132a851f6089e.svg",
     "HTML Exports/260201/site-lib/media/2308ab1944a6bfa5c5b8.svg",
     "HTML Exports/260201/site-lib/fonts/c504db5c06caaf7cdfba.woff2",
-    "HTML Exports/260201/site-lib/scripts/webpage.js",
-    "HTML Exports/260201/site-lib/fonts/70cc7ff27245e82ad414.ttf",
-    "HTML Exports/260201/site-lib/fonts/52ac8f3034507f1d9e53.ttf",
-    "HTML Exports/260201/attachments/pasted-image-20260131162811.png",
     "HTML Exports/260201/altkausuren.md",
     "HTML Exports/attachments/pasted-image-20260131162811.png",
     "HTML Exports/altkausuren.md",
@@ -289,7 +273,6 @@
     "Module/Semester 1/EIDI/Race Conditions.md",
     "Module/Semester 1/EIDI/Queue.md",
     "Module/Semester 1/EIDI/Producer Consumer Problem.md",
-    "Module/Semester 1/EIDI/Polymorphism.md",
     "Digital/examples/processor/ALU/ALU.svg",
     "Module/Vorkurs/9 Differentiation and Integration/attachments/Pasted image 20250925112807.png",
     "Module/Vorkurs/9 Differentiation and Integration/attachments/Pasted image 20250923174440.png",

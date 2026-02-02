@@ -60,8 +60,8 @@ public void testSortLengths(){
 > [!danger] Niemals [[#Primitivity|Non-Primitives]] mit `==` oder `assertEquals` vergleichen!
 > Dann vergleichst du nur deren Referenzen du ==Dulli==. Mach einfach `assert(true, obj1.equals(obj2))` du ==Dulli==.
 
-# Teil 4: Kontrollstrukturen  
-broooo free
+# Teil 4: Kontrollstrukturen
+## broooo free
 # Teil 5: Felder (arrays)
 auch free außer
 ## Matrixmultiplikation
