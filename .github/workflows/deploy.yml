@@ -32,7 +32,7 @@ jobs:
           <html>
             <head>
               <meta charset="UTF-8">
-              <meta name="pathname" content="eidi">
+              <meta name="pathname" content="">
               <meta http-equiv="refresh" content="0; url='$target_file'" />
               <title>Einführung in die Informatik</title>
             </head>
