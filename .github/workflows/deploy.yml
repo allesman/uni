@@ -16,27 +16,31 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Create Clean Entry Point
+      - name: Create Redirect Index
         run: |
           cd "HTML Exports"
-          # 1. Find the file regardless of encoding issues
+          # 1. Find the actual filename as it exists on the system
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
           if [ -n "$target_file" ]; then
-            echo "Processing $target_file..."
+            echo "Creating redirect index for: $target_file"
             
-            # 2. Copy the content to index.html
-            # This ensures the browser loads the content at the /eidi/ root
-            cp "$target_file" index.html
-            
-            # 3. Patch the metadata INSIDE index.html
-            # This stops the plugin's JS from 'correcting' the URL to the long name
-            sed -i 's/content="einführung-in-die-informatik.html"/content=".\/"/g' index.html
-            sed -i 's/property="og:url" content="einführung-in-die-informatik.html"/property="og:url" content=".\/"/g' index.html
-            
-            echo "Success: index.html created and patched."
+            # 2. Use the variable $target_file so we don't manually type the 'ü'
+            cat <<EOF > index.html
+          <!DOCTYPE html>
+          <html>
+            <head>
+              <meta charset="UTF-8">
+              <meta http-equiv="refresh" content="0; url='$target_file'" />
+              <title>Redirecting...</title>
+            </head>
+            <body>
+              <p>Redirecting to <a href="$target_file">Informatik</a></p>
+            </body>
+          </html>
+          EOF
           else
-            echo "Error: No file found starting with 'einf'."
+            echo "Error: No file found."
             exit 1
           fi
           
