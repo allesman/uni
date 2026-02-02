@@ -16,26 +16,32 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Create Redirect Index
+      - name: Prepare Files and Fix Navbar
         run: |
           cd "HTML Exports"
-          # Find the actual filename to avoid any manual typing
+          # 1. Identify the content file
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
           if [ -n "$target_file" ]; then
+            echo "Patching metadata in $target_file for a prettier navbar"
+            
+            # 2. Update the pathname inside the main content file
+            # This makes the navbar/UI show 'eidi' instead of the long name
+            sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content="eidi.html"/g' "$target_file"
+            
             echo "Creating redirect index for: $target_file"
             
-          cat <<EOF > index.html
+            # 3. Generate the redirect index
+            cat <<EOF > index.html
           <!DOCTYPE html>
           <html>
             <head>
               <meta charset="UTF-8">
               <meta http-equiv="refresh" content="0; url='$target_file'" />
-              <meta name="pathname" content="eidi.html">
               <title>Einführung in die Informatik</title>
             </head>
             <body>
-              <p>Redirecting to <a href="$target_file">Informatik</a></p>
+              <p>Redirecting...</p>
             </body>
           </html>
           EOF
