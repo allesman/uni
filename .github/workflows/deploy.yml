@@ -51,7 +51,7 @@ jobs:
             </body>
           </html>
           EOF
-            exit 1
+        fi
           
       - name: Sync files to hosting
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
