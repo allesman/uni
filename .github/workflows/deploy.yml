@@ -16,44 +16,26 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Prepare Files and Hide Extensions
+      - name: Prepare Files for Root URL
         run: |
           cd "HTML Exports"
-          # 1. Identify the content file
+          # 1. Find the long file
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
           if [ -n "$target_file" ]; then
-            echo "Patching metadata and hiding extensions..."
+            echo "Creating root index from $target_file..."
             
-            # 2. Update the internal pathname to 'eidi' (without .html)
-            sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content="eidi"/g' "$target_file"
+            # 2. Copy the content directly to index.html
+            # This makes the server load it at /eidi/ automatically
+            cp "$target_file" index.html
             
-            # 3. Create .htaccess to hide the .html extension on the server
-            # This allows the browser to load 'eidi' instead of 'eidi.html'
-            cat <<EOF > .htaccess
-          RewriteEngine On
-          RewriteCond %{REQUEST_FILENAME} !-f
-          RewriteCond %{REQUEST_FILENAME}.html -f
-          RewriteRule ^(.*)$ \$1.html [L]
-          EOF
-
-            # 4. Generate the redirect index pointing to 'eidi' (no extension)
-            cat <<EOF > index.html
-          <!DOCTYPE html>
-          <html>
-            <head>
-              <meta charset="UTF-8">
-              <meta http-equiv="refresh" content="0; url='eidi'" />
-              <title>Einführung in die Informatik</title>
-            </head>
-            <body>
-              <p>Redirecting...</p>
-            </body>
-          </html>
-          EOF
-          
-            # 5. Rename the physical file to match our new clean name
-            mv "$target_file" eidi.html
+            # 3. Patch the metadata INSIDE index.html
+            # We set the pathname to an empty string or './' so the 
+            # navbar and JS think they are already 'home'
+            sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content=".\/"/g' index.html
+            sed -i 's/property="og:url" content="[^"]*"/property="og:url" content=".\/"/g' index.html
+            
+            echo "Success: Site will now load at the directory root."
           else
             echo "Error: No file found."
             exit 1
