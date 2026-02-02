@@ -22,20 +22,29 @@ jobs:
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
           if [ -n "$target_file" ]; then
-            # 1. The Navbar Patch (Fixes the text)
+            # 1. The Navbar Patch
+            # This makes the UI display 'eidi' (the folder) as the home
             sed -i "s|meta name=\"pathname\" content=\"[^\"]*\"|meta name=\"pathname\" content=\"./\"|g" "$target_file"
             
-            # 2. The Link Root Patch (Fixes the jumping/reloading)
-            # This tells the JS: "Treat the folder as the starting point for all links"
+            # 2. The Link Root Patch
+            # This is the fix for the jumping. It forces the JS to stay at /eidi/
             sed -i "s|<base href=\"[^\"]*\">|<base href=\"./\">|g" "$target_file"
 
-            # 3. The htaccess Mask (Serves the file at /eidi/)
+            # 3. The htaccess Mask
+            # This serves the long file's content whenever someone hits /eidi/
           cat <<EOF > .htaccess
           RewriteEngine On
           RewriteRule ^$ "$target_file" [L]
+          
+          # Keeps sub-pages working without .html
           RewriteCond %{REQUEST_FILENAME} !-f
           RewriteCond %{REQUEST_FILENAME}.html -f
           RewriteRule ^(.*)$ \$1.html [L]
+          EOF
+
+            # 4. Fallback index
+          cat <<EOF > index.html
+          <script>window.location.href='./';</script>
           EOF
           
           else
