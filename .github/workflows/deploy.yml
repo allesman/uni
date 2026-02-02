@@ -28,4 +28,4 @@ jobs:
           # This tells the action to take the contents of your export folder...
           local-dir: ./HTML Exports/
           # ...and put them in the root (or subfolder) of your FTP server
-          server-dir: ./eidi
+          server-dir: ./eidi/
