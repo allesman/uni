@@ -20,6 +20,15 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@main
+      - name: Rename entry point to index.html
+        run: |
+          cd "HTML Exports"
+          if [ -f "einführung-in die-informatik.html" ]; then
+            mv "einführung-in die-informatik.html" index.html
+            echo "File renamed successfully."
+          else
+            echo "Warning: Target file not found, skipping rename."
+          fi
       - name: Sync files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
