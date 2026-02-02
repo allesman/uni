@@ -26,28 +26,37 @@ jobs:
             exit 1
           fi
           
-          # 2. Patch the metadata in the actual content file
-          # We tell the navbar it is at 'index.html' so it stays clean
-          sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content=".\/"/g' "$TARGET_FILE"
+          # 2. Patch the metadata so the UI navbar thinks the path is just 'eidi'
+          # We remove the .html from the pathname content
+          sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content="eidi"/g' "$TARGET_FILE"
           
-          # 3. Save the filename for the redirect step
-          echo "CONTENT_FILE_NAME=$(basename "$TARGET_FILE")" >> $GITHUB_ENV
+          # 3. Rename the physical file to eidi.html
+          mv "$TARGET_FILE" "HTML Exports/eidi.html"
+          echo "Renamed and patched file to eidi.html"
 
-      - name: Create Redirect Index
+      - name: Create .htaccess and Redirect
         run: |
           cd "HTML Exports"
-          # Create a redirect that preserves the 'clean' feel
+          
+          # 1. Create .htaccess to hide the .html extension from the URL bar
+          cat <<EOF > .htaccess
+          RewriteEngine On
+          RewriteCond %{REQUEST_FILENAME} !-f
+          RewriteCond %{REQUEST_FILENAME}.html -f
+          RewriteRule ^(.*)$ \$1.html [L]
+          EOF
+
+          # 2. Create the index redirect pointing to 'eidi' (no extension)
           cat <<EOF > index.html
           <!DOCTYPE html>
           <html>
             <head>
               <meta charset="UTF-8">
-              <meta http-equiv="refresh" content="0; url='$CONTENT_FILE_NAME'" />
-              <meta name="pathname" content="./">
-              <title>Einführung in die Informatik</title>
+              <meta http-equiv="refresh" content="0; url='eidi'" />
+              <title>Redirecting...</title>
             </head>
             <body>
-              <p>Redirecting to <a href="$CONTENT_FILE_NAME">Informatik</a></p>
+              <p>Redirecting to <a href="eidi">Informatik</a></p>
             </body>
           </html>
           EOF
