@@ -110,7 +110,7 @@
         "type": "end"
       },
       "displayTitle": "Outline",
-      "startCollapsed": false,
+      "startCollapsed": true,
       "minCollapseDepth": 0
     },
     "themeToggleOptions": {
@@ -180,7 +180,7 @@
       "hideSettingsButton": false,
       "allowFoldingLists": true,
       "allowFoldingHeadings": true,
-      "documentWidth": "40em"
+      "documentWidth": "100em"
     },
     "rssOptions": {
       "featureId": "rss",
@@ -207,7 +207,7 @@
     "inlineFonts": false,
     "inlineOther": false,
     "combineAsSingleFile": false,
-    "offlineResources": false,
+    "offlineResources": true,
     "themeName": "",
     "slugifyPaths": true,
     "flattenExportPaths": false,
