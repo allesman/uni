@@ -122,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Module/Semester 1/Advisor/Ersatzleistung_GPLA_1 1.pdf",
+                "file": "Module/Semester 1/EIDI/Einführung in die Informatik.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +132,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Ersatzleistung_GPLA_1 1"
+              "title": "Backlinks for Einführung in die Informatik"
             }
           },
           {
@@ -141,12 +141,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ERA/2025-10-14.md",
+                "file": "Module/Semester 1/EIDI/Einführung in die Informatik.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 2025-10-14"
+              "title": "Outgoing links from Einführung in die Informatik"
             }
           },
           {
@@ -170,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ERA/2025-10-14.md",
+                "file": "Module/Semester 1/EIDI/Einführung in die Informatik.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2025-10-14"
+              "title": "Outline of Einführung in die Informatik"
             }
           },
           {
@@ -185,16 +185,26 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "calendar"
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          },
+          {
+            "id": "98ca69100a74aadf",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -219,13 +229,31 @@
   },
   "active": "62a56c8338489fd2",
   "lastOpenFiles": [
-    "Dashboard.md",
     "conflict-files-obsidian-git.md",
-    "Module/Semester 1/DS/Diskrete Strukturen.md",
     "Module/Semester 1/EIDI/Einführung in die Informatik.md",
+    "[.md",
+    "Module/Semester 1/EIDI/Polymorphie.pdf",
+    "HTML Exports/site-lib/styles/obsidian.css",
+    "HTML Exports/site-lib/styles/theme.css",
+    "HTML Exports/site-lib/styles/main-styles.css",
+    "HTML Exports/site-lib/styles/global-variable-styles.css",
+    "HTML Exports/site-lib/scripts/webpage.js",
+    "HTML Exports/site-lib/scripts/graph-wasm.wasm",
+    "HTML Exports/site-lib/scripts/graph-wasm.js",
+    "HTML Exports/site-lib/scripts/graph-render-worker.js",
+    "HTML Exports/site-lib/media/favicon.png",
+    "HTML Exports/site-lib/media/6155340132a851f6089e.svg",
+    "HTML Exports/site-lib/media/2308ab1944a6bfa5c5b8.svg",
+    "HTML Exports/site-lib/html/file-tree-content.html",
+    "HTML Exports/attachments/pasted-image-20260131162811.png",
+    "HTML Exports/altkausuren.md",
+    "HTML Exports/260201/site-lib/media/6155340132a851f6089e.svg",
+    "HTML Exports/260201/site-lib/media/2308ab1944a6bfa5c5b8.svg",
+    "HTML Exports/260201/attachments/pasted-image-20260131162811.png",
+    "Dashboard.md",
+    "Module/Semester 1/DS/Diskrete Strukturen.md",
     "Module/Semester 1/EIDI/altklausuren/Altklausur 2017.md",
     "Module/Vorkurs/Rechnereinführung/Linux/Terminal.md",
-    "Module/Semester 1/EIDI/altklausuren/0dae4ef5a6a993465bce477e705721c4-6.pdf",
     "Module/Semester 1/EIDI/Abstract Keyword.md",
     "Module/Semester 1/EIDI/Altkausuren.md",
     "Module/Semester 1/EIDI/altklausuren/Altklausur 2017-2.md",
@@ -233,37 +261,19 @@
     "Module/Semester 1/EIDI/altklausuren/Altklausur 2018 Retake.md",
     "Module/Semester 1/EIDI/altklausuren/Altklausur 2018.md",
     "Module/Semester 1/EIDI/altklausuren/Altklausur 2024.md",
-    "Module/Semester 1/EIDI/altklausuren/0dae4ef5a6a993465bce477e705721c4-4.pdf",
-    "Module/Semester 1/EIDI/altklausuren/0dae4ef5a6a993465bce477e705721c4-3.pdf",
-    "Module/Semester 1/EIDI/altklausuren/0dae4ef5a6a993465bce477e705721c4-5.pdf",
-    "Module/Semester 1/EIDI/altklausuren/0dae4ef5a6a993465bce477e705721c4-8.pdf",
     "Templates/Altklausur Template.md",
     "Templates/Template for Courses.md",
-    "Module/Semester 1/EIDI/altklausuren/(Altklausur 17) oh helll naaaaahhaaah.pdf",
     "Module/Semester 1/EIDI/altklausuren/Some Word2026-02-01 000056.md",
     "Templates/Templates.md",
-    "Module/Semester 1/EIDI/altklausuren",
     "Module/Semester 1/EIDI/Select Note.md",
     "Attachments/Pasted image 20260131162811.png",
     "Module/Semester 1/EIDI/Bubble Sort.md",
-    "Module/Semester 1/DS/DS-Slides.pdf",
     "Module/Semester 1/Advisor/2025-01-28 Protokoll.md",
     "Module/Semester 1/Advisor/Advisor (Wahlfach).md",
     "Module/Semester 1/ERA/ERA.md",
     "Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md",
     "Module/Semester 1/ERA/Slides/HA.md",
-    "Module/Semester 1/ERA/Slides/era03-beispiel.pdf",
-    "Module/Semester 1/ERA/Zentralübungen/20251205.pdf",
-    "Module/Semester 1/ERA/Übungen/Übungen.md",
-    "Module/Semester 1/ERA/Strings.md",
     "Module/Semester 1/DS/Tutoriumsaufgaben/thumbnail.png",
-    "Module/Semester 1/DS/Tutoriumsaufgaben (3)/thumbnail.png",
-    "Module/Semester 1/DS/Tutoriumsaufgaben (2)/thumbnail.png",
-    "Module/Vorkurs/9 Differentiation and Integration/attachments/Pasted image 20250925112807.png",
-    "Module/Vorkurs/9 Differentiation and Integration/attachments/Pasted image 20250923174440.png",
-    "Module/Vorkurs/9 Differentiation and Integration/attachments/Pasted image 20250923170525.png",
-    "Module/Vorkurs/7 Elementary Functions/attachments/Pasted image 20250923133918.png",
-    "Attachments/Pasted image 20251104173149.png",
-    "Attachments/Pasted image 20251021210048.png"
+    "Module/Semester 1/DS/Tutoriumsaufgaben (3)/thumbnail.png"
   ]
 }

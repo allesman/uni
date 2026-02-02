@@ -19,7 +19,7 @@ finished: true
 
 **Abstract Methods**
 
-Abstract methods are methods that have no **implementation**. All classes that containt abstract methods **must** be abstract. Within the abstract class the signature of the abstract method to be implemented is defined. The class that inherits from the abstract class (if it is not abstract itself) must implement the methods to avoid a compiler error. This is useful in OOP because we can define general methods without actually implementing them until later in our subclasses.
+Abstract methods are methods that have no **implementation**. All classes that contain abstract methods **must** be abstract. Within the abstract class the signature of the abstract method to be implemented is defined. The class that inherits from the abstract class (if it is not abstract itself) must implement the methods to avoid a compiler error. This is useful in OOP because we can define general methods without actually implementing them until later in our subclasses.
 
 **Abstract Classes**
 
