@@ -16,50 +16,48 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Identify and Patch Content File
-        run: |
-          # 1. Find the long filename
-          TARGET_FILE=$(ls "HTML Exports"/einf*hrung*.html 2>/dev/null | head -n 1)
-          
-          if [ -z "$TARGET_FILE" ]; then
-            echo "Error: No export file found."
-            exit 1
-          fi
-          
-          # 2. Patch the metadata so the UI navbar thinks the path is just 'eidi'
-          # We remove the .html from the pathname content
-          sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content="eidi"/g' "$TARGET_FILE"
-          
-          # 3. Rename the physical file to eidi.html
-          mv "$TARGET_FILE" "HTML Exports/eidi.html"
-          echo "Renamed and patched file to eidi.html"
-
-      - name: Create .htaccess and Redirect
+      - name: Prepare Files and Hide Extensions
         run: |
           cd "HTML Exports"
+          # 1. Identify the content file
+          target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
-          # 1. Create .htaccess to hide the .html extension from the URL bar
-          cat <<EOF > .htaccess
+          if [ -n "$target_file" ]; then
+            echo "Patching metadata and hiding extensions..."
+            
+            # 2. Update the internal pathname to 'eidi' (without .html)
+            sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content="eidi"/g' "$target_file"
+            
+            # 3. Create .htaccess to hide the .html extension on the server
+            # This allows the browser to load 'eidi' instead of 'eidi.html'
+            cat <<EOF > .htaccess
           RewriteEngine On
           RewriteCond %{REQUEST_FILENAME} !-f
           RewriteCond %{REQUEST_FILENAME}.html -f
           RewriteRule ^(.*)$ \$1.html [L]
           EOF
 
-          # 2. Create the index redirect pointing to 'eidi' (no extension)
-          cat <<EOF > index.html
+            # 4. Generate the redirect index pointing to 'eidi' (no extension)
+            cat <<EOF > index.html
           <!DOCTYPE html>
           <html>
             <head>
               <meta charset="UTF-8">
               <meta http-equiv="refresh" content="0; url='eidi'" />
-              <title>Redirecting...</title>
+              <title>Einführung in die Informatik</title>
             </head>
             <body>
-              <p>Redirecting to <a href="eidi">Informatik</a></p>
+              <p>Redirecting...</p>
             </body>
           </html>
           EOF
+          
+            # 5. Rename the physical file to match our new clean name
+            mv "$target_file" eidi.html
+          else
+            echo "Error: No file found."
+            exit 1
+          fi
           
       - name: Sync files to hosting
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
