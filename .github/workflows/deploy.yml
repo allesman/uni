@@ -23,13 +23,15 @@ jobs:
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
           if [ -n "$target_file" ]; then
-            echo "Patching metadata and hiding extensions..."
+            echo "Patching metadata and renaming..."
             
-            # 2. Update the internal pathname to 'eidi' (without .html)
+            # 2. Update the internal pathname to 'eidi'
             sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content="eidi"/g' "$target_file"
             
-            # 3. Create .htaccess to hide the .html extension on the server
-            # This allows the browser to load 'eidi' instead of 'eidi.html'
+            # 3. Rename the physical file so the server can find it as 'eidi'
+            mv "$target_file" eidi.html
+
+            # 4. Create .htaccess to hide the .html extension
             cat <<EOF > .htaccess
           RewriteEngine On
           RewriteCond %{REQUEST_FILENAME} !-f
@@ -37,7 +39,7 @@ jobs:
           RewriteRule ^(.*)$ \$1.html [L]
           EOF
 
-            # 4. Generate the redirect index pointing to 'eidi' (no extension)
+            # 5. Generate the redirect index
             cat <<EOF > index.html
           <!DOCTYPE html>
           <html>
@@ -51,7 +53,10 @@ jobs:
             </body>
           </html>
           EOF
-         fi
+          else
+            echo "Error: No file found"
+            exit 1
+          fi
           
       - name: Sync files to hosting
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
