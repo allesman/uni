@@ -16,35 +16,37 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Prepare Files and Create Redirect
+      - name: Create Stealth URL Mask
         run: |
           cd "HTML Exports"
-          
-          # 1. Identify the long file (Must happen inside this block to use the variable)
+          # 1. Identify the long file
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
           if [ -n "$target_file" ]; then
-            echo "Processing: $target_file"
+            echo "Creating stealth mask for: $target_file"
             
-            # 3. Create index.html with the metadata identity
-            # (Ensuring EOF is at the start of the line to avoid syntax errors)
+            # 2. Create .htaccess
+            # This is the "Magic" part. [L] means 'Last' (stop processing rules here)
+          cat <<EOF > .htaccess
+          RewriteEngine On
+          
+          # If the user visits the root /eidi/, show the long file content
+          RewriteRule ^$ "$target_file" [L]
+          
+          # If the user visits /eidi/anything, and anything.html exists, show it
+          RewriteCond %{REQUEST_FILENAME} !-f
+          RewriteCond %{REQUEST_FILENAME}.html -f
+          RewriteRule ^(.*)$ \$1.html [L]
+          EOF
+
+            # 3. Create a tiny index.html as a backup
+            # This just ensures the directory has a default file
           cat <<EOF > index.html
-          <!DOCTYPE html>
-          <html>
-            <head>
-              <meta charset="UTF-8">
-              <meta name="pathname" content="eidi">
-              <meta http-equiv="refresh" content="0; url='$target_file'" />
-              <title>Einführung in die Informatik</title>
-            </head>
-            <body>
-              <p>Redirecting to <a href="$target_file">Informatik</a></p>
-            </body>
-          </html>
+          <script>window.location.href='./';</script>
           EOF
           
           else
-            echo "Error: No export file found."
+            echo "Error: No file found"
             exit 1
           fi
           
