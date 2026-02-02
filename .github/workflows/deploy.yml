@@ -16,29 +16,55 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Identify Content File
+      name: Deploy Obsidian Export
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'HTML Exports/**'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy 🚀
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Prepare Root Index
         run: |
-          # Finds the file and saves it to a GitHub environment variable for later steps
-          TARGET_FILE=$(ls "HTML Exports"/einf*hrung*.html 2>/dev/null | head -n 1)
-          if [ -z "$TARGET_FILE" ]; then
-            echo "Error: No export file found."
+          cd "HTML Exports"
+          # 1. Find the long file
+          target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
+          
+          if [ -n "$target_file" ]; then
+            echo "Creating root index from $target_file..."
+            
+            # 2. Copy the content directly to index.html
+            cp "$target_file" index.html
+            
+            # 3. Patch metadata so the JS thinks it's already 'home'
+            # We use ./ to tell the UI it is at the directory root
+            sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content=".\/"/g' index.html
+            sed -i 's/property="og:url" content="[^"]*"/property="og:url" content=".\/"/g' index.html
+          else
+            echo "Error: No file found."
             exit 1
           fi
-          echo "CONTENT_FILE=$TARGET_FILE" >> $GITHUB_ENV
-          echo "Found: $TARGET_FILE"
 
-      - name: Create index.html
-        run: |
-          cp "$CONTENT_FILE" "HTML Exports/index.html"
-          echo "Copied $CONTENT_FILE to index.html"
-
-      - name: Patch Metadata for URL Stability
-        run: |
-          # Replaces the long filename with './' in both pathname and OG tags
-          # This prevents the JS from 'correcting' the URL in the address bar
-          sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content=".\/"/g' "HTML Exports/index.html"
-          sed -i 's/property="og:url" content="[^"]*"/property="og:url" content=".\/"/g' "HTML Exports/index.html"
-          echo "Metadata patched successfully."
+      - name: Sync files to hosting
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: v132927.goserver.host
+          username: allesman
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./HTML Exports/
+          server-dir: ./eidi/
+          # This cleans up the old long filenames from the server
+          delete-missing: true
 
       - name: Sync to Hosting
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
