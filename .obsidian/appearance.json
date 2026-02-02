@@ -3,7 +3,7 @@
   "nativeMenus": false,
   "accentColor": "#d5a520",
   "theme": "obsidian",
-  "textFontFamily": "",
+  "textFontFamily": "Adwaita Mono",
   "interfaceFontFamily": "Adwaita Mono",
   "monospaceFontFamily": "Adwaita Mono"
 }

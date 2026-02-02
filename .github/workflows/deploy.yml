@@ -1,0 +1,41 @@
+name: Deploy Obsidian Export
+
+on:
+  push:
+    branches:
+      - main  # Or your default branch
+    paths:
+      - 'HTML Exports/**' # Only runs when files in this folder change
+  workflow_dispatch:      # Adds a "Run workflow" button in the GitHub UI
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    name: Deploy 🚀
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@main
+      - name: Rename entry point to index.html
+        run: |
+          cd "HTML Exports"
+          if [ -f "einführung-in die-informatik.html" ]; then
+            mv "einführung-in die-informatik.html" index.html
+            echo "File renamed successfully."
+          else
+            echo "Warning: Target file not found, skipping rename."
+          fi
+      - name: Sync files to hosting
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        with:
+          server: v132927.goserver.host
+          username: allesman
+          password: ${{ secrets.FTP_PASSWORD }}
+          # This tells the action to take the contents of your export folder...
+          local-dir: ./HTML Exports/
+          # ...and put them in the root (or subfolder) of your FTP server
+          server-dir: ./eidi/

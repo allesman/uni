@@ -22,8 +22,19 @@
               "icon": "lucide-file",
               "title": "Dashboard"
             }
+          },
+          {
+            "id": "33d3e2b18b622038",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -77,7 +88,7 @@
             }
           },
           {
-            "id": "4a104988f829ed7d",
+            "id": "1626ea4660d1fe52",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -86,7 +97,8 @@
               "title": "Navigator"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -154,13 +166,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Dashboard.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Dashboard"
+              "title": "Outline"
             }
           },
           {
@@ -231,22 +242,24 @@
   },
   "active": "52be1d4835667d7f",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
+    "HTML Exports/einführung-in-die-informatik.html",
+    "Dashboard.md",
+    "[.md",
+    "HTML Exports/site-lib/styles/theme.css",
+    "HTML Exports/site-lib/styles/global-variable-styles.css",
+    "HTML Exports/site-lib/styles",
+    "HTML Exports/site-lib/search-index.json",
+    "HTML Exports/site-lib/rss.xml",
+    "HTML Exports/site-lib/metadata.json",
+    "HTML Exports/site-lib",
     "Module/Semester 1/EIDI/Einführung in die Informatik.md",
     "HTML Exports/260201/index.html",
     "HTML Exports/260201/site-lib/search-index.json",
-    "HTML Exports/260201/site-lib/metadata.json",
     "HTML Exports/260201/attachments/pasted-image-20260131162811.png",
-    "HTML Exports/260201/attachments",
-    "Dashboard.md",
     "Module/Semester 1/EIDI/Altkausuren.md",
-    "HTML Exports/260201/site-lib/styles/obsidian.css",
-    "HTML Exports/260201/site-lib/styles/theme.css",
-    "HTML Exports/260201/site-lib/styles/global-variable-styles.css",
-    "HTML Exports/260201/site-lib/styles/main-styles.css",
-    "HTML Exports/260201/site-lib/media/favicon.ico",
     "HTML Exports/260201/site-lib/media/6155340132a851f6089e.svg",
     "HTML Exports/260201/site-lib/media/2308ab1944a6bfa5c5b8.svg",
-    "HTML Exports/260201/site-lib/fonts/c504db5c06caaf7cdfba.woff2",
     "HTML Exports/260201/altkausuren.md",
     "HTML Exports/attachments/pasted-image-20260131162811.png",
     "HTML Exports/altkausuren.md",
@@ -271,8 +284,6 @@
     "Module/Semester 1/EIDI/Recursion.md",
     "Module/Semester 1/EIDI/Radix Sort.md",
     "Module/Semester 1/EIDI/Race Conditions.md",
-    "Module/Semester 1/EIDI/Queue.md",
-    "Module/Semester 1/EIDI/Producer Consumer Problem.md",
     "Digital/examples/processor/ALU/ALU.svg",
     "Module/Vorkurs/9 Differentiation and Integration/attachments/Pasted image 20250925112807.png",
     "Module/Vorkurs/9 Differentiation and Integration/attachments/Pasted image 20250923174440.png",
