@@ -16,26 +16,29 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Prepare Files for Root URL
+      - name: Create Redirect Index
         run: |
           cd "HTML Exports"
-          # 1. Find the long file
+          # 1. Find the actual filename as it exists on the system
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
           if [ -n "$target_file" ]; then
-            echo "Creating root index from $target_file..."
+            echo "Creating redirect index for: $target_file"
             
-            # 2. Copy the content directly to index.html
-            # This makes the server load it at /eidi/ automatically
-            cp "$target_file" index.html
-            
-            # 3. Patch the metadata INSIDE index.html
-            # We set the pathname to an empty string or './' so the 
-            # navbar and JS think they are already 'home'
-            sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content=".\/"/g' index.html
-            sed -i 's/property="og:url" content="[^"]*"/property="og:url" content=".\/"/g' index.html
-            
-            echo "Success: Site will now load at the directory root."
+            # 2. Use the variable $target_file so we don't manually type the 'ü'
+            cat <<EOF > index.html
+          <!DOCTYPE html>
+          <html>
+            <head>
+              <meta charset="UTF-8">
+              <meta http-equiv="refresh" content="0; url='$target_file'" />
+              <title>Redirecting...</title>
+            </head>
+            <body>
+              <p>Redirecting to <a href="$target_file">Informatik</a></p>
+            </body>
+          </html>
+          EOF
           else
             echo "Error: No file found."
             exit 1
