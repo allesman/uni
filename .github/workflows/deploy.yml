@@ -23,7 +23,6 @@ jobs:
           
           if [ -n "$target_file" ]; then
             # 1. Rename the physical file
-            mv "$target_file" index.html
             
             # 2. Patch the metadata in the new index.html
             sed -i "s|meta name=\"pathname\" content=\"[^\"]*\"|meta name=\"pathname\" content=\"./\"|g" index.html
