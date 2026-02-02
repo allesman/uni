@@ -7,34 +7,38 @@ semester: 1
 ---
 [[Altkausuren]]
 # Einführung, Teil 1-2
-ts is free vro
-- Geheimnisprinzip -> Abstraktionsebene -> erleichtert Wartung
-- Bei Methodenaufruf werden gegebene Parameter für Ausführung der Methode kopiert
-
+## Kapselung
+Abstraktionsebene zwischen Dingen außerhalb und innerhalb von Klasse (z.B. Getter und Setter) erleichtert Wartung/[[#Komposition statt Vererbung!|Modifikationen am gekapselten Stuff]].
 ## Primitivity
 
-|                                 | Primitive                                                       | Non-Primitive                                                                                                |
-| ------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| Examples                        | `int`, `boolean`                                                | `String`, `Array`, any custom class                                                                          |
-| What does the variable contain? | the value itself                                                | a **reference** to the address where the data is stored                                                      |
-| What if I supply it to method?  | method receives copy of value (can't modify the caller's value) | method receives copy of reference (can modify the data, [[#Call-by-Value (Referenzen)\|⚠️ but not always!]]) |
+|                       | Primitive                                                            | Non-Primitive                                                                                                                            |
+| --------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Beispiele             | `int`, `boolean`                                                     | `String`, `Array`, jede custom class                                                                                                     |
+| Wert                  | direkt die Daten selbst                                              | eine **referenz** auf die Adresse mit den Daten                                                                                          |
+| Als Methodenparameter | Methode erhält Kopie des Werts, kann den "äußeren" Wert nicht ändern | Methode erhält Kopie der Referenz (kann also die Daten dennoch ändern, [[#Call-by-Value (Referenzen)\|⚠️ aber nicht bei reassignment!]]) |
 
 ## Decorators
-### Security Keywords
+### Access Modifier
 
-| *decorator*    | *function*                                                         |
-| -------------- | ------------------------------------------------------------------ |
-| `public`       | accessible from everywhere                                         |
-| `private`      | accessible from within class                                       |
-| `protected`    | accessible from within class, subclasses and [[#Package\|package]] |
-| \[no keyword\] | like `protected` but no access from outside [[#Package\|package]]  ||
+| **Modifier**     | **Klasse** | **[[#Package]]** | **Unterklasse** | **Welt (Global)** |
+| ---------------- | ---------- | ---------------- | --------------- | ----------------- |
+| `public`         | ✅          | ✅                | ✅               | ✅                 |
+| `protected`      | ✅          | ✅                | ✅               | ❌                 |
+| _(kein Keyword)_ | ✅          | ✅                | ❌               | ❌                 |
+| `private`        | ✅          | ❌                | ❌               | ❌                 |
 ### Other Keywords
-| *decorator* | *function*                                                                                                                                                                                                                                             |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `abstract`  | - methods declared without implementation<br>- classes that can never have objects (see also: [[#Abstraktion/ Interface s\|Interfaces]])<br>- all classes that contain abstract methods **must** be abstract                                           |
-| `final`     | - for variables -> constant values (can't be modified during runtime)<br>  - for [[#Primitivity\|non-primitives]], only the reference is `final`, not the data it points at<br>- for classes -> cannot be **[[#Abstraktion/ Interface s\|inherited]]** ||
+| *decorator* | *function*                                                                                                                                                                                                                                                                                                       |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `abstract`  | - Methoden: Deklarierung ohne Implementierung<br>- Klassen: uninstanziierbar -> kann keine Objekte haben (see also: [[#Abstraktion/ Interface s\|Interfaces]])<br>- Alle Klassen, die mindestens eine `abstract` Methode haben, **müssen** `abstract` sein                                                       |
+| `final`     | - Variablen<br>  - [[#Primitivity\|primitives]]: Konstanter Wert (kann nicht in **runtime** geändert werden)<br>  - [[#Primitivity\|non-primitives]]: nur der Wert, also die Referenz ist `final`, nicht die Daten auf die sie zeigt<br>- Klassen: kann nicht **[[#Abstraktion/ Interface s\|extended]]** werden |
+| `static`    | - Gehört nicht dem jeweiligen Objekt, sondern der Klasse an sich<br>- Kann ohne bestimmte Referenz auf oder Existenz eines Objekts verwendet werden<br>- Useful für Konstanten (mit `static`) oder id (`static int count=count; int id=count++;`[^2])                                                            |
+
+[^2]: wobei das laut meinem actual SWE Freund mit 10 Jahren Industrieerfahrung Giga Anti-Pattern ist lol
+
 ### Package
-normalerweise file, aber gibt keyword für mehr
+- Zur Gruppierung verwandter Klassen
+- Alle Klassen in einem File sind in einem Package
+- Für Package mit mehreren Files: Ordner `myPackage` machen und die Files darin mit `package myPackage;` versehen
 ## Call-by-Value (Referenzen)
 Bei [[#Primitivity|Non-Primitive]] Methodenargumenten übergibt Java **Kopien der Referenz**. Modifizierung des Objekts (z.B. `arr[0]=1`) ändert das **Original-Objekt im Heap**. Reassignment der Variable auf (neues) Objekt (z.B. `arr = new int[1]`) ändert nur die **lokale Kopie** der Referenz und hat außen keine Auswirkung.
 # Teil 3: Testen
@@ -78,7 +82,7 @@ skalarprodukt(a,b):
 ## Allgemein
 ### Implementierung
 #### Komposition statt Vererbung!
-Wird eine Datenstruktur A durch Nutzung einer anderen Struktur B implementiert, ist **Vererbung (`A extends B`) suboptimal**, da B nicht **gekapselt** bleibt (Bsp: `Stack extends ArrayList` erbt `add(0,x)`, was **LIFO bricht**). Durch **Komposition** (B als Attribut) bleibt man **flexibel**, falls B später gegen eine andere Struktur ausgetauscht werden soll.
+Wird eine Datenstruktur A durch Nutzung einer anderen Struktur B implementiert, ist **Vererbung (`A extends B`) suboptimal**, da B nicht **[[#Kapselung|gekapselt]]** bleibt (Bsp: `Stack extends ArrayList` erbt `add(0,x)`, was **LIFO bricht**). Durch **Komposition** (B als Attribut) bleibt man **flexibel**, falls B später gegen eine andere Struktur ausgetauscht werden soll.
 #### Generische Datentypen
 Die generische Form **`A<B>`** macht primär dann Sinn, wenn B den **Typ der in A gespeicherten Elemente** definiert (z.B. eine Liste von B-Objekten).
 ## Basic Strukturen

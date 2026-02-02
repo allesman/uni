@@ -10,7 +10,7 @@
     "postProcess": true,
     "displayProgress": true,
     "inlineHTML": false,
-    "exportPath": "E:\\Users\\allesman\\Documents\\1TUM\\uni vault\\HTML Exports\\260201",
+    "exportPath": "/home/merlin/uni/HTML Exports/260201",
     "filesToExport": [
       "Module/Semester 1/EIDI/Einführung in die Informatik.md"
     ],

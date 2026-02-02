@@ -24,7 +24,7 @@
             }
           },
           {
-            "id": "62a56c8338489fd2",
+            "id": "7fab67bce5d28505",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -92,7 +92,7 @@
             }
           },
           {
-            "id": "2421b422ae424e8c",
+            "id": "465e36349bd5ec27",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -106,7 +106,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 256.5,
+    "collapsed": true
   },
   "right": {
     "id": "09faeb26a179d322",
@@ -200,14 +201,16 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
+      "webpage-html-export:Export as HTML": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -227,10 +230,13 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "62a56c8338489fd2",
+  "active": "7fab67bce5d28505",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
     "Module/Semester 1/EIDI/Einführung in die Informatik.md",
+    "Dashboard.md",
+    "Module/Semester 1/EIDI/Stack.md",
+    "Module/Semester 1/EIDI/Final Keyword.md",
+    "conflict-files-obsidian-git.md",
     "[.md",
     "Module/Semester 1/EIDI/Polymorphie.pdf",
     "HTML Exports/site-lib/styles/obsidian.css",
@@ -250,7 +256,6 @@
     "HTML Exports/260201/site-lib/media/6155340132a851f6089e.svg",
     "HTML Exports/260201/site-lib/media/2308ab1944a6bfa5c5b8.svg",
     "HTML Exports/260201/attachments/pasted-image-20260131162811.png",
-    "Dashboard.md",
     "Module/Semester 1/DS/Diskrete Strukturen.md",
     "Module/Semester 1/EIDI/altklausuren/Altklausur 2017.md",
     "Module/Vorkurs/Rechnereinführung/Linux/Terminal.md",
@@ -271,8 +276,6 @@
     "Module/Semester 1/Advisor/2025-01-28 Protokoll.md",
     "Module/Semester 1/Advisor/Advisor (Wahlfach).md",
     "Module/Semester 1/ERA/ERA.md",
-    "Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md",
-    "Module/Semester 1/ERA/Slides/HA.md",
     "Module/Semester 1/DS/Tutoriumsaufgaben/thumbnail.png",
     "Module/Semester 1/DS/Tutoriumsaufgaben (3)/thumbnail.png"
   ]
