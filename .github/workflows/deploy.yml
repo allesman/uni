@@ -23,11 +23,17 @@ jobs:
       - name: Rename entry point to index.html
         run: |
           cd "HTML Exports"
-          if [ -f "einführung-in die-informatik.html" ]; then
-            mv "einführung-in die-informatik.html" index.html
-            echo "File renamed successfully."
+          # Find any file starting with 'einführung' (using a wildcard for the special characters)
+          # and rename it to index.html
+          target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
+          
+          if [ -n "$target_file" ]; then
+            echo "Found file: $target_file. Renaming to index.html"
+            mv "$target_file" index.html
           else
-            echo "Warning: Target file not found, skipping rename."
+            echo "Error: Could not find the file starting with 'einführung' in $(pwd)"
+            ls -R # This prints the folder contents to the log so you can see what's actually there
+            exit 1 # Fails the build so you know it didn't work
           fi
       - name: Sync files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
