@@ -14,23 +14,19 @@ permissions:
 
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    name: Deploy 🚀
+    needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Checkout repository
+        uses: actions/checkout@main
+      - name: Sync files to hosting
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          # Replace 'YOUR_EXPORTED_FOLDER' with your folder name (e.g., 'export')
-          path: './HTML Exports'
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          server: v132927.goserver.host
+          username: allesman
+          password: ${{ secrets.FTP_PASSWORD }}
+          # This tells the action to take the contents of your export folder...
+          local-dir: ./HTML Exports/
+          # ...and put them in the root (or subfolder) of your FTP server
+          server-dir: ./eidi
