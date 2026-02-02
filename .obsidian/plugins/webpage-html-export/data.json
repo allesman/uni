@@ -70,7 +70,7 @@
     },
     "fileNavigationOptions": {
       "featureId": "file-navigation",
-      "enabled": true,
+      "enabled": false,
       "unavailable": false,
       "alwaysEnabled": false,
       "hideSettingsButton": false,
@@ -89,7 +89,7 @@
     },
     "searchOptions": {
       "featureId": "search",
-      "enabled": true,
+      "enabled": false,
       "unavailable": false,
       "alwaysEnabled": false,
       "hideSettingsButton": false,
@@ -115,7 +115,7 @@
     },
     "themeToggleOptions": {
       "featureId": "theme-toggle",
-      "enabled": true,
+      "enabled": false,
       "unavailable": false,
       "alwaysEnabled": false,
       "hideSettingsButton": false,
@@ -127,7 +127,7 @@
     },
     "graphViewOptions": {
       "featureId": "graph-view",
-      "enabled": true,
+      "enabled": false,
       "unavailable": false,
       "alwaysEnabled": false,
       "hideSettingsButton": false,
@@ -215,7 +215,7 @@
     "faviconPath": "",
     "siteName": "uni vault",
     "iconEmojiStyle": "Native",
-    "exportRoot": "",
+    "exportRoot": "Module/Semester 1/EIDI",
     "includePluginCss": [],
     "includeStyleCssIds": [],
     "autoDisposeWebpages": true
