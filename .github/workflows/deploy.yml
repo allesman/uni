@@ -20,26 +20,31 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@main
-      - name: Create Clean Entry Point
+      - name: Create Redirect Index
         run: |
           cd "HTML Exports"
-          # 1. Identify the long file
+          # 1. Identify the long filename
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
           if [ -n "$target_file" ]; then
-            echo "Processing $target_file..."
+            echo "Creating redirect index pointing to $target_file"
             
-            # 2. Copy the file to index.html (Keeping the original keeps the plugin happy)
-            cp "$target_file" index.html
-            
-            # 3. Fix the internal metadata so the URL doesn't "self-correct" in the bar
-            # We change the pathname to just './' (the current directory)
-            sed -i 's/content="einführung-in-die-informatik.html"/content=".\/"/g' index.html
-            sed -i 's/property="og:url" content="einführung-in-die-informatik.html"/property="og:url" content=".\/"/g' index.html
-            
-            echo "index.html created and metadata patched."
+            # 2. Generate a clean index.html that redirects to the content
+            # The '0' means zero seconds delay
+            cat <<EOF > index.html
+            <!DOCTYPE html>
+            <html>
+              <head>
+                <meta http-equiv="refresh" content="0; url='$target_file'" />
+                <title>Redirecting...</title>
+              </head>
+              <body>
+                <p>Redirecting to <a href="$target_file">$target_file</a></p>
+              </body>
+            </html>
+            EOF
           else
-            echo "Error: Target file not found."
+            echo "Error: No export file found to redirect to."
             exit 1
           fi
       - name: Sync files to hosting
