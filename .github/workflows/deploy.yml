@@ -16,32 +16,41 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Identify Content File
+      - name: Identify and Patch Content File
         run: |
-          # Finds the long 'einführung...' file and saves path to environment
+          # 1. Find the long filename
           TARGET_FILE=$(ls "HTML Exports"/einf*hrung*.html 2>/dev/null | head -n 1)
+          
           if [ -z "$TARGET_FILE" ]; then
             echo "Error: No export file found."
             exit 1
           fi
-          echo "CONTENT_FILE=$TARGET_FILE" >> $GITHUB_ENV
-
-      - name: Create Root index.html
-        run: |
-          # Rename the content file to index.html so it loads at the directory root
-          mv "$CONTENT_FILE" "HTML Exports/index.html"
-          echo "Moved $CONTENT_FILE to index.html"
-
-      - name: Patch Metadata and Fix Links
-        run: |
-          # 1. Align the internal path with the root URL
-          sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content=".\/"/g' "HTML Exports/index.html"
           
-          # 2. Fix the Base HREF (This is the magic part)
-          # This tells the browser to resolve all links relative to the root folder
-          sed -i 's/<base href="[^"]*">/<base href=".\/">/g' "HTML Exports/index.html"
+          # 2. Patch the metadata in the actual content file
+          # We tell the navbar it is at 'index.html' so it stays clean
+          sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content=".\/"/g' "$TARGET_FILE"
           
-          echo "Metadata and Base URL patched."
+          # 3. Save the filename for the redirect step
+          echo "CONTENT_FILE_NAME=$(basename "$TARGET_FILE")" >> $GITHUB_ENV
+
+      - name: Create Redirect Index
+        run: |
+          cd "HTML Exports"
+          # Create a redirect that preserves the 'clean' feel
+          cat <<EOF > index.html
+          <!DOCTYPE html>
+          <html>
+            <head>
+              <meta charset="UTF-8">
+              <meta http-equiv="refresh" content="0; url='$CONTENT_FILE_NAME'" />
+              <meta name="pathname" content="./">
+              <title>Einführung in die Informatik</title>
+            </head>
+            <body>
+              <p>Redirecting to <a href="$CONTENT_FILE_NAME">Informatik</a></p>
+            </body>
+          </html>
+          EOF
           
       - name: Sync files to hosting
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
