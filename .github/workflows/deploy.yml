@@ -27,7 +27,7 @@ jobs:
             echo "Processing: $target_file"
             
             # 2. Change pathname in the original file
-            sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content="./"/g' "$target_file"
+            sed -i 's/meta name="pathname" content="[^"]*"/meta name="pathname" content=".\/"/g' "$target_file"
             
             # 3. Create index.html with the metadata identity
             # (Ensuring EOF is at the start of the line to avoid syntax errors)
