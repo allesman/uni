@@ -16,35 +16,36 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Prepare Files and Create Redirect
+      - name: Create Invisible Iframe Mask
         run: |
           cd "HTML Exports"
-          
-          # 1. Identify the long file (Must happen inside this block to use the variable)
+          # 1. Identify the content file
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
           if [ -n "$target_file" ]; then
-            echo "Processing: $target_file"
+            echo "Wrapping $target_file in a full-screen iframe..."
             
-            # 3. Create index.html with the metadata identity
-            # (Ensuring EOF is at the start of the line to avoid syntax errors)
+            # 2. Create the index.html as a full-screen container
+            # The 'overflow:hidden' on body prevents double scrollbars
           cat <<EOF > index.html
           <!DOCTYPE html>
-          <html>
-            <head>
+          <html lang="de" style="margin:0; padding:0; height:100%; overflow:hidden;">
+          <head>
               <meta charset="UTF-8">
-              <meta name="pathname" content="eidi">
-              <meta http-equiv="refresh" content="0; url='$target_file'" />
+              <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
               <title>Einführung in die Informatik</title>
-            </head>
-            <body>
-              <p>Redirecting to <a href="$target_file">Informatik</a></p>
-            </body>
+              <style>
+                  body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+                  iframe { border: none; width: 100vw; height: 100vh; display: block; }
+              </style>
+          </head>
+          <body>
+              <iframe src="$target_file" title="Content"></iframe>
+          </body>
           </html>
           EOF
-          
           else
-            echo "Error: No export file found."
+            echo "Error: No file found"
             exit 1
           fi
           
