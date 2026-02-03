@@ -37,7 +37,11 @@ In Java ist `a mod b` mit `a<0` also der absolute Wert des Rests von $\frac{a}{b
 | `++a`/`--a` | `a` wird in-/dekrementiert, dann wird der Wert gelesen.                                             |
 
 > [!danger] Deswegen liebe ich EIDI
-> Natürlich verwöhnt uns Big P hier wieder mit dem EIDI-Classic *"Having to understand code that would instantly get you fired at a real job"*: Da bei `a=a++;` der Wert von `a` zuerst im Execution Stack gespeichert wird, und die anschließende In-/Dekrementierung in Memory gespeichert wird, wird beim anschließenden Reassignment von `a` noch der alte Wert vor der Änderung verwendet. Die Anweisung `a=a++;` ändert also nicht den Wert von `a`.
+> Natürlich verwöhnt uns Big P hier wieder mit dem EIDI-Classic:
+> 
+> *"Having to understand code that would instantly get you fired at a real job"*
+> 
+> Da beim Assignment `a=a++` der Wert von `a` zuerst im **Execution Stack** gespeichert wird, und die anschließende In-/Dekrementierung in **Memory** gespeichert wird, wird beim anschließenden Reassignment von `a` noch der alte Wert vor der Änderung aus dem **Execution Stack** verwendet. Die Anweisung `a=a++` ändert also nicht den Wert von `a`. (Keine Sorge du musst nicht wissen was ein **Execution Stack** ist.)
 
 ## Decorators
 ### Access Modifier
@@ -54,6 +58,7 @@ In Java ist `a mod b` mit `a<0` also der absolute Wert des Rests von $\frac{a}{b
 | `abstract`  | - Methoden: Deklarierung ohne Implementierung<br>- Klassen: uninstanziierbar -> kann keine Objekte haben (see also: [[#Abstraktion/ Interface s\|Interfaces]])<br>- Alle Klassen, die mindestens eine `abstract` Methode haben, **müssen** `abstract` sein                                                       |
 | `final`     | - Variablen<br>  - [[#Primitivity\|primitives]]: Konstanter Wert (kann nicht in **runtime** geändert werden)<br>  - [[#Primitivity\|non-primitives]]: nur der Wert, also die Referenz ist `final`, nicht die Daten auf die sie zeigt<br>- Klassen: kann nicht **[[#Abstraktion/ Interface s\|extended]]** werden |
 | `static`    | - Gehört nicht dem jeweiligen Objekt, sondern der Klasse an sich<br>- Kann ohne bestimmte Referenz auf oder Existenz eines Objekts verwendet werden<br>- Useful für Konstanten (mit `static`) oder id (`static int count=count; int id=count++;`[^2])                                                            |
+| `default`   | Nur in [[#Interfaces]] möglich, entfernt sozusagen das hier automatisch anwesende `abstract`, sodass wir eine Implementierung für die Methode angeben können.                                                                                                                                                    |
 
 [^2]: wobei das laut meinem actual SWE Freund mit 10 Jahren Industrieerfahrung Giga Anti-Pattern ist lol
 
@@ -555,13 +560,13 @@ TODO syntax enum
 - [x] TODO maybe 4?
 - [x] TODO maybeeee 5 noch was ?
 - [x] TODO 6
-- [ ] TODO enums
-- [ ] TODO interface
-- [ ] TODO polymorphie
-- [ ] TODO 8
+- [x] TODO enums
+- [x] TODO interface
+- [x] TODO polymorphie
+- [x] TODO 8
 - [ ] TODO 11?
 - [ ] TODO 12
 - [x] TODO ++ --
 - [x] TODO modulo
 - [ ] TODO auto export
-- [ ] TODO [[#Package]]
+- [x] TODO [[#Package]]

@@ -39,6 +39,45 @@
           }
         ],
         "currentTab": 1
+      },
+      {
+        "id": "fcc1e8250b60b147",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6a7682fbce3a63fd",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "terminal:terminal",
+              "state": {
+                "terminal:terminal": {
+                  "cwd": "/home/merlin/uni",
+                  "focus": false,
+                  "profile": {
+                    "followTheme": true,
+                    "name": "",
+                    "restoreHistory": false,
+                    "rightClickAction": "copyPaste",
+                    "successExitCodes": [
+                      "0",
+                      "SIGINT",
+                      "SIGTERM"
+                    ],
+                    "terminalOptions": {
+                      "documentOverride": null
+                    },
+                    "type": "developerConsole"
+                  },
+                  "serial": null
+                }
+              },
+              "pinned": true,
+              "icon": "terminal",
+              "title": "Terminal: Developer console"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
