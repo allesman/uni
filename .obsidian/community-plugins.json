@@ -19,6 +19,5 @@
   "webpage-html-export",
   "obsidian-enhancing-export",
   "obsidian-pandoc",
-  "terminal",
-  "gnome-terminal-loader"
+  "terminal"
 ]
