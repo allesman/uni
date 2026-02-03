@@ -98,5 +98,14 @@
       ],
       "key": "E"
     }
+  ],
+  "workspace:split-vertical": [
+    {
+      "modifiers": [
+        "Mod",
+        "Meta"
+      ],
+      "key": "ArrowRight"
+    }
   ]
 }

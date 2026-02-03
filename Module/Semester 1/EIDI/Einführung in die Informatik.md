@@ -4,6 +4,7 @@ fertig: false
 klausur: 2026-02-09T00:00:00.000Z
 moodle: "[[https://eidi.tum.sexy]]"
 semester: 1
+note: 0
 ---
 [[Altkausuren]]
 # Teil 1: Einführung
@@ -213,7 +214,7 @@ Standard Implementierungen: `LinkedList`, `ArrayList`
 - `contains()`
 - `size()`
 #### Custom Implementierung als Linked List
-- Klasse `Node` mit Referenz zur nächsten (bei Double Linked auch zur vorigen) Node
+- Klasse `Node` mit [[#Teil 8 Rekursion|Referenz zur nächsten]] (bei Double Linked auch zur vorigen) Node
 - *Optional* (aber sehr sinnvoll): Wrapper-Klasse mit Referenzen `head` und `tail` zu erster und letzter Node
 - *Optional*: Abstraktionsebene zwischen `Node` und Daten mit Referenz zu Objekt der Klasse `Data` in `Node`, die tatsächliche Daten enthält
 - *Optional:* Kompositum-Pattern, `abstract` Klasse `Element`, von der `Node` und `End` erben, dann kann sehr viel Spaghetti Logik, durch Methoden ersetzt werden, die in den beiden unterschiedlich implementiert werden (z.B. Sortiert einfügen Methode vergleicht bei `Node` und gibt ggf an Nachfolger weiter, während `End` direkt einfügt, da Ende erreicht)
@@ -264,13 +265,42 @@ Wird eine Datenstruktur A durch Nutzung einer anderen Struktur B implementiert, 
 Die generische Form **`A<B>`** macht primär dann Sinn, wenn B den **Typ der in A gespeicherten Elemente** definiert (z.B. eine Liste von B-Objekten).
 
 ## Sorting Algs
-### [[Bubble Sort]]
-#### [[Radix Sort]]
-#### [[Insertion Sort]]
-#### [[Merge Sort]]
-#### [[Selection Sort]]
-# Teil 7: Objektorientierung 
+### $O(n^2)$
+#### Bubble Sort
+Iteriert durch das Array, für jedes Element, bewege es so lange nach rechts wie es größer als der rechte Nachbar ist.
+#### Selection Sort
+Sucht im unsortierten Teil des Arrays das **kleinste Element** und vertauscht es mit dem ersten Element des unsortierten Teils.
+#### Insertion Sort
+Man nimmt das nächste unsortierte Element und "fügt" es an der **richtigen Stelle** in den bereits sortierten Teil ein, indem man größere Elemente nach rechts verschiebt.
+### $O(d+n)$
+#### Radix Sort
+Vergleicht keine Zahlen direkt. Stattdessen werden die Zahlen in "Eimer" (Buckets) sortiert, basierend auf ihren einzelnen Ziffern (zuerst die Einerstelle, dann die Zehnerstelle usw.). Also wird für das sortieren dieser noch ein Sorting-Alg gebraucht
+### $O(n \log n)$
+
+#### Merge Sort
+Das Array wird rekursiv in immer kleinere Hälften gespalten, bis nur noch Einzelteile übrig sind. Diese werden dann in der richtigen Reihenfolge wieder **zusammengeführt (merged)**.
+# Teil 7: Objektorientierung
 ## Vererbung
+- Keyword `extends`
+- Unterklasse übernimmt alle Methoden und Attribute, kann diese aber überschreiben
+- Man kann nur von 1 Klasse erben
+## Interfaces
+- Keywords `Interface` und `implements`
+- Alle Methoden eines Interfaces sind automatisch `public` und `abstract`
+- mit `default` kann aber dennoch eine Implementierung vorgenommen werden
+- Man kann beliebig viele Interfaces implementieren
+- Interfaces können auch andere Interfaces `extend`en
+
+![[Pasted image 20260131162811.png|500]]
+## Enums
+Nützlich, wenn es eine begrenze Anzahl an Belegungen geben soll für Variable.
+```java
+enum Beziehungsstatus
+{
+	LEDIG, LIIERT, VERHEIRATET, VERWITWET
+}
+Beziehungsstatus b = Beziehungsstatus.VERHEIRATET;
+```
 ## Polymorphie
 ### Statischer vs. Dynamischer Typ
 `StaticType o = new DynamicType()`
@@ -296,19 +326,119 @@ Das gilt auch bei primitiven Typen.
 ![[Polymorphie.pdf#page=1&rect=447,42,548,167|Polymorphie, p.1|300]]
 ### **Und welche scheiß Methode wird jetzt aufgerufen?**
 ![[Polymorphie.pdf#page=2&rect=45,187,549,658|Polymorphie, p.2]]
-In other words: Such bei statischem Typ (oder wenn nichts gibt bei dessen Oberklassen) die Methode raus, die am besten passt. Dann nimmt die in der Vererbungshierarchie möglichst nah am dynamischen Typen liegende Implementierung dieser Methode. (Und zwar mit exakt der selben Signatur!)
+*In other words*: Such bei statischem Typ (oder wenn nichts gibt bei dessen Oberklassen) die Methode raus, die am besten passt. Dann nimmt die in der Vererbungshierarchie möglichst nah am dynamischen Typen liegende Implementierung dieser Methode. (Und zwar mit exakt der selben Signatur!)
 #### Best Fitting Methode
 Zunächst werden alle Methoden ausgesucht, deren [[#Methodensignatur]] auf den Call passt (auch wenn dafür [[#Implizit vs Explizit|implizite Parametercasts]] notwendig sind).
-Für jeden supplied Parameter wird geschaut, welche dieser Methode diesen mit den wenigsten [[#Implizit vs Explizit|impliziten Casts]] annehmen kann. Gibt es eine Methode, die für alle Parameter der beste Fit ist, wird sie gewählt, sonst ein `Ambiguity Error` geworfen.
-## Abstraktion/[[Interface]]s
-![[Pasted image 20260131162811.png|500]]
-## Enums
+Für jeden supplied Parameter wird geschaut, welche dieser Methoden diesen mit den wenigsten [[#Implizit vs Explizit|impliziten Casts]] annehmen kann. Gibt es eine Methode, die für alle Parameter der beste Fit ist, wird sie gewählt, sonst ein `Ambiguity Error` geworfen.
 
 # [[#Teil 8: Rekursion]]
-rekursion schmekursion sag ich immer
-- [[Binary Tree]]
-- [[Binary Search]]
-- [[Recursion]]
+
+> [!hint] Holy shit warum verbringen wir soviel Zeit mit Rekursion
+> \<rant\>
+> du wirst das nie in deinem Job brauchen
+> Die wichtigsten Anwendungen für Rekursion finden sich bei Giga-Low-Level Zeug wie [[#Custom Implementierung als Linked List|Linked Lists]] oder [[#Merge Sort]]. Also Zeug das schlaue Leute vor 30 Jahren ==schon für dich gemacht haben==! Du wirst auf Arbeit nie ein Ticket assigined bekommen "bitte bau einen custom sortalg" dikkahhh
+> \</rant\>
+## Aufbau
+- Base Case (Abbruchbedingung)
+- Rekursiver Aufruf
+- Logik
+- Return
+## Backtracking
+Die Idee is basically, dass du nicht immer alle rekursiven Branches betrachten musst. Wenn du z.B. nach etwas suchst, kannst du als `return`-value ne `boolean` nehmen, die der Methode Bescheid sagt, ob ihre rekursiven Aufrufe was gefunden haben. So kann bei Fund sofort das Programm beendet werden.
+## Tail Rekursion
+
+> [!quote] Hey Leute, ich weiß wir haben grade 2 Wochen gelernt, warum Rekursion so viel besser als Iteration ist
+> Ah btw, wenn möglich schreibt eure Rekursion so, dass sie der Compiler einfach als Iteration umformen kann 😭😭😭
+
+Wenn der Rekursive Aufruf nach der Rechnungslogik der Funktion steht, muss beim Erreichen von ihm nicht die Return-Adresse modifiziert werden, da wir nicht mehr an diese Stelle returnen müssen (es gibt ja nach dem Rekursiven Aufruf nichts mehr zu tun). Deshalb können wir die einfach die ganze Zeit an der Stelle lassen, wo die Funktion das erste Mal aufgerufen wurde. beim Erreichen der Abbruchbedingung springen wir dann direkt ganz raus. So sparen wir uns ne Menge Platz im Stack weil sonst müssten wir ja pro Rekursivem Aufruf eine Rücksprungadresse und ggf. noch andere Werte reinschreiben. Stattdessen machen wir die Berechnung jetzt einfach vor dem Aufruf/im Parameter.
+```java
+static int factorialRecursive(int n) 
+{
+	// 1 Base-Case
+    if (n <= 1) 
+        return 1;
+        
+    // 2 Rekursiver Aufruf
+	int preResult= factorial(n - 1); //Hierhin muss zurückgesprungen werden
+	
+	// 3 Calculation
+    return n * preResult; // Erst jetzt beim Weg heraus wird auf preResult draufmultipliziert
+}
+```
+vs.
+```java
+static int factorialTailRecursive(int n, int preResult)
+{
+	// 1 Base-Case
+	if (n <= 0)
+		return preResult;
+
+	// 2(!!) Calculation
+	preResult=preResult * n; // preResult wird schon beim Weg hinein draufmultipliziert
+	n=n-1;
+	
+	// 3(!!) Rekursiver Aufruf
+	return factTR(n, preResult); 
+}
+```
+but wait... das würde in Assembly dann etwa so aussehen
+```assembly
+START_METHOD:
+
+    # 1 Base-Case
+    COMPARE n, 0
+    JUMP_IF_LESS_EQUAL FINISH
+
+    # 2 Calculation
+    SUBTRACT n, n, 1
+    MULTIPLY preResult, preResult, n
+    
+    # 3 Rekursiver Aufruf
+    JUMP START_METHOD          # Der explizite Sprung (wie factTR)
+
+FINISH:
+    RETURN preResult
+```
+sieht das nicht ein bisschen aus wie...
+```java
+static int factorialLoop(int n, int preResult) {
+    // 1 Base-Case
+    while (n > 0) { 
+        
+        // 2 Calculation
+        n = n - 1;
+        preResult = n * preResult; 
+        
+        // 3 """Rekursiver Aufruf"""
+    }
+    return preResult;
+}
+```
+...
+
+## Divide and Conquer
+### Die Idee
+Probleme solange zerhacken bis sie trivial sind (wünschte das ginge auch irl 🚬)
+## Beispiele
+### Binary Search
+Die Idee des Algorithmus ist wie folgt (unter der Annahme, dass die Menge in **aufsteigender** Reihenfolge sortiert ist):
+* Starte mit der gesamten Liste.
+    * Erstelle einen Zeiger für die linke Grenze.
+    * Erstelle einen Zeiger für die rechte Grenze.
+* Solange die linke Grenze kleiner oder gleich der rechten Grenze ist, teile die Menge:
+    * Berechne den mittleren Index.
+    * *Falls* das mittlere Element größer als das Ziel ist:
+        * Wähle die linke Hälfte.
+        * Setze die rechte Grenze auf mittlerer Index - 1 (da wir das mittlere Element bereits geprüft haben).
+    * *Sonst falls* das mittlere Element kleiner als das Ziel ist:
+        * Wähle die rechte Hälfte.
+        * Setze die linke Grenze auf mittlerer Index + 1 (gleiche Logik).
+    * *Sonst*:
+        * Das mittlere Element ist das gesuchte Element; gib den Index/das Ziel zurück.
+* Gib -1/null zurück (Ziel-Element konnte nicht gefunden werden).
+### [[#Merge Sort]]
+
+## [[Binary Tree]]
 ## Endrekursion (Tail-Call)
 # Teil 9: Fortgeschrittene Programmierkonstrukte  
 ## [[Iteration]]
@@ -421,6 +551,7 @@ my tip gui
 
 ## TODOs
 
+TODO syntax enum
 - [x] TODO maybe 4?
 - [x] TODO maybeeee 5 noch was ?
 - [x] TODO 6

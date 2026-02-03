@@ -4,6 +4,7 @@ fertig: false
 klausur: 2026-02-13T00:00:00.000Z
 semester: 1
 retake: 2026-04-01T00:00:00.000Z
+note: 0
 ---
 #era
 #orga 

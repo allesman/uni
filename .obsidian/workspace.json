@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e7a7b303c61786dc",
+            "id": "6476b1793f0dcf79",
             "type": "leaf",
             "pinned": true,
             "state": {
@@ -24,35 +24,21 @@
             }
           },
           {
-            "id": "813b596b4f0f42d1",
+            "id": "5cf3f284119b5081",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Module/Semester 1/EIDI/Einführung in die Informatik.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "Einführung in die Informatik"
             }
-          },
-          {
-            "id": "1f0e505469d2eda1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Module/Semester 1/EIDI/Bubble Sort.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Bubble Sort"
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -168,7 +154,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 285.0026054382324
   },
   "right": {
     "id": "09faeb26a179d322",
@@ -259,8 +245,7 @@
               "title": "git-view"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -293,9 +278,23 @@
   "active": "96eb0d5e21eaaa8a",
   "lastOpenFiles": [
     "Module/Semester 1/EIDI/Einführung in die Informatik.md",
-    "Module/Semester 1/EIDI/Bubble Sort.md",
-    "Module/Semester 1/Games/Developing with Small Teams.md",
+    "Module/Semester 1/EIDI/Binary Search.md",
+    "Module/Semester 1/EIDI/Recursion.md",
+    "Module/Semester 1/EIDI/Binary Tree.md",
     "Dashboard.md",
+    "Module/Semester 1/EIDI/Altkausuren.md",
+    "Module/Semester 1/EIDI/Interface.md",
+    "Module/Semester 1/Advisor/Advisor (Wahlfach).md",
+    "Module/Semester 1/GDB/Grundlagen Datenbanken.md",
+    "Module/Semester 1/DS/Diskrete Strukturen.md",
+    "Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md",
+    "Module/Semester 1/PGDP/Grundlagenpraktikum Programmierung.md",
+    "Module/Semester 1/EIDI/Bubble Sort.md",
+    "Module/Semester 1/EIDI/Insertion Sort.md",
+    "Module/Semester 1/EIDI/Merge Sort.md",
+    "Module/Semester 1/EIDI/Radix Sort.md",
+    "Module/Semester 1/EIDI/Selection Sort.md",
+    "Module/Semester 1/Games/Developing with Small Teams.md",
     "Module/Semester 1/Games/Games.md",
     "Module/Semester 1/Games",
     "Module/Semester 1/EIDI/EIDI.md",
@@ -303,15 +302,10 @@
     "HTML Exports/polymorphie.pdf",
     "Module/Semester 1/EIDI/Polymorphism.md",
     "Module/Semester 1/EIDI/Array.md",
-    "Module/Semester 1/EIDI/Altkausuren.md",
     "Module/Semester 1/EIDI/Stack.md",
     "Module/Semester 1/EIDI/Buffers.md",
     "Module/Semester 1/EIDI/Queue.md",
     "Module/Semester 1/EIDI/Hash Table.md",
-    "Module/Semester 1/EIDI/Collections.md",
-    "Module/Semester 1/EIDI/Linked List.md",
-    ".obsidian.vimrc.md",
-    "Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md",
     "HTML Exports/site-lib/styles/main-styles.css",
     "HTML Exports/site-lib/fonts/mathjax_vector-bold.woff",
     "HTML Exports/site-lib/fonts/mathjax_vector-regular.woff",
@@ -322,20 +316,11 @@
     "HTML Exports/site-lib/media/favicon.png",
     "HTML Exports/site-lib/media/6155340132a851f6089e.svg",
     "HTML Exports/site-lib/media/2308ab1944a6bfa5c5b8.svg",
-    "Pasted image 20260124201751.png.md",
     "Pasted image 20260124201751.png",
-    "Module/Semester 1/EIDI/altklausuren/Altklausur 2017-2.md",
     "HTML Exports/attachments/pasted-image-20260131162811.png",
-    "Module/Semester 1/EIDI/Final Keyword.md",
-    "conflict-files-obsidian-git.md",
-    "[.md",
-    "HTML Exports/altkausuren.md",
     "HTML Exports/260201/site-lib/media/6155340132a851f6089e.svg",
     "HTML Exports/260201/site-lib/media/2308ab1944a6bfa5c5b8.svg",
     "HTML Exports/260201/attachments/pasted-image-20260131162811.png",
-    "Module/Semester 1/DS/Diskrete Strukturen.md",
-    "Module/Semester 1/EIDI/altklausuren/Altklausur 2017.md",
-    "Module/Vorkurs/Rechnereinführung/Linux/Terminal.md",
     "Attachments/Pasted image 20260131162811.png",
     "Module/Semester 1/DS/Tutoriumsaufgaben/thumbnail.png"
   ]

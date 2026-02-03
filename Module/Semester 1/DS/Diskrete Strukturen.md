@@ -4,6 +4,7 @@ fertig: false
 klausur: 2026-02-16T00:00:00.000Z
 moodle: "[[https://ds.tum.sexy]]"
 semester: 1
+note: 0
 ---
 
 # Grundlagen

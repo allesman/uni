@@ -27,7 +27,12 @@ choice(
 		fertig=true,
 		"✅",
 		"❌"
-	) as "DONE?"
+	) as "DONE?",
+choice(
+	note!=0,
+	note,
+	(prozent+"%")
+	) as NOTE
 from #orga
 sort klausur
 ```
