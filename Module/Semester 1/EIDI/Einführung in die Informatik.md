@@ -16,7 +16,8 @@ Abstraktionsebene zwischen Dingen außerhalb und innerhalb von Klasse (z.B. Gett
 | Beispiele             | `int`, `boolean`                                                     | `String`, `Array`, jede custom class                                                                                                     |
 | Wert                  | direkt die Daten selbst                                              | eine **referenz** auf die Adresse mit den Daten                                                                                          |
 | Als Methodenparameter | Methode erhält Kopie des Werts, kann den "äußeren" Wert nicht ändern | Methode erhält Kopie der Referenz (kann also die Daten dennoch ändern, [[#Call-by-Value (Referenzen)\|⚠️ aber nicht bei reassignment!]]) |
-
+Modulo Operator funktioniert anders als mathe
+++ 
 ## Decorators
 ### Access Modifier
 
@@ -44,25 +45,24 @@ Bei [[#Primitivity|Non-Primitive]] Methodenargumenten übergibt Java **Kopien de
 # Teil 3: Testen
 ## Die Idee
 Die Idee (bei Unit-Tests, eigentlich gibts auch noch andere wie z.B. Implementation Tests aber nicht Stoff) ist folgende:
-Wir zerhacken unseren Code in die minimalen Bestandteile, idealerweise Funktionen ohne Side-Effects (nur Input und Output) und schreiben für jeden Tests, bei denen wir Inputs providen und einen bestimmten Output dafür erwarten. So wissen wir direkt, wo genau der Fehler liegt. Wir schreiben sowohl Tests für das **Base-Case** (erwartbare Inputs), als auch für **Edge Cases** (weniger erwartbare Inputs). Eine gute Weise die Test-Cases zu strukturieren sind sogenannte Testklassen, bei denen man mit einer Reihe von Fallunterscheidungen alle möglichen Kombinationen und so alle Situationen abdeckt.
+Wir zerhacken unseren Code in die minimalen Bestandteile, idealerweise Funktionen ohne Side-Effects (nur Input und Output) und schreiben für jede Tests, bei denen wir Inputs providen und einen bestimmten Output dafür erwarten. So wissen wir direkt, wo genau der Fehler liegt. Wir schreiben sowohl Tests für das **Base-Case** (erwartbare Inputs), als auch für **Edge Cases** (weniger erwartbare Inputs). Eine gute Weise die Test-Cases zu strukturieren sind sogenannte Testklassen, bei denen man mit einer Reihe von Fallunterscheidungen alle möglichen Kombinationen und so alle Situationen abdeckt.
 
 > [!info] Welcome to Reality
 > Meistens geht das mit dem Zerhacken nicht so schön, weil viele Methoden in der echten Welt inheränt Side-Effects haben (außer man ist auf Hascell-FP-Trip). Ich muss z.B. auf Arbeit oft Unit Tests schreiben für Methoden die auf ne DB zugreifen. Oder die Methode ist abgesehen von den Parametern noch von anderem Stuff abhängig, wie z.B. Datum. Hier braucht man dann Mocking, wodurch man versucht, möglichst nur die Methode im Test zu testen und alles andere zu imitieren und damit abzuschotten.
 
 ## Syntax
 ```
-@Test                                 // Test annotation
-public void testSortLengths(){
-	// Tests for Bit-Flip-Protection
+@Test  // Test annotation
+public void testForBitFlip(){
     int a = 6;
     int b = 7;
     int c = a+b;
-    assertEquals(c,13);               // assert-Keyword (there's a bunch)
+    assertEquals(c,13); // assert-Keyword (there's a bunch)
 }
 ```
 
-> [!danger] Niemals [[#Primitivity|Non-Primitives]] mit `==` oder `assertEquals` vergleichen!
-> Dann vergleichst du nur deren Referenzen du ==Dulli==. Mach einfach `assert(true, obj1.equals(obj2))` du ==Dulli==.
+> [!danger] Niemals [[#Primitivity|Non-Primitives]] mit `==` vergleichen!
+> Dann vergleichst du nur deren Referenzen du ==Dulli==. Mach einfach `asssertEquals()` du ==Dulli==.
 
 # Teil 4: Kontrollstrukturen
 ## broooo free
@@ -210,6 +210,8 @@ Streams sind **lazy** und verarbeiten Daten **"on-the-fly"**, was sie **speicher
 	- oder Path von Directory, dann gibts `Files.walk()`, was n gefüllten Stream ausgibt
 [[Java File System]]
 ## [[Java Class - Socket]]
+## Exceptions/Errors
+### Checked vs Unchecked
 
 # Teil 10: Nebenläufigkeit
 [[Producer Consumer Problem]]
@@ -242,5 +244,8 @@ my tip gui
 
 
 ## TODOs
+
+TODO ++ --
+TODO modulo
 TODO auto export
 TODO [[#Package]]
