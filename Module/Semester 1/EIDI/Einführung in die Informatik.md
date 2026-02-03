@@ -242,10 +242,22 @@ Streams sind **lazy** und verarbeiten Daten **"on-the-fly"**, was sie **speicher
 # Teil 11: GUIs
 my tip gui
 
+# Teil 12: Compiler (Mini-Java)
+## Bytecode
+## EBNF
 
 ## TODOs
 
-TODO ++ --
-TODO modulo
-TODO auto export
-TODO [[#Package]]
+- [ ] TODO maybe 4?
+- [ ] TODO maybeeee 5 noch was ?
+- [ ] TODO 6
+- [ ] TODO enums
+- [ ] TODO interface
+- [ ] TODO polymorphie
+- [ ] TODO 8
+- [ ] TODO 11?
+- [ ] TODO 12
+- [ ] TODO ++ --
+- [ ] TODO modulo
+- [ ] TODO auto export
+- [ ] TODO [[#Package]]
