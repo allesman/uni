@@ -1,5 +1,6 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[eidi]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>site-lib/media/favicon.png</url><title>eidi</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Tue, 03 Feb 2026 09:44:58 GMT</lastBuildDate><atom:link href="site-lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 03 Feb 2026 09:44:57 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[Einführung in die Informatik]]></title><description><![CDATA[<a data-href="Altkausuren" href="module/semester-1/eidi/altkausuren.html" class="internal-link" target="_self" rel="noopener nofollow">Altkausuren</a><br>Abstraktionsebene zwischen Dingen außerhalb und innerhalb von Klasse (z.B. Getter und Setter) erleichtert Wartung und <a data-tooltip-position="top" aria-label="Komposition statt Vererbung!" data-href="#Komposition statt Vererbung!" href="einführung-in-die-informatik.html#Komposition_statt_Vererbung!_0" class="internal-link" target="_self" rel="noopener nofollow">Modifikationen am gekapselten Stuff</a>.Hier gibt es 1 wichtiges Detail, das relevant werden kann:In Java ist a mod b mit a&lt;0 also der absolute Wert des Rests von . In Mathe nimmt man stattdessen den negativen Rest und addiert so lange b bis man &gt;0 ist. (Da alle Werte die b auseinander sind, hinsichtlich mod b äquivalent sind.)Deswegen liebe ich EIDI
-Natürlich verwöhnt uns Big P hier wieder mit dem EIDI-Classic "Having to know what code does that would instantly get you fired at a real job": Da bei a=a++; der Wert von a zuerst im Execution Stack gespeichert wird, und die anschließende In-/Dekrementierung in Memory gespeichert wird, wird beim anschließenden Reassignment von a noch der alte Wert vor der Änderung verwendet. Zur Gruppierung verwandter Klassen
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[eidi]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>site-lib/media/favicon.png</url><title>eidi</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Tue, 03 Feb 2026 15:18:07 GMT</lastBuildDate><atom:link href="site-lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 03 Feb 2026 15:18:03 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[Einführung in die Informatik]]></title><description><![CDATA[<a data-href="Altkausuren" href="module/semester-1/eidi/altkausuren.html" class="internal-link" target="_self" rel="noopener nofollow">Altkausuren</a>bro so was soll ich dazu überhaupt schreiben idk
+Code ist eine Anreihung von Anweisungen dings<br>Abstraktionsebene zwischen Dingen außerhalb und innerhalb von Klasse (z.B. Getter und Setter) erleichtert Wartung und <a data-tooltip-position="top" aria-label="Komposition statt Vererbung!" data-href="#Komposition statt Vererbung!" href="einführung-in-die-informatik.html#Komposition_statt_Vererbung!_0" class="internal-link" target="_self" rel="noopener nofollow">Modifikationen am gekapselten Stuff</a>.Hier gibt es 1 wichtiges Detail, das relevant werden kann:In Java ist a mod b mit a&lt;0 also der absolute Wert des Rests von . In Mathe nimmt man stattdessen den negativen Rest und addiert so lange b bis man &gt;0 ist. (Da alle Werte die b auseinander sind, hinsichtlich mod b äquivalent sind.)Deswegen liebe ich EIDI
+Natürlich verwöhnt uns Big P hier wieder mit dem EIDI-Classic "Having to understand code that would instantly get you fired at a real job": Da bei a=a++; der Wert von a zuerst im Execution Stack gespeichert wird, und die anschließende In-/Dekrementierung in Memory gespeichert wird, wird beim anschließenden Reassignment von a noch der alte Wert vor der Änderung verwendet. Die Anweisung a=a++; ändert also nicht den Wert von a. Zur Gruppierung verwandter Klassen
 Alle Klassen in einem File sind in einem Package
 Für Package mit mehreren Files: Ordner myPackage machen und die Files darin mit package myPackage; versehen
 <br>Bei <a data-tooltip-position="top" aria-label="Primitivity" data-href="#Primitivity" href="einführung-in-die-informatik.html#Primitivity_0" class="internal-link" target="_self" rel="noopener nofollow">Non-Primitive</a> Methodenargumenten übergibt Java Kopien der Referenz. Modifizierung des Objekts (z.B. arr[0]=1) ändert das Original-Objekt im Heap. Reassignment der Variable auf (neues) Objekt (z.B. arr = new int[1]) ändert nur die lokale Kopie der Referenz und hat außen keine Auswirkung.Die Idee (bei Unit-Tests, eigentlich gibts auch noch andere wie z.B. Implementation Tests aber nicht Stoff) ist folgende:
@@ -10,13 +11,75 @@ public void testForBitFlip(){ int a = 6; int b = 7; int c = a+b; assertEquals(c,
 }
 <br>Niemals <a data-tooltip-position="top" aria-label="Primitivity" data-href="#Primitivity" href="einführung-in-die-informatik.html#Primitivity_0" class="internal-link" target="_self" rel="noopener nofollow">Non-Primitives</a> mit == vergleichen!
 Dann vergleichst du nur deren Referenzen du Dulli. Mach einfach asssertEquals() du Dulli.
-auch free außerfor i in zeilen: for j in spalten: skalarprodukt(i,j) skalarprodukt(a,b): for i,j in a,b: output+= i*j
-<br>Wird eine Datenstruktur A durch Nutzung einer anderen Struktur B implementiert, ist Vererbung (A extends B) suboptimal, da B nicht <a data-tooltip-position="top" aria-label="Kapselung" data-href="#Kapselung" href="einführung-in-die-informatik.html#Kapselung_0" class="internal-link" target="_self" rel="noopener nofollow">gekapselt</a> bleibt (Bsp: Stack extends ArrayList erbt add(0,x), was LIFO bricht). Durch Komposition (B als Attribut) bleibt man flexibel, falls B später gegen eine andere Struktur ausgetauscht werden soll.Die generische Form A&lt;B&gt; macht primär dann Sinn, wenn B den Typ der in A gespeicherten Elemente definiert (z.B. eine Liste von B-Objekten).<br><a data-href="Collections" href="module/semester-1/eidi/collections.html" class="internal-link" target="_self" rel="noopener nofollow">Collections</a><br><a data-href="Linked List" href="module/semester-1/eidi/linked-list.html" class="internal-link" target="_self" rel="noopener nofollow">Linked List</a><br><a data-href="Polymorphie.pdf" href="module/semester-1/eidi/polymorphie.html" class="internal-link" target="_self" rel="noopener nofollow">Polymorphie.pdf</a><br>
-<a data-href="Polymorphism" href="module/semester-1/eidi/polymorphism.html" class="internal-link" target="_self" rel="noopener nofollow">Polymorphism</a><br>Der statische Typ bestimmt die sichtbaren <a data-tooltip-position="top" aria-label="Methodensignatur" data-href="#Methodensignatur" href="einführung-in-die-informatik.html#Methodensignatur_0" class="internal-link" target="_self" rel="noopener nofollow">Methodensignaturen</a> für den Compiler; der dynamische Typ bestimmt die ausgeführte Implementierung der JVM.Name (nicht Return-Type), Parametertypen und Reihenfolge (nicht Namen)
-aka public static int method(String hallo, int hallo)Bei A&lt;U extends C&gt; ist die Konstruktion new A&lt;C&gt;() erlaubt, da für die Typprüfung und Generics jede Klasse als Subtyp ihrer selbst betrachtet wird.Ein Compile-Fehler, wenn der Compiler bei überladenen Methoden keine eindeutige Signatur als "besten Match" bestimmen kann.oldStaticType object = new dynamicType();
+broo free, außer maybe die hier:a = b ? c : d ist äquivalent zuif (b)
+{ a=c
+}
+else
+{ a=d
+}
+switch (a)
+{ case 1: System.out.println("eins"); break; case 2: System.out.println("zwei"); break; case 3: case 4: System.out.println("drei oder vier"); break; default: System.out.println("out of bounds");
+}
+Ohne die break Statements, würde danach einfach das nächste Case getestet werden, quasi als wären es einfach lauter ifs (und default eine normale Anweisung). Das wäre hier z.B. ein Problem, wenn statt blablab() der Wert von a auf 2 gesetzt wird.Das ganze geht auch fancier, und zwar wenn es keine Anweisung, sondern ein Ausdruck sein soll:System.out.println( switch (a) { case 1 -&gt; "eins"; case 2 -&gt; "zwei"; case 3,4 -&gt; "drei oder vier"; default -&gt; "out of bounds"; }
+)
+Dann braucht man wegen dem -&gt; auch keine breaks.Der Böse Couseng von while, voll praktisch manchmal:do { userInput = getUserInputOrSmth();
+}
+while (userInput.isInvalid());
+Die Schleife wird halt immer mindestens 1x ausgeführt, bevor die Condition überhaupt gecheckt wird.Beispiel:# (pseudocode)
+for i in zeilen: for j in spalten: skalarprodukt(i,j) skalarprodukt(a,b): for i,j in a,b: output += i*j
+<br>Auch nur ein normales (statisches) Array under the Hood aber mit resizing Logik eingebaut. Die Idee ist, dass die Resizing Operation, bei der der Inhalt des Arrays in ein größeres Array kopiert wird, recht selten passiert, sodass es insgessamt relativ effizient ist. Warum macht man das? Bessere Speichernutzung, siehe <a data-href="#Array vs List" href="#Array vs List" class="internal-link" target="_self" rel="noopener nofollow">Array vs List</a>.<br>Eine Sammlung an <a data-href="#Interfaces" href="#Interfaces" class="internal-link" target="_self" rel="noopener nofollow">Interfaces</a> für Datenstrukturen und deren Implementierungen
+Ne Liste halt.
+Standard Implementierungen: LinkedList, ArrayList
+add(), addFirst()
+remove()
+clone()
+get()
+indexOf()
+toArray()
+contains()
+size() Klasse Node mit Referenz zur nächsten (bei Double Linked auch zur vorigen) Node
+Optional (aber sehr sinnvoll): Wrapper-Klasse mit Referenzen head und tail zu erster und letzter Node
+Optional: Abstraktionsebene zwischen Node und Daten mit Referenz zu Objekt der Klasse Data in Node, die tatsächliche Daten enthält
+Optional: Kompositum-Pattern, abstract Klasse Element, von der Node und End erben, dann kann sehr viel Spaghetti Logik, durch Methoden ersetzt werden, die in den beiden unterschiedlich implementiert werden (z.B. Sortiert einfügen Methode vergleicht bei Node und gibt ggf an Nachfolger weiter, während End direkt einfügt, da Ende erreicht) Keine Duplikate, keine garantierte Reihenfolge, also keine Indices (wie in Mathe halt).
+Standard Implementierungen: HashSet, TreeSet, LinkedHashSet
+Wichtige Methoden:
+add()
+remove()
+contains()
+size() Key-Value-Pairs (Telefonbuch type shit), Key muss unique sein
+Standard Implementierungen: HashMap, TreeMap, LinkedHashMap
+Wichtige Methoden:
+put()
+get()
+remove()
+containsKey()
+<br>keySet() (returnt <a data-href="#Set" href="einführung-in-die-informatik.html#Set_0" class="internal-link" target="_self" rel="noopener nofollow">Set</a> der Keys)
+<br>Spezialversion: Hash-Table, quasi ne Liste an Hash-Maps, wo mit der Hash-Funktion jeder Wert eindeutig eine der Hash-Tabellen zugewiesen bekommt. (siehe auch <a data-tooltip-position="top" aria-label="Einführung in die Rechnerarchitektur &gt; Cache" data-href="Einführung in die Rechnerarchitektur#Cache" href="module/semester-1/era/einführung-in-die-rechnerarchitektur.html" class="internal-link" target="_self" rel="noopener nofollow">Cache in ERA</a>, der Funktioniert genau so). Warum macht man das? Ermöglicht sehr schnellen Zugriff, aber verliert dafür nicht die <a data-tooltip-position="top" aria-label="Array vs List" data-href="#Array vs List" href="#Array vs List" class="internal-link" target="_self" rel="noopener nofollow">Vorteile einer List</a>.<br>Implementierung mit <a data-tooltip-position="top" aria-label="List" data-href="#List" href="einführung-in-die-informatik.html#List_0" class="internal-link" target="_self" rel="noopener nofollow">Linked List</a>
+Wichtige Methoden:
+enqueue(): Fügt Element vorne ein
+dequeue(): Entfernt Element hinten
+poll(): wie dequeue() aber entfernt nicht
+<br>Implementierung mit <a data-href="Array" href="module/semester-1/eidi/array.html" class="internal-link" target="_self" rel="noopener nofollow">Array</a><br>
+An sich ähnlich zu <a data-tooltip-position="top" aria-label="Queue (FIFO)" data-href="#Queue (FIFO)" href="einführung-in-die-informatik.html#Queue_(FIFO)_0" class="internal-link" target="_self" rel="noopener nofollow">Queue</a>, auch hier wird nur vorne eingefügt und nur hinten entnommen. Der Trick ist, dass irgendwann index 0 frei wird und dann einfach das Element, das an Stelle length eingefügt werden soll, an 0 eingefügt wird. Erreicht wird das mit realIndex = index % capacity. Implementierung benötigt hierfür Indices für head und tail, bei leerem und vollen Buffer sind sie identisch (Unterscheidung möglich, da leere Elemente genullt werden).<br>Implementierung mit <a data-tooltip-position="top" aria-label="List" data-href="#List" href="einführung-in-die-informatik.html#List_0" class="internal-link" target="_self" rel="noopener nofollow">Linked List</a>
+Wichtige Methoden:
+push(): Fügt Element hinten ein
+pop(): Entfernt Element hinten
+peek(): wie pop() aber entfernt nicht
+<br>Wird eine Datenstruktur A durch Nutzung einer anderen Struktur B implementiert, ist Vererbung (A extends B) suboptimal, da B nicht <a data-tooltip-position="top" aria-label="Kapselung" data-href="#Kapselung" href="einführung-in-die-informatik.html#Kapselung_0" class="internal-link" target="_self" rel="noopener nofollow">gekapselt</a> bleibt (Bsp: Stack extends ArrayList erbt add(0,x), was LIFO bricht). Durch Komposition (B als Attribut) bleibt man flexibel, falls B später gegen eine andere Struktur ausgetauscht werden soll.Die generische Form A&lt;B&gt; macht primär dann Sinn, wenn B den Typ der in A gespeicherten Elemente definiert (z.B. eine Liste von B-Objekten).StaticType o = new DynamicType()<br>
+Der statische Typ bestimmt die sichtbaren <a data-tooltip-position="top" aria-label="Methodensignatur" data-href="#Methodensignatur" href="einführung-in-die-informatik.html#Methodensignatur_0" class="internal-link" target="_self" rel="noopener nofollow">Methodensignaturen</a> für den Compiler; der dynamische Typ bestimmt die ausgeführte Implementierung der JVM.Name (nicht Return-Type), Parametertypen und Reihenfolge (nicht Namen)
+aka public static int method(String hallo, int hallo)Bei A&lt;U extends C&gt; ist die Konstruktion new A&lt;C&gt;() erlaubt, da für die Typprüfung und Generics jede Klasse als Subtyp ihrer selbst betrachtet wird.oldStaticType object = new dynamicType();
 newStaticType object = (newStaticType) object;
 Erstellt ein neues Objekt mit dem alten dynamischen und dem in Klammern angegebenen neuen statischen Typ.
-Ein Upcast (von extender auf extendee) schränkt die Sichtbarkeit auf Methoden ein, die im statischen Zieltyp deklariert sind.<br><img alt="Pasted image 20260131162811.png" src="attachments/pasted-image-20260131162811.png" target="_self" style="width: 500px; max-width: 100%;">rekursion schmekursion sag ich immer
+Wenn neuer statischer Typ in der Vererbungshierarchie unter dem dynamischen liegt, gibts ClassCastException.
+Ein Upcast (von extender auf extendee) schränkt die Sichtbarkeit auf Methoden ein, die im statischen Zieltyp deklariert sind.Entlang der Vererbungsrichtung (in Pfeilrichtung) castet Java implizit aka automatisch (da keine Daten verloren gehen).
+Andersrum muss man explizit casten.
+Das gilt auch bei primitiven Typen. In other words: Such bei statischem Typ (oder wenn nichts gibt bei dessen Oberklassen) die Methode raus, die am besten passt. Dann nimmt die in der Vererbungshierarchie möglichst nah am dynamischen Typen liegende Implementierung dieser Methode. (Und zwar mit exakt der selben Signatur!)<br>Die Methode, wo die Parameter nach die wenigsten <a data-tooltip-position="top" aria-label="Implizit vs Explizit" data-href="#Implizit vs Explizit" href="einführung-in-die-informatik.html#Implizit_vs_Explizit_0" class="internal-link" target="_self" rel="noopener nofollow">Impliziten Casts</a> erfüllt werden. Wenn mehrere Methoden gleich viele Implizite Casts benötigen, wird geschaut, welche Es gibt einen Ambiguity Error, wenn der Compiler keine eindeutige Signatur als "besten Match" bestimmen kann.
+Also wäre das hier auch ein Fehler:class Lebewesen {}
+class Tier extends Lebewesen {}
+class Katze extends Tier {} class Merlin
+{ static void test(Katze k, Lebewesen l){System.out.println("a");} static void test(Tier t1, Tier t2){System.out.println("b");} public static void main(String args[]) { test(new Katze(), new Katze()); // was wird ausgegeben? }
+}
+<br><img alt="Pasted image 20260131162811.png" src="attachments/pasted-image-20260131162811.png" target="_self" style="width: 500px; max-width: 100%;">rekursion schmekursion sag ich immer
 <br><a data-href="Binary Tree" href="module/semester-1/eidi/binary-tree.html" class="internal-link" target="_self" rel="noopener nofollow">Binary Tree</a>
 <br><a data-href="Binary Search" href="module/semester-1/eidi/binary-search.html" class="internal-link" target="_self" rel="noopener nofollow">Binary Search</a>
 <br><a data-href="Recursion" href="module/semester-1/eidi/recursion.html" class="internal-link" target="_self" rel="noopener nofollow">Recursion</a> Iterableimplementieren
@@ -36,7 +99,8 @@ Streams sind lazy und verarbeiten Daten "on-the-fly", was sie speichereffiziente
 Path ist ein Interface, du kannst Objekt von Klasse, die dieses implementiert erstellen mit Path.of("x/y/z") entweder Path zu File, dann kann man mit Files.readString() und Files.writeString() self explanatory shit machen
 oder mit Files.write() Iterables und so reinschreiben
 oder mit Files.readAllLines() Lines als Stream lesen oder Path von Directory, dann gibts Files.walk(), was n gefüllten Stream ausgibt<br>
-<a data-href="Java File System" href="module/semester-1/eidi/java-file-system.html" class="internal-link" target="_self" rel="noopener nofollow">Java File System</a> <br><a data-href="Producer Consumer Problem" href="module/semester-1/eidi/producer-consumer-problem.html" class="internal-link" target="_self" rel="noopener nofollow">Producer Consumer Problem</a>
+<a data-href="Java File System" href="module/semester-1/eidi/java-file-system.html" class="internal-link" target="_self" rel="noopener nofollow">Java File System</a><br>
+<a data-href="Buffers" href="module/semester-1/eidi/buffers.html" class="internal-link" target="_self" rel="noopener nofollow">Buffers</a> <br><a data-href="Producer Consumer Problem" href="module/semester-1/eidi/producer-consumer-problem.html" class="internal-link" target="_self" rel="noopener nofollow">Producer Consumer Problem</a>
 Thread vs Runnable Runnable etwas, das wir machen
 aka Liste von Anweisungen
 plainstes Interface, das keine Paramter nimmt und nichts zurückgibt Thread kann Runnable übergeben bekommen, um zu festlegen was er tun soll IMMER start() benutzen, nie run()
@@ -59,6 +123,6 @@ TODO 12
 TODO ++ --
 TODO modulo
 TODO auto export
-<br>TODO <a data-href="#Package" href="einführung-in-die-informatik.html#Package_0" class="internal-link" target="_self" rel="noopener nofollow">Package</a> <br>wobei das laut meinem actual SWE Freund mit 10 Jahren Industrieerfahrung Giga Anti-Pattern ist lol<a href="#fnref-1-bd38af79bd8815fe" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
-<br>datentypen können weggelassen werden, (aber nur wenn man es mit allen macht), dann wird inferred<a href="#fnref-2-bd38af79bd8815fe" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
-]]></description><link>einführung-in-die-informatik.html</link><guid isPermaLink="false">Module/Semester 1/EIDI/Einführung in die Informatik.md</guid><pubDate>Tue, 03 Feb 2026 09:44:53 GMT</pubDate><enclosure url="HTML Exports/attachments/pasted-image-20260131162811.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="HTML Exports/attachments/pasted-image-20260131162811.png"&gt;&lt;/figure&gt;</content:encoded></item></channel></rss>
+<br>TODO <a data-href="#Package" href="einführung-in-die-informatik.html#Package_0" class="internal-link" target="_self" rel="noopener nofollow">Package</a> <br>wobei das laut meinem actual SWE Freund mit 10 Jahren Industrieerfahrung Giga Anti-Pattern ist lol<a href="#fnref-1-2187f87b8da6a1d6" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
+<br>datentypen können weggelassen werden, (aber nur wenn man es mit allen macht), dann wird inferred<a href="#fnref-2-2187f87b8da6a1d6" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
+]]></description><link>einführung-in-die-informatik.html</link><guid isPermaLink="false">Module/Semester 1/EIDI/Einführung in die Informatik.md</guid><pubDate>Tue, 03 Feb 2026 15:08:16 GMT</pubDate></item></channel></rss>

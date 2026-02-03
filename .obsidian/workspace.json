@@ -30,11 +30,27 @@
               "type": "markdown",
               "state": {
                 "file": "Module/Semester 1/EIDI/Einführung in die Informatik.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "Einführung in die Informatik"
+            }
+          },
+          {
+            "id": "76e476818ff43b6f",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Module/Semester 1/EIDI/Polymorphie.pdf",
+                "page": 3,
+                "left": -15,
+                "top": 619,
+                "zoom": 1.1263607042064239
+              },
+              "icon": "lucide-file-text",
+              "title": "Polymorphie"
             }
           },
           {
@@ -52,29 +68,7 @@
             }
           }
         ],
-        "currentTab": 1
-      },
-      {
-        "id": "6970402ca844eca5",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "5d58218533d40c7b",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Module/Semester 1/EIDI/Polymorphie.pdf",
-                "page": 3,
-                "left": -4,
-                "top": 754,
-                "zoom": 0.6
-              },
-              "icon": "lucide-file-text",
-              "title": "Polymorphie"
-            }
-          }
-        ]
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -315,9 +309,10 @@
   },
   "active": "96eb0d5e21eaaa8a",
   "lastOpenFiles": [
-    "Module/Semester 1/EIDI/Einführung in die Informatik.md",
-    "Module/Semester 1/EIDI/Polymorphism.md",
     "Module/Semester 1/EIDI/Polymorphie.pdf",
+    "Module/Semester 1/EIDI/Einführung in die Informatik.md",
+    "HTML Exports/polymorphie.pdf",
+    "Module/Semester 1/EIDI/Polymorphism.md",
     "Module/Semester 1/EIDI/Array.md",
     "Module/Semester 1/EIDI/Altkausuren.md",
     "Module/Semester 1/EIDI/Stack.md",
@@ -337,7 +332,6 @@
     "HTML Exports/site-lib/fonts/mathjax_sansserif-italic.woff",
     "HTML Exports/site-lib/fonts/mathjax_sansserif-bold.woff",
     "HTML Exports/site-lib/fonts/mathjax_sansserif-regular.woff",
-    "HTML Exports/site-lib/fonts/mathjax_fraktur-bold.woff",
     "Module/Semester 1/EIDI/EIDI.md",
     "HTML Exports/site-lib/media/favicon.png",
     "HTML Exports/site-lib/media/6155340132a851f6089e.svg",

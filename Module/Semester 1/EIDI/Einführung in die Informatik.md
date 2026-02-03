@@ -296,9 +296,26 @@ Das gilt auch bei primitiven Typen.
 ![[Polymorphie.pdf#page=1&rect=447,42,548,167|Polymorphie, p.1|300]]
 ### **Und welche scheiß Methode wird jetzt aufgerufen?**
 ![[Polymorphie.pdf#page=2&rect=45,187,549,658|Polymorphie, p.2]]
-In other words: Such bei statischem Typ die Methode raus, die am besten passt. Dann nimmt die in der Vererbungshierarchie möglichst nah am dynamischen Typen liegende Implementierung dieser Methode. (Und zwar mit exakt der selben Signatur!)
+In other words: Such bei statischem Typ (oder wenn nichts gibt bei dessen Oberklassen) die Methode raus, die am besten passt. Dann nimmt die in der Vererbungshierarchie möglichst nah am dynamischen Typen liegende Implementierung dieser Methode. (Und zwar mit exakt der selben Signatur!)
 #### Best Fitting Methode
-Die Methode, wo die Parameter mit den wenigsten [[#Implizit vs Explizit|Impliziten Casts]] erfüllt werden. Es gibt einen `Ambiguity Error`, wenn der Compiler **keine eindeutige Signatur** als "besten Match" bestimmen kann.
+Die Methode, wo die Parameter nach die wenigsten [[#Implizit vs Explizit|Impliziten Casts]] erfüllt werden. Wenn mehrere Methoden gleich viele Implizite Casts benötigen, wird geschaut, welche Es gibt einen `Ambiguity Error`, wenn der Compiler **keine eindeutige Signatur** als "besten Match" bestimmen kann.
+Also wäre das hier auch ein Fehler:
+```java
+class Lebewesen {}
+class Tier extends Lebewesen {}
+class Katze extends Tier {}
+
+class Merlin
+{
+	static void test(Katze k, Lebewesen l){System.out.println("a");}
+	static void test(Tier t1, Tier t2){System.out.println("b");}
+	
+	public static void main(String args[])
+	{
+		test(new Katze(), new Katze()); // was wird ausgegeben?
+	}
+}
+```
 ## Abstraktion/[[Interface]]s
 ![[Pasted image 20260131162811.png|500]]
 ## Enums
