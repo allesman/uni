@@ -4,27 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "4509724f8bf84da7",
+        "id": "7ebba3d6aa3f142a",
         "type": "tabs",
         "children": [
           {
-            "id": "e7a7b303c61786dc",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Dashboard.md",
-                "mode": "preview",
-                "source": false
-              },
-              "pinned": true,
-              "icon": "lucide-file",
-              "title": "Dashboard"
-            }
-          },
-          {
-            "id": "0f3d7cd99d5ea753",
+            "id": "b7201b3102f1a221",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -37,8 +21,7 @@
               "title": "Einführung in die Informatik"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -93,7 +76,7 @@
             }
           },
           {
-            "id": "68774f6abbd4f681",
+            "id": "e4fa236515c38f81",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -154,7 +137,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 256.5
+    "width": 200
   },
   "right": {
     "id": "09faeb26a179d322",
@@ -280,20 +263,21 @@
   "active": "96eb0d5e21eaaa8a",
   "lastOpenFiles": [
     "Module/Semester 1/EIDI/Einführung in die Informatik.md",
-    "HTML Exports/site-lib/styles/theme.css",
+    "HTML Exports/site-lib/styles/main-styles.css",
+    "HTML Exports/site-lib/fonts/mathjax_vector-bold.woff",
+    "HTML Exports/site-lib/fonts/mathjax_vector-regular.woff",
+    "HTML Exports/site-lib/fonts/mathjax_typewriter-regular.woff",
+    "HTML Exports/site-lib/fonts/mathjax_script-regular.woff",
+    "HTML Exports/site-lib/fonts/mathjax_sansserif-italic.woff",
+    "HTML Exports/site-lib/fonts/mathjax_sansserif-bold.woff",
+    "HTML Exports/site-lib/fonts/mathjax_sansserif-regular.woff",
+    "HTML Exports/site-lib/fonts/mathjax_fraktur-bold.woff",
+    "HTML Exports/site-lib/fonts/mathjax_fraktur-regular.woff",
+    "Module/Semester 1/EIDI/EIDI.md",
     "Dashboard.md",
-    "HTML Exports/site-lib/styles/obsidian.css",
-    "HTML Exports/site-lib/styles/global-variable-styles.css",
-    "HTML Exports/site-lib/styles",
     "HTML Exports/site-lib/media/favicon.png",
     "HTML Exports/site-lib/media/6155340132a851f6089e.svg",
     "HTML Exports/site-lib/media/2308ab1944a6bfa5c5b8.svg",
-    "HTML Exports/site-lib/media",
-    "HTML Exports/site-lib/fonts/c504db5c06caaf7cdfba.woff2",
-    "HTML Exports/site-lib/fonts/70cc7ff27245e82ad414.ttf",
-    "HTML Exports/site-lib/fonts/52ac8f3034507f1d9e53.ttf",
-    "HTML Exports/site-lib/fonts/4bb6ac751d1c5478ff3a.woff2",
-    "HTML Exports/site-lib/fonts/454577c22304619db035.ttf",
     "Pasted image 20260124201751.png.md",
     "Pasted image 20260124201751.png",
     "Module/Semester 1/EIDI/Altkausuren.md",
@@ -322,7 +306,6 @@
     "Module/Semester 1/EIDI/Select Note.md",
     "Attachments/Pasted image 20260131162811.png",
     "Module/Semester 1/EIDI/Bubble Sort.md",
-    "Module/Semester 1/Advisor/2025-01-28 Protokoll.md",
     "Module/Semester 1/DS/Tutoriumsaufgaben/thumbnail.png"
   ]
 }

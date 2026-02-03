@@ -6,7 +6,7 @@ moodle: "[[https://eidi.tum.sexy]]"
 semester: 1
 ---
 [[Altkausuren]]
-# Einführung, Teil 1-2
+# Teil 1+2: Einführung
 ## Kapselung
 Abstraktionsebene zwischen Dingen außerhalb und innerhalb von Klasse (z.B. Getter und Setter) erleichtert Wartung und [[#Komposition statt Vererbung!|Modifikationen am gekapselten Stuff]].
 ## Primitivity
@@ -16,8 +16,24 @@ Abstraktionsebene zwischen Dingen außerhalb und innerhalb von Klasse (z.B. Gett
 | Beispiele             | `int`, `boolean`                                                     | `String`, `Array`, jede custom class                                                                                                     |
 | Wert                  | direkt die Daten selbst                                              | eine **referenz** auf die Adresse mit den Daten                                                                                          |
 | Als Methodenparameter | Methode erhält Kopie des Werts, kann den "äußeren" Wert nicht ändern | Methode erhält Kopie der Referenz (kann also die Daten dennoch ändern, [[#Call-by-Value (Referenzen)\|⚠️ aber nicht bei reassignment!]]) |
-Modulo Operator funktioniert anders als mathe
-++ 
+## Modulo-Operator
+Hier gibt es 1 wichtiges Detail, das relevant werden kann:
+
+| in Mathe                     | in Java        |
+| ---------------------------- | -------------- |
+| `13 % 6 == 7`                | `13 % 6 == 7`  |
+| `-13 % 6 == -7 + 6 + 6 == 5` | `-13 % 6 == 7` |
+In Java ist `a mod b` mit `a<0` also der absolute Wert des Rests von $\frac{a}{b}$. In Mathe nimmt man stattdessen den negativen Rest und addiert so lange `b` bis man `>0` ist. (Da alle Werte die `b` auseinander sind, hinsichtlich `mod b` äquivalent sind.)
+
+# Pre-/Post-Increment/Decrement
+
+| `a++`/`a--` | Wert von `a` gelesen und im Execution Stack gespeichert, dann wird `a` in Memory in-/dekrementiert. |
+| ----------- | --------------------------------------------------------------------------------------------------- |
+| `++a`/`--a` | `a` wird in-/dekrementiert, dann wird der Wert gelesen.                                             |
+
+> [!danger] Deswegen liebe ich EIDI
+> Natürlich verwöhnt uns Big P hier wieder mit dem EIDI-Classic *"Having to know what code does that would instantly get you fired at a real job"*: Da bei `a=a++;` der Wert von `a` zuerst im Execution Stack gespeichert wird, und die anschließende In-/Dekrementierung in Memory gespeichert wird, wird beim anschließenden Reassignment von `a` noch der alte Wert vor der Änderung verwendet.
+
 ## Decorators
 ### Access Modifier
 
@@ -257,7 +273,7 @@ my tip gui
 - [ ] TODO 8
 - [ ] TODO 11?
 - [ ] TODO 12
-- [ ] TODO ++ --
-- [ ] TODO modulo
+- [x] TODO ++ --
+- [x] TODO modulo
 - [ ] TODO auto export
 - [ ] TODO [[#Package]]
