@@ -16,24 +16,37 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Rename and Patch Logic
+      - name: Create Invisible Iframe Mask
         run: |
           cd "HTML Exports"
+          # 1. Identify the content file
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
           
           if [ -n "$target_file" ]; then
-            # 1. Rename the physical file
+            echo "Wrapping $target_file in a full-screen iframe..."
             
-            # 2. Patch the metadata in the new index.html
-            sed -i "s|meta name=\"pathname\" content=\"[^\"]*\"|meta name=\"pathname\" content=\"./\"|g" index.html
-            sed -i "s|<base href=\"[^\"]*\">|<base href=\"./\">|g" index.html
-            
-            # 3. THE MAGIC: Patch the plugin's internal map
-            # This finds the long filename inside all .js and .json files (like search index)
-            # and tells the plugin that the file is now called 'index.html'
-            find . -type f \( -name "*.js" -o -name "*.json" \) -exec sed -i "s|$target_file|index.html|g" {} +
-            
-            echo "Renamed and patched internal logic."
+            # 2. Create the index.html as a full-screen container
+            # The 'overflow:hidden' on body prevents double scrollbars
+          cat <<EOF > index.html
+          <!DOCTYPE html>
+          <html lang="de" style="margin:0; padding:0; height:100%; overflow:hidden;">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+              <title>Einführung in die Informatik</title>
+              <style>
+                  body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+                  iframe { border: none; width: 100vw; height: 100vh; display: block; }
+              </style>
+          </head>
+          <body>
+              <iframe src="$target_file" title="Content"></iframe>
+          </body>
+          </html>
+          EOF
+          else
+            echo "Error: No file found"
+            exit 1
           fi
           
       - name: Sync files to hosting
