@@ -6,10 +6,14 @@ moodle: "[[https://eidi.tum.sexy]]"
 semester: 1
 ---
 [[Altkausuren]]
-# Teil 1+2: Einführung
+# Teil 1: Einführung
+bro so was soll ich dazu überhaupt schreiben idk
+Code ist eine Anreihung von Anweisungen dings
+# Teil 2: Objektbasierte Programmierung
 ## Kapselung
 Abstraktionsebene zwischen Dingen außerhalb und innerhalb von Klasse (z.B. Getter und Setter) erleichtert Wartung und [[#Komposition statt Vererbung!|Modifikationen am gekapselten Stuff]].
 ## Primitivity
+
 
 |                       | Primitive                                                            | Non-Primitive                                                                                                                            |
 | --------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
@@ -32,7 +36,7 @@ In Java ist `a mod b` mit `a<0` also der absolute Wert des Rests von $\frac{a}{b
 | `++a`/`--a` | `a` wird in-/dekrementiert, dann wird der Wert gelesen.                                             |
 
 > [!danger] Deswegen liebe ich EIDI
-> Natürlich verwöhnt uns Big P hier wieder mit dem EIDI-Classic *"Having to know what code does that would instantly get you fired at a real job"*: Da bei `a=a++;` der Wert von `a` zuerst im Execution Stack gespeichert wird, und die anschließende In-/Dekrementierung in Memory gespeichert wird, wird beim anschließenden Reassignment von `a` noch der alte Wert vor der Änderung verwendet.
+> Natürlich verwöhnt uns Big P hier wieder mit dem EIDI-Classic *"Having to understand code that would instantly get you fired at a real job"*: Da bei `a=a++;` der Wert von `a` zuerst im Execution Stack gespeichert wird, und die anschließende In-/Dekrementierung in Memory gespeichert wird, wird beim anschließenden Reassignment von `a` noch der alte Wert vor der Änderung verwendet. Die Anweisung `a=a++;` ändert also nicht den Wert von `a`.
 
 ## Decorators
 ### Access Modifier
@@ -81,40 +85,183 @@ public void testForBitFlip(){
 > Dann vergleichst du nur deren Referenzen du ==Dulli==. Mach einfach `asssertEquals()` du ==Dulli==.
 
 # Teil 4: Kontrollstrukturen
-## broooo free
-# Teil 5: Felder (arrays)
-auch free außer
-## Matrixmultiplikation
+broo free, außer maybe die hier:
+## Ternary Operator
+```java
+a = b ? c : d
 ```
+ ist äquivalent zu
+```java
+if (b)
+{
+	a=c
+}
+else
+{
+	a=d
+}
+```
+## Switch-Case
+### -Statement
+```java
+switch (a)
+{
+	case 1:
+		System.out.println("eins");
+		break;
+	case 2:
+		System.out.println("zwei");
+		break;
+	case 3: case 4:
+		System.out.println("drei oder vier");
+		break;
+	default:
+		System.out.println("out of bounds");
+}
+```
+Ohne die `break` Statements, würde danach einfach das nächste Case getestet werden, quasi als wären es einfach lauter `if`s (und `default` eine normale Anweisung). Das wäre hier z.B. ein Problem, wenn statt `blablab()` der Wert von `a` auf `2` gesetzt wird.
+### -Expression
+Das ganze geht auch fancier, und zwar wenn es keine Anweisung, sondern ein Ausdruck sein soll:
+```java
+System.out.println(
+	switch (a)
+	{
+		case 1 -> "eins";
+		case 2 -> "zwei";
+		case 3,4 -> "drei oder vier";
+		default -> "out of bounds";
+	}
+)
+```
+Dann braucht man wegen dem `->` auch keine breaks.
+### do-while
+Der Böse Couseng von `while`, voll praktisch manchmal:
+```java
+do 
+{
+	userInput = getUserInputOrSmth();
+}
+while (userInput.isInvalid());
+```
+Die Schleife wird halt immer mindestens 1x ausgeführt, bevor die Condition überhaupt gecheckt wird.
+## Kontrollflussdiagramm
+Beispiel:
+```mermaid
+flowchart TD
+    S([Start]) --> IN[/"Eingabe: x = read();"/]
+    IN --> A["Zuweisung/Anweisung: sum = 0; i = 0;"]
+
+    %% ---------- Schleife (while) ----------
+    A --> W{"while-Bedingung: i < n ?"}
+    W -- "yes" --> BODY["Schleifenrumpf: sum = sum + a[i];"]
+    BODY --> INC["Anweisung: i = i + 1;"]
+    INC --> W
+    W -- "no" --> AFTER_LOOP((Nach der Schleife))
+
+    %% ---------- switch-case (Mehrfachselektion) ----------
+    AFTER_LOOP --> SW{"switch(command)"}
+    SW -- "case 'n'" --> CNEW["createNewFile();"]
+    SW -- "case 'o'" --> COPEN["openFile();"]
+    SW -- "default" --> CDEF[/"Ausgabe: Unbekanntes Kommando"/]
+
+    %% Zusammenlauf nach den cases
+    CNEW --> MERGE(( ))
+    COPEN --> MERGE
+    CDEF --> MERGE
+
+    MERGE --> OUT[/"Ausgabe: write(sum);"/]
+    OUT --> T([Stop])
+```
+
+# Teil 5+6: Arrays und andere abstrakte Datentypen
+## Arrays
+### Matrixmultiplikation
+```python
+# (pseudocode)
 for i in zeilen:
 	for j in spalten:
 		skalarprodukt(i,j)
 		
 skalarprodukt(a,b):
 	for i,j in a,b:
-		output+= i*j
+		output += i*j
 ```
-# Teil 6: Einige Abstrakte Datentypen
-## Allgemein
-### Implementierung
-#### Komposition statt Vererbung!
-Wird eine Datenstruktur A durch Nutzung einer anderen Struktur B implementiert, ist **Vererbung (`A extends B`) suboptimal**, da B nicht **[[#Kapselung|gekapselt]]** bleibt (Bsp: `Stack extends ArrayList` erbt `add(0,x)`, was **LIFO bricht**). Durch **Komposition** (B als Attribut) bleibt man **flexibel**, falls B später gegen eine andere Struktur ausgetauscht werden soll.
-#### Generische Datentypen
-Die generische Form **`A<B>`** macht primär dann Sinn, wenn B den **Typ der in A gespeicherten Elemente** definiert (z.B. eine Liste von B-Objekten).
-## Basic Strukturen
-[[Collections]]
-### List
-[[Linked List]]
-### Set
-### Map
-### [[Array]]
-### [[Hash Table]]
+### Dynamic Array
+Auch nur ein normales (statisches) Array under the Hood aber mit resizing Logik eingebaut. Die Idee ist, dass die Resizing Operation, bei der der Inhalt des Arrays in ein größeres Array kopiert wird, recht selten passiert, sodass es insgessamt relativ effizient ist. Warum macht man das? Bessere Speichernutzung, siehe [[#Array vs List]].
+### Array vs [[#List]]
 
-## Advanced Strukturen (mit [[#Basic Strukturen|obigen]] implementierbar)
-### [[Queue]] (FIFO)
-#### [[Buffers]]
-##### RingBuffer
-### [[Stack]] (LIFO)
+|                                            | Array                                                                                                                                                                                    | List                                           |
+| ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| Cache Effizienz                            | *die Elemente liegen direkt hintereinander im Speicher, hilft bei Iteration durch Array wegen räumlichem Lokalitätsprinzip ([[Einführung in die Rechnerarchitektur#Cache\|siehe ERA]]))* | **die Elemente sind weiß Gott wo im Speicher** |
+| Time Complexity Zugriff                    | *$O(1)$*                                                                                                                                                                                 | **$O(n)$**                                     |
+| Kapazität                                  | **bei Initialisierung definiert und dann fix**                                                                                                                                           | *dynamisch*                                    |
+| Speicherbedarf                             | **ggf größer als nötig (wenn nicht ganz voll)**                                                                                                                                          | *genau so groß wie nötig*                      |
+| Zwischeneinfügen, Entfernen mit Nachrücken | **sehr komplex, alles hinter Element muss verschoben werden**                                                                                                                            | *easy clap*                                    |
+## Collections
+Eine Sammlung an [[#Interfaces]] für Datenstrukturen und deren Implementierungen
+### List
+>**Ne Liste halt.**
+
+Standard Implementierungen: `LinkedList`, `ArrayList`
+#### Wichtige Methoden
+- `add()`, `addFirst()`
+- `remove()`
+- `clone()`
+- `get()`
+- `indexOf()`
+- `toArray()`
+- `contains()`
+- `size()`
+#### Custom Implementierung als Linked List
+- Klasse `Node` mit Referenz zur nächsten (bei Double Linked auch zur vorigen) Node
+- *Optional* (aber sehr sinnvoll): Wrapper-Klasse mit Referenzen `head` und `tail` zu erster und letzter Node
+- *Optional*: Abstraktionsebene zwischen `Node` und Daten mit Referenz zu Objekt der Klasse `Data` in `Node`, die tatsächliche Daten enthält
+- *Optional:* Kompositum-Pattern, `abstract` Klasse `Element`, von der `Node` und `End` erben, dann kann sehr viel Spaghetti Logik, durch Methoden ersetzt werden, die in den beiden unterschiedlich implementiert werden (z.B. Sortiert einfügen Methode vergleicht bei `Node` und gibt ggf an Nachfolger weiter, während `End` direkt einfügt, da Ende erreicht)
+
+### Set
+> **Keine Duplikate, keine garantierte Reihenfolge, also keine Indices (wie in Mathe halt).**
+
+Standard Implementierungen: `HashSet`, `TreeSet`, `LinkedHashSet`
+Wichtige Methoden:
+- `add()`
+- `remove()`
+- `contains()`
+- `size()`
+### Map
+> **Key-Value-Pairs (Telefonbuch type shit), Key muss unique sein**
+
+Standard Implementierungen: `HashMap`, `TreeMap`, `LinkedHashMap`
+Wichtige Methoden:
+- `put()`
+- `get()`
+- `remove()`
+- `containsKey()`
+- `keySet()` (returnt [[#Set]] der Keys)
+
+Spezialversion: Hash-Table, quasi ne Liste an Hash-Maps, wo mit der Hash-Funktion jeder Wert eindeutig eine der Hash-Tabellen zugewiesen bekommt. (siehe auch [[Einführung in die Rechnerarchitektur#Cache|Cache in ERA]], der Funktioniert genau so). Warum macht man das? Ermöglicht sehr schnellen Zugriff, aber verliert dafür nicht die [[#Array vs List|Vorteile einer List]].
+
+## High-Level Strukturen
+### Queue (FIFO)
+Implementierung mit [[#List|Linked List]]
+Wichtige Methoden:
+- `enqueue()`: Fügt Element vorne ein
+- `dequeue()`: Entfernt Element hinten
+- `poll()`: wie `dequeue()` aber entfernt nicht
+### RingBuffer (FIFO)
+Implementierung mit [[Array]]
+An sich ähnlich zu [[#Queue (FIFO)|Queue]], auch hier wird nur vorne eingefügt und nur hinten entnommen. Der Trick ist, dass irgendwann index `0` frei wird und dann einfach das Element, das an Stelle `length` eingefügt werden soll, an `0` eingefügt wird. Erreicht wird das mit `realIndex = index % capacity`. Implementierung benötigt hierfür Indices für `head` und `tail`, bei leerem und vollen Buffer sind sie identisch (Unterscheidung möglich, da leere Elemente ge`null`t werden).
+### Stack (LIFO)
+Implementierung mit [[#List|Linked List]]
+Wichtige Methoden:
+- `push()`: Fügt Element hinten ein
+- `pop()`: Entfernt Element hinten
+- `peek()`: wie `pop()` aber entfernt nicht
+
+## Implementierung
+### Komposition statt Vererbung!
+Wird eine Datenstruktur A durch Nutzung einer anderen Struktur B implementiert, ist **Vererbung (`A extends B`) suboptimal**, da B nicht **[[#Kapselung|gekapselt]]** bleibt (Bsp: `Stack extends ArrayList` erbt `add(0,x)`, was **LIFO bricht**). Durch **Komposition** (B als Attribut) bleibt man **flexibel**, falls B später gegen eine andere Struktur ausgetauscht werden soll.
+### Generische Datentypen
+Die generische Form **`A<B>`** macht primär dann Sinn, wenn B den **Typ der in A gespeicherten Elemente** definiert (z.B. eine Liste von B-Objekten).
 
 ## Sorting Algs
 ### [[Bubble Sort]]
@@ -124,18 +271,15 @@ Die generische Form **`A<B>`** macht primär dann Sinn, wenn B den **Typ der in 
 #### [[Selection Sort]]
 # Teil 7: Objektorientierung 
 ## Vererbung
-## Polymorphie!
-[[Polymorphie.pdf]]
-[[Polymorphism]]
+## Polymorphie
 ### Statischer vs. Dynamischer Typ
+`StaticType o = new DynamicType()`
 Der **statische Typ** bestimmt die sichtbaren **[[#Methodensignatur|Methodensignaturen]]** für den Compiler; der **dynamische Typ** bestimmt die ausgeführte **Implementierung** der JVM.
 ### Methodensignatur
 Name (nicht Return-Type), Parametertypen und Reihenfolge (nicht Namen)
-aka ==public static int== **method**(**String **==hallo,== **int** ==hallo==)
+aka ==public static int== **method**(**String** ==hallo,== **int** ==hallo==)
 ### Generics & Bounds
 Bei `A<U extends C>` ist die Konstruktion **`new A<C>()`** erlaubt, da für die Typprüfung und Generics **jede Klasse als Subtyp ihrer selbst** betrachtet wird.
-### Ambiguity Error
-Ein **Compile-Fehler**, wenn der Compiler bei überladenen Methoden **keine eindeutige Signatur** als "besten Match" bestimmen kann.
 ### Casting
 ```java
 oldStaticType object = new dynamicType();
@@ -143,11 +287,22 @@ newStaticType object = (newStaticType) object;
 ```
 
 Erstellt ein neues Objekt mit dem alten **dynamischen** und dem in Klammern angegebenen neuen **statischen** Typ.
+Wenn neuer statischer Typ in der Vererbungshierarchie unter dem dynamischen liegt, gibts `ClassCastException`.
 Ein **Upcast** (von extender auf extendee) schränkt die **Sichtbarkeit** auf Methoden ein, die im **statischen Zieltyp** deklariert sind.
-
+#### Implizit vs Explizit
+Entlang der Vererbungsrichtung (in Pfeilrichtung) castet Java implizit aka automatisch (da keine Daten verloren gehen).
+Andersrum muss man explizit casten.
+Das gilt auch bei primitiven Typen.
+![[Polymorphie.pdf#page=1&rect=447,42,548,167|Polymorphie, p.1|300]]
+### **Und welche scheiß Methode wird jetzt aufgerufen?**
+![[Polymorphie.pdf#page=2&rect=45,187,549,658|Polymorphie, p.2]]
+In other words: Such bei statischem Typ die Methode raus, die am besten passt. Dann nimmt die in der Vererbungshierarchie möglichst nah am dynamischen Typen liegende Implementierung dieser Methode. (Und zwar mit exakt der selben Signatur!)
+#### Best Fitting Methode
+Die Methode, wo die Parameter mit den wenigsten [[#Implizit vs Explizit|Impliziten Casts]] erfüllt werden. Es gibt einen `Ambiguity Error`, wenn der Compiler **keine eindeutige Signatur** als "besten Match" bestimmen kann.
 ## Abstraktion/[[Interface]]s
 ![[Pasted image 20260131162811.png|500]]
 ## Enums
+
 # [[#Teil 8: Rekursion]]
 rekursion schmekursion sag ich immer
 - [[Binary Tree]]
@@ -225,6 +380,7 @@ Streams sind **lazy** und verarbeiten Daten **"on-the-fly"**, was sie **speicher
 		- oder mit `Files.readAllLines()` Lines als Stream lesen
 	- oder Path von Directory, dann gibts `Files.walk()`, was n gefüllten Stream ausgibt
 [[Java File System]]
+[[Buffers]]
 ## [[Java Class - Socket]]
 ## Exceptions/Errors
 ### Checked vs Unchecked
@@ -264,9 +420,9 @@ my tip gui
 
 ## TODOs
 
-- [ ] TODO maybe 4?
-- [ ] TODO maybeeee 5 noch was ?
-- [ ] TODO 6
+- [x] TODO maybe 4?
+- [x] TODO maybeeee 5 noch was ?
+- [x] TODO 6
 - [ ] TODO enums
 - [ ] TODO interface
 - [ ] TODO polymorphie

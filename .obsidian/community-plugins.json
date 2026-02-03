@@ -19,5 +19,6 @@
   "webpage-html-export",
   "obsidian-enhancing-export",
   "obsidian-pandoc",
-  "terminal"
+  "terminal",
+  "obsidian-vimrc-support"
 ]

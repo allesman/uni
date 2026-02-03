@@ -12,5 +12,6 @@
   },
   "readableLineLength": false,
   "alwaysUpdateLinks": true,
-  "defaultViewMode": "preview"
+  "defaultViewMode": "preview",
+  "vimMode": true
 }
