@@ -18,5 +18,7 @@
   "wrangle-todos",
   "webpage-html-export",
   "obsidian-enhancing-export",
-  "obsidian-pandoc"
+  "obsidian-pandoc",
+  "terminal",
+  "gnome-terminal-loader"
 ]

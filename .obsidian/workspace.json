@@ -39,6 +39,52 @@
           }
         ],
         "currentTab": 1
+      },
+      {
+        "id": "d6a0db33281cb452",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7a22a7d38e15a4dd",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "terminal:terminal",
+              "state": {
+                "terminal:terminal": {
+                  "cwd": "/home/merlin/uni",
+                  "focus": false,
+                  "profile": {
+                    "args": [],
+                    "executable": "/bin/sh",
+                    "followTheme": true,
+                    "name": "",
+                    "platforms": {
+                      "linux": true
+                    },
+                    "pythonExecutable": "python3",
+                    "restoreHistory": false,
+                    "rightClickAction": "copyPaste",
+                    "successExitCodes": [
+                      "0",
+                      "SIGINT",
+                      "SIGTERM"
+                    ],
+                    "terminalOptions": {
+                      "documentOverride": null
+                    },
+                    "type": "integrated",
+                    "useWin32Conhost": true
+                  },
+                  "serial": null
+                }
+              },
+              "pinned": true,
+              "icon": "terminal",
+              "title": "Terminal: sh"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -170,13 +216,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Module/Semester 1/EIDI/Einführung in die Informatik.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Einführung in die Informatik"
+              "title": "Outline"
             }
           },
           {
@@ -226,12 +271,18 @@
       "pdf-plus:PDF++: Toggle auto-copy": false,
       "pdf-plus:PDF++: Toggle auto-focus": false,
       "pdf-plus:PDF++: Toggle auto-paste": false,
-      "obsidian-excalidraw-plugin:New drawing": false
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "terminal:Open terminal": false,
+      "gnome-terminal-loader:main.py (Gnome Terminal)": false,
+      "gnome-terminal-loader:Gnome Terminal": false
     }
   },
-  "active": "0d062fe24b59371a",
+  "active": "7a22a7d38e15a4dd",
   "lastOpenFiles": [
     "Module/Semester 1/EIDI/Einführung in die Informatik.md",
+    "Pasted image 20260124201751.png.md",
+    "main.py",
+    "Pasted image 20260124201751.png",
     "Dashboard.md",
     "HTML Exports/site-lib/search-index.json",
     "HTML Exports/site-lib/metadata.json",
@@ -247,7 +298,6 @@
     "HTML Exports/site-lib/media/6155340132a851f6089e.svg",
     "HTML Exports/site-lib/media/2308ab1944a6bfa5c5b8.svg",
     "HTML Exports/site-lib/fonts/c504db5c06caaf7cdfba.woff2",
-    "HTML Exports/site-lib/fonts/70cc7ff27245e82ad414.ttf",
     "HTML Exports/attachments/pasted-image-20260131162811.png",
     "Module/Semester 1/EIDI/Stack.md",
     "Module/Semester 1/EIDI/Final Keyword.md",
@@ -274,7 +324,6 @@
     "Module/Semester 1/EIDI/Bubble Sort.md",
     "Module/Semester 1/Advisor/2025-01-28 Protokoll.md",
     "Module/Semester 1/Advisor/Advisor (Wahlfach).md",
-    "Module/Semester 1/DS/Tutoriumsaufgaben/thumbnail.png",
-    "Module/Semester 1/DS/Tutoriumsaufgaben (3)/thumbnail.png"
+    "Module/Semester 1/DS/Tutoriumsaufgaben/thumbnail.png"
   ]
 }
