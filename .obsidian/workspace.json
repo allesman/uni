@@ -232,7 +232,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -264,25 +264,25 @@
   },
   "active": "96eb0d5e21eaaa8a",
   "lastOpenFiles": [
-    "Dashboard.md",
     "Module/Semester 1/EIDI/Einführung in die Informatik.md",
-    "Pasted image 20260124201751.png.md",
-    "main.py",
-    "Pasted image 20260124201751.png",
-    "HTML Exports/site-lib/search-index.json",
-    "HTML Exports/site-lib/metadata.json",
-    "HTML Exports/site-lib/media/favicon.png",
-    "Module/Semester 1/EIDI/Altkausuren.md",
-    "Module/Semester 1/EIDI/altklausuren/0dae4ef5a6a993465bce477e705721c4-8.pdf",
-    "Module/Semester 1/EIDI/altklausuren/Altklausur 2017-2.md",
-    "HTML Exports/site-lib/styles/theme.css",
     "HTML Exports/site-lib/styles/obsidian.css",
-    "HTML Exports/site-lib/styles/main-styles.css",
     "HTML Exports/site-lib/styles/global-variable-styles.css",
-    "HTML Exports/site-lib/scripts/webpage.js",
+    "HTML Exports/site-lib/styles",
+    "HTML Exports/site-lib/media/favicon.png",
     "HTML Exports/site-lib/media/6155340132a851f6089e.svg",
     "HTML Exports/site-lib/media/2308ab1944a6bfa5c5b8.svg",
+    "HTML Exports/site-lib/media",
     "HTML Exports/site-lib/fonts/c504db5c06caaf7cdfba.woff2",
+    "HTML Exports/site-lib/fonts/70cc7ff27245e82ad414.ttf",
+    "HTML Exports/site-lib/fonts/52ac8f3034507f1d9e53.ttf",
+    "HTML Exports/site-lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+    "HTML Exports/site-lib/fonts/454577c22304619db035.ttf",
+    "HTML Exports/site-lib/fonts/05b618077343fbbd92b7.ttf",
+    "Dashboard.md",
+    "Pasted image 20260124201751.png.md",
+    "Pasted image 20260124201751.png",
+    "Module/Semester 1/EIDI/Altkausuren.md",
+    "Module/Semester 1/EIDI/altklausuren/Altklausur 2017-2.md",
     "HTML Exports/attachments/pasted-image-20260131162811.png",
     "Module/Semester 1/EIDI/Stack.md",
     "Module/Semester 1/EIDI/Final Keyword.md",
@@ -308,7 +308,6 @@
     "Attachments/Pasted image 20260131162811.png",
     "Module/Semester 1/EIDI/Bubble Sort.md",
     "Module/Semester 1/Advisor/2025-01-28 Protokoll.md",
-    "Module/Semester 1/Advisor/Advisor (Wahlfach).md",
     "Module/Semester 1/DS/Tutoriumsaufgaben/thumbnail.png"
   ]
 }
