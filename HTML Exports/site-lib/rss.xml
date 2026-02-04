@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[eidi]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>site-lib/media/favicon.png</url><title>eidi</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 04 Feb 2026 10:53:45 GMT</lastBuildDate><atom:link href="site-lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 04 Feb 2026 10:53:38 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[Einführung in die Informatik]]></title><description><![CDATA[<a data-href="Altkausuren" href="module/semester-1/eidi/altkausuren.html" class="internal-link" target="_self" rel="noopener nofollow">Altkausuren</a>bro so was soll ich dazu überhaupt schreiben idk
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[eidi]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>site-lib/media/favicon.png</url><title>eidi</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 04 Feb 2026 21:44:30 GMT</lastBuildDate><atom:link href="site-lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 04 Feb 2026 21:44:24 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[Einführung in die Informatik]]></title><description><![CDATA[<a data-href="Altkausuren" href="module/semester-1/eidi/altkausuren.html" class="internal-link" target="_self" rel="noopener nofollow">Altkausuren</a>bro so was soll ich dazu überhaupt schreiben idk
 Code ist eine Anreihung von Anweisungen dings<br>Abstraktionsebene zwischen Dingen außerhalb und innerhalb von Klasse (z.B. Getter und Setter) erleichtert Wartung und <a data-tooltip-position="top" aria-label="Komposition statt Vererbung!" data-href="#Komposition statt Vererbung!" href="einführung-in-die-informatik.html#Komposition_statt_Vererbung!_0" class="internal-link" target="_self" rel="noopener nofollow">Modifikationen am gekapselten Stuff</a>.Hier gibt es 1 wichtiges Detail, das relevant werden kann:In Java hat das Ergebnis von a % b immer dasselbe Vorzeichen wie a (der Dividend). In der Mathematik ist der Rest hingegen meistens so definiert, dass er immer ≥0 ist.
 &amp; und | prüfen immer rechts und links
 &amp;&amp; bricht nach false für links schon ab
@@ -19,10 +19,10 @@ public void testForBitFlip(){ int a = 6; int b = 7; int c = a+b; assertEquals(c,
 <br>Niemals <a data-tooltip-position="top" aria-label="Primitivity" data-href="#Primitivity" href="einführung-in-die-informatik.html#Primitivity_0" class="internal-link" target="_self" rel="noopener nofollow">Non-Primitives</a> mit == vergleichen!
 Dann vergleichst du nur deren Referenzen du Dulli. Mach einfach asssertEquals() du Dulli.
 broo free, außer maybe die hier:a = b ? c : d ist äquivalent zuif (b)
-{ a=c
+{ a=c;
 }
 else
-{ a=d
+{ a=d;
 }
 switch (a)
 { case 1: System.out.println("eins"); break; case 2: System.out.println("zwei"); break; case 3: case 4: System.out.println("drei oder vier"); break; default: System.out.println("out of bounds");
@@ -155,32 +155,51 @@ Alle RuntimeException sind unchecked, alle anderen Exceptions checked. Dann gibt
 Bei try{} catch(Exception e){} finally{} ist die Funktion von finally, dass es fast immer ausgeführt wird, egal ob eine Exception geworfen wurde oder ob im try/catch ein return steht. Sinn: Aufräumarbeiten (Files schließen, Sockets beenden), damit die nicht offen bleiben, wenn es knallt.FAST immer
 Die Ausnahme: wenn System.exit(0) gerufen wird oder die JVM komplett abschmiert (Stromausfall type shit)
 <br><a data-href="Producer Consumer Problem" href="module/semester-1/eidi/producer-consumer-problem.html" class="internal-link" target="_self" rel="noopener nofollow">Producer Consumer Problem</a>
-Thread vs Runnable Runnable etwas, das wir machen
+Prozesse, die mit einem Pufferspeicher gekoppelt sindProzesse, die mit einem Pufferspeicher gekoppelt sind
+etwas, das wir machen
 aka Liste von Anweisungen
-plainstes Interface, das keine Paramter nimmt und nichts zurückgibt Thread kann Runnable übergeben bekommen, um zu festlegen was er tun soll IMMER start() benutzen, nie run()
-wait() braucht Handling für InterruptedException (try/catch oder mit throws nach oben geben)
-(bei auf Objekt) Ownership des Objekts via synchronized(obj) join() aufrufen -&gt; warten bis thread fertig ist.
-<br>synchronized als <a data-href="Synchronized Keyword" href="module/semester-1/eidi/synchronized-keyword.html" class="internal-link" target="_self" rel="noopener nofollow">Synchronized Keyword</a> wrapper, dann "auf" einem Objekt, direkt der ressource, wenn sie ein objekt ist, sonst
-einem boilerplate objekt methodendings, äquivalent zu wrapper für ganze methode auf this volatile ist synchronized light (Race Conditions passieren noch, aber kein Caching sondern es wird direkt mit RAM geschrieben und gelesen)
-<br><a data-href="Race Conditions" href="module/semester-1/eidi/race-conditions.html" class="internal-link" target="_self" rel="noopener nofollow">Race Conditions</a> -&gt; Monitor -&gt; <a data-href="Deadlock" href="module/semester-1/eidi/deadlock.html" class="internal-link" target="_self" rel="noopener nofollow">Deadlock</a> -&gt; Semaphor, Lock, etc. Semamphore(n) mit n als Anzahl Permits acquire() nimmt 1 Permit, wartet falls 0 ist
-release() gibt 1 Permit zurück <br><a data-href="JVM Intricacies" href="module/semester-1/eidi/jvm-intricacies.html" class="internal-link" target="_self" rel="noopener nofollow">JVM Intricacies</a>
-my tip guiTODO syntax enum
-TODO maybe 4?
-TODO maybeeee 5 noch was ?
-TODO 6
-TODO enums
-TODO interface
-TODO polymorphie
-TODO 8
-TODO 11?
+<br>plainstes <a data-tooltip-position="top" aria-label="Berühmte Interfaces (aus `java.util.function`)" data-href="#Berühmte Interfaces (aus `java.util.function`)" href="einführung-in-die-informatik.html#Berühmte_Interfaces_(aus_`java.util.function`)_0" class="internal-link" target="_self" rel="noopener nofollow">Interface</a>, das keine Parameter nimmt und nichts zurückgibt
+kann Runnable übergeben bekommen, um zu festlegen was er tun soll
+IMMER start() benutzen, nie run()
+wait(Object o) wartet darauf, dass auf dem Parameter o notify() aufgerufen wird. Dafür nötig: Handling für InterruptedException (try/catch oder mit throws nach oben geben)
+Ownership des Objekts o via synchronized(o) o.notify() weckt einen Thread auf, der auf o wartet
+o.notifyAll() weckt alle Threads auf, die auf o warten
+interrupt() wacht
+join() aufrufen -&gt; warten bis thread fertig ist.
+<br>synchronized als <a data-href="Synchronized Keyword" href="module/semester-1/eidi/synchronized-keyword.html" class="internal-link" target="_self" rel="noopener nofollow">Synchronized Keyword</a> wrapper, dann "auf" einem Objekt, direkt der Ressource, wenn sie ein objekt ist, sonst
+einem boilerplate Objekt Methodendings, äquivalent zu wrapper für ganze methode auf this volatile ist synchronized light (Race Conditions passieren noch, aber kein Caching sondern es wird direkt mit RAM geschrieben und gelesen)
+Mehrere Prozesse greifen auf Ressource zu⬇️Race Condition
+Datenverfälschung durch zeitgleichen Zugriff
+(z.B. Beide lesen erst ob ein Sitzplatz noch buchbar ist und reservieren ihn dann.)
+⬇️Monitor
+Blockierung von Zugriff auf Ressource, wenn schon auf sie zugegriffen wird
+(z.B. Bei Klick auf Sitzplatz wird nicht nur gecheckt ob er schon reserviert ist, sondern auch ob grade jemand schon im Begriff ihn zu buchen ist, dann ggf warten auf Freigabe)
+⬇️Deadlock
+Mindestens zwei&nbsp;nebenläufige Prozesse&nbsp;befinden sich in&nbsp;zyklischer Wartesituation&nbsp;auf&nbsp;exklusiv&nbsp;und&nbsp;ununterbrechbar von einem anderen Prozess belegte, gemeinsame Ressourcen.<br>
+<img alt="Pasted image 20260204153203.png" src="attachments/pasted-image-20260204153203.png" target="_self">
+⬇️Lösungsmöglichkeiten
+Semaphor, Lock, etc.
+Semamphore(n) mit n als Anzahl Permit acquire() nimmt 1 Permit, wartet falls 0 ist
+release() gibt 1 Permit zurück GUIs sind Graphical User Interfaces. Eine Anwendung besteht typischerweise aus einem Frame (Hauptfenster) und verschiedenen Swing-Komponenten (z.B. „ein Knopf“ und weitere einfache Bedienelemente), die über Ereignisse (z.B. Klicks) gesteuert werden. Für die Anordnung der Komponenten sind Layout-Konzepte zentral (behandelt als Layout I und Layout II), und als größere Anwendung wird die Kombination von GUIs mit Netzwerkprogrammierung thematisiert.Highly doubt, dass irgendwas davon drankommtAufgabe: Quelltext wird in Tokens zerlegt. Identifiziert u.a. reservierte Wörter, Namen, Konstanten
+Ignoriert: White Space und Kommentare Technik: Vergleich mit regulären Ausdrücken, daraus werden „Wörter“ (= Tokens).Aufgabe: Analysiert die Struktur des Programms.
+Ergebnis: Erzeugt einen Syntaxbaum und prüft, ob die Syntax korrekt ist.Aufgabe: Prüft Kontextbedingungen, z.B. ob Variablen vor ihrer Verwendung deklariert wurden.Aufgabe: Aus (annotiertem) Baum wird (Zwischen-)Code erzeugt.Aufgabe: Der erzeugte Code wird abschließend optimiert.Komplexere Konstrukte (z.B. Ausdrücke, if, while) werden in eine Sequenz solcher einfachen Instruktionen übersetzt; Sprünge sind dabei zentral für Kontrollstrukturen.Funktionsaufrufe werden im Bytecode/VM-Kontext typischerweise über Stacks und eine passende Laufzeitorganisation (z.B. Aktivierungsdaten pro Aufruf) realisiert.EBNF ist eine formale Notation, um die Syntax einer Sprachepräzise zu beschreiben (welche Zeichenketten/Programme wohlgeformt sind).
+Terminale: „konkrete“ Symbole der Sprache (z.B. "a", "+", "if", "(").
+Nichtterminale: Namen für syntaktische Kategorien (z.B. Expr, Stmt, A).
+Startsymbol: Das Nichtterminal, von dem aus die Beschreibung der ganzen Sprache beginnt. Schreibweise typischerweise: Nichtterminal ::= Ausdruck Bedeutung: Das Nichtterminal auf der linken Seite darf/ soll durch den rechten Ausdruck ersetzt/abgeleitet werden. Konkatenation: X Y bedeutet „X gefolgt von Y“.
+Alternative: X | Y bedeutet „entweder X oder Y“.
+Option: [ X ] bedeutet „X ist optional (0 oder 1 Mal)“.
+Wiederholung (0 oder mehr): { X }
+Wiederholung (1 oder mehr): oft als X { X } (oder je nach Variante auch { X }+).
+Gruppierung: ( ... ) zur Klammerung/Strukturierung. Durch wiederholtes Anwenden der Regeln wird aus dem Startsymbol eine Zeichenkette aus nur Terminalen erzeugt.
+Die Menge aller so erzeugbaren Terminalketten ist die Sprache der Grammatik. Sprache : A ::= ( "a" A "b" ) | ε
+Idee: Jedes Anwenden der Regel fügt außen ein "a" und ein "b" hinzu; ε beendet. TODO 11?
 TODO 12
-TODO ++ --
-TODO modulo
-TODO auto export
-<br>TODO <a data-href="#Package" href="einführung-in-die-informatik.html#Package_0" class="internal-link" target="_self" rel="noopener nofollow">Package</a>
 TODO socket
 TODO producer consumer problem
-TODO Exceptions
-TODO JVM <br>wobei das laut meinem actual SWE Freund mit 10 Jahren Industrieerfahrung Giga Anti-Pattern ist lol<a href="#fnref-1-af530ba55c83cae6" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
-<br>datentypen können weggelassen werden, (aber nur wenn man es mit allen macht), dann wird inferred<a href="#fnref-2-af530ba55c83cae6" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
-]]></description><link>einführung-in-die-informatik.html</link><guid isPermaLink="false">Module/Semester 1/EIDI/Einführung in die Informatik.md</guid><pubDate>Wed, 04 Feb 2026 10:53:29 GMT</pubDate></item></channel></rss>
+<br>TODO <a data-href="JVM Intricacies#JVM Intricacies" href="module/semester-1/eidi/jvm-intricacies.html" class="internal-link" target="_self" rel="noopener nofollow">JVM Intricacies &gt; JVM Intricacies</a>
+<br><a data-href="Java Class - Thread" href="module/semester-1/eidi/java-class-thread.html" class="internal-link" target="_self" rel="noopener nofollow">Java Class - Thread</a>
+<br><a data-href="Synchronized Keyword" href="module/semester-1/eidi/synchronized-keyword.html" class="internal-link" target="_self" rel="noopener nofollow">Synchronized Keyword</a>
+<br><a data-href="Race Conditions" href="module/semester-1/eidi/race-conditions.html" class="internal-link" target="_self" rel="noopener nofollow">Race Conditions</a>
+<br><a data-href="Deadlock" href="module/semester-1/eidi/deadlock.html" class="internal-link" target="_self" rel="noopener nofollow">Deadlock</a> Was kann zu GUIs drankommen? <br>wobei das laut meinem actual SWE Freund mit 10 Jahren Industrieerfahrung Giga Anti-Pattern ist lol<a href="#fnref-1-faa5b09d7995c655" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
+<br>datentypen können weggelassen werden, (aber nur wenn man es mit allen macht), dann wird inferred<a href="#fnref-2-faa5b09d7995c655" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
+]]></description><link>einführung-in-die-informatik.html</link><guid isPermaLink="false">Module/Semester 1/EIDI/Einführung in die Informatik.md</guid><pubDate>Wed, 04 Feb 2026 21:37:21 GMT</pubDate></item></channel></rss>

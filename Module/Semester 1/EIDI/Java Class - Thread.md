@@ -103,13 +103,12 @@ The start method **must** be used to initiate a thread in java. Directly invokin
 **`join()`** 
 - **throws** InterruptedException
 The join method allows us to force the **current thread** to wait until the thread object has exited its run() method. This is extremely useful for synchronizing threads.
-
 **`interrupt()`**
 - **causes** InterrupedException
 The interrupt method lets us stop a thread in its tracks. Calling interrupt() will set the interrupted thread's "interrupt" flag to true. The interrupt flag can be accessed in two different ways. Using `Thread.interrupted()` will **return** the boolean interrupted flag of the current thread, and it will also **set** the interrupted flag to false. However using `myThread.isInterrupted()` will **only** **return** the boolean interrupted flag of the referenced object.
 
 There are three outcomes of an interrupt() method invocation.
-1) If the interrupted thread was either: waiting, sleeping, or joining then the interrupted thread will throw an InterruptedException which is caught by the required try-catch block surrounding the wait/sleep/join method.
+1) If the interrupted thread was either: waiting, sleeping, or joining then the interrupted thread will throw an `InterruptedException` which is caught by the required try-catch block surrounding the wait/sleep/join method.
 2) If the interrupted thread is not waiting, sleeping, or joining then the interrupted thread will continue as normal.
 3) If the interrupted thread is dead then nothing happens.
 

@@ -105,11 +105,11 @@ a = b ? c : d
 ```java
 if (b)
 {
-	a=c
+	a=c;
 }
 else
 {
-	a=d
+	a=d;
 }
 ```
 ## Switch-Case
@@ -615,54 +615,147 @@ Bei `try{} catch(Exception e){} finally{}` ist die Funktion von `finally`, dass 
 
 # Teil 10: Nebenläufigkeit
 [[Producer Consumer Problem]]
+Prozesse, die mit einem Pufferspeicher gekoppelt sindProzesse, die mit einem Pufferspeicher gekoppelt sind
 ## [[Java Class - Thread|Threads]]
-- `Thread` vs `Runnable`
-	- `Runnable`
-		- etwas, das wir machen
-		- aka Liste von Anweisungen
-		- plainstes Interface, das keine Paramter nimmt und nichts zurückgibt
-	- `Thread`
-		- kann `Runnable` übergeben bekommen, um zu festlegen was er tun soll
+### `Thread` vs `Runnable`
+#### `Runnable`
+- etwas, das wir machen
+- aka Liste von Anweisungen
+- plainstes [[#Berühmte Interfaces (aus `java.util.function`)|Interface]], das keine Parameter nimmt und nichts zurückgibt
+#### `Thread`
+kann `Runnable` übergeben bekommen, um zu festlegen was er tun soll
+## Verwendung von Threads
 - IMMER `start()` benutzen, nie `run()`
-- `wait()` braucht
+- `wait(Object o)` wartet darauf, dass auf dem Parameter `o` `notify()` aufgerufen wird. Dafür nötig:
 	- Handling für `InterruptedException` (`try/catch` oder mit `throws` nach oben geben)
-	- (bei auf Objekt) *Ownership* des Objekts via `synchronized(obj)`
+	- *Ownership* des Objekts `o` via `synchronized(o)`
+- `o.notify()` weckt einen Thread auf, der auf `o` wartet
+- `o.notifyAll()` weckt alle Threads auf, die auf `o` warten
+- **`interrupt()`** wacht
 - `join()` aufrufen -> warten bis thread fertig ist.
 - `synchronized` als [[Synchronized Keyword]]
 	- wrapper, dann "auf" einem Objekt,
-		- direkt der ressource, wenn sie ein objekt ist, sonst
-		- einem boilerplate objekt
-	- methodendings, äquivalent zu wrapper für ganze methode auf `this`
+		- direkt der Ressource, wenn sie ein objekt ist, sonst
+		- einem boilerplate Objekt
+	- Methodendings, äquivalent zu wrapper für ganze methode auf `this`
 - `volatile` ist `synchronized` light (Race Conditions passieren noch, aber kein Caching sondern es wird direkt mit RAM geschrieben und gelesen)
-- [[Race Conditions]] -> Monitor -> [[Deadlock]] -> Semaphor, Lock, etc.
-	- `Semamphore(n)` mit `n` als Anzahl Permits
-		- `acquire()` nimmt 1 Permit, wartet falls 0 ist
-		- `release()` gibt 1 Permit zurück
-- [[JVM Intricacies]]
+## Probleme
+
+> [!info] Mehrere Prozesse greifen auf Ressource zu
+
+⬇️
+> [!danger] Race Condition
+> Datenverfälschung durch zeitgleichen Zugriff
+> (z.B. Beide lesen erst ob ein Sitzplatz noch buchbar ist und reservieren ihn dann.)
+
+⬇️
+> [!success] Monitor
+> Blockierung von Zugriff auf Ressource, wenn schon auf sie zugegriffen wird
+> (z.B. Bei Klick auf Sitzplatz wird nicht nur gecheckt ob er schon reserviert ist, sondern auch ob grade jemand schon im Begriff ihn zu buchen ist, dann ggf warten auf Freigabe)
+
+⬇️
+> [!danger] Deadlock
+> Mindestens zwei **nebenläufige Prozesse** befinden sich in **zyklischer Wartesituation** auf **exklusiv** und **ununterbrechbar von einem anderen Prozess belegte, gemeinsame Ressourcen**.
+> ![[Pasted image 20260204153203.png]]
+
+⬇️
+
+> [!success] Lösungsmöglichkeiten
+> Semaphor, Lock, etc.
+> 
+> `Semamphore(n)` mit `n` als Anzahl Permit
+> - `acquire()` nimmt 1 Permit, wartet falls 0 ist
+> - `release()` gibt 1 Permit zurück
+
+
 # Teil 11: GUIs
-my tip gui
+GUIs sind **Graphical User Interfaces**.  Eine Anwendung besteht typischerweise aus einem **Frame** (Hauptfenster) und verschiedenen **Swing-Komponenten** (z.B. „ein Knopf“ und weitere einfache Bedienelemente), die über **Ereignisse** (z.B. Klicks) gesteuert werden. Für die Anordnung der Komponenten sind **Layout**-Konzepte zentral (behandelt als *Layout I* und *Layout II*), und als größere Anwendung wird die Kombination von **GUIs mit Netzwerkprogrammierung** thematisiert.
 
-# Teil 12: Compiler (Mini-Java)
+
+> [!info] Highly doubt, dass irgendwas davon drankommt
+
+
+# Teil 12: Compiler
+## Compiler-Phasen
+### 1) Scanner (lexikalische Analyse)
+Aufgabe: Quelltext wird in **Tokens** zerlegt. Identifiziert u.a. **reservierte Wörter**, **Namen**, **Konstanten**
+Ignoriert: **White Space** und **Kommentare** Technik: Vergleich mit **regulären Ausdrücken**, daraus werden „Wörter“ (= Tokens).
+### 2) Parser (Syntaxanalyse)
+Aufgabe: Analysiert die **Struktur** des Programms.
+Ergebnis: Erzeugt einen **Syntaxbaum** und prüft, ob die **Syntax korrekt** ist.
+### 3) Semantische Analyse
+Aufgabe: Prüft Kontextbedingungen, z.B. ob **Variablen vor ihrer Verwendung deklariert** wurden.
+### 4) (Zwischen-)Codegenerierung
+Aufgabe: Aus (annotiertem) Baum wird **(Zwischen-)Code** erzeugt.
+### 5) Optimierung
+Aufgabe: Der erzeugte Code wird **abschließend optimiert**.
 ## Bytecode
+### Was steht „drin“? (Instruktionen)
+
+| Befehl    | Parameter           | Bedeutung                                                |     |
+| --------- | ------------------- | -------------------------------------------------------- | --- |
+| `NEG`     |                     | `int` negieren (Vorzeichenwechsel)                       |     |
+| `ADD`     |                     | zwei `int` addieren                                      |     |
+| `SUB`     |                     | zwei `int` subtrahieren                                  |     |
+| `MUL`     |                     | zwei `int` multiplizieren                    <br>Befehl   |     |
+| `DIV`     |                     | zwei `int` dividieren                      | ---------- | ------------------- | -------------------------------------------------------- | --- |                |     |
+| `NOT`     |                     | `boolean` negieren                                        |     |
+| `AND`     |                     | logisches UND                                             |     |
+| `OR`      |                     | logisches ODER                                            |     |
+| `LESS`    |                     | Vergleich `<` (liefert `boolean`)                         |     |
+| `LEQ`     |                     | Vergleich `<=` (liefert `boolean`)                        |     |
+| `EQ`      |                     | Vergleich `==` (liefert `boolean`)                        |     |
+| `NEQ`     |                     | Vergleich `!=` (liefert `boolean`)                        |     |
+| `CONST i` | `i` (int)           | Konstante `i` auf den Stack legen                         |     |
+| `TRUE`    |                     | `true` auf den Stack legen                                |     |
+| `FALSE`   |                     | `false` auf den Stack legen                               |     |
+| `LOAD i`  | `i` (Index/Adresse) | Wert aus Speicherzelle `i` laden (auf den Stack)          |     |
+| `STORE i` | `i` (Index/Adresse) | obersten Stack-Wert in Speicherzelle `i` speichern        |     |
+| `JUMP i`  | `i` (Ziel)          | unbedingter Sprung zu Instruktion/Label `i`               |     |
+| `FJUMP i` | `i` (Ziel)          | „False-Jump“: springt zu `i`, wenn Bedingung `false     t |     |
+| `READ`    |                     | Eingabe lesen (Wert auf den Stack)                        |     |
+| `WRITE`   |                     | obersten Stack-Wert ausgeben                              |     |
+| `ALLOC i` | `i` (Anzahl)        | Speicher für `i` Variablen/Speicherzellen reservieren     |     |
+| `HALT`    |                     | Programm beenden                                          |     |
+### Übersetzung (High-Level → Bytecode)
+Komplexere Konstrukte (z.B. Ausdrücke, `if`, `while`) werden in eine **Sequenz** solcher einfachen Instruktionen übersetzt; Sprünge sind dabei zentral für Kontrollstrukturen.
+### Bezug zu Funktionen
+Funktionsaufrufe werden im Bytecode/VM-Kontext typischerweise über **Stacks** und eine passende Laufzeitorganisation (z.B. Aktivierungsdaten pro Aufruf) realisiert.
 ## EBNF
-
-## TODOs
-
-TODO syntax enum
-- [x] TODO maybe 4?
-- [x] TODO maybeeee 5 noch was ?
-- [x] TODO 6
-- [x] TODO enums
-- [x] TODO interface
-- [x] TODO polymorphie
-- [x] TODO 8
-- [ ] TODO 11?
-- [ ] TODO 12
-- [x] TODO ++ --
-- [x] TODO modulo
-- [ ] TODO auto export
-- [x] TODO [[#Package]]
+### Die Idee
+**EBNF** ist eine formale Notation, um die **Syntax** einer Sprachepräzise zu beschreiben (welche Zeichenketten/Programme *wohlgeformt* sind).
+### Grundbausteine
+- **Terminale**: „konkrete“ Symbole der Sprache (z.B. `"a"`, `"+"`, `"if"`, `"("`).
+- **Nichtterminale**: Namen für syntaktische Kategorien (z.B. `Expr`, `Stmt`, `A`).
+- **Startsymbol**: Das Nichtterminal, von dem aus die Beschreibung der ganzen Sprache beginnt.
+### Regeln (Produktionen)
+- Schreibweise typischerweise:
+  - `Nichtterminal ::= Ausdruck`
+- Bedeutung: Das Nichtterminal auf der linken Seite darf/ soll durch den rechten Ausdruck **ersetzt/abgeleitet** werden.
+### Wichtige EBNF-Konstrukte (Operatoren)
+- **Konkatenation**: `X Y` bedeutet „X gefolgt von Y“.
+- **Alternative**: `X | Y` bedeutet „entweder X oder Y“.
+- **Option**: `[ X ]` bedeutet „X ist optional (0 oder 1 Mal)“.
+- **Wiederholung (0 oder mehr)**: `{ X }`
+- **Wiederholung (1 oder mehr)**: oft als `X { X }` (oder je nach Variante auch `{ X }+`).
+- **Gruppierung**: `( ... )` zur Klammerung/Strukturierung.
+### Ableitung / Sprache einer Grammatik
+- Durch wiederholtes Anwenden der Regeln wird aus dem **Startsymbol** eine Zeichenkette aus **nur Terminalen** erzeugt.
+- Die Menge aller so erzeugbaren Terminalketten ist die **Sprache der Grammatik**.
+### Mini-Beispiel
+- Sprache $\mathcal{L}=\{\varepsilon, ab, aabb, aaabbb,\ldots\}$:
+  - `A ::= ( "a" A "b" ) | ε`
+  - Idee: Jedes Anwenden der Regel fügt außen ein `"a"` und ein `"b"` hinzu; `ε` beendet.
+# TODOs
+- [x] TODO 11?
+- [x] TODO 12
 - [ ] TODO socket
 - [ ] TODO producer consumer problem
-- [x] TODO Exceptions
-- [ ] TODO JVM
+- [ ] TODO [[JVM Intricacies#JVM Intricacies]]
+- [ ] **[[Java Class - Thread]]**
+- [ ] **[[Synchronized Keyword]]**
+- [ ] **[[Race Conditions]]**
+- [ ] **[[Deadlock]]**
+
+# Fragen:
+- Was kann zu GUIs drankommen?
