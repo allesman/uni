@@ -261,7 +261,7 @@ Wichtige Methoden:
 
 Spezialversion: Hash-Table, quasi ne Liste an Hash-Maps, wo mit der Hash-Funktion jeder Wert eindeutig eine der Hash-Tabellen zugewiesen bekommt. (siehe auch [[Einführung in die Rechnerarchitektur#Cache|Cache in ERA]], der Funktioniert genau so). *Warum macht man das?* Ermöglicht sehr schnellen Zugriff, aber verliert dafür nicht die [[#Array vs List|Vorteile einer List]].
 
-## [[Binary Tree]]
+## Binary Tree
 Rekursive Datenstruktur wie die [[#Custom Implementierung als Linked List|Linked List]], aber jetzt hat jede `Node` bis zu **zwei** Nachfolger. Das ermöglicht viele [[#Teil 8 Rekursion|rekursive]] Shenanigans.
 ### Time Complexity
 Bei einem sortierten Baum ist der Elementzugriff mit $O(\log n)$ möglich (im idealsten Fall natürlich, das andere Extremum ist ein sog. *entarteter* Baum, wo jede `Node` nur einen Nachfolger hat, z.B. weil die Werte vor dem Einlesen schon sortiert waren).

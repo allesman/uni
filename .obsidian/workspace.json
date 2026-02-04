@@ -44,29 +44,15 @@
               "type": "markdown",
               "state": {
                 "file": "Module/Semester 1/EIDI/Einführung in die Informatik.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "Einführung in die Informatik"
             }
-          },
-          {
-            "id": "7c58dcc882f223ba",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://github.com/allesman/uni",
-                "title": "GitHub - allesman/uni: Tum Informatik Notizen Obsidian Vault",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "GitHub - allesman/uni: Tum Informatik Notizen Obsidian Vault"
-            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -305,8 +291,9 @@
   },
   "active": "96eb0d5e21eaaa8a",
   "lastOpenFiles": [
-    "HTML Exports/site-lib/styles/supported-plugins.css",
     "Module/Semester 1/EIDI/Einführung in die Informatik.md",
+    "HTML Exports/polymorphie.pdf",
+    "HTML Exports/site-lib/styles/supported-plugins.css",
     "Module/Semester 1/EIDI/Java Class - Socket.md",
     "Module/Semester 1/EIDI/Producer Consumer Problem.md",
     "Module/Semester 1/EIDI/Java Class - Thread.md",
@@ -333,14 +320,12 @@
     "Module/Semester 1/EIDI/Selection Sort.md",
     "Module/Semester 1/Games",
     "Module/Semester 1/EIDI/Polymorphie.pdf",
-    "HTML Exports/polymorphie.pdf",
     "HTML Exports/site-lib/styles/main-styles.css",
     "HTML Exports/site-lib/fonts/mathjax_vector-bold.woff",
     "HTML Exports/site-lib/fonts/mathjax_vector-regular.woff",
     "HTML Exports/site-lib/fonts/mathjax_typewriter-regular.woff",
     "HTML Exports/site-lib/fonts/mathjax_script-regular.woff",
     "HTML Exports/site-lib/fonts/mathjax_sansserif-italic.woff",
-    "HTML Exports/site-lib/fonts/mathjax_sansserif-bold.woff",
     "HTML Exports/site-lib/media/favicon.png",
     "HTML Exports/site-lib/media/6155340132a851f6089e.svg",
     "HTML Exports/site-lib/media/2308ab1944a6bfa5c5b8.svg",
