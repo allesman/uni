@@ -1,4 +1,10 @@
 {
   "Appearance-dark@@card-layout-open-dark": false,
-  "Appearance-dark@@theme-dark-style-select": "theme-dark-background-default"
+  "Appearance-dark@@theme-dark-style-select": "theme-dark-background-default",
+  "primary-theme@@h2-color@@light": "#9BC1BC",
+  "primary-theme@@h3-color@@light": "#5CA4A9",
+  "primary-theme@@h4-color@@dark": "#FFA45B",
+  "primary-theme@@h3-color@@dark": "#ED6A5E",
+  "primary-theme@@h2-color@@dark": "#817E9F",
+  "primary-theme@@h1-color@@dark": "#7FC29B"
 }

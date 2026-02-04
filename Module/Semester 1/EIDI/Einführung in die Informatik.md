@@ -16,21 +16,26 @@ Abstraktionsebene zwischen Dingen außerhalb und innerhalb von Klasse (z.B. Gett
 ## Primitivity
 
 
-|                       | Primitive                                                            | Non-Primitive                                                                                                                            |
-| --------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| Beispiele             | `int`, `boolean`                                                     | `String`, `Array`, jede custom class                                                                                                     |
-| Wert                  | direkt die Daten selbst                                              | eine **referenz** auf die Adresse mit den Daten                                                                                          |
-| Als Methodenparameter | Methode erhält Kopie des Werts, kann den "äußeren" Wert nicht ändern | Methode erhält Kopie der Referenz (kann also die Daten dennoch ändern, [[#Call-by-Value (Referenzen)\|⚠️ aber nicht bei reassignment!]]) |
+|                       | Primitive                                                            | Non-Primitive                                                                                                                                                                               |
+| --------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Beispiele             | `int`, `boolean`                                                     | `String`, `Array`, jede custom class                                                                                                                                                        |
+| Wert                  | direkt die Daten selbst                                              | eine **referenz** auf die Adresse mit den Daten                                                                                                                                             |
+| Als Methodenparameter | Methode erhält Kopie des Werts, kann den "äußeren" Wert nicht ändern | Methode erhält Kopie der Referenz (kann also die Daten dennoch ändern ([[#Call-by-Value (Referenzen)\|⚠️ aber nicht bei reassignment!]] und nicht bei `String`, da dieser _immutable_ ist). |
 ## Modulo-Operator
 Hier gibt es 1 wichtiges Detail, das relevant werden kann:
 
-| in Mathe                     | in Java        |
-| ---------------------------- | -------------- |
-| `13 % 6 == 7`                | `13 % 6 == 7`  |
-| `-13 % 6 == -7 + 6 + 6 == 5` | `-13 % 6 == 7` |
-In Java ist `a mod b` mit `a<0` also der absolute Wert des Rests von $\frac{a}{b}$. In Mathe nimmt man stattdessen den negativen Rest und addiert so lange `b` bis man `>0` ist. (Da alle Werte die `b` auseinander sind, hinsichtlich `mod b` äquivalent sind.)
+| **in Mathe**                   | **in Java**     |
+| ------------------------------ | --------------- |
+| `13 % 6 == 1`                  | `13 % 6 == 1`   |
+| `-13 % 6 == 5` (in Restklasse) | `-13 % 6 == -1` |
+In Java hat das Ergebnis von `a % b` immer dasselbe Vorzeichen wie `a` (der Dividend). In der Mathematik ist der Rest hingegen meistens so definiert, dass er immer ≥0 ist.
+## Vergleichsoperatoren
+- `&` und `|` prüfen immer rechts und links
+- `&&` bricht nach `false` für links schon ab
+- `||` bricht nach `true` für links schon ab
+-> Wenn links und rechts Methoden, die einen Zustand verändern, stehen macht das einen Unterschied!
 
-# Pre-/Post-Increment/Decrement
+## Pre-/Post-Increment/Decrement
 
 | `a++`/`a--` | Wert von `a` gelesen und im Execution Stack gespeichert, dann wird `a` in Memory in-/dekrementiert. |
 | ----------- | --------------------------------------------------------------------------------------------------- |
@@ -57,7 +62,7 @@ In Java ist `a mod b` mit `a<0` also der absolute Wert des Rests von $\frac{a}{b
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `abstract`  | - Methoden: Deklarierung ohne Implementierung<br>- Klassen: uninstanziierbar -> kann keine Objekte haben (see also: [[#Abstraktion/ Interface s\|Interfaces]])<br>- Alle Klassen, die mindestens eine `abstract` Methode haben, **müssen** `abstract` sein                                                       |
 | `final`     | - Variablen<br>  - [[#Primitivity\|primitives]]: Konstanter Wert (kann nicht in **runtime** geändert werden)<br>  - [[#Primitivity\|non-primitives]]: nur der Wert, also die Referenz ist `final`, nicht die Daten auf die sie zeigt<br>- Klassen: kann nicht **[[#Abstraktion/ Interface s\|extended]]** werden |
-| `static`    | - Gehört nicht dem jeweiligen Objekt, sondern der Klasse an sich<br>- Kann ohne bestimmte Referenz auf oder Existenz eines Objekts verwendet werden<br>- Useful für Konstanten (mit `static`) oder id (`static int count=count; int id=count++;`[^2])                                                            |
+| `static`    | - Gehört nicht dem jeweiligen Objekt, sondern der Klasse an sich<br>- Kann ohne bestimmte Referenz auf oder Existenz eines Objekts verwendet werden<br>- Useful für Konstanten (mit `static`) oder id (`static int count; int id=count++;`[^2])                                                                  |
 | `default`   | Nur in [[#Interfaces]] möglich, entfernt sozusagen das hier automatisch anwesende `abstract`, sodass wir eine Implementierung für die Methode angeben können.                                                                                                                                                    |
 
 [^2]: wobei das laut meinem actual SWE Freund mit 10 Jahren Industrieerfahrung Giga Anti-Pattern ist lol
@@ -150,6 +155,16 @@ do
 while (userInput.isInvalid());
 ```
 Die Schleife wird halt immer mindestens 1x ausgeführt, bevor die Condition überhaupt gecheckt wird.
+## Enums
+Nützlich, wenn es eine begrenze Anzahl an Belegungen geben soll für Variable.
+```java
+enum Beziehungsstatus
+{
+	LEDIG, LIIERT, VERHEIRATET, VERWITWET
+}
+Beziehungsstatus b = Beziehungsstatus.VERHEIRATET;
+Beziehungsstatus[] alleOptionen = Beziehungsstatus.values()
+```
 ## Kontrollflussdiagramm
 Beispiel:
 ```mermaid
@@ -193,7 +208,7 @@ skalarprodukt(a,b):
 		output += i*j
 ```
 ### Dynamic Array
-Auch nur ein normales (statisches) Array under the Hood aber mit resizing Logik eingebaut. Die Idee ist, dass die Resizing Operation, bei der der Inhalt des Arrays in ein größeres Array kopiert wird, recht selten passiert, sodass es insgessamt relativ effizient ist. Warum macht man das? Bessere Speichernutzung, siehe [[#Array vs List]].
+Auch nur ein normales (statisches) Array under the Hood aber mit Resizing-Logik eingebaut. Die Idee ist, dass die Resizing-Operation, bei der der Inhalt des Arrays in ein größeres Array kopiert wird, recht selten passiert, sodass es insgesamt effizient ist. *Warum macht man das?* Weil man sich dann nicht ganz am Anfang auf die Länge festlegen muss.
 ### Array vs [[#List]]
 
 |                                            | Array                                                                                                                                                                                    | List                                           |
@@ -201,11 +216,11 @@ Auch nur ein normales (statisches) Array under the Hood aber mit resizing Logik 
 | Cache Effizienz                            | *die Elemente liegen direkt hintereinander im Speicher, hilft bei Iteration durch Array wegen räumlichem Lokalitätsprinzip ([[Einführung in die Rechnerarchitektur#Cache\|siehe ERA]]))* | **die Elemente sind weiß Gott wo im Speicher** |
 | Time Complexity Zugriff                    | *$O(1)$*                                                                                                                                                                                 | **$O(n)$**                                     |
 | Kapazität                                  | **bei Initialisierung definiert und dann fix**                                                                                                                                           | *dynamisch*                                    |
-| Speicherbedarf                             | **ggf größer als nötig (wenn nicht ganz voll)**                                                                                                                                          | *genau so groß wie nötig*                      |
+| Speicherbedarf                             | *zwar ggf größer als nötig aber immer noch super klein*                                                                                                                                  | **groß, da jede Node viel Platz braucht**      |
 | Zwischeneinfügen, Entfernen mit Nachrücken | **sehr komplex, alles hinter Element muss verschoben werden**                                                                                                                            | *easy clap*                                    |
 ## Collections
 Eine Sammlung an [[#Interfaces]] für Datenstrukturen und deren Implementierungen
-### List
+### `List`
 >**Ne Liste halt.**
 
 Standard Implementierungen: `LinkedList`, `ArrayList`
@@ -224,7 +239,7 @@ Standard Implementierungen: `LinkedList`, `ArrayList`
 - *Optional*: Abstraktionsebene zwischen `Node` und Daten mit Referenz zu Objekt der Klasse `Data` in `Node`, die tatsächliche Daten enthält
 - *Optional:* Kompositum-Pattern, `abstract` Klasse `Element`, von der `Node` und `End` erben, dann kann sehr viel Spaghetti Logik, durch Methoden ersetzt werden, die in den beiden unterschiedlich implementiert werden (z.B. Sortiert einfügen Methode vergleicht bei `Node` und gibt ggf an Nachfolger weiter, während `End` direkt einfügt, da Ende erreicht)
 
-### Set
+### `Set`
 > **Keine Duplikate, keine garantierte Reihenfolge, also keine Indices (wie in Mathe halt).**
 
 Standard Implementierungen: `HashSet`, `TreeSet`, `LinkedHashSet`
@@ -233,7 +248,7 @@ Wichtige Methoden:
 - `remove()`
 - `contains()`
 - `size()`
-### Map
+### `Map`
 > **Key-Value-Pairs (Telefonbuch type shit), Key muss unique sein**
 
 Standard Implementierungen: `HashMap`, `TreeMap`, `LinkedHashMap`
@@ -244,8 +259,23 @@ Wichtige Methoden:
 - `containsKey()`
 - `keySet()` (returnt [[#Set]] der Keys)
 
-Spezialversion: Hash-Table, quasi ne Liste an Hash-Maps, wo mit der Hash-Funktion jeder Wert eindeutig eine der Hash-Tabellen zugewiesen bekommt. (siehe auch [[Einführung in die Rechnerarchitektur#Cache|Cache in ERA]], der Funktioniert genau so). Warum macht man das? Ermöglicht sehr schnellen Zugriff, aber verliert dafür nicht die [[#Array vs List|Vorteile einer List]].
+Spezialversion: Hash-Table, quasi ne Liste an Hash-Maps, wo mit der Hash-Funktion jeder Wert eindeutig eine der Hash-Tabellen zugewiesen bekommt. (siehe auch [[Einführung in die Rechnerarchitektur#Cache|Cache in ERA]], der Funktioniert genau so). *Warum macht man das?* Ermöglicht sehr schnellen Zugriff, aber verliert dafür nicht die [[#Array vs List|Vorteile einer List]].
 
+## [[Binary Tree]]
+Rekursive Datenstruktur wie die [[#Custom Implementierung als Linked List|Linked List]], aber jetzt hat jede `Node` bis zu **zwei** Nachfolger. Das ermöglicht viele [[#Teil 8 Rekursion|rekursive]] Shenanigans.
+### Time Complexity
+Bei einem sortierten Baum ist der Elementzugriff mit $O(\log n)$ möglich (im idealsten Fall natürlich, das andere Extremum ist ein sog. *entarteter* Baum, wo jede `Node` nur einen Nachfolger hat, z.B. weil die Werte vor dem Einlesen schon sortiert waren).
+### Traversierung
+Es gibt 3 wichtige Wege der Traversierung:
+#### In-Order
+`leftChild parent rightChild`
+-> Gibt sortierten Baum sortiert aus
+#### Pre-Order
+`parent leftChild rightChild`
+-> Fängt oben mit dem linkesten Ast an und arbeitet sich nach rechts, bis zur `Node` rechts unten
+#### Post-Order
+`leftChild rightChild parent`
+-> Fängt unten mit dem linkesten Ast an und endet ganz oben
 ## High-Level Strukturen
 ### Queue (FIFO)
 Implementierung mit [[#List|Linked List]]
@@ -295,17 +325,15 @@ Das Array wird rekursiv in immer kleinere Hälften gespalten, bis nur noch Einze
 - mit `default` kann aber dennoch eine Implementierung vorgenommen werden
 - Man kann beliebig viele Interfaces implementieren
 - Interfaces können auch andere Interfaces `extend`en
-
-![[Pasted image 20260131162811.png|500]]
-## Enums
-Nützlich, wenn es eine begrenze Anzahl an Belegungen geben soll für Variable.
-```java
-enum Beziehungsstatus
-{
-	LEDIG, LIIERT, VERHEIRATET, VERWITWET
-}
-Beziehungsstatus b = Beziehungsstatus.VERHEIRATET;
+```mermaid
+    flowchart TD
+    S[Class] -- "implements (n)" --> IN[Interface]
+    
+    %% Pfeile zu sich selbst
+    S -- "extends (≤1)" --> S
+    IN -- "extends (n)" --> IN
 ```
+
 ## Polymorphie
 ### Statischer vs. Dynamischer Typ
 `StaticType o = new DynamicType()`
@@ -338,7 +366,7 @@ Für jeden supplied Parameter wird geschaut, welche dieser Methoden diesen mit d
 
 # [[#Teil 8: Rekursion]]
 
-> [!hint] Holy shit warum verbringen wir soviel Zeit mit Rekursion
+> [!question] Holy shit warum verbringen wir soviel Zeit mit Rekursion
 > \<rant\>
 > du wirst das nie in deinem Job brauchen
 > Die wichtigsten Anwendungen für Rekursion finden sich bei Giga-Low-Level Zeug wie [[#Custom Implementierung als Linked List|Linked Lists]] oder [[#Merge Sort]]. Also Zeug das schlaue Leute vor 30 Jahren ==schon für dich gemacht haben==! Du wirst auf Arbeit nie ein Ticket assigined bekommen "bitte bau einen custom sortalg" dikkahhh
@@ -350,12 +378,12 @@ Für jeden supplied Parameter wird geschaut, welche dieser Methoden diesen mit d
 - Return
 ## Backtracking
 Die Idee is basically, dass du nicht immer alle rekursiven Branches betrachten musst. Wenn du z.B. nach etwas suchst, kannst du als `return`-value ne `boolean` nehmen, die der Methode Bescheid sagt, ob ihre rekursiven Aufrufe was gefunden haben. So kann bei Fund sofort das Programm beendet werden.
-## Tail Rekursion
+## End-Rekursion
 
 > [!quote] Hey Leute, ich weiß wir haben grade 2 Wochen gelernt, warum Rekursion so viel besser als Iteration ist
 > Ah btw, wenn möglich schreibt eure Rekursion so, dass sie der Compiler einfach als Iteration umformen kann 😭😭😭
 
-Wenn der Rekursive Aufruf nach der Rechnungslogik der Funktion steht, muss beim Erreichen von ihm nicht die Return-Adresse modifiziert werden, da wir nicht mehr an diese Stelle returnen müssen (es gibt ja nach dem Rekursiven Aufruf nichts mehr zu tun). Deshalb können wir die einfach die ganze Zeit an der Stelle lassen, wo die Funktion das erste Mal aufgerufen wurde. beim Erreichen der Abbruchbedingung springen wir dann direkt ganz raus. So sparen wir uns ne Menge Platz im Stack weil sonst müssten wir ja pro Rekursivem Aufruf eine Rücksprungadresse und ggf. noch andere Werte reinschreiben. Stattdessen machen wir die Berechnung jetzt einfach vor dem Aufruf/im Parameter.
+Wenn der Rekursive Aufruf nach der Rechnungslogik der Funktion steht, muss beim Erreichen von ihm nicht die Return-Adresse modifiziert werden, da wir nicht mehr an diese Stelle returnen müssen (es gibt ja nach dem Rekursiven Aufruf nichts mehr zu tun). Deshalb können wir die einfach die ganze Zeit an der Stelle lassen, wo die Funktion das erste Mal aufgerufen wurde. beim Erreichen der Abbruchbedingung springen wir dann direkt ganz raus (**Tail Call**). So sparen wir uns ne Menge Platz im Stack weil sonst müssten wir ja pro Rekursivem Aufruf eine Rücksprungadresse und Werte für die Berechnung später reinschreiben. Stattdessen machen wir die Berechnung jetzt einfach vor dem Aufruf/im Parameter.
 ```java
 static int factorialRecursive(int n) 
 {
@@ -364,7 +392,7 @@ static int factorialRecursive(int n)
         return 1;
         
     // 2 Rekursiver Aufruf
-	int preResult= factorial(n - 1); //Hierhin muss zurückgesprungen werden
+	int preResult = factorial(n - 1); //Hierhin muss zurückgesprungen werden
 	
 	// 3 Calculation
     return n * preResult; // Erst jetzt beim Weg heraus wird auf preResult draufmultipliziert
@@ -379,11 +407,10 @@ static int factorialTailRecursive(int n, int preResult)
 		return preResult;
 
 	// 2(!!) Calculation
-	preResult=preResult * n; // preResult wird schon beim Weg hinein draufmultipliziert
-	n=n-1;
+	preResult = preResult * n; // preResult wird schon beim Weg hinein draufmultipliziert
 	
 	// 3(!!) Rekursiver Aufruf
-	return factTR(n, preResult); 
+	return factTR(n-1, preResult); 
 }
 ```
 but wait... das würde in Assembly dann etwa so aussehen
@@ -395,11 +422,11 @@ START_METHOD:
     JUMP_IF_LESS_EQUAL FINISH
 
     # 2 Calculation
-    SUBTRACT n, n, 1
     MULTIPLY preResult, preResult, n
     
     # 3 Rekursiver Aufruf
-    JUMP START_METHOD          # Der explizite Sprung (wie factTR)
+    SUBTRACT n, n, 1
+    JUMP START_METHOD
 
 FINISH:
     RETURN preResult
@@ -411,10 +438,11 @@ static int factorialLoop(int n, int preResult) {
     while (n > 0) { 
         
         // 2 Calculation
-        n = n - 1;
         preResult = n * preResult; 
         
         // 3 """Rekursiver Aufruf"""
+        n = n - 1;
+        // (jump passiert automatisch)
     }
     return preResult;
 }
@@ -424,8 +452,8 @@ static int factorialLoop(int n, int preResult) {
 ## Divide and Conquer
 ### Die Idee
 Probleme solange zerhacken bis sie trivial sind (wünschte das ginge auch irl 🚬)
-## Beispiele
-### Binary Search
+### Beispiele
+#### Binary Search
 Die Idee des Algorithmus ist wie folgt (unter der Annahme, dass die Menge in **aufsteigender** Reihenfolge sortiert ist):
 * Starte mit der gesamten Liste.
     * Erstelle einen Zeiger für die linke Grenze.
@@ -441,17 +469,24 @@ Die Idee des Algorithmus ist wie folgt (unter der Annahme, dass die Menge in **a
     * *Sonst*:
         * Das mittlere Element ist das gesuchte Element; gib den Index/das Ziel zurück.
 * Gib -1/null zurück (Ziel-Element konnte nicht gefunden werden).
-### [[#Merge Sort]]
-
-## [[Binary Tree]]
-## Endrekursion (Tail-Call)
+#### Merge Sort
+[[#Merge Sort|hatten wir schon]]
 # Teil 9: Fortgeschrittene Programmierkonstrukte  
-## [[Iteration]]
+## Iteration
 - `Iterable`implementieren
   -> `iterator()` bereitstellen
 - `iterator()` returnt ein Objekt einer Klasse, die `Iterator` implementiert
-  -> muss Methoden `hasNext()` & `next()` bereitstellen
-## [[Lambda Expressions]]
+  -> muss Methoden `hasNext()` & `next()` bereitstellen, sagen ob es next gibt bzw geben zurück
+- Um das dann zu nutzen, kann man entweder tatsächlich die `iterator()` Methode aufrufen oder einfach diesen Syntax zum iterieren verwenden:
+  ```java
+	is = new MyIteratable;
+	for(MyIteratable i : is){
+		System.out.println(i);
+	}
+  ```
+- Implementierung eines solchen `Iterator`s für einen Baum nutzt am besten einen Stack, der die noch zu traversierenden Teile des Baums stored.
+  
+## Lambda Expressions
 
 | aus:                                           | kann man machen:                                     | Erklärung                                 |
 | ---------------------------------------------- | ---------------------------------------------------- | ----------------------------------------- |
@@ -469,7 +504,7 @@ Die Idee des Algorithmus ist wie folgt (unter der Annahme, dass die Menge in **a
 | **`Function<T, R>`** | `R apply(T a)`          | Nimmt `T` an und gibt ein Resultat `R` zurück.                                                           |
 | **`Predicate<T>`**   | `boolean test(T a)`     | Prüft eine Bedingung und gibt `true` oder `false` zurück.                                                |
 | **`Comparator<T>`**  | `int compare(T a, T b)` | Vergleicht zwei Objekte:<br>`a > b` -> `return > 0`<br>`a == b` -> `return 0`<br>`a < b` -> `return < 0` |
-## [[Streams]]
+## Streams
 ### Erstellen
 - `Stream.of(n,m,...)` aus festen Werten
 - `Stream.generate(insertSupplierName)` aus Supplier (infinite amount of elements!)
@@ -493,6 +528,7 @@ Die Idee des Algorithmus ist wie folgt (unter der Annahme, dass die Menge in **a
 | **`peek()`**      | wie `foreach()` aber consumed nicht -> **braucht terminale Option zum funktionieren**.                                                                                                                                                                                                               |
 | **`sorted()`**    | braucht [[#Berühmte Interfaces (aus `java.util.function`)\|Comparator]], es gibt standard aber man kann auch seinen eigenen machen.                                                                                                                                                                  |
 | **`parallel()`**  | parallele Bearbeitung, nicht deteministisch!                                                                                                                                                                                                                                                         |
+
 #### Terminal
 | **Methode**                 | **Erklärung**                                                                                                     |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------- |
@@ -509,17 +545,73 @@ Die Idee des Algorithmus ist wie folgt (unter der Annahme, dass die Menge in **a
 ### Speichereffizienz
 Streams sind **lazy** und verarbeiten Daten **"on-the-fly"**, was sie **speichereffizienter** macht als persistente Collections im RAM.
 ## I/O
-- `Path` ist ein Interface, du kannst Objekt von Klasse, die dieses implementiert erstellen mit `Path.of("x/y/z")`
-	- entweder Path zu File,
-		- dann kann man mit `Files.readString()` und `Files.writeString()` self explanatory shit machen
-		- oder mit `Files.write()` Iterables und so reinschreiben
-		- oder mit `Files.readAllLines()` Lines als Stream lesen
-	- oder Path von Directory, dann gibts `Files.walk()`, was n gefüllten Stream ausgibt
-[[Java File System]]
-[[Buffers]]
+- `Path` ist ein [[#Interfaces|Interface]]
+	- du kannst Objekt von einer implementierenden Klasse erstellen mit `Path.of("x/y/z")`
+	- man kann auch von einem File Object den `Path` kriegen mit `toPath()`
+	- **`Path.resolve(String/Path other)`** ermöglicht das Verketten von Pfaden
+	- **`Path.relativize(Path other)`** entfernt gleiche Elemente, wir wandeln den Pfad im Parameter um, sodass er relativ zum ersten Pfad ist (erst bei der Position vom ersten Pfad startet).
+- zeigt ein `Path` auf eine Datei,
+	- dann kann man mit `Files.readString()` und `Files.writeString(String s)` self explanatory shit machen
+	- oder mit `Files.write(Iterable i)` Iterables und so reinschreiben
+	- oder mit `Files.readAllLines(Path p)` Lines als [[#List|Liste]] lesen
+	- oder mit `Files.lines(Path p)` als [[#Streams|Stream]]
+	- oder mit `Files.createFile(Path p)` die Datei überhaupt erst erzeugen
+- zeigt ein Path auf ein Directory
+	- dann gibts `Files.walk(Path p)`, was einen gefüllten Stream ausgibt
+	- oder mit `Files.createDirectory(Path dir)` das Directory überhaupt erst erzeugen
+		- `Files.createDirectories(Path dir)` erzeugt auch alle, die auf dem Weg benötigt werden, ersteres failed da
+- `Files.move(Path source, Path target)` bewegt/renamed eine Datei/Folder
+
+> [!danger] You better catch that shit
+> Oft muss bei diesen Operationen eine `IOException` ge`catch`ed werden
+
+## Buffers
+Zwischenlager zwischen Produzent und Konsument im Allgemeinen. Bei [[#I/O]] nützlich da wir die Datei nicht Byte für Byte lesen müssen.
+
+Output: `01001101 01100101 01110010 01101100 01101001 01101110`
+
+| Ohne Buffer                      | Mit Buffer      |
+| -------------------------------- | --------------- |
+| `0`-> hm ok, interessant         | `01001101`-> M  |
+| `1`-> aha crazy...               | `01100101`-> E  |
+| `0`-> wow, wieder ne Null?       | `01110010`-> R  |
+| `0`-> ohaa noch eine?            | `01101100`-> L  |
+| `1`-> fuck jetzt wieder ne eins? | `01101001`-> I  |
+| `1`-> damnn noch eine?           | `01101110` -> N |
+
 ## [[Java Class - Socket]]
 ## Exceptions/Errors
-### Checked vs Unchecked
+```mermaid
+classDiagram
+    class Throwable {
+        <<abstract>>
+    }
+    class Error {
+        +OutOfMemoryError
+        +StackOverflowError
+    }
+    class Exception {
+        <<checked>>
+        +IOException
+        +SQLException
+    }
+    class RuntimeException {
+        <<unchecked>>
+        +NullPointerException
+        +ArithmeticException
+        +IndexOutOfBoundsException
+    }
+
+    Throwable <|-- Error
+    Throwable <|-- Exception
+    Exception <|-- RuntimeException
+```
+**Checked** bedeutet, dass man sie entweder `catch`en oder mit `throws` nach oben weitergeben muss.
+Alle `RuntimeException` sind **unchecked**, alle anderen `Exceptions` **checked**. Dann gibt es auch noch `Error`s, die kann man nicht abfangen weil danach wallah Krise ist (z.B. `StackOverflowError`).
+Bei `try{} catch(Exception e){} finally{}` ist die Funktion von `finally`, dass es **fast immer** ausgeführt wird, egal ob eine Exception geworfen wurde oder ob im `try`/`catch` ein `return` steht. Sinn: Aufräumarbeiten (Files schließen, Sockets beenden), damit die nicht offen bleiben, wenn es knallt.
+
+> [!danger] FAST immer
+> **Die Ausnahme:** wenn `System.exit(0)` gerufen wird oder die JVM komplett abschmiert (Stromausfall type shit)
 
 # Teil 10: Nebenläufigkeit
 [[Producer Consumer Problem]]
@@ -570,3 +662,7 @@ TODO syntax enum
 - [x] TODO modulo
 - [ ] TODO auto export
 - [x] TODO [[#Package]]
+- [ ] TODO socket
+- [ ] TODO producer consumer problem
+- [x] TODO Exceptions
+- [ ] TODO JVM

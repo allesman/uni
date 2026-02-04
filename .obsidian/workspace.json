@@ -36,48 +36,37 @@
               "icon": "lucide-file",
               "title": "Einführung in die Informatik"
             }
-          }
-        ],
-        "currentTab": 1
-      },
-      {
-        "id": "fcc1e8250b60b147",
-        "type": "tabs",
-        "children": [
+          },
           {
-            "id": "6a7682fbce3a63fd",
+            "id": "499b9bf5bbbb827d",
             "type": "leaf",
-            "pinned": true,
             "state": {
-              "type": "terminal:terminal",
+              "type": "markdown",
               "state": {
-                "terminal:terminal": {
-                  "cwd": "/home/merlin/uni",
-                  "focus": false,
-                  "profile": {
-                    "followTheme": true,
-                    "name": "",
-                    "restoreHistory": false,
-                    "rightClickAction": "copyPaste",
-                    "successExitCodes": [
-                      "0",
-                      "SIGINT",
-                      "SIGTERM"
-                    ],
-                    "terminalOptions": {
-                      "documentOverride": null
-                    },
-                    "type": "developerConsole"
-                  },
-                  "serial": null
-                }
+                "file": "Module/Semester 1/EIDI/Einführung in die Informatik.md",
+                "mode": "preview",
+                "source": false
               },
-              "pinned": true,
-              "icon": "terminal",
-              "title": "Terminal: Developer console"
+              "icon": "lucide-file",
+              "title": "Einführung in die Informatik"
+            }
+          },
+          {
+            "id": "7c58dcc882f223ba",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://github.com/allesman/uni",
+                "title": "GitHub - allesman/uni: Tum Informatik Notizen Obsidian Vault",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "GitHub - allesman/uni: Tum Informatik Notizen Obsidian Vault"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -309,17 +298,26 @@
       "pdf-plus:PDF++: Toggle auto-copy": false,
       "pdf-plus:PDF++: Toggle auto-focus": false,
       "pdf-plus:PDF++: Toggle auto-paste": false,
-      "obsidian-excalidraw-plugin:New drawing": false,
       "webpage-html-export:Export as HTML": false,
-      "terminal:Open terminal": false
+      "terminal:Open terminal": false,
+      "obsidian-excalidraw-plugin:New drawing": false
     }
   },
   "active": "96eb0d5e21eaaa8a",
   "lastOpenFiles": [
+    "HTML Exports/site-lib/styles/supported-plugins.css",
     "Module/Semester 1/EIDI/Einführung in die Informatik.md",
+    "Module/Semester 1/EIDI/Java Class - Socket.md",
+    "Module/Semester 1/EIDI/Producer Consumer Problem.md",
+    "Module/Semester 1/EIDI/Java Class - Thread.md",
+    "Module/Semester 1/EIDI/Java File System.md",
+    "Module/Semester 1/EIDI/Buffers.md",
+    "Module/Semester 1/EIDI/Streams.md",
+    "Module/Semester 1/EIDI/Lambda Expressions.md",
+    "Module/Semester 1/EIDI/Iteration.md",
+    "Module/Semester 1/EIDI/Binary Tree.md",
     "Module/Semester 1/EIDI/Binary Search.md",
     "Module/Semester 1/EIDI/Recursion.md",
-    "Module/Semester 1/EIDI/Binary Tree.md",
     "Dashboard.md",
     "Module/Semester 1/EIDI/Altkausuren.md",
     "Module/Semester 1/EIDI/Interface.md",
@@ -333,18 +331,9 @@
     "Module/Semester 1/EIDI/Merge Sort.md",
     "Module/Semester 1/EIDI/Radix Sort.md",
     "Module/Semester 1/EIDI/Selection Sort.md",
-    "Module/Semester 1/Games/Developing with Small Teams.md",
-    "Module/Semester 1/Games/Games.md",
     "Module/Semester 1/Games",
-    "Module/Semester 1/EIDI/EIDI.md",
     "Module/Semester 1/EIDI/Polymorphie.pdf",
     "HTML Exports/polymorphie.pdf",
-    "Module/Semester 1/EIDI/Polymorphism.md",
-    "Module/Semester 1/EIDI/Array.md",
-    "Module/Semester 1/EIDI/Stack.md",
-    "Module/Semester 1/EIDI/Buffers.md",
-    "Module/Semester 1/EIDI/Queue.md",
-    "Module/Semester 1/EIDI/Hash Table.md",
     "HTML Exports/site-lib/styles/main-styles.css",
     "HTML Exports/site-lib/fonts/mathjax_vector-bold.woff",
     "HTML Exports/site-lib/fonts/mathjax_vector-regular.woff",
