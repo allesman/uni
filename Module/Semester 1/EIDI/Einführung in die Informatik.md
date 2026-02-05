@@ -578,8 +578,29 @@ Output: `01001101 01100101 01110010 01101100 01101001 01101110`
 | `0`-> ohaa noch eine?            | `01101100`-> L  |
 | `1`-> fuck jetzt wieder ne eins? | `01101001`-> I  |
 | `1`-> damnn noch eine?           | `01101110` -> N |
-
-## [[Java Class - Socket]]
+## Socket
+Können Verbindung zwischen mehreren Rechnern herstellen. Dann ist ein Datentransfer via **InputStream** und **OutputStream** möglich.
+Um eine Verbindung zu einem anderen Rechner aufzubauen, benötigt man dessen **Hostname** (IP-Adresse oder Domain) und den **Port** (0–65535). Beim Instanziieren mit `new Socket(host, port)` wird die Verbindung **automatisch** aufgebaut.
+- **`getInputStream()`**: Liefert den Stream, um Daten **empfangen** (hinein in das Programm).
+- **`getOutputStream()`**: Liefert den Stream, um Daten zu **senden** (heraus aus dem Programm).
+### Reader & Writer
+| **Typ**       | **Klasse**                                 | **Funktion**                                                                                                     |
+| ------------- | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
+| **Basic**     | `InputStreamReader` / `OutputStreamWriter` | Konvertiert Bytes in `char` / `String` und umgekehrt.                                                            |
+| **Effizient** | `BufferedReader` / `BufferedWriter`        | Nutzt [[#Buffers]], um Datenblöcke statt einzelner Zeichen zu verarbeiten. Erlaubt `readLine()` oder `.lines()`. |
+| **Komfort**   | `PrintWriter`                              | Kann beliebige Objekte via `toString()` direkt in den Stream schreiben (`print()`, `println()`).                 |
+### Server Sockets
+Ein Server "spricht" nicht von sich aus, sondern "lauscht".
+1. **Instanziierung**: `ServerSocket server = new ServerSocket(port);`
+2. **Warten**: `Socket client = server.accept();`
+    - Diese Methode ist **blockierend**: Der Thread bleibt stehen, bis sich ein Client verbindet.
+    - `accept()` gibt dann ein normales `Socket`-Objekt für die Kommunikation mit diesem Client zurück.
+> [!danger] Ressourcen-Management Sockets, Writer und Reader müssen am Ende immer mit **`.close()`** geschlossen werden, damit der Port wieder freigegeben wird und das Programm nicht beim Beenden blockiert.
+### Error Handling
+Netzwerkoperationen sind fehleranfällig. Fast alle Methoden werfen eine **`IOException`**.
+- **`UnknownHostException`**: IP/Domain nicht gefunden.
+- **`ConnectException`**: Verbindung abgelehnt (z.B. falscher Port oder Server offline).
+- Beide sind Unterklassen der `IOException`, ein `catch`-Block reicht also oft aus.
 ## Exceptions/Errors
 ```mermaid
 classDiagram
@@ -614,8 +635,7 @@ Bei `try{} catch(Exception e){} finally{}` ist die Funktion von `finally`, dass 
 > **Die Ausnahme:** wenn `System.exit(0)` gerufen wird oder die JVM komplett abschmiert (Stromausfall type shit)
 
 # Teil 10: Nebenläufigkeit
-[[Producer Consumer Problem]]
-Prozesse, die mit einem Pufferspeicher gekoppelt sindProzesse, die mit einem Pufferspeicher gekoppelt sind
+
 ## [[Java Class - Thread|Threads]]
 ### `Thread` vs `Runnable`
 #### `Runnable`
@@ -625,21 +645,31 @@ Prozesse, die mit einem Pufferspeicher gekoppelt sindProzesse, die mit einem Puf
 #### `Thread`
 kann `Runnable` übergeben bekommen, um zu festlegen was er tun soll
 ## Verwendung von Threads
-- IMMER `start()` benutzen, nie `run()`
-- `wait(Object o)` wartet darauf, dass auf dem Parameter `o` `notify()` aufgerufen wird. Dafür nötig:
-	- Handling für `InterruptedException` (`try/catch` oder mit `throws` nach oben geben)
-	- *Ownership* des Objekts `o` via `synchronized(o)`
-- `o.notify()` weckt einen Thread auf, der auf `o` wartet
+
+> [!danger] zum Starten IMMER `start()` benutzen, nie `run()`
+### Wartende Methoden
+- `wait(Object o)` wartet darauf, dass auf dem Parameter `o` `notify()` aufgerufen wird.
+	- Dafür nötig:
+		- Handling für `InterruptedException` (`try/catch` oder mit `throws` nach oben geben)
+		- *Ownership* des Objekts `o` via `synchronized(o)`
+	- Optional kann man ein Timeout passen, nachdem dann auch das Warten endet
+- `join(Thread t)` lässt den ausführenden Thread warten bis der Thread im Parameter fertig ist.
+- `sleep()` wartet die angegebene Zeit
+### Unterbrechende Methoden
+- `o.notify()` weckt einen zufälligen Thread auf, der auf `o` wartet
 - `o.notifyAll()` weckt alle Threads auf, die auf `o` warten
-- **`interrupt()`** wacht
-- `join()` aufrufen -> warten bis thread fertig ist.
-- `synchronized` als [[Synchronized Keyword]]
-	- wrapper, dann "auf" einem Objekt,
-		- direkt der Ressource, wenn sie ein objekt ist, sonst
-		- einem boilerplate Objekt
-	- Methodendings, äquivalent zu wrapper für ganze methode auf `this`
-- `volatile` ist `synchronized` light (Race Conditions passieren noch, aber kein Caching sondern es wird direkt mit RAM geschrieben und gelesen)
-## Probleme
+- **`interrupt()`** setzt bei einem Thread `interrupted` auf true, wenn der Thread grade wartet, wird eine `InterruptedException` geworfen
+### Keywords
+- `synchronized(Object o)` markiert einen **kritischen Bereich**, in dem nur ein Zugriff auf einmal erlaubt ist
+	- nimmt als Parameter die Ressource, mit der der Zugriff verbunden ist
+		- alle anderen Bereiche, die auf diese Ressource synchronisiert sind, sind dann geblockt
+		- Gibt es kein solches Objekt können wir einfach ein Dummy Objekt erstellen (sog. Lock) und das verwenden
+	- alternativ als Methoden-Decorator möglich, das ist äquivalent zum wrappen des gesamten Methodeninhalts in `synchronized(this)`
+- `volatile` ist `synchronized` light (Race Conditions passieren noch, aber kein Caching sondern es wird direkt mit RAM geschrieben und gelesen, siehe [[Einführung in die Rechnerarchitektur#MESI|Mesi Protokoll aus ERA]])
+## Producer-Consumer-Problem
+Ein klassisches Problem der Nebenläufigkeit:
+2 Prozesse, die mit einem [[#Buffers|Pufferspeicher]] gekoppelt sind. Einer produziert etwas, einer konsumiert es, aber sie arbeiten nicht gleichschnell. Das kann zu Problemen führen, wenn der Puffer voll ist und der Producer weiter producen will oder der Buffer leer ist und der Consumer weiter consumen will.
+## Typische Problem-/Lösungsfolge
 
 > [!info] Mehrere Prozesse greifen auf Ressource zu
 
@@ -650,6 +680,7 @@ kann `Runnable` übergeben bekommen, um zu festlegen was er tun soll
 
 ⬇️
 > [!success] Monitor
+> `synchronized`
 > Blockierung von Zugriff auf Ressource, wenn schon auf sie zugegriffen wird
 > (z.B. Bei Klick auf Sitzplatz wird nicht nur gecheckt ob er schon reserviert ist, sondern auch ob grade jemand schon im Begriff ihn zu buchen ist, dann ggf warten auf Freigabe)
 
@@ -746,16 +777,3 @@ Funktionsaufrufe werden im Bytecode/VM-Kontext typischerweise über **Stacks** u
 - Sprache $\mathcal{L}=\{\varepsilon, ab, aabb, aaabbb,\ldots\}$:
   - `A ::= ( "a" A "b" ) | ε`
   - Idee: Jedes Anwenden der Regel fügt außen ein `"a"` und ein `"b"` hinzu; `ε` beendet.
-# TODOs
-- [x] TODO 11?
-- [x] TODO 12
-- [ ] TODO socket
-- [ ] TODO producer consumer problem
-- [ ] TODO [[JVM Intricacies#JVM Intricacies]]
-- [ ] **[[Java Class - Thread]]**
-- [ ] **[[Synchronized Keyword]]**
-- [ ] **[[Race Conditions]]**
-- [ ] **[[Deadlock]]**
-
-# Fragen:
-- Was kann zu GUIs drankommen?
