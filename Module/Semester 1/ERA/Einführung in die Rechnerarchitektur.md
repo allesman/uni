@@ -10,7 +10,7 @@ note: 0
 #orga 
 **Workflow:**
 - Vorlesung/Moodle -> reine Gliederung (Obsidian)
-- Bjarne-Slides -> Handnotizen
+- Bjarne(the goat)-Slides -> Handnotizen
 - ZÜ-Quizzes
 - Handnotizen, Bjarne-Tipps -> Obsidian
 - Tutoriumsaufgaben/Altklausur

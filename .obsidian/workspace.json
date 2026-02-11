@@ -50,7 +50,7 @@
       {
         "id": "722f1a1d3abcabd5",
         "type": "tabs",
-        "dimension": 73.89033942558747,
+        "dimension": 66.40419947506561,
         "children": [
           {
             "id": "a8895f7d457f24a7",
@@ -106,9 +106,9 @@
         "currentTab": 3
       },
       {
-        "id": "6a160d9149dee10b",
+        "id": "e5ee9cd0cc2c072a",
         "type": "tabs",
-        "dimension": 26.109660574412537,
+        "dimension": 33.59580052493438,
         "children": [
           {
             "id": "96eb0d5e21eaaa8a",
@@ -168,7 +168,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Module/Semester 1/EIDI/Einführung in die Informatik.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -178,7 +177,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Einführung in die Informatik"
+              "title": "Backlinks"
             }
           },
           {
@@ -241,15 +240,16 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "git-view"
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 217,
+    "width": 432,
     "collapsed": true
   },
   "left-ribbon": {
