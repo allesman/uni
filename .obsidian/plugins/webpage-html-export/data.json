@@ -10,9 +10,9 @@
     "postProcess": true,
     "displayProgress": true,
     "inlineHTML": false,
-    "exportPath": "/home/merlin/uni/HTML Exports",
+    "exportPath": "/home/merlin/uni/HTML Exports/ERA",
     "filesToExport": [
-      "Module/Semester 1/EIDI/Einführung in die Informatik.md"
+      "Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md"
     ],
     "useFallbackRenderer": false,
     "addBodyClasses": true,
@@ -226,7 +226,7 @@
   "onlyExportModified": true,
   "deleteOldFiles": true,
   "exportPreset": "online",
-  "openAfterExport": false,
+  "openAfterExport": true,
   "filePickerBlacklist": [
     "(^|\\/)node_modules\\/",
     "(^|\\/)dist\\/",

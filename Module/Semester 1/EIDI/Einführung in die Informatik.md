@@ -1,6 +1,6 @@
 ---
 tags: orga
-fertig: false
+fertig: true
 klausur: 2026-02-09T00:00:00.000Z
 moodle: "[[https://eidi.tum.sexy]]"
 semester: 1
@@ -629,7 +629,8 @@ classDiagram
 ```
 **Checked** bedeutet, dass man sie entweder `catch`en oder mit `throws` nach oben weitergeben muss.
 Alle `RuntimeException` sind **unchecked**, alle anderen `Exceptions` **checked**. Dann gibt es auch noch `Error`s, die kann man nicht abfangen weil danach wallah Krise ist (z.B. `StackOverflowError`).
-Bei `try{} catch(Exception e){} finally{}` ist die Funktion von `finally`, dass es **fast immer** ausgeführt wird, egal ob eine Exception geworfen wurde oder ob im `try`/`catch` ein `return` steht. Sinn: Aufräumarbeiten (Files schließen, Sockets beenden), damit die nicht offen bleiben, wenn es knallt.
+Bei `try{} catch(Exception e){} finally{}` ist die Funktion von `finally`, dass es **fast immer** ausgeführt wird, egal ob eine ungegangene Exception geworfen wurde oder ob im `try`/`catch` ein `return` steht.
+Sinn: Aufräumarbeiten (Files schließen, Sockets beenden), damit die nicht offen bleiben, wenn es knallt.
 
 > [!danger] FAST immer
 > **Die Ausnahme:** wenn `System.exit(0)` gerufen wird oder die JVM komplett abschmiert (Stromausfall type shit)
@@ -723,31 +724,32 @@ Aufgabe: Der erzeugte Code wird **abschließend optimiert**.
 ## Bytecode
 ### Was steht „drin“? (Instruktionen)
 
-| Befehl    | Parameter           | Bedeutung                                                |     |
-| --------- | ------------------- | -------------------------------------------------------- | --- |
-| `NEG`     |                     | `int` negieren (Vorzeichenwechsel)                       |     |
-| `ADD`     |                     | zwei `int` addieren                                      |     |
-| `SUB`     |                     | zwei `int` subtrahieren                                  |     |
-| `MUL`     |                     | zwei `int` multiplizieren                    <br>Befehl   |     |
-| `DIV`     |                     | zwei `int` dividieren                      | ---------- | ------------------- | -------------------------------------------------------- | --- |                |     |
-| `NOT`     |                     | `boolean` negieren                                        |     |
-| `AND`     |                     | logisches UND                                             |     |
-| `OR`      |                     | logisches ODER                                            |     |
-| `LESS`    |                     | Vergleich `<` (liefert `boolean`)                         |     |
-| `LEQ`     |                     | Vergleich `<=` (liefert `boolean`)                        |     |
-| `EQ`      |                     | Vergleich `==` (liefert `boolean`)                        |     |
-| `NEQ`     |                     | Vergleich `!=` (liefert `boolean`)                        |     |
-| `CONST i` | `i` (int)           | Konstante `i` auf den Stack legen                         |     |
-| `TRUE`    |                     | `true` auf den Stack legen                                |     |
-| `FALSE`   |                     | `false` auf den Stack legen                               |     |
-| `LOAD i`  | `i` (Index/Adresse) | Wert aus Speicherzelle `i` laden (auf den Stack)          |     |
-| `STORE i` | `i` (Index/Adresse) | obersten Stack-Wert in Speicherzelle `i` speichern        |     |
-| `JUMP i`  | `i` (Ziel)          | unbedingter Sprung zu Instruktion/Label `i`               |     |
-| `FJUMP i` | `i` (Ziel)          | „False-Jump“: springt zu `i`, wenn Bedingung `false     t |     |
-| `READ`    |                     | Eingabe lesen (Wert auf den Stack)                        |     |
-| `WRITE`   |                     | obersten Stack-Wert ausgeben                              |     |
-| `ALLOC i` | `i` (Anzahl)        | Speicher für `i` Variablen/Speicherzellen reservieren     |     |
-| `HALT`    |                     | Programm beenden                                          |     |
+
+| Befehl    | Parameter           | Bedeutung                                                 |     |     |     |     |     |     |
+| --------- | ------------------- | --------------------------------------------------------- | --- | --- | --- | --- | --- | --- |
+| `NEG`     |                     | `int` negieren (Vorzeichenwechsel)                        |     |     |     |     |     |     |
+| `ADD`     |                     | zwei `int` addieren                                       |     |     |     |     |     |     |
+| `SUB`     |                     | zwei `int` subtrahieren                                   |     |     |     |     |     |     |
+| `MUL`     |                     | zwei `int` multiplizieren                                 |     |     |     |     |     |     |
+| `DIV`     |                     | zwei `int` dividieren                                     |     |     |     |     |     |     |
+| `NOT`     |                     | `boolean` negieren                                        |     |     |     |     |     |     |
+| `AND`     |                     | logisches UND                                             |     |     |     |     |     |     |
+| `OR`      |                     | logisches ODER                                            |     |     |     |     |     |     |
+| `LESS`    |                     | Vergleich `<` (liefert `boolean`)                         |     |     |     |     |     |     |
+| `LEQ`     |                     | Vergleich `<=` (liefert `boolean`)                        |     |     |     |     |     |     |
+| `EQ`      |                     | Vergleich `==` (liefert `boolean`)                        |     |     |     |     |     |     |
+| `NEQ`     |                     | Vergleich `!=` (liefert `boolean`)                        |     |     |     |     |     |     |
+| `CONST i` | `i` (int)           | Konstante `i` auf den Stack legen                         |     |     |     |     |     |     |
+| `TRUE`    |                     | `true` auf den Stack legen                                |     |     |     |     |     |     |
+| `FALSE`   |                     | `false` auf den Stack legen                               |     |     |     |     |     |     |
+| `LOAD i`  | `i` (Index/Adresse) | Wert aus Speicherzelle `i` laden (auf den Stack)          |     |     |     |     |     |     |
+| `STORE i` | `i` (Index/Adresse) | obersten Stack-Wert in Speicherzelle `i` speichern        |     |     |     |     |     |     |
+| `JUMP i`  | `i` (Ziel)          | unbedingter Sprung zu Instruktion/Label `i`               |     |     |     |     |     |     |
+| `FJUMP i` | `i` (Ziel)          | „False-Jump“: springt zu `i`, wenn Bedingung `false     t |     |     |     |     |     |     |
+| `READ`    |                     | Eingabe lesen (Wert auf den Stack)                        |     |     |     |     |     |     |
+| `WRITE`   |                     | obersten Stack-Wert ausgeben                              |     |     |     |     |     |     |
+| `ALLOC i` | `i` (Anzahl)        | Speicher für `i` Variablen/Speicherzellen reservieren     |     |     |     |     |     |     |
+| `HALT`    |                     | Programm beenden                                          |     |     |     |     |     |     |
 ### Übersetzung (High-Level → Bytecode)
 Komplexere Konstrukte (z.B. Ausdrücke, `if`, `while`) werden in eine **Sequenz** solcher einfachen Instruktionen übersetzt; Sprünge sind dabei zentral für Kontrollstrukturen.
 ### Bezug zu Funktionen

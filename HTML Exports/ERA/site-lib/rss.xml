@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[eidi]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>site-lib/media/favicon.png</url><title>eidi</title><link></link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 11 Feb 2026 22:22:54 GMT</lastBuildDate><atom:link href="site-lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 11 Feb 2026 22:22:51 GMT</pubDate><ttl>60</ttl><dc:creator></dc:creator><item><title><![CDATA[Einführung in die Rechnerarchitektur]]></title><description><![CDATA[<a href=".?query=tag:era" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#era">#era</a><br>
+<a href=".?query=tag:orga" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#orga">#orga</a>
+Workflow:
+Vorlesung/Moodle -&gt; reine Gliederung (Obsidian)
+Bjarne-Slides -&gt; Handnotizen
+ZÜ-Quizzes
+Handnotizen, Bjarne-Tipps -&gt; Obsidian
+Tutoriumsaufgaben/Altklausur Grundlage: Relais (Stromkreis durch separaten Strom an/aus öffnen schließen)
+Transistor (selbe Funktionsweise, aber nur 3 Kontakte also 1 Stromkreis) "Word" Basisgröße des Systems (16 bit, 32 bit, etc.) wir benutzen 32 bit Negative Zahlen via Zweierkomplement (Rechnung leichter) Invertierung, + 1
+Wertebereich Kommazahlen via Tupel aus 2 Zahlen (vor und nach Komma)
+Floating Point Numbers S: Vorzeichen
+F: Nachkommastellen nach 1 (Fraction, Koeffizient, Mantisse, Significant)
+E: Verschiebung des Kommas (Abzüglich Bias)
+<br>(<a data-footref="2" href="#fn-1-d40ac1f658604a23" class="footnote-link" target="_self" rel="noopener nofollow">[1]</a>) Strings via Ascii (so 8 bit Zahl &lt;-&gt; Buchstabe halt) C-String endet mit dem Byte 0x0 (null-terminiert)
+in RV-Assembly mit .asciz
+Soweit ich weiß bei uns eher default Pascal String beginnt mit Zahl als Länge
+"Der Pascal sagt dir gleich was Sache ist" Vorteil: Verschiedene Versionen jeder Ebene mit jeweils anderen Ebenen kompatibelgcc - C Code -&gt; Kompilierung auf ausführbare Binärdatei
+-s: Erzeugt Zwischenergebnis (Assemblersprache)
+hexdump - Inhalt der Binärdatei in Hex ausgeben
+objdump
+-h: teilt in sections ein
+-d: Disassemblierung (Binär -&gt; Assemblersprache)
+-S: Codiertes Programm mit Bezug auf QuellcodeISA
+Instruction Set Architectures
+Assemblersprache, Datenkodierungen, Systemeigenschaften, Boot-Up-Prozess
+add/sub Ziel, Quelle1, Quelle2
+addi Ziel Quelle1, Konst &lt;- max 12 bits
+lui lädt obere 20 bits (zusammen mit addi laden von 32 bits)mul multipliziert untere 32 bit
+mulh multiply high (multipliziert obere) signed * signed
+...su signed unsigned
+...u unsigned unsigned
+div Division abgerundet
+rem Rest
+...u unsignedand,or,xor
+Für jeden Bit der beiden ZahlenBasically wie Multiplikation/Division, manchmal
+sll shift left logical (um drittes argument, aber nur letzte 5 bits), füllt mit 0 auf
+...i intermediate (direkt mit supplied 5 bit Zahl)
+sr shift right... (zwei Möglichkeit)
+...l logical (füllt mit 0 auf)
+...a arithmetic (füllt mit 0 auf, aber behält aller ersten bit aka Vorzeichen)Floats mit F-Erweiterung
+Doubles mit D-Erweiterung
+Eigene Register
+fadd,fsub
+...dDaten aus dem Hauptspeicher (Arbeitsspeicher) laden
+ld load double word (64 bit)
+sd store double word
+ld destination const(Basisadresse)
+Lädt in destination Adresse: Wert vonBasisadresse + constj offset Springe zu aktuell + offset
+jr reg, const Springe zu Wert von reg + imm
+Beim selbst Schreiben: Sprungmarkenbxx Operand1, Operand2, offset Springe um offset wenn Bedingung true
+beq, bne, blt, bge
+Andere Richtungen der letzten beiden via Tausch der Operandenjal reg, offset Jump and link, Springe um offset, Speicher Adresse nächsten Befehls in reg<br>+Systembefehle ecall, Eskaliert vom <a data-footref="3" href="#fn-2-d40ac1f658604a23" class="footnote-link" target="_self" rel="noopener nofollow">[2]</a>
++Input/OutputKeine 1:1-Beziehung von Opcode und Befehl
+Pseudobefehle, z.B.
+mv ra, rb = add ra, rb, x0
+j offset = jal x0, offset
+li ra, i = ``
+x0: zero
+x1-x31:
+an: Argument/Return<br>
+sn: saved (<a data-tooltip-position="top" aria-label="Caller-/Callee-Saved" data-href="#Caller-/Callee-Saved" href="einführung-in-die-rechnerarchitektur.html#Caller-/Callee-Saved_0" class="internal-link" target="_self" rel="noopener nofollow">by callee</a>)
+tn: temporary
+ra: return adress<br>
+sp: stack pointer (also <a data-tooltip-position="top" aria-label="Caller-/Callee-Saved" data-href="#Caller-/Callee-Saved" href="einführung-in-die-rechnerarchitektur.html#Caller-/Callee-Saved_0" class="internal-link" target="_self" rel="noopener nofollow">callee-saved</a>)Speicherzellen mit Größe entsprechend ISA
+Adresse pro Byte (8 bits)Ausrichtung auf n-Byte-Grenze: jede Adresse mod n = 0
+Bei RISC-V ist der Stack 16 byte alignedin RISC-V Wechselmöglichkeit, aber wir nutzen Little Endian
+Stack meist für Zwischenergebnisse verwendet
+meist größer als der Heap
+wächst meist nach unten (-&gt; Erweitern durch Dekrementierung(!) des SP)
+recht einfach zu verwalten (LIFO)
+<br><a data-tooltip-position="top" aria-label="Data alignment" data-href="#Data alignment" href="einführung-in-die-rechnerarchitektur.html#Data_alignment_0" class="internal-link" target="_self" rel="noopener nofollow">16 byte aligned</a> Heap meist für dynamische Datenstrukturen verwendet
+meist kleiner als der Stack
+wächst meist nach oben
+schwerer zu verwalten (Dynamisch) Static Data hat z.B. Konstanten wie verwendete Strings
+Text ist der Programmcode
+<br><a data-tooltip-position="top" aria-label="Virtueller Speicher (Mehrere Adressräume)" data-href="#Virtueller Speicher (Mehrere Adressräume)" href="einführung-in-die-rechnerarchitektur.html#Virtueller_Speicher_(Mehrere_Adressräume)_0" class="internal-link" target="_self" rel="noopener nofollow">Jedes Programm erhält eigenen Adressraum (für genutzte Daten und Programm selbst)</a>TODOzu "in a0 referenzierter Adresse" Diese Adresse muss also der Caller der Funktion schon mitgeben.
+Die tatsächlichen Argumente darf er dann erst ab a1 angeben.
+Meist handelt es sich bei der Adresse in a0 um eine innerhalb des Stack-Frames des Callers, so weit Bjarne weiß sogar immer ganz oben (also bei 0(sp)). Prologue Platz auf Stack reservieren (SP dekrementieren(!))
+Return Address und andere Variablen auf dem Stack sichern Tatsächlicher Stuff
+Epilogue Return Address etc. wieder vom Stack holen
+Platz auf Stack freigeben (SP inkrementieren(!))<br>
+<a data-footref="4" href="#fn-3-d40ac1f658604a23" class="footnote-link" target="_self" rel="noopener nofollow">[3]</a> Struktur des Rechners unabhängig von bearbeitetem Problem
+Rechner besteht aus vier Werken:
+Hauptspeicher (RAM)
+Leitwerk (CPU)
+Rechenwerk (CPU)
+Ein-/Ausgabewerk inkl. Sekundärspeicher (Peripherieanschluss, Festplatte)
+Hauptspeicher hat Zellen gleiche Größe mit Adressen
+Programm &amp; Daten stehen in selbem Speicher und können durch die Maschine verändert werden
+Die Maschine nutzt Binär
+Programm besteht aus Folge von Befehlen
+Von der Folge kann durch Sprünge abgewichen werden
+Unterprogrammaufrufe: Register sichern, Parameter supplien
+Springen (Jump and Link)
+Operation
+Zurückspringen (Jump and Link) Unterschied z.B.: Getrennter Speicher für Daten und Programminshallah das kommt in der klausur dran<br><img alt="Pasted image 20251104173149.png" src="attachments/pasted-image-20251104173149.png" target="_self" style="width: 500px; max-width: 100%;">shoutout an schulz's roten stift, you won't be missedJedes Programm hat eigenen Speicherraum mit virtuellen Adressen, und nur innerhalb dieses Adressraums Zugriff
+Virtuelle Adresse wird immer auf physische übersetzt von MMU (früher Hardware) via Seiten-Kachel-Tabelle (auch mehrere Ebenen möglich)
+4KiB Kacheln abgebildet auf 4KiB Kacheln (heutzutage auch größere möglich)
+Nur Teil des Adressraums jedes Programms ist tatsächlich im Speicher angelegt, bei Bedarf wird erweitert
+Was wenn Programm zugeschriebener Speicher nicht erfüllt werden kann weil keine Kacheln verfügbar? Freimachen beliebiger ( idealerweise lange ungenutzter) Kachel durch Auslagern auf Hintergrundspeicher/FestplatteIdealerweise enthält ein möglichst kleiner Zwischenspeicher die als nächstes benötigten Daten, damit schneller auf sie zugegriffen werden kann.
+Aber was wird als nächstes benötigt?
+zeitliches Lokalitätsprinzip: vor kurzem verwendete Daten
+räumliches Lokalitätsprinzip: benachbarte Daten zu zuvor verwendeten
+Wie geht dann Schreiben? 2 Möglichkeiten:
+Schreiben in den Cache (bei Löschen aus Cache auch Hauptspeicher updaten)
+Schreiben in den Hauptspeicher (bei Lesen aus Cache neu aus Hauptspeicher holen)
+Was wird wo im Cache gespeichert?
+Einteilung Speicheradresse inTODO fertig macheneasy, S-und I-Reduktion <br>Was ist Bias
+<a href="#fnref-1-d40ac1f658604a23" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a> <br>ecall
+<a href="#fnref-2-d40ac1f658604a23" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a> <br>Binär-Kodierungen?
+<a href="#fnref-3-d40ac1f658604a23" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a> <br>Mehrbenutzersysteme
+<a href="#fnref-4-d40ac1f658604a23" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
+<br>Das Wirtschaftsmagazin<a href="#fnref-5-d40ac1f658604a23" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
+]]></description><link>einführung-in-die-rechnerarchitektur.html</link><guid isPermaLink="false">Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md</guid><pubDate>Wed, 11 Feb 2026 22:17:57 GMT</pubDate></item></channel></rss>

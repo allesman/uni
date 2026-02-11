@@ -15,7 +15,7 @@
               "type": "markdown",
               "state": {
                 "file": "Dashboard.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "pinned": true,
@@ -24,17 +24,17 @@
             }
           },
           {
-            "id": "04d7119e8f6fa67f",
+            "id": "dcec6187a09d2f4f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Module/Semester 1/EIDI/Einführung in die Informatik.md",
-                "mode": "preview",
+                "file": "Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Einführung in die Informatik"
+              "title": "Einführung in die Rechnerarchitektur"
             }
           }
         ],
@@ -93,7 +93,7 @@
             }
           },
           {
-            "id": "8360d8e5abd7e262",
+            "id": "42ed1a739bc940a4",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -113,7 +113,6 @@
           {
             "id": "96eb0d5e21eaaa8a",
             "type": "leaf",
-            "pinned": true,
             "state": {
               "type": "terminal:terminal",
               "state": {
@@ -145,7 +144,6 @@
                   "serial": null
                 }
               },
-              "pinned": true,
               "icon": "terminal",
               "title": "Terminal: sh"
             }
@@ -154,7 +152,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 285.0026054382324
+    "width": 316
   },
   "right": {
     "id": "09faeb26a179d322",
@@ -279,50 +277,51 @@
   },
   "active": "96eb0d5e21eaaa8a",
   "lastOpenFiles": [
+    "Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md",
+    "HTML Exports/ERA/site-lib/styles/theme.css",
+    "HTML Exports/ERA/site-lib/styles/supported-plugins.css",
+    "HTML Exports/ERA/site-lib/styles/obsidian.css",
+    "HTML Exports/ERA/site-lib/styles/main-styles.css",
+    "HTML Exports/ERA/site-lib/styles/global-variable-styles.css",
+    "HTML Exports/ERA/site-lib/media/favicon.png",
+    "HTML Exports/ERA/site-lib/media/6155340132a851f6089e.svg",
+    "HTML Exports/ERA/site-lib/media/2308ab1944a6bfa5c5b8.svg",
+    "HTML Exports/ERA/site-lib/scripts/webpage.js",
+    "HTML Exports/ERA/site-lib/fonts/mathjax_zero.woff",
+    "HTML Exports/ERA/site-lib/fonts/mathjax_vector-regular.woff",
+    "HTML Exports/ERA/site-lib/fonts/mathjax_vector-bold.woff",
+    "HTML Exports/ERA/site-lib/fonts/mathjax_typewriter-regular.woff",
+    "HTML Exports/ERA/attachments/pasted-image-20251104173149.png",
+    "HTML Exports/EIDI/site-lib/media/favicon.png",
+    "HTML Exports/EIDI/site-lib/media/6155340132a851f6089e.svg",
+    "HTML Exports/EIDI/site-lib/media/2308ab1944a6bfa5c5b8.svg",
+    "HTML Exports/EIDI/attachments/pasted-image-20260204153203.png",
     "Module/Semester 1/EIDI/Einführung in die Informatik.md",
+    "Dashboard.md",
+    "Meta.md",
+    "Module/Semester 1/EIDI/EIDI.md",
+    "Module/Semester 1/EIDI/Isaac/Isaac.md",
+    "Boolean Algebra.md",
+    "Module/Semester 1/ERA/isaac/CPU Hazards.md",
+    "HTML Exports/attachments/pasted-image-20260204153203.png",
+    "Module/Semester 1/ERA/isaac/Integrated Circuit Arithmetic.md",
+    "Module/Semester 1/ERA/isaac/Assets/Screenshot 2026-02-11 at 10.54.53.png",
+    "Module/Semester 1/ERA/isaac/Assets/trainInfoERModel.canvas",
+    "Module/Semester 1/ERA/isaac/Stack (Computer Architecture).md",
+    "Module/Semester 1/EIDI/Isaac/Stack.md",
+    "Module/Semester 1/ERA/isaac/Number Systems.md",
+    "Module/Semester 1/ERA/isaac/Steiner Tree.md",
+    "Module/Semester 1/ERA/isaac/CPU Cache.md",
+    "Module/Semester 1/EIDI/Isaac/Altkausuren.md",
+    "Module/Semester 1/DS/Diskrete Strukturen.md",
     "Module/Semester 1/EIDI/Altkausuren.md",
     "Module/Semester 1/EIDI/Producer Consumer Problem.md",
     "Module/Semester 1/EIDI/Java Class - Socket.md",
     "Module/Semester 1/EIDI/Deadlock.md",
     "Module/Semester 1/EIDI/Race Conditions.md",
     "Module/Semester 1/EIDI/Synchronized Keyword.md",
-    "Dashboard.md",
     "Module/Semester 1/EIDI/Java Class - Thread.md",
     "Module/Semester 1/EIDI/JVM Intricacies.md",
-    "HTML Exports/attachments/pasted-image-20260204153203.png",
-    "HTML Exports/attachments",
-    "Attachments/Pasted image 20260204153203.png",
-    "Weekly Tasks/KW06.md",
-    "Module/Semester 1/EIDI/altklausuren/EIDI-Endterm-2022 5.pdf",
-    "Module/Semester 1/EIDI/altklausuren/EIDI_Endterm_2022_Aufgaben1.pdf",
-    "Module/Semester 1/EIDI/EIDI-Uebungsskript.pdf",
-    "HTML Exports/polymorphie.pdf",
-    "HTML Exports/site-lib/styles/supported-plugins.css",
-    "Module/Semester 1/EIDI/Java File System.md",
-    "Module/Semester 1/EIDI/Buffers.md",
-    "Module/Semester 1/EIDI/Streams.md",
-    "Module/Semester 1/EIDI/Lambda Expressions.md",
-    "Module/Semester 1/EIDI/Iteration.md",
-    "Module/Semester 1/EIDI/Binary Tree.md",
-    "Module/Semester 1/EIDI/Binary Search.md",
-    "Module/Semester 1/EIDI/Recursion.md",
-    "Module/Semester 1/EIDI/Interface.md",
-    "Module/Semester 1/Advisor/Advisor (Wahlfach).md",
-    "Module/Semester 1/GDB/Grundlagen Datenbanken.md",
-    "Module/Semester 1/DS/Diskrete Strukturen.md",
-    "Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md",
-    "Module/Semester 1/PGDP/Grundlagenpraktikum Programmierung.md",
-    "Module/Semester 1/Games",
-    "Module/Semester 1/EIDI/Polymorphie.pdf",
-    "HTML Exports/site-lib/styles/main-styles.css",
-    "HTML Exports/site-lib/fonts/mathjax_vector-bold.woff",
-    "HTML Exports/site-lib/media/favicon.png",
-    "HTML Exports/site-lib/media/6155340132a851f6089e.svg",
-    "HTML Exports/site-lib/media/2308ab1944a6bfa5c5b8.svg",
-    "Pasted image 20260124201751.png",
-    "HTML Exports/attachments/pasted-image-20260131162811.png",
-    "HTML Exports/260201/site-lib/media/6155340132a851f6089e.svg",
-    "HTML Exports/260201/site-lib/media/2308ab1944a6bfa5c5b8.svg",
-    "HTML Exports/260201/attachments/pasted-image-20260131162811.png"
+    "Weekly Tasks/KW06.md"
   ]
 }
