@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[eidi]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>site-lib/media/favicon.png</url><title>eidi</title><link></link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 11 Feb 2026 22:22:54 GMT</lastBuildDate><atom:link href="site-lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 11 Feb 2026 22:22:51 GMT</pubDate><ttl>60</ttl><dc:creator></dc:creator><item><title><![CDATA[Einführung in die Rechnerarchitektur]]></title><description><![CDATA[<a href=".?query=tag:era" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#era">#era</a><br>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[eidi]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>site-lib/media/favicon.png</url><title>eidi</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 11 Feb 2026 22:34:33 GMT</lastBuildDate><atom:link href="site-lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 11 Feb 2026 22:34:30 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[Einführung in die Rechnerarchitektur]]></title><description><![CDATA[<a href=".?query=tag:era" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#era">#era</a><br>
 <a href=".?query=tag:orga" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#orga">#orga</a>
 Workflow:
 Vorlesung/Moodle -&gt; reine Gliederung (Obsidian)
-Bjarne-Slides -&gt; Handnotizen
+Bjarne(the goat)-Slides -&gt; Handnotizen
 ZÜ-Quizzes
 Handnotizen, Bjarne-Tipps -&gt; Obsidian
 Tutoriumsaufgaben/Altklausur Grundlage: Relais (Stromkreis durch separaten Strom an/aus öffnen schließen)
@@ -11,7 +11,7 @@ Wertebereich Kommazahlen via Tupel aus 2 Zahlen (vor und nach Komma)
 Floating Point Numbers S: Vorzeichen
 F: Nachkommastellen nach 1 (Fraction, Koeffizient, Mantisse, Significant)
 E: Verschiebung des Kommas (Abzüglich Bias)
-<br>(<a data-footref="2" href="#fn-1-d40ac1f658604a23" class="footnote-link" target="_self" rel="noopener nofollow">[1]</a>) Strings via Ascii (so 8 bit Zahl &lt;-&gt; Buchstabe halt) C-String endet mit dem Byte 0x0 (null-terminiert)
+<br>(<a data-footref="2" href="#fn-1-6dabe8c5d2be6d0c" class="footnote-link" target="_self" rel="noopener nofollow">[1]</a>) Strings via Ascii (so 8 bit Zahl &lt;-&gt; Buchstabe halt) C-String endet mit dem Byte 0x0 (null-terminiert)
 in RV-Assembly mit .asciz
 Soweit ich weiß bei uns eher default Pascal String beginnt mit Zahl als Länge
 "Der Pascal sagt dir gleich was Sache ist" Vorteil: Verschiedene Versionen jeder Ebene mit jeweils anderen Ebenen kompatibelgcc - C Code -&gt; Kompilierung auf ausführbare Binärdatei
@@ -49,7 +49,7 @@ Lädt in destination Adresse: Wert vonBasisadresse + constj offset Springe zu ak
 jr reg, const Springe zu Wert von reg + imm
 Beim selbst Schreiben: Sprungmarkenbxx Operand1, Operand2, offset Springe um offset wenn Bedingung true
 beq, bne, blt, bge
-Andere Richtungen der letzten beiden via Tausch der Operandenjal reg, offset Jump and link, Springe um offset, Speicher Adresse nächsten Befehls in reg<br>+Systembefehle ecall, Eskaliert vom <a data-footref="3" href="#fn-2-d40ac1f658604a23" class="footnote-link" target="_self" rel="noopener nofollow">[2]</a>
+Andere Richtungen der letzten beiden via Tausch der Operandenjal reg, offset Jump and link, Springe um offset, Speicher Adresse nächsten Befehls in reg<br>+Systembefehle ecall, Eskaliert vom <a data-footref="3" href="#fn-2-6dabe8c5d2be6d0c" class="footnote-link" target="_self" rel="noopener nofollow">[2]</a>
 +Input/OutputKeine 1:1-Beziehung von Opcode und Befehl
 Pseudobefehle, z.B.
 mv ra, rb = add ra, rb, x0
@@ -79,7 +79,7 @@ Meist handelt es sich bei der Adresse in a0 um eine innerhalb des Stack-Frames d
 Return Address und andere Variablen auf dem Stack sichern Tatsächlicher Stuff
 Epilogue Return Address etc. wieder vom Stack holen
 Platz auf Stack freigeben (SP inkrementieren(!))<br>
-<a data-footref="4" href="#fn-3-d40ac1f658604a23" class="footnote-link" target="_self" rel="noopener nofollow">[3]</a> Struktur des Rechners unabhängig von bearbeitetem Problem
+<a data-footref="4" href="#fn-3-6dabe8c5d2be6d0c" class="footnote-link" target="_self" rel="noopener nofollow">[3]</a> Struktur des Rechners unabhängig von bearbeitetem Problem
 Rechner besteht aus vier Werken:
 Hauptspeicher (RAM)
 Leitwerk (CPU)
@@ -106,9 +106,9 @@ Schreiben in den Cache (bei Löschen aus Cache auch Hauptspeicher updaten)
 Schreiben in den Hauptspeicher (bei Lesen aus Cache neu aus Hauptspeicher holen)
 Was wird wo im Cache gespeichert?
 Einteilung Speicheradresse inTODO fertig macheneasy, S-und I-Reduktion <br>Was ist Bias
-<a href="#fnref-1-d40ac1f658604a23" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a> <br>ecall
-<a href="#fnref-2-d40ac1f658604a23" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a> <br>Binär-Kodierungen?
-<a href="#fnref-3-d40ac1f658604a23" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a> <br>Mehrbenutzersysteme
-<a href="#fnref-4-d40ac1f658604a23" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
-<br>Das Wirtschaftsmagazin<a href="#fnref-5-d40ac1f658604a23" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
-]]></description><link>einführung-in-die-rechnerarchitektur.html</link><guid isPermaLink="false">Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md</guid><pubDate>Wed, 11 Feb 2026 22:17:57 GMT</pubDate></item></channel></rss>
+<a href="#fnref-1-6dabe8c5d2be6d0c" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a> <br>ecall
+<a href="#fnref-2-6dabe8c5d2be6d0c" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a> <br>Binär-Kodierungen?
+<a href="#fnref-3-6dabe8c5d2be6d0c" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a> <br>Mehrbenutzersysteme
+<a href="#fnref-4-6dabe8c5d2be6d0c" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
+<br>Das Wirtschaftsmagazin<a href="#fnref-5-6dabe8c5d2be6d0c" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
+]]></description><link>einführung-in-die-rechnerarchitektur.html</link><guid isPermaLink="false">Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md</guid><pubDate>Wed, 11 Feb 2026 22:33:24 GMT</pubDate></item></channel></rss>

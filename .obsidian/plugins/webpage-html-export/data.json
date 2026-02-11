@@ -215,7 +215,7 @@
     "faviconPath": "",
     "siteName": "eidi",
     "iconEmojiStyle": "Native",
-    "exportRoot": "Module/Semester 1/EIDI",
+    "exportRoot": "Module/Semester 1/ERA",
     "includePluginCss": [],
     "includeStyleCssIds": [],
     "autoDisposeWebpages": true
@@ -226,7 +226,7 @@
   "onlyExportModified": true,
   "deleteOldFiles": true,
   "exportPreset": "online",
-  "openAfterExport": true,
+  "openAfterExport": false,
   "filePickerBlacklist": [
     "(^|\\/)node_modules\\/",
     "(^|\\/)dist\\/",
