@@ -16,18 +16,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Create Invisible Iframe Mask
+      # --- EIDI SECTION ---
+      - name: Create Iframe Mask for EIDI
         run: |
-          cd "HTML Exports"
-          # 1. Identify the content file
+          cd "HTML Exports/EIDI"
           target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
-          
           if [ -n "$target_file" ]; then
-            echo "Wrapping $target_file in a full-screen iframe..."
-            
-            # 2. Create the index.html as a full-screen container
-            # The 'overflow:hidden' on body prevents double scrollbars
-          cat <<EOF > index.html
+            cat <<EOF > index.html
           <!DOCTYPE html>
           <html lang="de" style="margin:0; padding:0; height:100%; overflow:hidden;">
           <head>
@@ -39,22 +34,50 @@ jobs:
                   iframe { border: none; width: 100vw; height: 100vh; display: block; }
               </style>
           </head>
-          <body>
-              <iframe src="$target_file" title="Content"></iframe>
-          </body>
+          <body><iframe src="$target_file"></iframe></body>
           </html>
           EOF
-          else
-            echo "Error: No file found"
-            exit 1
           fi
-          
-      - name: Sync files to hosting
+
+      - name: Sync EIDI
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: v132927.goserver.host
           username: allesman
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./HTML Exports/
-          server-dir: ./eidi/
+          local-dir: "./HTML Exports/EIDI/"
+          server-dir: "./eidi/"
+          delete-missing: true
+
+      # --- ERA SECTION ---
+      - name: Create Iframe Mask for ERA
+        run: |
+          cd "HTML Exports/ERA"
+          target_file=$(ls einf*hrung*.html 2>/dev/null | head -n 1)
+          if [ -n "$target_file" ]; then
+            cat <<EOF > index.html
+          <!DOCTYPE html>
+          <html lang="de" style="margin:0; padding:0; height:100%; overflow:hidden;">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+              <title>Einführung in die Rechnerarchitektur</title>
+              <style>
+                  body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+                  iframe { border: none; width: 100vw; height: 100vh; display: block; }
+              </style>
+          </head>
+          <body><iframe src="$target_file"></iframe></body>
+          </html>
+          EOF
+          fi
+
+      - name: Sync ERA
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: v132927.goserver.host
+          username: allesman
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: "./HTML Exports/ERA/"
+          server-dir: "./era/"
           delete-missing: true
