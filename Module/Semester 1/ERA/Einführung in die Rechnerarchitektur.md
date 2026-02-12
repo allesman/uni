@@ -19,11 +19,11 @@ note: 0
 - Grundlage: Relais (Stromkreis durch separaten Strom an/aus öffnen schließen)
 - Transistor (selbe Funktionsweise, aber nur 3 Kontakte also 1 Stromkreis)
 ### Binär
-- "Word" Basisgröße des Systems (`16 bit`, `32 bit`, etc.)
+- "Word" = Basisgröße des Systems (`16 bit`, `32 bit`, etc.)
 	- wir benutzen `32 bit`
 - Negative Zahlen via Zweierkomplement (Rechnung leichter)
 	- Invertierung, + 1
-	- Wertebereich $[-1^{n-1},2^{n-1}-1]$
+	- Wertebereich $[2^{n-1},2^{n-1}-1]$ -> positiver Bereich eins kleiner, dafür $0$ dabei
 - Kommazahlen via
 	- Tupel aus 2 Zahlen (vor und nach Komma)
 	- Floating Point Numbers
@@ -217,17 +217,23 @@ in RISC-V Wechselmöglichkeit, aber wir nutzen **Little Endian**
 [[#Virtueller Speicher (Mehrere Adressräume)|Jedes Programm erhält eigenen Adressraum (für genutzte Daten und Programm selbst)]]
 
 ### Sign-Extension
-TODO
+Jede Zahl, die mit `1` beginnt, ist im [[#Binär|Zweier-Komplement]] negativ. Wenn wir diesen Zahlen mehr Stellen geben wollen ("größer casten"), gibt es eine wichtige Sache zu beachten: Der Default-Wert für "leere Stellen", die neu hinzukommen, ist bei negativen Zahlen nicht `0`, sondern `1`. Also füllt man mit `1`en auf, wenn bspw. ein `12-bit` Immediate auf ein `32-bit` Register addiert werden soll.
+
+| `12 bits`           | *Sign-Extended* auf `32 bits`                |
+| ------------------- | -------------------------------------------- |
+| `0b 0100 0110 1110` | `0b 0000 0000 0000 0000 0000 0100 0110 1110` |
+| `0b 1100 0110 1110` | `0b 1111 1111 1111 1111 1111 1100 0110 1110` |
+
 ## Calling Convention
 ### Argumente/Return
 #### Einzelnes Argument
 
-| Größe                | Passed als                                                   |
-| -------------------- | ------------------------------------------------------------ |
-| `<32 bits`           | [[#Sign-Extension\|Sign-Extended]] zu 1 Register (`32 bits`) |
-| `32 bits / 1 word`   | 1 Register                                                   |
-| `64 bit / 2 words`   | 2 Register ([[#Endianness\|lower half zuerst]])              |
-| `>64 bit / >2 words` | Referenz                                                     |
+| Größe                | Passed als                                                     |
+| -------------------- | -------------------------------------------------------------- |
+| `<32 bits`           | [[#Sign-Extension\|Sign-Extended]] auf `32 bits` -> 1 Register |
+| `32 bits / 1 word`   | 1 Register                                                     |
+| `64 bit / 2 words`   | 2 Register ([[#Endianness\|lower half zuerst]])                |
+| `>64 bit / >2 words` | Referenz                                                       |
 #### Argumente insgesamt
 
 | Größe       | Passed in |
