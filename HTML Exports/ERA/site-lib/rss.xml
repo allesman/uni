@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[eidi]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>site-lib/media/favicon.png</url><title>eidi</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 12 Feb 2026 08:56:53 GMT</lastBuildDate><atom:link href="site-lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 12 Feb 2026 08:56:50 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[Einführung in die Rechnerarchitektur]]></title><description><![CDATA[<a href=".?query=tag:era" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#era">#era</a><br>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[eidi]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>site-lib/media/favicon.png</url><title>eidi</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 12 Feb 2026 12:29:02 GMT</lastBuildDate><atom:link href="site-lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 12 Feb 2026 12:28:59 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[Einführung in die Rechnerarchitektur]]></title><description><![CDATA[<a href=".?query=tag:era" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#era">#era</a><br>
 <a href=".?query=tag:orga" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#orga">#orga</a>
 Workflow:
 Vorlesung/Moodle -&gt; reine Gliederung (Obsidian)
@@ -11,7 +11,7 @@ Wertebereich -&gt; positiver Bereich eins kleiner, dafür dabei Kommazahlen via 
 Floating Point Numbers S: Vorzeichen
 F: Nachkommastellen nach 1 (Fraction, Koeffizient, Mantisse, Significant)
 E: Verschiebung des Kommas (Abzüglich Bias)
-<br>(<a data-footref="2" href="#fn-1-7a517368ae380ae9" class="footnote-link" target="_self" rel="noopener nofollow">[1]</a>) Strings via Ascii (so 8 bit Zahl &lt;-&gt; Buchstabe halt) C-String endet mit dem Byte 0x0 (null-terminiert)
+<br>(<a data-footref="2" href="#fn-1-0d366c96a798a0f6" class="footnote-link" target="_self" rel="noopener nofollow">[1]</a>) Strings via Ascii (so 8 bit Zahl &lt;-&gt; Buchstabe halt) C-String endet mit dem Byte 0x0 (null-terminiert)
 in RV-Assembly mit .asciz
 Soweit ich weiß bei uns eher default Pascal String beginnt mit Zahl als Länge
 "Der Pascal sagt dir gleich was Sache ist" Vorteil: Verschiedene Versionen jeder Ebene mit jeweils anderen Ebenen kompatibelgcc - C Code -&gt; Kompilierung auf ausführbare Binärdatei
@@ -49,7 +49,7 @@ Lädt in destination Adresse: Wert vonBasisadresse + constj offset Springe zu ak
 jr reg, const Springe zu Wert von reg + imm
 Beim selbst Schreiben: Sprungmarkenbxx Operand1, Operand2, offset Springe um offset wenn Bedingung true
 beq, bne, blt, bge
-Andere Richtungen der letzten beiden via Tausch der Operandenjal reg, offset Jump and link, Springe um offset, Speicher Adresse nächsten Befehls in reg<br>+Systembefehle ecall, Eskaliert vom <a data-footref="3" href="#fn-2-7a517368ae380ae9" class="footnote-link" target="_self" rel="noopener nofollow">[2]</a>
+Andere Richtungen der letzten beiden via Tausch der Operandenjal reg, offset Jump and link, Springe um offset, Speicher Adresse nächsten Befehls in reg<br>+Systembefehle ecall, Eskaliert vom <a data-footref="3" href="#fn-2-0d366c96a798a0f6" class="footnote-link" target="_self" rel="noopener nofollow">[2]</a>
 +Input/OutputKeine 1:1-Beziehung von Opcode und Befehl
 Pseudobefehle, z.B.
 mv ra, rb = add ra, rb, x0
@@ -65,11 +65,11 @@ sp: stack pointer (also <a data-tooltip-position="top" aria-label="Caller-/Calle
 Adresse pro Byte (8 bits)Ausrichtung auf n-Byte-Grenze: jede Adresse mod n = 0
 Bei RISC-V ist der Stack 16 byte alignedin RISC-V Wechselmöglichkeit, aber wir nutzen Little Endian
 Stack meist für Zwischenergebnisse verwendet
-meist größer als der Heap
+meist kleiner als der Heap
 wächst meist nach unten (-&gt; Erweitern durch Dekrementierung(!) des SP)
 recht einfach zu verwalten (LIFO)
 <br><a data-tooltip-position="top" aria-label="Data alignment" data-href="#Data alignment" href="einführung-in-die-rechnerarchitektur.html#Data_alignment_0" class="internal-link" target="_self" rel="noopener nofollow">16 byte aligned</a> Heap meist für dynamische Datenstrukturen verwendet
-meist kleiner als der Stack
+meist größer als der Stack
 wächst meist nach oben
 schwerer zu verwalten (Dynamisch) Static Data hat z.B. Konstanten wie verwendete Strings
 Text ist der Programmcode
@@ -79,7 +79,7 @@ Meist handelt es sich bei der Adresse in a0 um eine innerhalb des Stack-Frames d
 Return Address und andere Variablen auf dem Stack sichern Tatsächlicher Stuff
 Epilogue Return Address etc. wieder vom Stack holen
 Platz auf Stack freigeben (SP inkrementieren(!))<br>
-<a data-footref="4" href="#fn-3-7a517368ae380ae9" class="footnote-link" target="_self" rel="noopener nofollow">[3]</a> Struktur des Rechners unabhängig von bearbeitetem Problem
+<a data-footref="4" href="#fn-3-0d366c96a798a0f6" class="footnote-link" target="_self" rel="noopener nofollow">[3]</a> Struktur des Rechners unabhängig von bearbeitetem Problem
 Rechner besteht aus vier Werken:
 Hauptspeicher (RAM)
 Leitwerk (CPU)
@@ -106,9 +106,9 @@ Schreiben in den Cache (bei Löschen aus Cache auch Hauptspeicher updaten)
 Schreiben in den Hauptspeicher (bei Lesen aus Cache neu aus Hauptspeicher holen)
 Was wird wo im Cache gespeichert?
 Einteilung Speicheradresse inTODO fertig macheneasy, S-und I-Reduktion <br>Was ist Bias
-<a href="#fnref-1-7a517368ae380ae9" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a> <br>ecall
-<a href="#fnref-2-7a517368ae380ae9" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a> <br>Binär-Kodierungen?
-<a href="#fnref-3-7a517368ae380ae9" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a> <br>Mehrbenutzersysteme
-<a href="#fnref-4-7a517368ae380ae9" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
-<br>Das Wirtschaftsmagazin<a href="#fnref-5-7a517368ae380ae9" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
-]]></description><link>einführung-in-die-rechnerarchitektur.html</link><guid isPermaLink="false">Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md</guid><pubDate>Thu, 12 Feb 2026 08:55:46 GMT</pubDate></item></channel></rss>
+<a href="#fnref-1-0d366c96a798a0f6" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a> <br>ecall
+<a href="#fnref-2-0d366c96a798a0f6" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a> <br>Binär-Kodierungen?
+<a href="#fnref-3-0d366c96a798a0f6" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a> <br>Mehrbenutzersysteme
+<a href="#fnref-4-0d366c96a798a0f6" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
+<br>Das Wirtschaftsmagazin<a href="#fnref-5-0d366c96a798a0f6" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
+]]></description><link>einführung-in-die-rechnerarchitektur.html</link><guid isPermaLink="false">Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md</guid><pubDate>Thu, 12 Feb 2026 12:28:33 GMT</pubDate></item></channel></rss>

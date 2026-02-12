@@ -24,13 +24,13 @@
             }
           },
           {
-            "id": "85e8538e83a77723",
+            "id": "b15c882b2f27b5ad",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -279,6 +279,7 @@
   "lastOpenFiles": [
     "Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md",
     "Dashboard.md",
+    "Module/Semester 1/EIDI/Einführung in die Informatik.md",
     "HTML Exports/ERA/site-lib/styles/theme.css",
     "HTML Exports/ERA/site-lib/styles/supported-plugins.css",
     "HTML Exports/ERA/site-lib/styles/obsidian.css",
@@ -297,7 +298,6 @@
     "HTML Exports/EIDI/site-lib/media/6155340132a851f6089e.svg",
     "HTML Exports/EIDI/site-lib/media/2308ab1944a6bfa5c5b8.svg",
     "HTML Exports/EIDI/attachments/pasted-image-20260204153203.png",
-    "Module/Semester 1/EIDI/Einführung in die Informatik.md",
     "Meta.md",
     "Module/Semester 1/EIDI/EIDI.md",
     "Module/Semester 1/EIDI/Isaac/Isaac.md",

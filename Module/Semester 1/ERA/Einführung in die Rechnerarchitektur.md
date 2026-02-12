@@ -202,13 +202,13 @@ in RISC-V Wechselmöglichkeit, aber wir nutzen **Little Endian**
 ![[era03-beispiel.pdf#page=12&rect=663,34,844,436|era03-beispiel, p.12|250]]
 - Stack
 	- meist für Zwischenergebnisse verwendet
-	- meist größer als der Heap
+	- meist kleiner als der Heap
 	- wächst meist nach unten (-> Erweitern durch **Dekrementierung(!)** des SP)
 	- recht einfach zu verwalten (LIFO)
 	- [[#Data alignment|16 byte aligned]]
 - Heap
 	- meist für dynamische Datenstrukturen verwendet
-	- meist kleiner als der Stack
+	- meist größer als der Stack
 	- wächst meist nach oben
 	- schwerer zu verwalten (Dynamisch)
 - Static Data hat z.B. Konstanten wie verwendete Strings
