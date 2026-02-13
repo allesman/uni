@@ -48,7 +48,9 @@
     "//Digital/Digital/lib/Digital/lib/DIL Chips/Digital/lib/DIL Chips/74xx",
     "//Digital/Digital/lib/Digital/lib/DIL Chips/Digital/lib/DIL Chips/74xx/Digital/lib/DIL Chips/74xx/flipflops",
     "//Module",
-    "//Module/Module/Semester 1"
+    "//Module/Module/Semester 1",
+    "//Module/Module/Semester 1/Module/Semester 1/DS",
+    "//Module/Module/Semester 1/Module/Semester 1/ERA"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",

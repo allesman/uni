@@ -7,7 +7,7 @@ semester: 1
 note: 0
 ---
 
-# Grundlagen
+# (Grundlagen)
 diskret heißt basically abzählbar (<-> kontinuierlich)
 
 Mehrdeutigkeit vermeiden im...
@@ -43,12 +43,12 @@ wenn gültig:
 > [!hint] Negation
 > $\lnot (\forall x P(x))\equiv\exists x (\lnot P(x))$ "Nicht für alle x gilt P" = "Es gibt ein x für das nicht P gilt"
 > $\lnot (\exists x P(x))\equiv\forall x (\lnot P(x))$ "Nicht ein (kein) x für das P gilt" = "Für alle x gilt nicht P"
-# Beweis
+## Beweis
 - aufgebaut aus Beweisschritten
 	- aufgebaut aus *Prämissen -> Konsequenz*
 
 z.B. Syllogismen (Bandersnatch), modus ponens ($(P\to Q)\land P)\to Q$)
-# Beweisstrategien
+## Beweisstrategien
 
 | Name            | Funktionsweise am Beispiel $A\to B$       | Beispiel                               |
 | --------------- | ----------------------------------------- | -------------------------------------- |
@@ -172,6 +172,7 @@ ungerichtet + keine Schleifen -> einfacher Graph
 	- letztes Element $d_n$ entfernen
 	- letzte $d_n$ Komponenten um 1 verkleinern
 	- 🔁
+	  
 **Euler-Kreis:** Haus des Nikolaus (Jede Kante besucht)
 *hinreichend und notwendig*: jeder Knotengrad gerade
 **Hamilton-Kreis:** Jeder Knoten besucht, jede Kante $\leq1$

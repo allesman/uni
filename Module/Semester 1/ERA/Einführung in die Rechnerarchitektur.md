@@ -1,13 +1,13 @@
 ---
 tags: Orga
-fertig: false
+fertig: true
 klausur: 2026-02-13T00:00:00.000Z
 semester: 1
 retake: 2026-04-01T00:00:00.000Z
 note: 0
 ---
 #era
-#orga 
+#orga
 **Workflow:**
 - Vorlesung/Moodle -> reine Gliederung (Obsidian)
 - Bjarne(the goat)-Slides -> Handnotizen
@@ -220,7 +220,7 @@ in RISC-V Wechselmöglichkeit, aber wir nutzen **Little Endian**
 - Static Data hat z.B. Konstanten wie verwendete Strings
 - Text ist der Programmcode
   
-[[#Virtueller Speicher (Mehrere Adressräume)|Jedes Programm erhält eigenen Adressraum (für genutzte Daten und Programm selbst)]]
+[[#Virtueller Speicher (Paging/Mehrere Adressräume)|Jedes Programm erhält eigenen Adressraum (für genutzte Daten und Programm selbst)]]
 
 ### Sign-Extension
 Jede Zahl, die mit `1` beginnt (aka in Hex mit >=`8` beginnt), ist im [[#Binär|Zweier-Komplement]] negativ. Wenn wir diesen Zahlen mehr Stellen geben wollen ("größer casten"), gibt es eine wichtige Sache zu beachten: Der Default-Wert für "leere Stellen", die neu hinzukommen, ist bei negativen Zahlen nicht `0`, sondern `1`. Also füllt man mit `1`en auf, wenn bspw. ein `12-bit` Immediate auf ein `32-bit` Register addiert werden soll.
