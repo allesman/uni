@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[eidi]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>site-lib/media/favicon.png</url><title>eidi</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 12 Feb 2026 12:29:02 GMT</lastBuildDate><atom:link href="site-lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 12 Feb 2026 12:28:59 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[Einführung in die Rechnerarchitektur]]></title><description><![CDATA[<a href=".?query=tag:era" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#era">#era</a><br>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[eidi]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>site-lib/media/favicon.png</url><title>eidi</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Fri, 13 Feb 2026 10:36:37 GMT</lastBuildDate><atom:link href="site-lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Fri, 13 Feb 2026 10:36:34 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[Einführung in die Rechnerarchitektur]]></title><description><![CDATA[<a href=".?query=tag:era" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#era">#era</a><br>
 <a href=".?query=tag:orga" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#orga">#orga</a>
 Workflow:
 Vorlesung/Moodle -&gt; reine Gliederung (Obsidian)
@@ -11,7 +11,7 @@ Wertebereich -&gt; positiver Bereich eins kleiner, dafür dabei Kommazahlen via 
 Floating Point Numbers S: Vorzeichen
 F: Nachkommastellen nach 1 (Fraction, Koeffizient, Mantisse, Significant)
 E: Verschiebung des Kommas (Abzüglich Bias)
-<br>(<a data-footref="2" href="#fn-1-0d366c96a798a0f6" class="footnote-link" target="_self" rel="noopener nofollow">[1]</a>) Strings via Ascii (so 8 bit Zahl &lt;-&gt; Buchstabe halt) C-String endet mit dem Byte 0x0 (null-terminiert)
+<br>(<a data-footref="2" href="#fn-1-828c1697fae757ad" class="footnote-link" target="_self" rel="noopener nofollow">[1]</a>) Strings via Ascii (so 8 bit Zahl &lt;-&gt; Buchstabe halt) C-String endet mit dem Byte 0x0 (null-terminiert)
 in RV-Assembly mit .asciz
 Soweit ich weiß bei uns eher default Pascal String beginnt mit Zahl als Länge
 "Der Pascal sagt dir gleich was Sache ist" Vorteil: Verschiedene Versionen jeder Ebene mit jeweils anderen Ebenen kompatibelgcc - C Code -&gt; Kompilierung auf ausführbare Binärdatei
@@ -49,7 +49,7 @@ Lädt in destination Adresse: Wert vonBasisadresse + constj offset Springe zu ak
 jr reg, const Springe zu Wert von reg + imm
 Beim selbst Schreiben: Sprungmarkenbxx Operand1, Operand2, offset Springe um offset wenn Bedingung true
 beq, bne, blt, bge
-Andere Richtungen der letzten beiden via Tausch der Operandenjal reg, offset Jump and link, Springe um offset, Speicher Adresse nächsten Befehls in reg<br>+Systembefehle ecall, Eskaliert vom <a data-footref="3" href="#fn-2-0d366c96a798a0f6" class="footnote-link" target="_self" rel="noopener nofollow">[2]</a>
+Andere Richtungen der letzten beiden via Tausch der Operandenjal reg, offset Jump and link, Springe um offset, Speicher Adresse nächsten Befehls in reg<br>+Systembefehle ecall, Eskaliert vom <a data-footref="3" href="#fn-2-828c1697fae757ad" class="footnote-link" target="_self" rel="noopener nofollow">[2]</a>
 +Input/OutputKeine 1:1-Beziehung von Opcode und Befehl
 Pseudobefehle, z.B.
 mv ra, rb = add ra, rb, x0
@@ -62,7 +62,7 @@ sn: saved (<a data-tooltip-position="top" aria-label="Caller-/Callee-Saved" data
 tn: temporary
 ra: return adress<br>
 sp: stack pointer (also <a data-tooltip-position="top" aria-label="Caller-/Callee-Saved" data-href="#Caller-/Callee-Saved" href="einführung-in-die-rechnerarchitektur.html#Caller-/Callee-Saved_0" class="internal-link" target="_self" rel="noopener nofollow">callee-saved</a>)Speicherzellen mit Größe entsprechend ISA
-Adresse pro Byte (8 bits)Ausrichtung auf n-Byte-Grenze: jede Adresse mod n = 0
+Byte-Adressiert (wir können nur ganze Bytes adressieren):Ausrichtung auf n-Byte-Grenze: jede Adresse mod n = 0
 Bei RISC-V ist der Stack 16 byte alignedin RISC-V Wechselmöglichkeit, aber wir nutzen Little Endian
 Stack meist für Zwischenergebnisse verwendet
 meist kleiner als der Heap
@@ -73,15 +73,15 @@ meist größer als der Stack
 wächst meist nach oben
 schwerer zu verwalten (Dynamisch) Static Data hat z.B. Konstanten wie verwendete Strings
 Text ist der Programmcode
-<br><a data-tooltip-position="top" aria-label="Virtueller Speicher (Mehrere Adressräume)" data-href="#Virtueller Speicher (Mehrere Adressräume)" href="einführung-in-die-rechnerarchitektur.html#Virtueller_Speicher_(Mehrere_Adressräume)_0" class="internal-link" target="_self" rel="noopener nofollow">Jedes Programm erhält eigenen Adressraum (für genutzte Daten und Programm selbst)</a><br>Jede Zahl, die mit 1 beginnt, ist im <a data-tooltip-position="top" aria-label="Binär" data-href="#Binär" href="einführung-in-die-rechnerarchitektur.html#Binär_0" class="internal-link" target="_self" rel="noopener nofollow">Zweier-Komplement</a> negativ. Wenn wir diesen Zahlen mehr Stellen geben wollen ("größer casten"), gibt es eine wichtige Sache zu beachten: Der Default-Wert für "leere Stellen", die neu hinzukommen, ist bei negativen Zahlen nicht 0, sondern 1. Also füllt man mit 1en auf, wenn bspw. ein 12-bit Immediate auf ein 32-bit Register addiert werden soll.zu "in a0 referenzierter Adresse" Diese Adresse muss also der Caller der Funktion schon mitgeben.
+<br><a data-tooltip-position="top" aria-label="Virtueller Speicher (Mehrere Adressräume)" data-href="#Virtueller Speicher (Mehrere Adressräume)" href="#Virtueller Speicher (Mehrere Adressräume)" class="internal-link" target="_self" rel="noopener nofollow">Jedes Programm erhält eigenen Adressraum (für genutzte Daten und Programm selbst)</a><br>Jede Zahl, die mit 1 beginnt (aka in Hex mit &gt;=8 beginnt), ist im <a data-tooltip-position="top" aria-label="Binär" data-href="#Binär" href="einführung-in-die-rechnerarchitektur.html#Binär_0" class="internal-link" target="_self" rel="noopener nofollow">Zweier-Komplement</a> negativ. Wenn wir diesen Zahlen mehr Stellen geben wollen ("größer casten"), gibt es eine wichtige Sache zu beachten: Der Default-Wert für "leere Stellen", die neu hinzukommen, ist bei negativen Zahlen nicht 0, sondern 1. Also füllt man mit 1en auf, wenn bspw. ein 12-bit Immediate auf ein 32-bit Register addiert werden soll.zu "in a0 referenzierter Adresse" Diese Adresse muss also der Caller der Funktion schon mitgeben.
 Die tatsächlichen Argumente darf er dann erst ab a1 angeben.
 Meist handelt es sich bei der Adresse in a0 um eine innerhalb des Stack-Frames des Callers, so weit Bjarne weiß sogar immer ganz oben (also bei 0(sp)). Prologue Platz auf Stack reservieren (SP dekrementieren(!))
 Return Address und andere Variablen auf dem Stack sichern Tatsächlicher Stuff
 Epilogue Return Address etc. wieder vom Stack holen
 Platz auf Stack freigeben (SP inkrementieren(!))<br>
-<a data-footref="4" href="#fn-3-0d366c96a798a0f6" class="footnote-link" target="_self" rel="noopener nofollow">[3]</a> Struktur des Rechners unabhängig von bearbeitetem Problem
-Rechner besteht aus vier Werken:
-Hauptspeicher (RAM)
+<a data-footref="4" href="#fn-3-828c1697fae757ad" class="footnote-link" target="_self" rel="noopener nofollow">[3]</a> Struktur des Rechners unabhängig von bearbeitetem Problem
+Rechner besteht aus vier Werken (die mit Bus-System verbunden sind):
+Speicherwerk (RAM)
 Leitwerk (CPU)
 Rechenwerk (CPU)
 Ein-/Ausgabewerk inkl. Sekundärspeicher (Peripherieanschluss, Festplatte)
@@ -93,11 +93,23 @@ Von der Folge kann durch Sprünge abgewichen werden
 Unterprogrammaufrufe: Register sichern, Parameter supplien
 Springen (Jump and Link)
 Operation
-Zurückspringen (Jump and Link) Unterschied z.B.: Getrennter Speicher für Daten und Programminshallah das kommt in der klausur dran<br><img alt="Pasted image 20251104173149.png" src="attachments/pasted-image-20251104173149.png" target="_self" style="width: 500px; max-width: 100%;">shoutout an schulz's roten stift, you won't be missedJedes Programm hat eigenen Speicherraum mit virtuellen Adressen, und nur innerhalb dieses Adressraums Zugriff
-Virtuelle Adresse wird immer auf physische übersetzt von MMU (früher Hardware) via Seiten-Kachel-Tabelle (auch mehrere Ebenen möglich)
+Zurückspringen (Jump and Link) Unterschied z.B.: Getrennter Speicher für Daten und Programminshallah das kommt in der klausur dran
+Machine Mode Babo Modus
+<br><a data-href="#Systemaufruf" href="einführung-in-die-rechnerarchitektur.html#Systemaufruf_0" class="internal-link" target="_self" rel="noopener nofollow">Systemaufruf</a> führt kurz hier hin, dann meist Mapping zu S-Mode Supervisor Mode ("Kernel-Level") <br>Hier landen wir meist nach <a data-href="#Systemaufruf" href="einführung-in-die-rechnerarchitektur.html#Systemaufruf_0" class="internal-link" target="_self" rel="noopener nofollow">Systemaufruf</a>
+Zugriff auf z.B. Hardware möglich User Mode hier sind wir normalerweise
+<br>mit <a data-href="#Systemaufruf" href="einführung-in-die-rechnerarchitektur.html#Systemaufruf_0" class="internal-link" target="_self" rel="noopener nofollow">Systemaufruf</a> können wir aber raus in RISC-V mit ecall<br><img alt="Pasted image 20251104173149.png" src="attachments/pasted-image-20251104173149.png" target="_self" style="width: 500px; max-width: 100%;">shoutout an schulz's roten stift, you won't be missedJedes Programm hat eigenen Speicherraum mit virtuellen Adressen, und nur innerhalb dieses Adressraums Zugriff<br>
+Virtuelle Adresse wird immer auf physische übersetzt von MMU (früher Hardware) via Seiten-Kachel-Tabelle (<a data-tooltip-position="top" aria-label="Herausforderungen und Einsatz von Virtuellem Speicher" data-href="#Herausforderungen und Einsatz von Virtuellem Speicher" href="einführung-in-die-rechnerarchitektur.html#Herausforderungen_und_Einsatz_von_Virtuellem_Speicher_0" class="internal-link" target="_self" rel="noopener nofollow">auch mehrere Ebenen möglich</a>)
 4KiB Kacheln abgebildet auf 4KiB Kacheln (heutzutage auch größere möglich)
 Nur Teil des Adressraums jedes Programms ist tatsächlich im Speicher angelegt, bei Bedarf wird erweitert
-Was wenn Programm zugeschriebener Speicher nicht erfüllt werden kann weil keine Kacheln verfügbar? Freimachen beliebiger ( idealerweise lange ungenutzter) Kachel durch Auslagern auf Hintergrundspeicher/FestplatteIdealerweise enthält ein möglichst kleiner Zwischenspeicher die als nächstes benötigten Daten, damit schneller auf sie zugegriffen werden kann.
+Was wenn Programm zugeschriebener Speicher nicht erfüllt werden kann weil keine Kacheln verfügbar? Freimachen beliebiger ( idealerweise lange ungenutzter) Kachel durch Auslagern auf Hintergrundspeicher/FestplatteRealisierung?
+Naiv: 1 zusammenhängende Page Table mit komplettem Mapping
+-&gt; schneller Zugriff, aber giga Platzbedarf
+man müsste ja 1 zusammenhängenden Platz für alle mappings aller Speicherräume reservieren
+Based und Sigma: Ebenen mit Tables gemäß Teilen der Adresse
+-&gt; viel weniger Platzbedarf
+-&gt; aber auch langsamer
+(weil nicht Zugriff sondern immer Zugriffe)
+-&gt; Allerdings in der Praxis TLB (Cache für Mapping -&gt; weniger Zugriffe)Idealerweise enthält ein möglichst kleiner Zwischenspeicher die als nächstes benötigten Daten, damit schneller auf sie zugegriffen werden kann.
 Aber was wird als nächstes benötigt?
 zeitliches Lokalitätsprinzip: vor kurzem verwendete Daten
 räumliches Lokalitätsprinzip: benachbarte Daten zu zuvor verwendeten
@@ -105,10 +117,45 @@ Wie geht dann Schreiben? 2 Möglichkeiten:
 Schreiben in den Cache (bei Löschen aus Cache auch Hauptspeicher updaten)
 Schreiben in den Hauptspeicher (bei Lesen aus Cache neu aus Hauptspeicher holen)
 Was wird wo im Cache gespeichert?
-Einteilung Speicheradresse inTODO fertig macheneasy, S-und I-Reduktion <br>Was ist Bias
-<a href="#fnref-1-0d366c96a798a0f6" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a> <br>ecall
-<a href="#fnref-2-0d366c96a798a0f6" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a> <br>Binär-Kodierungen?
-<a href="#fnref-3-0d366c96a798a0f6" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a> <br>Mehrbenutzersysteme
-<a href="#fnref-4-0d366c96a798a0f6" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
-<br>Das Wirtschaftsmagazin<a href="#fnref-5-0d366c96a798a0f6" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
-]]></description><link>einführung-in-die-rechnerarchitektur.html</link><guid isPermaLink="false">Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md</guid><pubDate>Thu, 12 Feb 2026 12:28:33 GMT</pubDate></item></channel></rss>
+Einteilung Speicheradresse inProblem:
+Prozessor A liest Wert mit Adresse 1 aus Hauptspeicher und legt ihn in seinen Cache
+Prozessor B schreibt auf Adresse 1 im Hauptspeicher
+-&gt; Prozessor A hat falschen Wert im Cache!
+Lösung:MESI-Protokoll
+Jeder Prozessor merkt sich für jede Adresse, die er im Cache hat, einen der folgenden Zustände
+Exclusive: Nur ich habe diese Adresse im Cache
+mein Wert im Cache ist valid (entspricht dem Hauptspeicher) Shared: Auch andere haben diese Adresse im Cache
+mein Wert im Cache ist valid Modified: Auch andere haben diese Adresse im Cache
+mein (neuer, von mir modifizierter) Wert im Cache ist valid
+andere haben noch den alten, invalid Wert Invalid: Auch andere haben diese Adresse im Cache
+in meinem Cache ist ein veralteter, invalid Wert
+ich muss mir beim nächsten Zugriff den neuen valid aus dem Hauptspeicher holen -&gt; Pro Index-Bit Belegung existiert nur 1 Zeile (das zugehörige Set hat nur 1 Zeile)
+-&gt; Es kann nur maximal eine Hauptspeicherzeile mit dieser Belegung im Cache sein<br>
+-&gt; <a data-tooltip-position="top" aria-label="Conflict Miss" data-href="#Conflict Miss" href="einführung-in-die-rechnerarchitektur.html#Conflict_Miss_0" class="internal-link" target="_self" rel="noopener nofollow">Conflict-Miss</a>-City (passieren dauernd) -&gt; Es gibt nur ein einziges Set, wo jede Hauptspeicherzeile whereever hin kann, weil sie mit ihrem Tag identifiziert wird.<br>
+-&gt; Es kann keine <a data-href="#Conflict Miss" href="einführung-in-die-rechnerarchitektur.html#Conflict_Miss_0" class="internal-link" target="_self" rel="noopener nofollow">Conflict Miss</a>es gebenGenerell: Gesuchte Zeile ist momentan nicht im Cache und muss aus dem Hauptspeicher geholt werden (-&gt; delay)Gesuchte Zeile war noch nie im Cache, also muss sie obv aus dem Hauptspeicher geholt werden.<br>Gesuchte Zeile war mal im Cache. Aber sie wurde von anderer Zeile vertrieben, und das obwohl es damals in anderen Sets noch Platz gegeben hätte. Also wäre das in einem <a data-tooltip-position="top" aria-label="Voll-Assoziativ" data-href="#Voll-Assoziativ" href="einführung-in-die-rechnerarchitektur.html#Voll-Assoziativ_0" class="internal-link" target="_self" rel="noopener nofollow">voll-assoziativen</a> Cache nicht passiert.<br>Gesuchte Zeile war mal im Cache. Aber sie wurde von anderer Zeile vertrieben, und es wäre auch nirgends sonst noch Platz gewesen. Also wäre das in einem <a data-tooltip-position="top" aria-label="Voll-Assoziativ" data-href="#Voll-Assoziativ" href="einführung-in-die-rechnerarchitektur.html#Voll-Assoziativ_0" class="internal-link" target="_self" rel="noopener nofollow">voll-assoziativen</a> Cache auch passiert.Hauptspeicher -&gt; L1 -&gt; L2 -&gt; L3
+Inklusiv: Alle Daten aus Layer auch in untergeordneten
+oder
+Exklusiv: Gegenteil, jedes Datum nur in einem Layereasy clap tbhDualer Ausdruck: , sozusagen das Gegenteil eines Ausdrucks
+Bilden mit: , , , Basically switch case, 1 Entscheidungseingang und lauter nummerierte Eingänge, von denen der Entscheidungseingang einen aussucht.
+In Klausur immer die Nummerierung der Eingänge hinschreiben!Latch -&gt; "latched" onto E (meist Clock), bei E=1 wird D "geschrieben", sonst behält es den letzten valid ZustandFlipFlop -&gt; "schreibt" nur exakt beim Wechsel von E (meist Clock) von 0 auf 1 (bzw. 1 auf 0), sonst behält es den letzten valid Zustand.S-Reduktion
+stupid Knoten, der mit allem auf anderen zeigt, kann weg
+I-Reduktion
+isomorphe Knoten, die sich gleich verhalten, kann man kombinieren<br>Funktion: Formel -&gt; <a data-tooltip-position="top" aria-label="BDT (Binary Decision Tree)" data-href="#BDT (Binary Decision Tree)" href="einführung-in-die-rechnerarchitektur.html#BDT_(Binary_Decision_Tree)_0" class="internal-link" target="_self" rel="noopener nofollow">BDT</a>
+Wir nehmen immer die entsprechend der Variablenordnung kleinste Variable und erzeugen zwei neue Branches, für die beiden Belegungen der Variable. Auf die neuen Knoten schreiben wir die neue Formel (mit belegter Variable). Das machen wir so lange bis es keine Variablen mehr gibt. Fertig ist der Baum!<br>Funktion: <a data-tooltip-position="top" aria-label="BDT (Binary Decision Tree)" data-href="#BDT (Binary Decision Tree)" href="einführung-in-die-rechnerarchitektur.html#BDT_(Binary_Decision_Tree)_0" class="internal-link" target="_self" rel="noopener nofollow">BDTs</a> kombinieren mithilfe Operator
+Jeden Knoten unique benennen
+Wir starten bei jedem Baum mit dem jeweils obersten Knoten
+Loop (solang bis der Wert der Formel feststeht) Neuen Knoten unseres neuen Baums erstellen Mit zugehöriger Formel (Operator auf Knoten der Bäume angewendet)
+Wenn es den Knoten mit der Formel schon gibt, können wir ihn wiederverwenden! Bei niedrigste(n) Variablen (gemäß Ordnung) eins runtergehen, um nächste Knoten zu finden Wenn wir einen festen Wert haben, verweist die entsprechende Kante einfach auf 1 oder 0
+Dann gehen wir im zu erstellenden Baum so lange hoch, bis ein Pfad fehlt und wieder Loop
+<br><a data-href="#Reduktionen" href="einführung-in-die-rechnerarchitektur.html#Reduktionen_0" class="internal-link" target="_self" rel="noopener nofollow">Reduktionen</a> benutzen, um Baum zu "kürzen"
+Funktion: Schaltungen auf Äquivalenz Prüfen wenn erfüllbar ist (also wenn es Belegung gibt wo True rauskommt), sind die Schaltungen nicht Äquivalent!
+-&gt; Um das zu testen, kann man noch in KNF überführen.Dafür
+erstellt man den Syntax-Baum (mit der direkt geht eigentlich auch)
+benennt jede Abzweigung mit einer Variable formuliert Das kann man dann noch in KNF auflösen: (ggf. deMorgan anwenden)
+Hat NICHTS mit ITE-Operator an sich zu tun
+Nicht verwirren lassen, wenn man mit dem ITE-Verfahren 3 Bäume mit dem ITE-Operator kombinieren soll. <br>Was ist Bias
+<a href="#fnref-1-828c1697fae757ad" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a> <br>ecall
+<a href="#fnref-2-828c1697fae757ad" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a> <br>Binär-Kodierungen?
+<a href="#fnref-3-828c1697fae757ad" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
+<br>Das Wirtschaftsmagazin<a href="#fnref-4-828c1697fae757ad" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
+]]></description><link>einführung-in-die-rechnerarchitektur.html</link><guid isPermaLink="false">Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md</guid><pubDate>Fri, 13 Feb 2026 10:36:31 GMT</pubDate></item></channel></rss>

@@ -24,13 +24,13 @@
             }
           },
           {
-            "id": "b15c882b2f27b5ad",
+            "id": "57cf6567f0faeb13",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -93,7 +93,7 @@
             }
           },
           {
-            "id": "2ef6d8e24521f02e",
+            "id": "7f5c1b6edce7e9d7",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -152,7 +152,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 316
+    "width": 259
   },
   "right": {
     "id": "09faeb26a179d322",
@@ -279,6 +279,8 @@
   "lastOpenFiles": [
     "Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md",
     "Dashboard.md",
+    "Module/Semester 1/ERA/era_tutor13_platz.pdf",
+    "Module/Semester 1/ERA/era_tutor10.pdf",
     "Module/Semester 1/EIDI/Einführung in die Informatik.md",
     "HTML Exports/ERA/site-lib/styles/theme.css",
     "HTML Exports/ERA/site-lib/styles/supported-plugins.css",
@@ -291,8 +293,6 @@
     "HTML Exports/ERA/site-lib/scripts/webpage.js",
     "HTML Exports/ERA/site-lib/fonts/mathjax_zero.woff",
     "HTML Exports/ERA/site-lib/fonts/mathjax_vector-regular.woff",
-    "HTML Exports/ERA/site-lib/fonts/mathjax_vector-bold.woff",
-    "HTML Exports/ERA/site-lib/fonts/mathjax_typewriter-regular.woff",
     "HTML Exports/ERA/attachments/pasted-image-20251104173149.png",
     "HTML Exports/EIDI/site-lib/media/favicon.png",
     "HTML Exports/EIDI/site-lib/media/6155340132a851f6089e.svg",

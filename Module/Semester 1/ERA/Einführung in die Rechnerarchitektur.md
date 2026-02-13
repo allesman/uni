@@ -185,7 +185,12 @@ x1-x31:
 	`sp`: stack pointer (also [[#Caller-/Callee-Saved|callee-saved]])
 ### Hauptspeicher (Arbeitsspeicher)
 Speicherzellen mit Größe entsprechend ISA
-Adresse pro Byte (8 bits)
+**Byte-Adressiert** (wir können nur ganze Bytes adressieren):
+
+| Adresse | Daten in Speicher |
+| ------- | ----------------- |
+| 1 bit   | 1 byte = 8 bits   |
+
 #### Data alignment
 Ausrichtung auf n-Byte-Grenze: jede Adresse mod n = 0
 Bei **RISC-V** ist der **Stack** `16 byte` aligned
@@ -217,7 +222,7 @@ in RISC-V Wechselmöglichkeit, aber wir nutzen **Little Endian**
 [[#Virtueller Speicher (Mehrere Adressräume)|Jedes Programm erhält eigenen Adressraum (für genutzte Daten und Programm selbst)]]
 
 ### Sign-Extension
-Jede Zahl, die mit `1` beginnt, ist im [[#Binär|Zweier-Komplement]] negativ. Wenn wir diesen Zahlen mehr Stellen geben wollen ("größer casten"), gibt es eine wichtige Sache zu beachten: Der Default-Wert für "leere Stellen", die neu hinzukommen, ist bei negativen Zahlen nicht `0`, sondern `1`. Also füllt man mit `1`en auf, wenn bspw. ein `12-bit` Immediate auf ein `32-bit` Register addiert werden soll.
+Jede Zahl, die mit `1` beginnt (aka in Hex mit >=`8` beginnt), ist im [[#Binär|Zweier-Komplement]] negativ. Wenn wir diesen Zahlen mehr Stellen geben wollen ("größer casten"), gibt es eine wichtige Sache zu beachten: Der Default-Wert für "leere Stellen", die neu hinzukommen, ist bei negativen Zahlen nicht `0`, sondern `1`. Also füllt man mit `1`en auf, wenn bspw. ein `12-bit` Immediate auf ein `32-bit` Register addiert werden soll.
 
 | `12 bits`           | *Sign-Extended* auf `32 bits`                |
 | ------------------- | -------------------------------------------- |
@@ -272,11 +277,11 @@ Jede Zahl, die mit `1` beginnt, ist im [[#Binär|Zweier-Komplement]] negativ. We
 # 3. Architekturen
 ## Von-Neumann-Architektur
 1. Struktur des Rechners unabhängig von bearbeitetem Problem
-2. Rechner besteht aus vier Werken:
-   Hauptspeicher (RAM)
-   Leitwerk (CPU)
-   Rechenwerk (CPU)
-   Ein-/Ausgabewerk inkl. Sekundärspeicher (Peripherieanschluss, Festplatte)
+2. Rechner besteht aus vier Werken (die mit Bus-System verbunden sind):
+   *Speicherwerk* (RAM)
+   *Leitwerk* (CPU)
+   *Rechenwerk* (CPU)
+   *Ein-/Ausgabewerk* inkl. Sekundärspeicher (Peripherieanschluss, Festplatte)
 3. Hauptspeicher hat Zellen gleiche Größe mit Adressen
 4. Programm & Daten stehen in selbem Speicher und können durch die Maschine verändert werden
 5. Die Maschine nutzt Binär
@@ -296,20 +301,42 @@ Unterschied z.B.: Getrennter Speicher für Daten und Programm
 # 4.A Andere ISAs
 
 # 4.B Systemarchitektur
-## Mehrbenutzersysteme?[^5]
+## Mehrbenutzersysteme
+### Privilegienstufen
+- **M**achine Mode
+	- Babo Modus
+	- [[#Systemaufruf]] führt kurz hier hin, dann meist Mapping zu S-Mode
+- **S**upervisor Mode ("Kernel-Level")
+	- Hier landen wir meist nach [[#Systemaufruf]]
+	- Zugriff auf z.B. Hardware möglich
+- **U**ser Mode
+	- hier sind wir normalerweise
+	- mit [[#Systemaufruf]] können wir aber raus
+### Systemaufruf
+in RISC-V mit `ecall`
+
 ## Interrupts vs. Traps/Exceptions
 ![[Pasted image 20251104173149.png|500]]
 
 > [!quote] shoutout an schulz's roten stift, you won't be missed
 
 # 5. Speicherverwaltung & Caches
-## Virtueller Speicher (Mehrere Adressräume)
+## Virtueller Speicher (Paging/Mehrere Adressräume)
 Jedes Programm hat eigenen Speicherraum mit virtuellen Adressen, und nur innerhalb dieses Adressraums Zugriff
-Virtuelle Adresse wird immer auf physische übersetzt von MMU (früher Hardware) via Seiten-Kachel-Tabelle (auch mehrere Ebenen möglich)
+Virtuelle Adresse wird immer auf physische übersetzt von MMU (früher Hardware) via Seiten-Kachel-Tabelle ([[#Herausforderungen und Einsatz von Virtuellem Speicher|auch mehrere Ebenen möglich]])
 4KiB Kacheln abgebildet auf 4KiB Kacheln (heutzutage auch größere möglich)
 Nur Teil des Adressraums jedes Programms ist tatsächlich im Speicher angelegt, bei Bedarf wird erweitert
 Was wenn Programm zugeschriebener Speicher nicht erfüllt werden kann weil keine Kacheln verfügbar? Freimachen beliebiger ( idealerweise lange ungenutzter) Kachel durch Auslagern auf Hintergrundspeicher/Festplatte
 ## Herausforderungen und Einsatz von Virtuellem Speicher
+Realisierung?
+*Naiv*: 1 zusammenhängende Page Table mit komplettem Mapping
+	-> schneller Zugriff, aber giga Platzbedarf
+	man müsste ja 1 zusammenhängenden Platz für alle mappings aller Speicherräume reservieren
+*Based und Sigma*: Ebenen mit Tables gemäß Teilen der Adresse
+	-> viel weniger Platzbedarf
+	-> aber auch langsamer
+		(weil nicht $1$ Zugriff sondern immer $n_{Ebenen}$ Zugriffe)
+		-> Allerdings in der Praxis TLB (Cache für Mapping -> weniger Zugriffe)
 ## Cache
 Idealerweise enthält ein möglichst kleiner Zwischenspeicher die als nächstes benötigten Daten, damit schneller auf sie zugegriffen werden kann.
 Aber was wird als nächstes benötigt?
@@ -323,15 +350,63 @@ Wie geht dann Schreiben? 2 Möglichkeiten:
 Was wird wo im Cache gespeichert?
 Einteilung Speicheradresse in
 
-| Tag             | Index                | Offset              |
-| --------------- | -------------------- | ------------------- |
-| Alias von Zeile | ID von Speichermenge | innerhalb von Zeile |
-
-TODO fertig machen
-## Bsiepiel
+| Tag                                     | Index                | Offset                  |
+| --------------------------------------- | -------------------- | ----------------------- |
+| Alias von Zeile                         | ID von Speichermenge | innerhalb von Zeile     |
+| $bits_{ges}-bits_{index}-bits_{offset}$ | $\log_{2}(n_{Sets})$ | $\log_{2}(Zeilenlänge)$ |
+$$assozitivität = \frac{n_{Zeilen}}{n_{Sets}}$$
+## Cache-Kohärenz
+**Problem**:
+- Prozessor A liest Wert mit Adresse 1 aus Hauptspeicher und legt ihn in seinen Cache
+- Prozessor B schreibt auf Adresse 1 im Hauptspeicher
+-> Prozessor A hat falschen Wert im Cache!
+**Lösung**:*MESI-Protokoll*
+Jeder Prozessor merkt sich für jede Adresse, die er im Cache hat, einen der folgenden Zustände
+- Exclusive:
+	- ==Nur ich== habe diese Adresse im Cache
+	- mein Wert im Cache ist *==valid==* (entspricht dem Hauptspeicher)
+- Shared:
+	- ==Auch andere== haben diese Adresse im Cache
+	- mein Wert im Cache ist *==valid==*
+- Modified:
+	- ==Auch andere== haben diese Adresse im Cache
+	- mein (neuer, von mir modifizierter) Wert im Cache ist *==valid==*
+	- andere haben noch den alten, **==invalid==** Wert
+- Invalid:
+	- ==Auch andere== haben diese Adresse im Cache
+	- in meinem Cache ist ein veralteter, **==invalid==** Wert
+	- ich muss mir beim nächsten Zugriff den neuen *==valid==* aus dem Hauptspeicher holen
+### Spezialfälle
+#### Direct Mapped
+$assoziativität=1$ -> $n_{Zeilen}=n_{Sets}$
+Pro Index-Bit Belegung existiert nur 1 Zeile (das zugehörige Set hat nur 1 Zeile)
+-> Es kann nur maximal eine Hauptspeicherzeile mit dieser Belegung im Cache sein
+-> [[#Conflict Miss|Conflict-Miss]]-City (passieren dauernd)
+#### Voll-Assoziativ
+$assoziativität = n_{Zeilen}$ -> $n_{Sets}=1$
+Es gibt nur ein einziges Set, wo jede Hauptspeicherzeile whereever hin kann, weil sie mit ihrem Tag identifiziert wird.
+-> Es kann keine [[#Conflict Miss]]es geben
+### Misses
+**Generell**: Gesuchte Zeile ist momentan nicht im Cache und muss aus dem Hauptspeicher geholt werden (-> delay)
+#### Cold Miss
+Gesuchte Zeile war noch nie im Cache, also muss sie obv aus dem Hauptspeicher geholt werden.
+#### Conflict Miss
+Gesuchte Zeile war mal im Cache. Aber sie wurde von anderer Zeile vertrieben, und das obwohl es damals in anderen Sets noch Platz gegeben hätte. Also wäre das in einem [[#Voll-Assoziativ|voll-assoziativen]] Cache nicht passiert.
+#### Capacity Miss
+Gesuchte Zeile war mal im Cache. Aber sie wurde von anderer Zeile vertrieben, und es wäre auch nirgends sonst noch Platz gewesen. Also wäre das in einem [[#Voll-Assoziativ|voll-assoziativen]] Cache auch passiert.
+### Memory Access Time
+$$AvgMemoryAccessTime = HitRate \cdot HitLatency + MissRate \cdot MissLatency$$
+$$HitRate + MissRate = \frac{Hits}{TotalAccesses} + \frac{Misses}{TotalAccesses} = 1$$
 ## Speicherhierarchie
+*==Hauptspeicher==* -> *L1* -> *L2* -> *L3*
+**Inklusiv**: Alle Daten aus Layer auch in untergeordneten
+oder
+**Exklusiv**: Gegenteil, jedes Datum nur in einem Layer
 # 6.A Boolesche Algebra
+easy clap tbh
 ## Aussagenlogik
+**Dualer Ausdruck**: $F^D$, sozusagen das Gegenteil eines Ausdrucks
+	Bilden mit: $1:=0$, $0:=1$, $\vee:=\wedge$, $\wedge:=\vee$
 ## Wahrheitstabellen
 ## Boolesche Algebra
 ## Boolesche Ausdrücke
@@ -339,6 +414,8 @@ TODO fertig machen
 # 6.B +/-[^1] (Addierer & Subtrahierer)
 ## Beschreibung von Schaltungen
 ## Multiplexer
+Basically switch case, 1 Entscheidungseingang und lauter nummerierte Eingänge, von denen der Entscheidungseingang einen aussucht.
+==In Klausur immer die Nummerierung der Eingänge hinschreiben!==
 ## Addierer
 ## Subtrahierer
 # 7.A * (Multiplizierer)
@@ -349,16 +426,64 @@ TODO fertig machen
 ## Sequenzielle Schaltungen
 ## RS-Latch
 ## D-Latch
-## Taktflankengesteuertes D-FlipFlop
+Latch -> "latched" onto E (meist Clock), bei E=1 wird D "geschrieben", sonst behält es den letzten valid Zustand
+## D-FlipFlop
+FlipFlop -> "schreibt" nur exakt beim Wechsel von E (meist Clock) von 0 auf 1 (bzw. 1 auf 0), sonst behält es den letzten valid Zustand.
 ## Schieberegister
 ## Speicher
-***
+# Single-Cycle
+## Decode
+
+| Name              | Bits      | Verwendung                            |
+| ----------------- | --------- | ------------------------------------- |
+| op                | 7         | Instruktionsformat (für Main Decoder) |
+| func-3 und func-7 | 3 und 7   | ALU-Operation (mit Opcode)            |
+| rd                | 5         | register destination                  |
+| rs1 und rs2       | 5 und 5   | register source                       |
+| imm               | $\geq$ 12 | Immediate                             |
+
 ## ?
 ### Logic Hazards
-### BDT (Binary Decision Tree)
-#### Reduktion
-easy, S-und I-Reduktion
-### ITE (If-Then-Else)
+# BDT (Binary Decision Tree)
+## Reduktionen
+*S-Reduktion*
+	stupid Knoten, der mit allem auf anderen zeigt, kann weg
+*I-Reduktion*
+	isomorphe Knoten, die sich gleich verhalten, kann man kombinieren
+## Shannon-Transformation
+**Funktion**: ==Formel -> [[#BDT (Binary Decision Tree)|BDT]]==
+Wir nehmen immer die entsprechend der Variablenordnung kleinste Variable und erzeugen zwei neue Branches, für die beiden Belegungen der Variable. Auf die neuen Knoten schreiben wir die neue Formel (mit belegter Variable). Das machen wir so lange bis es keine Variablen mehr gibt. Fertig ist der Baum!
+## ITE-Verfahren
+**Funktion**: ==[[#BDT (Binary Decision Tree)|BDTs]] kombinieren mithilfe Operator==
+- Jeden Knoten unique benennen
+- Wir starten bei jedem Baum mit dem jeweils obersten Knoten
+- Loop (solang bis der Wert der Formel feststeht)
+	- Neuen Knoten unseres neuen Baums erstellen
+		- Mit zugehöriger Formel (Operator auf Knoten der Bäume angewendet)
+		- Wenn es den Knoten mit der Formel schon gibt, können wir ihn wiederverwenden!
+	- Bei niedrigste(n) Variablen (gemäß Ordnung) eins runtergehen, um nächste Knoten zu finden
+- Wenn wir einen festen Wert haben, verweist die entsprechende Kante einfach auf 1 oder 0
+- Dann gehen wir im zu erstellenden Baum so lange hoch, bis ein Pfad fehlt und wieder Loop
+- [[#Reduktionen]] benutzen, um Baum zu "kürzen"
+
+## Tseitsin-Transformation
+**Funktion**: ==Schaltungen auf Äquivalenz Prüfen==
+- $F = Schaltung1 \oplus Schaltung2$
+- wenn $F$ erfüllbar ist (also wenn es $\geq 1$ Belegung gibt wo True rauskommt), sind die Schaltungen nicht Äquivalent!
+-> Um das zu testen, kann man $F$ noch in KNF überführen.Dafür
+- erstellt man den Syntax-Baum (mit der $Schaltung$ direkt geht eigentlich auch)
+- benennt jede Abzweigung mit einer Variable $a_{n}$
+- formuliert $F \wedge (F \leftrightarrow a_{0}) \wedge (a_{0} \leftrightarrow \dots) \wedge \dots$
+- Das kann man dann noch in KNF auflösen:
+  $A\leftrightarrow B$
+  $\equiv (A\to B)\wedge(B\to A)$
+  $\equiv (\neg A \vee B)\wedge(\neg B\vee A)$
+  (ggf. *deMorgan* anwenden)
+
+> [!danger] Hat NICHTS mit ITE-Operator an sich zu tun
+> Nicht verwirren lassen, wenn man mit dem ITE-Verfahren 3 Bäume mit dem ITE-Operator kombinieren soll.
+
+
 
 [^1]: Das Wirtschaftsmagazin
 
