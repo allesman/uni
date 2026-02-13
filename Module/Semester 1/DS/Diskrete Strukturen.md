@@ -6,8 +6,7 @@ moodle: "[[https://ds.tum.sexy]]"
 semester: 1
 note: 0
 ---
-
-# (Grundlagen)
+# 1 Beweise und Induktion
 diskret heißt basically abzählbar (<-> kontinuierlich)
 
 Mehrdeutigkeit vermeiden im...
@@ -56,7 +55,17 @@ z.B. Syllogismen (Bandersnatch), modus ponens ($(P\to Q)\land P)\to Q$)
 | Kontraposition  | Nimm $\lnot B$ an, beweis damit $\lnot A$ | ![[IMG_20251016_150731310 copy 2.png]] |
 | Widerspruch     | Nimm $\lnot A$ an, finde Widerspruch      | ![[IMG_20251016_150731310.jpg]]        |
 ![[DS-Slides.pdf#page=43&rect=24,38,353,164|DS-Slides, p.43]]
-# Mengen
+## Induktionsbeweis
+**IB** (P gilt für $n_0$)
+**IS** ($P(n)\to P(n+1$) beweisen)
+	**IA** (P gilt für beliebiges $n\in \mathbb{N}_0$)
+	$a_{n+1} =^{Def} ... =^{IA}$
+	dann auflösen, sodass P auch für $n+1$ gilt
+$n_0$ muss nicht zwingend 0 sein, man kann auch woanders anfangen
+**Starke Induktion**: Manchmal kann man nicht von $P(n)$ auf $P(n+1)$ schließen
+-> Dann muss man $P$ für alle $x$ mit $n_0\le x \le n$ annehmen, um auf $P(n+1)$ zu schließen
+
+# 2 Mengen
 - Mehrfachnennung und Ordnung spielt keine Rolle
 - explizite und implizite Definition
 - Menge darf in Definition nur bereits Definierte Mengen verwenden (Russel)
@@ -87,20 +96,8 @@ $A^0=\{()\}$
 $\Sigma$ Alphabet
 Sprache $S \subseteq \Sigma^*$
 Wort als Tupel der Buchstaben, vereinfachte Darstellung durch Anreihung der Elemente
-
-# Natürliche Zahlen
-Induktionsbeweis
-**IB** (P gilt für $n_0$)
-**IS** ($P(n)\to P(n+1$) beweisen)
-	**IA** (P gilt für beliebiges $n\in \mathbb{N}_0$)
-	$a_{n+1} =^{Def} ... =^{IA}$
-	dann auflösen, sodass P auch für $n+1$ gilt
-$n_0$ muss nicht zwingend 0 sein, man kann auch woanders anfangen
-**Starke Induktion**: Manchmal kann man nicht von $P(n)$ auf $P(n+1)$ schließen
--> Dann muss man $P$ für alle $x$ mit $n_0\le x \le n$ annehmen, um auf $P(n+1)$ zu schließen
-
-# Relationen / Graphen
-
+# 3 Relationen und Funktionen
+## Relationen
 Relation $R\subseteq A_1,A_2,...A_k$
 Inverse Relation $R^{-1}=R^T=\{(b,a)|(a,b)\in \mathbb{R}\}$ 
 
@@ -183,12 +180,12 @@ ungerichtet + keine Schleifen -> einfacher Graph
 *notwendig*: $3|V|-6\geq|E|$
 *idk*: $|E|\le 2|V|-4$
 
-# Funktionen
+## Funktionen
 Untergruppe von Relationen $R\subseteq A\times B$, wo jedes Element von $A$ maximal einmal vertreten ist
 partielle Funktion: Nicht jedes Element von $A$ vertreten
 $B^A=:\{f:A\to B\}$ aka die Menge aller Funktionen zwischen $A$ und $B$
 **Multimenge**: mehrmals dasselbe Element erlaubt
-# Operationen
+### Operationen
 - Untergruppe von Funktionen
 - $f:A^k\to A$ ist $k$-stellige Operation, aber $2$-stellige Relation
 - mögliche Eigenschaften
@@ -205,7 +202,7 @@ Wenn $f=A^A$, dann injektiv <-> bijektiv <-> surjektiv
 Wenn $g\circ f$ bijektiv, dann $f$ injektiv $g$ surjektiv
 **Orbit**=eindeutig bestimmter unendlicher Pfad
 
-# Kardinalität
+### Kardinalität
 $|A|\le|B|\leftrightarrow \text{Es gibt eine injektive Funktion} f:A\to B$
 $|A|=|B|\leftrightarrow \text{Es gibt eine bijektive Funktion} f:A\to B$
 ${0,1}^{\mathbb{N}}=\text{Funktionen mit } \mathbb{N}\to\{0,1\}$
@@ -216,10 +213,18 @@ $|A|<|B|$ Bilde Ungleichungskette $|A|\le|C_{1}|\le \dots \leq |C_{N}|\le B$
 Für $|C_{i}\leq|C_{i+1}|$: Injektion
 Für $|C_{i}=|C_{i+1}|$: Satz von Cantor
 
-# Logik
+# 4 Graphen und Bäume
+# 5 Kombinatorik
+## Urnenmodell
+## Partitionierung
+### 1. Partition
+### 2. Partition
+# 6 Logik
 ![[DS-Slides.pdf#page=516&rect=1,20,340,272|DS-Slides, p.449]]
 ![[DS-Slides.pdf#page=517&rect=6,47,313,274|DS-Slides, p.450]]
 ![[DS-Slides.pdf#page=518&rect=3,52,341,267|DS-Slides, p.451]]
 
 Resolution!!!
 (immer wahr -> nicht immer falsch -> ungültig)
+
+# 7 Zahlentheorie
