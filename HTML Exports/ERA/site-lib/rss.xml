@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[eidi]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>site-lib/media/favicon.png</url><title>eidi</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Fri, 13 Feb 2026 10:36:37 GMT</lastBuildDate><atom:link href="site-lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Fri, 13 Feb 2026 10:36:34 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[Einführung in die Rechnerarchitektur]]></title><description><![CDATA[<a href=".?query=tag:era" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#era">#era</a><br>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[eidi]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>site-lib/media/favicon.png</url><title>eidi</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Fri, 13 Feb 2026 11:13:59 GMT</lastBuildDate><atom:link href="site-lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Fri, 13 Feb 2026 11:13:56 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[Einführung in die Rechnerarchitektur]]></title><description><![CDATA[<a href=".?query=tag:era" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#era">#era</a><br>
 <a href=".?query=tag:orga" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#orga">#orga</a>
 Workflow:
 Vorlesung/Moodle -&gt; reine Gliederung (Obsidian)
@@ -11,7 +11,7 @@ Wertebereich -&gt; positiver Bereich eins kleiner, dafür dabei Kommazahlen via 
 Floating Point Numbers S: Vorzeichen
 F: Nachkommastellen nach 1 (Fraction, Koeffizient, Mantisse, Significant)
 E: Verschiebung des Kommas (Abzüglich Bias)
-<br>(<a data-footref="2" href="#fn-1-828c1697fae757ad" class="footnote-link" target="_self" rel="noopener nofollow">[1]</a>) Strings via Ascii (so 8 bit Zahl &lt;-&gt; Buchstabe halt) C-String endet mit dem Byte 0x0 (null-terminiert)
+<br>(<a data-footref="1" href="#fn-1-da1adc1191cb0463" class="footnote-link" target="_self" rel="noopener nofollow">[1]</a>) Strings via Ascii (so 8 bit Zahl &lt;-&gt; Buchstabe halt) C-String endet mit dem Byte 0x0 (null-terminiert)
 in RV-Assembly mit .asciz
 Soweit ich weiß bei uns eher default Pascal String beginnt mit Zahl als Länge
 "Der Pascal sagt dir gleich was Sache ist" Vorteil: Verschiedene Versionen jeder Ebene mit jeweils anderen Ebenen kompatibelgcc - C Code -&gt; Kompilierung auf ausführbare Binärdatei
@@ -49,12 +49,13 @@ Lädt in destination Adresse: Wert vonBasisadresse + constj offset Springe zu ak
 jr reg, const Springe zu Wert von reg + imm
 Beim selbst Schreiben: Sprungmarkenbxx Operand1, Operand2, offset Springe um offset wenn Bedingung true
 beq, bne, blt, bge
-Andere Richtungen der letzten beiden via Tausch der Operandenjal reg, offset Jump and link, Springe um offset, Speicher Adresse nächsten Befehls in reg<br>+Systembefehle ecall, Eskaliert vom <a data-footref="3" href="#fn-2-828c1697fae757ad" class="footnote-link" target="_self" rel="noopener nofollow">[2]</a>
+Andere Richtungen der letzten beiden via Tausch der Operandenjal reg, offset Jump and link, Springe um offset, Speicher Adresse nächsten Befehls in reg+Systembefehle ecall, Eskaliert vom 3
 +Input/OutputKeine 1:1-Beziehung von Opcode und Befehl
 Pseudobefehle, z.B.
-mv ra, rb = add ra, rb, x0
+mv rd, rs = add rd, rs, x0
 j offset = jal x0, offset
-li ra, i = ``
+li rd, i = 1.lui rd, i[31:12] 2.addi rd, rd, i[11:0]<br>
+-&gt; Wenn i[11]=1, müssen wir lui rd,i[31:12]+1 machen, da addi das i[11:0] dann als negativ interpretiert und das <a data-tooltip-position="top" aria-label="Sign-Extension" data-href="#Sign-Extension" href="einführung-in-die-rechnerarchitektur.html#Sign-Extension_0" class="internal-link" target="_self" rel="noopener nofollow">Zweier-Komplement</a> der Zahl vom Upper Immediate abzieht!
 x0: zero
 x1-x31:
 an: Argument/Return<br>
@@ -78,8 +79,8 @@ Die tatsächlichen Argumente darf er dann erst ab a1 angeben.
 Meist handelt es sich bei der Adresse in a0 um eine innerhalb des Stack-Frames des Callers, so weit Bjarne weiß sogar immer ganz oben (also bei 0(sp)). Prologue Platz auf Stack reservieren (SP dekrementieren(!))
 Return Address und andere Variablen auf dem Stack sichern Tatsächlicher Stuff
 Epilogue Return Address etc. wieder vom Stack holen
-Platz auf Stack freigeben (SP inkrementieren(!))<br>
-<a data-footref="4" href="#fn-3-828c1697fae757ad" class="footnote-link" target="_self" rel="noopener nofollow">[3]</a> Struktur des Rechners unabhängig von bearbeitetem Problem
+Platz auf Stack freigeben (SP inkrementieren(!))
+4 Struktur des Rechners unabhängig von bearbeitetem Problem
 Rechner besteht aus vier Werken (die mit Bus-System verbunden sind):
 Speicherwerk (RAM)
 Leitwerk (CPU)
@@ -140,8 +141,10 @@ Bilden mit: , , , Basically switch case, 1 Entscheidungseingang und lauter numme
 In Klausur immer die Nummerierung der Eingänge hinschreiben!Latch -&gt; "latched" onto E (meist Clock), bei E=1 wird D "geschrieben", sonst behält es den letzten valid ZustandFlipFlop -&gt; "schreibt" nur exakt beim Wechsel von E (meist Clock) von 0 auf 1 (bzw. 1 auf 0), sonst behält es den letzten valid Zustand.S-Reduktion
 stupid Knoten, der mit allem auf anderen zeigt, kann weg
 I-Reduktion
-isomorphe Knoten, die sich gleich verhalten, kann man kombinieren<br>Funktion: Formel -&gt; <a data-tooltip-position="top" aria-label="BDT (Binary Decision Tree)" data-href="#BDT (Binary Decision Tree)" href="einführung-in-die-rechnerarchitektur.html#BDT_(Binary_Decision_Tree)_0" class="internal-link" target="_self" rel="noopener nofollow">BDT</a>
-Wir nehmen immer die entsprechend der Variablenordnung kleinste Variable und erzeugen zwei neue Branches, für die beiden Belegungen der Variable. Auf die neuen Knoten schreiben wir die neue Formel (mit belegter Variable). Das machen wir so lange bis es keine Variablen mehr gibt. Fertig ist der Baum!<br>Funktion: <a data-tooltip-position="top" aria-label="BDT (Binary Decision Tree)" data-href="#BDT (Binary Decision Tree)" href="einführung-in-die-rechnerarchitektur.html#BDT_(Binary_Decision_Tree)_0" class="internal-link" target="_self" rel="noopener nofollow">BDTs</a> kombinieren mithilfe Operator
+isomorphe Knoten, die sich gleich verhalten, kann man kombinieren<br>Funktion: Formel -&gt; <a data-tooltip-position="top" aria-label="BDD (Binary Decision Diagram)" data-href="#BDD (Binary Decision Diagram)" href="einführung-in-die-rechnerarchitektur.html#BDD_(Binary_Decision_Diagram)_0" class="internal-link" target="_self" rel="noopener nofollow">BDD</a><br>
+Wir nehmen immer die entsprechend der Variablenordnung kleinste Variable und erzeugen zwei neue Branches, für die beiden Belegungen der Variable. Auf die neuen Knoten schreiben wir die neue Formel (mit belegter Variable). Das machen wir so lange bis es keine Variablen mehr gibt. Dann nur noch <a data-href="#Reduktionen" href="einführung-in-die-rechnerarchitektur.html#Reduktionen_0" class="internal-link" target="_self" rel="noopener nofollow">Reduktionen</a> benutzen, um zu "kürzen". Fertig ist der Baum!Hat NICHTS mit ITE-Operator an sich zu tun
+Idk wer sich dachte, dass man das so nennen soll. Nicht verwirren lassen, wenn man mit dem ITE-Verfahren 3 Bäume mit dem ITE-Operator kombinieren soll.
+<br>Funktion: <a data-tooltip-position="top" aria-label="BDD (Binary Decision Diagram)" data-href="#BDD (Binary Decision Diagram)" href="einführung-in-die-rechnerarchitektur.html#BDD_(Binary_Decision_Diagram)_0" class="internal-link" target="_self" rel="noopener nofollow">BDDs</a> kombinieren mithilfe beliebiges Operators
 Jeden Knoten unique benennen
 Wir starten bei jedem Baum mit dem jeweils obersten Knoten
 Loop (solang bis der Wert der Formel feststeht) Neuen Knoten unseres neuen Baums erstellen Mit zugehöriger Formel (Operator auf Knoten der Bäume angewendet)
@@ -151,11 +154,19 @@ Dann gehen wir im zu erstellenden Baum so lange hoch, bis ein Pfad fehlt und wie
 Funktion: Schaltungen auf Äquivalenz Prüfen wenn erfüllbar ist (also wenn es Belegung gibt wo True rauskommt), sind die Schaltungen nicht Äquivalent!
 -&gt; Um das zu testen, kann man noch in KNF überführen.Dafür
 erstellt man den Syntax-Baum (mit der direkt geht eigentlich auch)
-benennt jede Abzweigung mit einer Variable formuliert Das kann man dann noch in KNF auflösen: (ggf. deMorgan anwenden)
-Hat NICHTS mit ITE-Operator an sich zu tun
-Nicht verwirren lassen, wenn man mit dem ITE-Verfahren 3 Bäume mit dem ITE-Operator kombinieren soll. <br>Was ist Bias
-<a href="#fnref-1-828c1697fae757ad" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a> <br>ecall
-<a href="#fnref-2-828c1697fae757ad" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a> <br>Binär-Kodierungen?
-<a href="#fnref-3-828c1697fae757ad" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
-<br>Das Wirtschaftsmagazin<a href="#fnref-4-828c1697fae757ad" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
-]]></description><link>einführung-in-die-rechnerarchitektur.html</link><guid isPermaLink="false">Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md</guid><pubDate>Fri, 13 Feb 2026 10:36:31 GMT</pubDate></item></channel></rss>
+benennt jede Abzweigung mit einer Variable formuliert Das kann man dann noch in KNF auflösen: (ggf. deMorgan anwenden) verbindet alle Terminale in
+zusammenhängendem Graphen Hanaan-Punkte finden
+alle die auf Spalte und Zeile von Terminalen liegen
+Kürzesten Pfad zwischen zwei Terminalen finden
+auf den beiden Möglichkeiten verbinden (links und rechtsrum)
+Alle Hanaan-Punkte auf diesen Verbindungen markieren
+Kürzesten Pfad zwischen Hanaan-Punkt und nächstem Terminal finden (-&gt; 3.)
+-&gt; Wenn alle verbunden sind, sind wir fertig yay!
+<br>Nur weil wir einen Steinerbaum haben, hat der noch nicht die minimalen Kosten. Dabei handelt es sich dann um ein (NP-hartes) <a data-tooltip-position="top" aria-label="MILP aka Multiple Integer Linear Programming (nicht so easy (NP-hart))" data-href="#MILP aka Multiple Integer Linear Programming (nicht so easy (NP-hart))" href="einführung-in-die-rechnerarchitektur.html#MILP_aka_Multiple_Integer_Linear_Programming_(nicht_so_easy_(NP-hart))_0" class="internal-link" target="_self" rel="noopener nofollow">MILP-Problem</a>Unter Beachtung linearer Bedingungen (z.B. ) möglichst kleinen Wert für eine Formel finden. Meist sind einige Variablen der Lösung nicht ganzzahlig.<br>Wie <a data-tooltip-position="top" aria-label="LP aka Linear Programming (easy)" data-href="#LP aka Linear Programming (easy)" href="einführung-in-die-rechnerarchitektur.html#LP_aka_Linear_Programming_(easy)_0" class="internal-link" target="_self" rel="noopener nofollow">LP</a> aber zudem muss eine bestimmte Teilmenge der Variablen ganzzahlig sein.
+<br><a data-tooltip-position="top" aria-label="LP aka Linear Programming (easy)" data-href="#LP aka Linear Programming (easy)" href="einführung-in-die-rechnerarchitektur.html#LP_aka_Linear_Programming_(easy)_0" class="internal-link" target="_self" rel="noopener nofollow">LP</a>-Lösung finden
+ist sie auch MILP-Lösung? ja -&gt; perfekt, nächste Lösung finden (-&gt; 1.)
+nein -&gt; Werte "runden" indem wir für jeden zu rundenden Wert zwei neue LP-Bedingungen adden
+und zwar und So schließen wir den nicht-ganzzahligen Problembereich für diesen Wert quasi aus
+dann mit neuen Bedingungen dabei von vorne (-&gt; 1.) Sobald wir alle MILP-Lösungen haben, die mit minimalen Kosten nehmen! <br>TODO Was ist Bias?<a href="#fnref-1-da1adc1191cb0463" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
+<br>Das Wirtschaftsmagazin<a href="#fnref-2-da1adc1191cb0463" class="footnote-backref footnote-link" target="_self" rel="noopener nofollow">↩︎</a>
+]]></description><link>einführung-in-die-rechnerarchitektur.html</link><guid isPermaLink="false">Module/Semester 1/ERA/Einführung in die Rechnerarchitektur.md</guid><pubDate>Fri, 13 Feb 2026 11:11:57 GMT</pubDate></item></channel></rss>

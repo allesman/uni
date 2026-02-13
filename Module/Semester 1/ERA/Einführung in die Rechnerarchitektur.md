@@ -30,7 +30,7 @@ note: 0
 		- **S**: Vorzeichen
 		- **F**: Nachkommastellen nach 1 (Fraction, Koeffizient, Mantisse, Significant)
 		- **E**: Verschiebung des Kommas (Abzüglich Bias)
-		- ($Mantisse\cdot basis^{Exponent}$[^2])
+		- ($Mantisse\cdot basis^{Exponent}$[^1])
 - Strings via **Ascii** (so 8 bit Zahl <-> Buchstabe halt)
 	- *C-String*
 		- endet mit dem Byte `0x0` (**null-terminiert**)
@@ -171,9 +171,10 @@ Andere Richtungen der letzten beiden via Tausch der Operanden
 
 > [!warning] Keine 1:1-Beziehung von Opcode und Befehl
 > Pseudobefehle, z.B.
-> `mv ra, rb` = `add ra, rb, x0`
+> `mv rd, rs` = `add rd, rs, x0`
 > `j offset` = `jal x0, offset`
-> `li ra, i` = ``
+> `li rd, i` = 1.`lui rd, i[31:12]` 2.`addi rd, rd, i[11:0]`
+> 	-> **==Wenn `i[11]`=`1`, müssen wir `lui rd,i[31:12]+1` machen, da `addi` das `i[11:0]` dann als negativ interpretiert und das [[#Sign-Extension|Zweier-Komplement]] der Zahl vom Upper Immediate abzieht!==**
 ## Speicher
 ### Register
 `x0`: zero
@@ -411,7 +412,7 @@ easy clap tbh
 ## Boolesche Algebra
 ## Boolesche Ausdrücke
 
-# 6.B +/-[^1] (Addierer & Subtrahierer)
+# 6.B +/-[^2] (Addierer & Subtrahierer)
 ## Beschreibung von Schaltungen
 ## Multiplexer
 Basically switch case, 1 Entscheidungseingang und lauter nummerierte Eingänge, von denen der Entscheidungseingang einen aussucht.
@@ -444,17 +445,20 @@ FlipFlop -> "schreibt" nur exakt beim Wechsel von E (meist Clock) von 0 auf 1 (b
 
 ## ?
 ### Logic Hazards
-# BDT (Binary Decision Tree)
+# BDD (Binary Decision Diagram)
 ## Reduktionen
 *S-Reduktion*
 	stupid Knoten, der mit allem auf anderen zeigt, kann weg
 *I-Reduktion*
 	isomorphe Knoten, die sich gleich verhalten, kann man kombinieren
 ## Shannon-Transformation
-**Funktion**: ==Formel -> [[#BDT (Binary Decision Tree)|BDT]]==
-Wir nehmen immer die entsprechend der Variablenordnung kleinste Variable und erzeugen zwei neue Branches, für die beiden Belegungen der Variable. Auf die neuen Knoten schreiben wir die neue Formel (mit belegter Variable). Das machen wir so lange bis es keine Variablen mehr gibt. Fertig ist der Baum!
+**Funktion**: ==Formel -> [[#BDD (Binary Decision Diagram)|BDD]]==
+Wir nehmen immer die entsprechend der Variablenordnung kleinste Variable und erzeugen zwei neue Branches, für die beiden Belegungen der Variable. Auf die neuen Knoten schreiben wir die neue Formel (mit belegter Variable). Das machen wir so lange bis es keine Variablen mehr gibt. Dann nur noch [[#Reduktionen]] benutzen, um zu "kürzen". Fertig ist der Baum!
 ## ITE-Verfahren
-**Funktion**: ==[[#BDT (Binary Decision Tree)|BDTs]] kombinieren mithilfe Operator==
+> [!danger] Hat NICHTS mit ITE-Operator an sich zu tun
+> Idk wer sich dachte, dass man das so nennen soll. Nicht verwirren lassen, wenn man mit dem ITE-Verfahren 3 Bäume mit dem ITE-Operator kombinieren soll.
+
+**Funktion**: ==[[#BDD (Binary Decision Diagram)|BDDs]] kombinieren mithilfe beliebiges Operators==
 - Jeden Knoten unique benennen
 - Wir starten bei jedem Baum mit dem jeweils obersten Knoten
 - Loop (solang bis der Wert der Formel feststeht)
@@ -465,7 +469,6 @@ Wir nehmen immer die entsprechend der Variablenordnung kleinste Variable und erz
 - Wenn wir einen festen Wert haben, verweist die entsprechende Kante einfach auf 1 oder 0
 - Dann gehen wir im zu erstellenden Baum so lange hoch, bis ein Pfad fehlt und wieder Loop
 - [[#Reduktionen]] benutzen, um Baum zu "kürzen"
-
 ## Tseitsin-Transformation
 **Funktion**: ==Schaltungen auf Äquivalenz Prüfen==
 - $F = Schaltung1 \oplus Schaltung2$
@@ -480,17 +483,37 @@ Wir nehmen immer die entsprechend der Variablenordnung kleinste Variable und erz
   $\equiv (\neg A \vee B)\wedge(\neg B\vee A)$
   (ggf. *deMorgan* anwenden)
 
-> [!danger] Hat NICHTS mit ITE-Operator an sich zu tun
-> Nicht verwirren lassen, wenn man mit dem ITE-Verfahren 3 Bäume mit dem ITE-Operator kombinieren soll.
+# Steinerbaum
+- verbindet alle Terminale in
+- zusammenhängendem Graphen
+## Erstellen
+1. Hanaan-Punkte finden
+   alle die auf Spalte und Zeile von Terminalen liegen
+2. Kürzesten Pfad zwischen zwei Terminalen finden
+3. auf den beiden Möglichkeiten verbinden (links und rechtsrum)
+4. Alle Hanaan-Punkte auf diesen Verbindungen markieren
+5. Kürzesten Pfad zwischen Hanaan-Punkt und nächstem Terminal finden (-> 3.)
+-> Wenn alle verbunden sind, sind wir fertig yay!
+## Optimierter Steinerbaum
+Nur weil wir einen Steinerbaum haben, hat der noch nicht die minimalen Kosten. Dabei handelt es sich dann um ein (NP-hartes) [[#MILP aka Multiple Integer Linear Programming (nicht so easy (NP-hart))|MILP-Problem]]
 
+# LP und MILP
+## LP aka Linear Programming (easy)
+Unter Beachtung linearer Bedingungen (z.B. $x_{1}+x_{2}>4$) möglichst kleinen Wert für eine Formel $f(x_{1},\dots x_{n})$ finden. Meist sind einige Variablen der Lösung nicht ganzzahlig.
+## MILP aka Multiple Integer Linear Programming (nicht so easy (NP-hart))
+Wie [[#LP aka Linear Programming (easy)|LP]] aber zudem muss eine bestimmte Teilmenge der Variablen ganzzahlig sein.
+1. [[#LP aka Linear Programming (easy)|LP]]-Lösung finden
+2. ist sie auch MILP-Lösung?
+	- ja -> perfekt, nächste Lösung finden (-> 1.)
+	- nein -> Werte "runden"
+		- indem wir für jeden zu rundenden Wert $x_{p}$ zwei neue LP-Bedingungen adden
+		- und zwar $x_{p}\geq upperBound$ und $x_{p}\leq lowerBound$
+		- So schließen wir den nicht-ganzzahligen Problembereich für diesen Wert quasi aus
+		- dann mit neuen Bedingungen dabei von vorne (-> 1.)
+3. Sobald wir alle MILP-Lösungen haben, die mit minimalen Kosten nehmen!
 
+---
+# Fußnoten
 
-[^1]: Das Wirtschaftsmagazin
-
-[^2]: - [ ] Was ist Bias
-
-[^3]: - [ ] ecall
-
-[^4]: - [ ] Binär-Kodierungen?
-
-[^5]: - [ ] Mehrbenutzersysteme
+[^1]: TODO Was ist Bias?
+[^2]: Das Wirtschaftsmagazin
